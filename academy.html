@@ -102,6 +102,40 @@ progress::-moz-progress-bar { background: var(--accent); border-radius: 99px; }
 .quiz h2 { margin: 0 0 6px; font-size: 24px; }
 .quiz-intro { margin: 0 0 18px; color: var(--muted); }
 .quiz fieldset + fieldset { padding-top: 14px; border-top: 1px solid var(--line); }
+.challenge-notice {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    margin-top: 16px;
+    padding: 17px 20px;
+    border: 1px solid #277c67;
+    border-radius: 14px;
+    background: linear-gradient(120deg, #103b3d, #10243a 72%);
+}
+.challenge-notice h2 { margin: 3px 0 4px; font-size: 18px; }
+.challenge-notice p { margin: 0; color: #d5e1eb; }
+.challenge-notice a { flex: 0 0 auto; font-weight: 800; text-decoration: none; }
+.result-share-card {
+    margin-top: 18px;
+    padding: 20px;
+    border: 1px solid #277c67;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #103b3d, #10243a 72%);
+}
+.result-share-card h3 { margin: 4px 0 8px; font-size: 21px; }
+.result-score { margin: 8px 0; color: #d5e1eb; }
+.result-score strong { color: var(--accent); font-size: clamp(28px, 5vw, 38px); line-height: 1.15; }
+.result-note { margin: 5px 0 0; color: var(--muted); font-size: 13px; }
+.share-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.share-actions button { min-height: 46px; padding: 10px 16px; border-radius: 9px; font: inherit; font-weight: 800; cursor: pointer; }
+.share-primary { border: 0; background: var(--accent); color: #061b16; }
+.share-secondary { border: 1px solid #426074; background: transparent; color: #e2edf5; }
+.share-actions button:hover { filter: brightness(1.08); }
+.challenge-link-label { display: block; margin-top: 15px; color: #d5e1eb; font-size: 13px; font-weight: 750; }
+.challenge-link-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; margin-top: 6px; }
+.challenge-link-input { width: 100%; min-width: 0; min-height: 44px; padding: 10px 12px; border: 1px solid #426074; border-radius: 8px; background: var(--panel-deep); color: #e5edf4; font: inherit; font-size: 13px; }
+.share-status { min-height: 1.5em; margin: 9px 0 0; color: var(--muted); font-size: 13px; }
 .more-topics > h2 { margin: 0 0 6px; font-size: 24px; }
 .more-topics > p { margin: 0 0 16px; color: var(--muted); }
 .topic-group { margin-top: 10px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel-deep); }
@@ -118,6 +152,11 @@ footer { padding: 20px; border-top: 1px solid #152c41; color: #8193a5; text-alig
     progress, .storage-note { grid-column: 1; }
     .reset-button { justify-self: start; }
     .lesson-topline { gap: 8px; }
+    .challenge-notice { align-items: flex-start; flex-direction: column; gap: 10px; padding: 16px; }
+    .share-actions { display: grid; grid-template-columns: 1fr; }
+    .share-actions button { width: 100%; }
+    .challenge-link-row { grid-template-columns: 1fr; }
+    .challenge-link-input { font-size: 16px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
@@ -137,6 +176,15 @@ footer { padding: 20px; border-top: 1px solid #152c41; color: #8193a5; text-alig
             <span>Free to explore</span>
         </div>
     </section>
+
+    <aside class="challenge-notice" id="incoming-challenge" aria-labelledby="incoming-challenge-title" hidden>
+        <div>
+            <span class="eyebrow">Challenge received</span>
+            <h2 id="incoming-challenge-title">A friend shared a quiz score</h2>
+            <p id="incoming-challenge-text"></p>
+        </div>
+        <a href="#first-quiz">Take the five-question quiz →</a>
+    </aside>
 
     <section class="path-summary" aria-label="Your learning progress">
         <div>
@@ -276,6 +324,23 @@ footer { padding: 20px; border-top: 1px solid #152c41; color: #8193a5; text-alig
             </fieldset>
             <button class="quiz-submit" type="submit">Check my score</button>
             <div id="quiz-result" role="status" aria-live="polite" aria-atomic="true"></div>
+            <section class="result-share-card" id="quiz-share-card" aria-labelledby="share-card-title" hidden>
+                <span class="eyebrow">Your learning result</span>
+                <h3 id="share-card-title">Forex basics · quick review</h3>
+                <p class="result-score">Your score: <strong id="share-score"></strong> <span>out of 5</span></p>
+                <p class="result-note">A learning quiz score only; it does not predict future trading performance.</p>
+                <div class="share-actions">
+                    <button class="share-primary" id="share-challenge" type="button">Challenge a friend</button>
+                    <button class="share-secondary" id="share-result-card" type="button">Share result card</button>
+                    <button class="share-secondary" id="download-result-card" type="button">Download card</button>
+                    <button class="share-secondary" id="copy-challenge-link" type="button">Copy link</button>
+                </div>
+                <label class="challenge-link-label" for="challenge-link">Challenge link · includes only this quiz score</label>
+                <div class="challenge-link-row">
+                    <input class="challenge-link-input" id="challenge-link" type="text" readonly spellcheck="false" aria-label="Shareable challenge link containing only the quiz score">
+                </div>
+                <p class="share-status" id="share-status" role="status" aria-live="polite"></p>
+            </section>
         </form>
     </section>
 
@@ -344,6 +409,160 @@ footer { padding: 20px; border-top: 1px solid #152c41; color: #8193a5; text-alig
     const progress = document.getElementById("path-progress");
     const progressLabel = document.getElementById("progress-label");
     const storageNote = document.getElementById("storage-note");
+
+    const shareCard = document.getElementById("quiz-share-card");
+    const shareScore = document.getElementById("share-score");
+    const shareLink = document.getElementById("challenge-link");
+    const shareStatus = document.getElementById("share-status");
+    let latestScore = null;
+
+    function buildChallengeUrl(score) {
+        const challengeUrl = new URL("https://sif-forex-hubreal.vercel.app/academy.html");
+        challengeUrl.search = "";
+        challengeUrl.hash = "";
+        challengeUrl.searchParams.set("challenge", String(score));
+        return challengeUrl.toString();
+    }
+
+    function prepareShareLink() {
+        if (latestScore === null) return "";
+        const link = buildChallengeUrl(latestScore);
+        shareLink.value = link;
+        return link;
+    }
+
+    async function copyChallengeLink() {
+        const link = prepareShareLink();
+        if (!link) return;
+        let copied = false;
+        try {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                await navigator.clipboard.writeText(link);
+                copied = true;
+            }
+        } catch (error) {}
+        if (!copied) {
+            try {
+                shareLink.focus();
+                shareLink.select();
+                copied = document.execCommand("copy");
+            } catch (error) {}
+        }
+        if (copied) {
+            shareStatus.textContent = "Challenge link copied. It contains only your learning quiz score.";
+        } else {
+            shareLink.focus();
+            shareLink.select();
+            shareStatus.textContent = "Copy was not available here. The score-only link is selected so you can copy it manually.";
+        }
+    }
+
+    async function shareChallenge() {
+        if (latestScore === null) return;
+        const link = prepareShareLink();
+        const shareData = {
+            title: "SIF Forex Hub · Start Here quiz",
+            text: `I scored ${latestScore}/5 on a short forex learning quiz. Can you match my score? This learning score does not predict future performance.`,
+            url: link
+        };
+        if (typeof navigator.share !== "function") {
+            await copyChallengeLink();
+            return;
+        }
+        try {
+            await navigator.share(shareData);
+            shareStatus.textContent = "Shared. The message includes only your quiz score and challenge link.";
+        } catch (error) {
+            if (error && error.name === "AbortError") {
+                shareStatus.textContent = "Share cancelled. You can still use Copy link.";
+                return;
+            }
+            await copyChallengeLink();
+        }
+    }
+
+    function makeResultCardFile(score) {
+        const canvas = document.createElement("canvas");
+        canvas.width = 1200;
+        canvas.height = 630;
+        const ctx = canvas.getContext("2d");
+        if (!ctx) throw new Error("Card image unavailable");
+        const background = ctx.createLinearGradient(0, 0, 1200, 630);
+        background.addColorStop(0, "#103b3d");
+        background.addColorStop(1, "#091a2c");
+        ctx.fillStyle = background;
+        ctx.fillRect(0, 0, 1200, 630);
+        ctx.strokeStyle = "#277c67";
+        ctx.lineWidth = 4;
+        ctx.strokeRect(32, 32, 1136, 566);
+        ctx.fillStyle = "#24e69a";
+        ctx.font = "bold 25px sans-serif";
+        ctx.fillText("SIF FOREX HUB  /  BEGINNER ACADEMY", 86, 104);
+        ctx.fillStyle = "#f4f8fc";
+        ctx.font = "bold 52px sans-serif";
+        ctx.fillText("Forex basics · quick review", 86, 186);
+        ctx.font = "29px sans-serif";
+        ctx.fillStyle = "#d5e1eb";
+        ctx.fillText("MY LEARNING QUIZ SCORE", 86, 270);
+        ctx.font = "bold 146px sans-serif";
+        ctx.fillStyle = "#24e69a";
+        ctx.fillText(`${score} / 5`, 82, 426);
+        ctx.fillStyle = "#d5e1eb";
+        ctx.font = "26px sans-serif";
+        ctx.fillText("Educational quiz only. This score does not predict", 86, 510);
+        ctx.fillText("future trading performance.", 86, 548);
+        const encoded = canvas.toDataURL("image/png").split(",")[1];
+        const bytes = Uint8Array.from(atob(encoded), character => character.charCodeAt(0));
+        return new File([bytes], "sif-forex-learning-result.png", { type: "image/png" });
+    }
+
+    function downloadResultCard(file) {
+        const url = URL.createObjectURL(file);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = file.name;
+        document.body.append(link);
+        link.click();
+        link.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 10000);
+    }
+
+    function downloadCard() {
+        if (latestScore === null) return;
+        try {
+            downloadResultCard(makeResultCardFile(latestScore));
+            shareStatus.textContent = "Your score-only result card is downloading.";
+        } catch (error) {
+            shareStatus.textContent = "The card image could not be created here. You can still share the challenge link.";
+        }
+    }
+
+    async function shareResultCard() {
+        if (latestScore === null) return;
+        try {
+            const file = makeResultCardFile(latestScore);
+            const data = { files: [file], title: "SIF Forex Hub learning quiz", text: "My forex basics learning quiz score." };
+            if (typeof navigator.share === "function" && typeof navigator.canShare === "function" && navigator.canShare({ files: [file] })) {
+                try {
+                    await navigator.share(data);
+                    shareStatus.textContent = "Result card shared or handed to your device's share menu.";
+                } catch (error) {
+                    shareStatus.textContent = error && error.name === "AbortError" ? "Share cancelled. You can still download the card." : "Sharing the image was unavailable. Use Download card to share it manually.";
+                }
+            } else {
+                downloadResultCard(file);
+                shareStatus.textContent = "Image sharing is unavailable here, so your score-only card is downloading instead.";
+            }
+        } catch (error) {
+            shareStatus.textContent = "The card image could not be created here. You can still share the challenge link.";
+        }
+    }
+
+    const incomingScore = new URLSearchParams(window.location.search).get("challenge");
+    if (incomingScore !== null && /^[0-5]$/.test(incomingScore)) {
+        document.getElementById("incoming-challenge-text").textContent = `A friend scored ${incomingScore} out of 5 on the beginner forex quiz. Take it to compare your learning scores. This score does not predict future performance.`;
+        document.getElementById("incoming-challenge").hidden = false;
+    }
 
     function updateProgress() {
         progress.value = completed.size;
@@ -416,16 +635,35 @@ footer { padding: 20px; border-top: 1px solid #152c41; color: #8193a5; text-alig
         updateProgress();
     });
 
-    document.getElementById("quiz-form").addEventListener("submit", event => {
+    const quizForm = document.getElementById("quiz-form");
+    quizForm.addEventListener("change", () => {
+        if (latestScore !== null) {
+            latestScore = null;
+            shareCard.hidden = true;
+            shareLink.value = "";
+            shareStatus.textContent = "";
+            document.getElementById("quiz-result").replaceChildren();
+        }
+    });
+    document.getElementById("share-challenge").addEventListener("click", shareChallenge);
+    document.getElementById("copy-challenge-link").addEventListener("click", copyChallengeLink);
+    document.getElementById("share-result-card").addEventListener("click", shareResultCard);
+    document.getElementById("download-result-card").addEventListener("click", downloadCard);
+    quizForm.addEventListener("submit", event => {
         event.preventDefault();
         const selected = quizAnswers.map((_, index) => document.querySelector(`input[name="q${index + 1}"]:checked`));
         const result = document.getElementById("quiz-result");
         result.replaceChildren();
         if (selected.some(answer => !answer)) {
+            latestScore = null;
+            shareCard.hidden = true;
+            shareLink.value = "";
+            shareStatus.textContent = "";
             result.textContent = "Please answer all five questions before checking your score.";
             return;
         }
         const score = selected.reduce((total, answer, index) => total + (answer.value === quizAnswers[index].correct ? 1 : 0), 0);
+        latestScore = score;
         const heading = document.createElement("p");
         heading.textContent = `Your score: ${score} out of 5. ${score === 5 ? "Excellent recall." : "Review any missed lesson and try again."}`;
         result.append(heading);
@@ -436,6 +674,10 @@ footer { padding: 20px; border-top: 1px solid #152c41; color: #8193a5; text-alig
             list.append(line);
         });
         result.append(list);
+        shareScore.textContent = String(score);
+        shareLink.value = buildChallengeUrl(score);
+        shareStatus.textContent = "";
+        shareCard.hidden = false;
     });
 
     updateProgress();
