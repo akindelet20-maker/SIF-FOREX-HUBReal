@@ -153,25 +153,27 @@ a {
     <h2>Welcome Back!</h2>
 
     <p class="subtitle">
-        Login to access your trading education platform.
+        Sign in for your personal dashboard or journal. Public lessons, charts and practice tools open without an account.
     </p>
 
     <form id="loginForm">
 
-        <label>Email Address</label>
+        <label for="email">Email Address</label>
 
         <input
             type="email"
             id="email"
+            autocomplete="username"
             placeholder="Enter your email"
             required
         >
 
-        <label>Password</label>
+        <label for="password">Password</label>
 
         <input
             type="password"
             id="password"
+            autocomplete="current-password"
             placeholder="Enter your password"
             required
         >
@@ -180,11 +182,13 @@ a {
             LOGIN TO YOUR ACCOUNT
         </button>
 
-        <div id="message" class="message"></div>
+        <div id="message" class="message" role="status" aria-live="polite" aria-atomic="true"></div>
 
     </form>
 
     <div class="links">
+        <a href="academy.html">Continue as a guest — open the Academy</a>
+        <br><br>
         <a href="#" id="forgotPassword">Forgot Password?</a>
         <br><br>
         Don't have an account?
@@ -250,13 +254,18 @@ form.addEventListener('submit', async function(event) {
             throw error;
         }
 
+        const nextPage = new URLSearchParams(window.location.search).get('next') === 'journal.html'
+            ? 'journal.html'
+            : 'dashboard.html';
         showMessage(
-            'Login successful! Opening your dashboard...',
+            nextPage === 'journal.html'
+                ? 'Login successful! Opening your personal journal...'
+                : 'Login successful! Opening your dashboard...',
             'success'
         );
 
         setTimeout(() => {
-            window.location.href = 'dashboard.html';
+            window.location.href = nextPage;
         }, 1200);
 
     } catch (error) {

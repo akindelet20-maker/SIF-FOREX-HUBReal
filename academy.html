@@ -191,7 +191,7 @@ footer {
 <body>
 
 <header>
-    <a href="dashboard.html">← Back to Dashboard</a>
+    <a href="index.html">← Home</a>
 </header>
 
 <div class="container">
@@ -204,7 +204,8 @@ footer {
         Welcome to your trading education centre.
         Develop your understanding of the forex market,
         technical analysis, Smart Money Concepts and
-        professional risk management.
+        practical risk management. No account is required;
+        lesson and quiz progress is not saved between visits.
     </p>
 
 </section>
@@ -569,7 +570,7 @@ A trading plan should contain:
 
 <button onclick="checkQuiz()">SUBMIT MY ANSWERS</button>
 
-<div id="quizResult"></div>
+<div id="quizResult" role="status" aria-live="polite" aria-atomic="true"></div>
 
 </section>
 
@@ -582,16 +583,21 @@ A trading plan should contain:
 <script>
 
 function toggleLesson(button) {
-
     const content = button.nextElementSibling;
-
-    if (content.style.display === "block") {
-        content.style.display = "none";
-    } else {
-        content.style.display = "block";
-    }
-
+    const isOpen = button.getAttribute("aria-expanded") === "true";
+    button.setAttribute("aria-expanded", String(!isOpen));
+    content.hidden = isOpen;
+    content.style.display = isOpen ? "none" : "block";
 }
+
+document.querySelectorAll(".lesson > button").forEach((button, index) => {
+    const content = button.nextElementSibling;
+    if (!content) return;
+    content.id = "lesson-content-" + (index + 1);
+    content.hidden = true;
+    button.setAttribute("aria-controls", content.id);
+    button.setAttribute("aria-expanded", "false");
+});
 
 function checkQuiz() {
 

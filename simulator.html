@@ -20,6 +20,7 @@ header{
 }
 header h2{margin:0;color:#20d69a}
 header p{margin:7px 0 0;color:#a8b7c9;font-size:13px}
+header a{display:inline-block;margin-top:10px;color:#20d69a;text-decoration:none}
 .container{max-width:1000px;margin:auto;padding:18px}
 .card{
  background:#102238;
@@ -94,6 +95,7 @@ th{color:#20d69a}
  color:#c8d5e3;
  line-height:1.6;
 }
+[hidden]{display:none !important}
 @media(max-width:550px){
  .grid{grid-template-columns:1fr}
  .balance{font-size:25px}
@@ -105,10 +107,15 @@ th{color:#20d69a}
 
 <header>
  <h2>📈 SIF FOREX HUB</h2>
- <p>Trading Simulator • Practise Without Risking Real Money</p>
+ <p>Guest practice simulator • Uses fictional funds only</p>
+ <a href="index.html">← Home</a>
 </header>
 
 <div class="container">
+
+ <div id="storageWarning" class="notice" role="status" aria-live="polite" hidden>
+  Your saved simulator data could not be read completely. It has not been overwritten; some saved items may be missing from this view, and new changes are paused. Use RESET PRACTICE ACCOUNT only if you intentionally want to replace the saved data.
+ </div>
 
  <div class="card">
   <div class="small">VIRTUAL ACCOUNT BALANCE</div>
@@ -121,7 +128,7 @@ th{color:#20d69a}
 
   <div class="grid">
    <div>
-    <label>Trading Pair</label>
+    <label for="pair">Trading Pair</label>
     <select id="pair">
      <option>EURUSD</option>
      <option>GBPUSD</option>
@@ -135,44 +142,37 @@ th{color:#20d69a}
    </div>
 
    <div>
-    <label>Simulated Market Price</label>
+    <label for="marketPrice">Simulated Market Price</label>
     <input id="marketPrice" type="number" step="any" value="1.08500">
    </div>
 
    <div>
-    <label>Pip Size</label>
+    <label for="pipSize">Pip Size</label>
     <input id="pipSize" type="number" step="any" value="0.0001">
    </div>
 
    <div>
-    <label>Pip Value per 1.00 Lot ($)</label>
+    <label for="pipValue">Pip Value per 1.00 Lot ($)</label>
     <input id="pipValue" type="number" step="any" value="10">
    </div>
   </div>
 
   <button class="update" onclick="updateMarket()">UPDATE SIMULATED PRICE</button>
-  <p class="small">Prices are manually entered for practice. They are not live market prices.</p>
+  <p class="small">Prices are manually entered for practice and saved per pair. They are not live market prices. Update a pair’s price before closing its positions.</p>
  </div>
 
  <div class="card">
   <h3>🚀 Open a Practice Trade</h3>
 
-  <label>Trade Direction</label>
+  <label for="direction">Trade Direction</label>
   <select id="direction">
    <option value="BUY">BUY</option>
    <option value="SELL">SELL</option>
   </select>
 
-  <div class="grid">
-   <div>
-    <label>Entry Price</label>
-    <input id="entry" type="number" step="any" placeholder="Enter entry price">
-   </div>
-
-   <div>
-    <label>Lot Size</label>
-    <input id="lots" type="number" step="0.01" min="0.01" value="0.10">
-   </div>
+  <div>
+   <label for="lots">Lot Size</label>
+   <input id="lots" type="number" step="0.01" min="0.01" value="0.10">
   </div>
 
   <div class="actions">
@@ -180,7 +180,7 @@ th{color:#20d69a}
    <button class="sell" onclick="openTrade('SELL')">SELL TRADE</button>
   </div>
 
-  <p class="small">The current simulated market price will be used as your entry price.</p>
+  <p class="small">The current simulated price for the selected pair is used as the entry price. Set a separate practice price for each pair.</p>
  </div>
 
  <div class="card">
@@ -251,6 +251,7 @@ th{color:#20d69a}
   It does not connect to a broker, execute real orders or provide live market prices.
   Pip values and pip sizes are simplified assumptions. Actual trading results may differ
   because of spreads, commissions, swaps, currency conversion and execution conditions.
+  No account is required. Practice state is stored in this browser profile and may be visible to other people who use it; avoid real or sensitive data.
  </div>
 
  <button class="reset" onclick="resetAccount()">RESET PRACTICE ACCOUNT</button>
@@ -263,16 +264,83 @@ th{color:#20d69a}
 
 <script>
 const STORAGE_KEY = "sif_simulator_v1";
+const supportedPairs = new Set(["EURUSD","GBPUSD","USDJPY","USDCHF","AUDUSD","NZDUSD","USDCAD","XAUUSD"]);
+let storageUnreadable = false;
 
-let account = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {
- balance:10000,
- positions:[],
- history:[]
-};
+function freshAccount(){
+ return {balance:10000,positions:[],history:[],marketPrices:{EURUSD:1.085}};
+}
 
-function save(){
- localStorage.setItem(STORAGE_KEY,JSON.stringify(account));
+function loadAccount(){
+ try{
+  const raw = localStorage.getItem(STORAGE_KEY);
+  if(raw === null) return freshAccount();
+  const saved = JSON.parse(raw);
+  if(!saved || typeof saved !== "object" || Array.isArray(saved) || !Number.isFinite(saved.balance) ||
+     !Array.isArray(saved.positions) || !Array.isArray(saved.history)){
+   storageUnreadable = true;
+   return freshAccount();
+  }
+  const positions = saved.positions.filter(t => t && typeof t.pair === "string" && supportedPairs.has(t.pair) &&
+   Number.isFinite(Number(t.id)) && ["BUY","SELL"].includes(t.direction) &&
+   [t.entry,t.market,t.lots,t.pipSize,t.pipValue].every(v => Number.isFinite(Number(v)) && Number(v) > 0));
+  const history = saved.history.filter(t => t && typeof t.pair === "string" && supportedPairs.has(t.pair) &&
+   ["BUY","SELL"].includes(t.direction) &&
+   [t.entry,t.exit,t.lots].every(v => Number.isFinite(Number(v)) && Number(v) > 0) &&
+   Number.isFinite(Number(t.profit)));
+  if(positions.length !== saved.positions.length || history.length !== saved.history.length) storageUnreadable = true;
+  const marketPrices = {};
+  if(saved.marketPrices !== undefined){
+   if(!saved.marketPrices || typeof saved.marketPrices !== "object" || Array.isArray(saved.marketPrices)){
+    storageUnreadable = true;
+   }else{
+    for(const [pair, value] of Object.entries(saved.marketPrices)){
+     if(supportedPairs.has(pair) && Number.isFinite(Number(value)) && Number(value) > 0){
+      marketPrices[pair] = Number(value);
+     }else{
+      storageUnreadable = true;
+     }
+    }
+   }
+  }
+  for(const trade of positions){
+   if(!Number.isFinite(marketPrices[trade.pair])) marketPrices[trade.pair] = Number(trade.market);
+  }
+  return {balance:saved.balance,positions,history,marketPrices};
+ }catch{
+  storageUnreadable = true;
+  return freshAccount();
+ }
+}
+
+let account = loadAccount();
+
+function syncSelectedMarketPrice(){
+ const pair = document.getElementById("pair").value;
+ const price = account.marketPrices[pair];
+ document.getElementById("marketPrice").value = Number.isFinite(price) ? String(price) : "";
+}
+
+function save(previousAccount, allowReplaceUnreadable = false){
+ if(storageUnreadable && !allowReplaceUnreadable){
+  if(previousAccount) account = previousAccount;
+  render();
+  syncSelectedMarketPrice();
+  alert("Saved simulator data could not be read. No changes were saved. Use RESET PRACTICE ACCOUNT only if you intentionally want to replace it.");
+  return false;
+ }
+ try{
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(account));
+ }catch{
+  if(previousAccount) account = previousAccount;
+  render();
+  syncSelectedMarketPrice();
+  alert("Your browser could not save this change. No change was kept; check browser storage and try again.");
+  return false;
+ }
+ storageUnreadable = false;
  render();
+ return true;
 }
 
 function money(value){
@@ -299,16 +367,30 @@ function calculatePL(trade,price){
  return (difference / trade.pipSize) * trade.pipValue * trade.lots;
 }
 
+function escapeHTML(value){
+ return String(value).replace(/[&<>"']/g, character => ({
+  "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
+ })[character]);
+}
+
 function updateMarket(){
  const price = getPrice();
-
+ const pair = document.getElementById("pair").value;
  if(!Number.isFinite(price) || price <= 0){
   alert("Enter a valid simulated market price.");
   return;
  }
-
- save();
- alert("Simulated market price updated.");
+ const affectedPositions = account.positions.filter(trade => trade.pair === pair);
+ if(affectedPositions.some(trade => !Number.isFinite(calculatePL(trade,price)))){
+  syncSelectedMarketPrice();
+  alert("This simulated price is outside the supported calculation range. No price was updated.");
+  return;
+ }
+ const previous = JSON.parse(JSON.stringify(account));
+ account.marketPrices[pair] = price;
+ account.positions.forEach(trade => { if(trade.pair === pair) trade.market = price; });
+ if(!save(previous)) return;
+ alert("Simulated price updated for " + pair + ".");
 }
 
 function openTrade(direction){
@@ -317,61 +399,48 @@ function openTrade(direction){
  const price = getPrice();
  const pipSize = getPipSize();
  const pipValue = getPipValue();
-
- if(!Number.isFinite(price) || price <= 0 ||
-    !Number.isFinite(lots) || lots <= 0 ||
-    !Number.isFinite(pipSize) || pipSize <= 0 ||
-    !Number.isFinite(pipValue) || pipValue <= 0){
+ if(!Number.isFinite(price) || price <= 0 || !Number.isFinite(lots) || lots <= 0 ||
+    !Number.isFinite(pipSize) || pipSize <= 0 || !Number.isFinite(pipValue) || pipValue <= 0){
   alert("Please enter valid price, lot size, pip size and pip value.");
   return;
  }
-
- const trade = {
-  id:Date.now() + Math.random(),
-  pair,
-  direction,
-  entry:price,
-  market:price,
-  lots,
-  pipSize,
-  pipValue,
-  opened:new Date().toLocaleString()
- };
-
+ const previous = JSON.parse(JSON.stringify(account));
+ const trade = {id:Date.now() + Math.random(),pair,direction,entry:price,market:price,lots,pipSize,pipValue,opened:new Date().toLocaleString()};
+ account.marketPrices[pair] = price;
  account.positions.push(trade);
- save();
-
+ if(!save(previous)) return;
  alert(direction + " practice trade opened successfully!");
 }
 
 function closeTrade(id){
  const index = account.positions.findIndex(t => t.id === id);
-
  if(index === -1) return;
-
  const trade = account.positions[index];
- const exitPrice = getPrice();
-
+ const exitPrice = Number(trade.market);
  if(!Number.isFinite(exitPrice) || exitPrice <= 0){
-  alert("Enter a valid simulated market price first.");
+  alert("Update the simulated price for this position’s pair before closing it.");
   return;
  }
-
  const pl = calculatePL(trade,exitPrice);
-
+ const newBalance = account.balance + pl;
+ if(!Number.isFinite(pl) || !Number.isFinite(newBalance)){
+  alert("This practice result is outside the supported calculation range. Nothing was closed.");
+  return;
+ }
+ const previous = JSON.parse(JSON.stringify(account));
  trade.exit = exitPrice;
  trade.profit = pl;
  trade.closed = new Date().toLocaleString();
-
- account.balance += pl;
+ account.balance = newBalance;
  account.history.unshift(trade);
  account.positions.splice(index,1);
-
- save();
+ save(previous);
 }
 
 function render(){
  document.getElementById("balance").textContent = money(account.balance);
+ const storageWarning = document.getElementById("storageWarning");
+ if(storageWarning) storageWarning.hidden = !storageUnreadable;
 
  const open = document.getElementById("openPositions");
 
@@ -381,15 +450,15 @@ function render(){
   open.innerHTML = account.positions.map(t => {
    const pl = calculatePL(t,t.market);
 
-   return `
-    <tr>
-     <td>${t.pair}</td>
-     <td>${t.direction}</td>
-     <td>${t.entry}</td>
-     <td>${t.market}</td>
-     <td>${t.lots}</td>
-     <td class="${pl >= 0 ? 'profit':'loss'}">${money(pl)}</td>
-     <td><button class="close" onclick="closeTrade(${t.id})">Close</button></td>
+	   return `
+	    <tr>
+	     <td>${escapeHTML(t.pair)}</td>
+	     <td>${escapeHTML(t.direction)}</td>
+	     <td>${escapeHTML(t.entry)}</td>
+	     <td>${escapeHTML(t.market)}</td>
+	     <td>${escapeHTML(t.lots)}</td>
+	     <td class="${pl >= 0 ? 'profit':'loss'}">${money(pl)}</td>
+	     <td><button class="close" onclick="closeTrade(${Number(t.id)})">Close</button></td>
     </tr>
    `;
   }).join("");
@@ -400,13 +469,13 @@ function render(){
  if(account.history.length === 0){
   history.innerHTML = '<tr><td colspan="6" class="empty">Your closed trades will appear here.</td></tr>';
  }else{
-  history.innerHTML = account.history.map(t => `
-   <tr>
-    <td>${t.pair}</td>
-    <td>${t.direction}</td>
-    <td>${t.entry}</td>
-    <td>${t.exit}</td>
-    <td>${t.lots}</td>
+	  history.innerHTML = account.history.map(t => `
+	   <tr>
+	    <td>${escapeHTML(t.pair)}</td>
+	    <td>${escapeHTML(t.direction)}</td>
+	    <td>${escapeHTML(t.entry)}</td>
+	    <td>${escapeHTML(t.exit)}</td>
+	    <td>${escapeHTML(t.lots)}</td>
     <td class="${t.profit >= 0 ? 'profit':'loss'}">${money(t.profit)}</td>
    </tr>
   `).join("");
@@ -424,18 +493,27 @@ function render(){
 }
 
 function resetAccount(){
- if(!confirm("Are you sure you want to reset your entire practice account and trade history?")){
-  return;
+ if(!confirm("Are you sure you want to reset your entire practice account and trade history?")) return;
+ const previous = JSON.parse(JSON.stringify(account));
+ const previousPair = pairSelect.value;
+ account = freshAccount();
+ pairSelect.value = "EURUSD";
+ marketPriceInput.value = "1.085";
+ if(!save(previous, true)){
+  pairSelect.value = previousPair;
+  syncSelectedMarketPrice();
  }
-
- account = {
-  balance:10000,
-  positions:[],
-  history:[]
- };
-
- save();
 }
+
+const pairSelect = document.getElementById("pair");
+const marketPriceInput = document.getElementById("marketPrice");
+const initialPrice = account.marketPrices[pairSelect.value];
+if(Number.isFinite(initialPrice)) marketPriceInput.value = String(initialPrice);
+
+pairSelect.addEventListener("change", () => {
+ const pairPrice = account.marketPrices[pairSelect.value];
+ marketPriceInput.value = Number.isFinite(pairPrice) ? String(pairPrice) : "";
+});
 
 render();
 </script>

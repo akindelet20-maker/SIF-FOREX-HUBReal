@@ -309,7 +309,7 @@ nav a:hover {
 .dashboard-footer {
     text-align: center;
     margin-top: 20px;
-    color: #65778e;
+    color: #9aadc1;
     font-size: 9px;
     letter-spacing: 1px;
 }
@@ -540,7 +540,7 @@ footer p {
     border-top: 1px solid #1b2939;
     padding-top: 20px;
     margin-top: 25px;
-    color: #607188;
+    color: #9aadc1;
     font-size: 11px;
 }
 
@@ -769,8 +769,71 @@ footer p {
 }
 
 .auth-footer {
-    color: #65778e;
+    color: #9aadc1;
     font-size: 11px;
     margin-top: 30px;
     text-align: center;
+}
+
+/* Accessibility and transparent preview states */
+:focus-visible {
+    outline: 3px solid #f1c76b;
+    outline-offset: 3px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+html {
+    scroll-padding-top: 90px;
+}
+
+[id] {
+    scroll-margin-top: 90px;
+}
+
+.privacy-note,
+.chart-fallback {
+    color: #b5c3d2;
+    font-size: 13px;
+    line-height: 1.7;
+    margin: 14px 0 20px;
+}
+
+.chart-fallback a {
+    color: #8de8bf;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.feature-card .coming-soon-label {
+    display: inline-block;
+    margin-top: 14px;
+    color: #e5c77f;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.price-button.is-disabled {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: not-allowed;
+    opacity: .7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto !important;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
 }

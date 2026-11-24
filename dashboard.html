@@ -135,6 +135,33 @@ header {
     color: #24e69a;
 }
 
+.profile-notice {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    background: #172c40;
+    border-left: 4px solid #d7b56e;
+    padding: 14px 16px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    color: #d7e1e8;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.profile-notice button, .loading button {
+    background: #24e69a;
+    color: #071426;
+    border: 0;
+    border-radius: 6px;
+    padding: 9px 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+[hidden] { display: none !important; }
+
 footer {
     text-align: center;
     padding: 25px;
@@ -167,13 +194,19 @@ footer {
     <button class="logout" id="logoutButton">LOGOUT</button>
 </header>
 
-<div class="container">
+<main class="container">
 
-    <div id="loading" class="loading">
-        Loading your trading dashboard...
+    <div id="loading" class="loading" role="status" aria-live="polite">
+        <span id="loadingMessage">Loading your trading dashboard...</span>
+        <button type="button" id="retryDashboard" hidden>Try again</button>
     </div>
 
     <div id="dashboardContent" style="display:none;">
+
+        <div id="profileNotice" class="profile-notice" role="status" aria-live="polite" hidden>
+            <span id="profileNoticeText"></span>
+            <button type="button" id="retryProfile">Retry profile</button>
+        </div>
 
         <section class="welcome">
 
@@ -247,7 +280,7 @@ footer {
 
     </div>
 
-</div>
+</main>
 
 <footer>
     © 2026 SIF FOREX HUB V2.0. All Rights Reserved.
@@ -255,83 +288,103 @@ footer {
 
 <script type="module">
 
-import { createClient } from
-'https://esm.sh/@supabase/supabase-js@2';
-
 const SUPABASE_URL =
 'https://kfaqrjhwbmkawnxkcrld.supabase.co';
 
 const SUPABASE_KEY =
 'sb_publishable_-kdg7Pmr_mWPPfnv83VTMA_n2hhKXhk';
 
-const supabase = createClient(
-    SUPABASE_URL,
-    SUPABASE_KEY
-);
+let supabase;
 
 async function loadDashboard() {
 
-    const { data: authData, error: authError } =
-        await supabase.auth.getUser();
+    const loading = document.getElementById('loading');
+    const loadingMessage = document.getElementById('loadingMessage');
+    const retryButton = document.getElementById('retryDashboard');
+    const profileNotice = document.getElementById('profileNotice');
+    const profileNoticeText = document.getElementById('profileNoticeText');
 
-    if (authError || !authData.user) {
-        window.location.href = 'login.html';
-        return;
+    loading.style.display = 'block';
+    loadingMessage.textContent = 'Loading your trading dashboard...';
+    retryButton.hidden = true;
+    profileNotice.hidden = true;
+
+    try {
+        if (!supabase) {
+            const { createClient } = await import('https://esm.sh/@supabase/supabase-js@2');
+            supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+        }
+
+        const { data: authData, error: authError } = await supabase.auth.getUser();
+        if (authError) throw authError;
+        if (!authData.user) {
+            window.location.href = 'login.html';
+            return;
+        }
+
+        const user = authData.user;
+        let profileData = null;
+        let profileError = false;
+        try {
+            const result = await supabase
+                .from('profiles')
+                .select('full_name, username, membership')
+                .eq('id', user.id)
+                .maybeSingle();
+            profileData = result.data;
+            profileError = Boolean(result.error);
+        } catch {
+            profileError = true;
+        }
+
+        const profile = profileError ? null : profileData;
+        const name = profile?.full_name || user.user_metadata?.full_name || 'Trader';
+        const username = profile?.username || user.user_metadata?.username || 'Member';
+        const membership = profile?.membership;
+
+        document.getElementById('memberName').textContent = name;
+        document.getElementById('memberUsername').textContent = '@' + username;
+        document.getElementById('membership').textContent = membership
+            ? String(membership).toUpperCase() + ' MEMBER'
+            : 'MEMBERSHIP STATUS UNAVAILABLE';
+
+        if (profileError || !profile) {
+            profileNoticeText.textContent = profileError
+                ? 'Your saved profile could not be loaded. Showing account details where available; membership status cannot be confirmed.'
+                : 'No saved profile was found. Showing account details where available; membership status cannot be confirmed.';
+            profileNotice.hidden = false;
+        }
+
+        loading.style.display = 'none';
+        document.getElementById('dashboardContent').style.display = 'block';
+
+    } catch {
+        loadingMessage.textContent = 'We could not connect to your account right now. Check your connection and try again.';
+        retryButton.hidden = false;
     }
-
-    const user = authData.user;
-
-    const { data: profile, error } =
-        await supabase
-        .from('profiles')
-        .select('full_name, username, membership')
-        .eq('id', user.id)
-        .maybeSingle();
-
-    if (error) {
-        document.getElementById('loading').textContent =
-            'Could not load your profile. Please refresh the page.';
-        return;
-    }
-
-    const name =
-        profile?.full_name ||
-        user.user_metadata?.full_name ||
-        'Trader';
-
-    const username =
-        profile?.username ||
-        user.user_metadata?.username ||
-        'Member';
-
-    const membership =
-        profile?.membership || 'FREE';
-
-    document.getElementById('memberName').textContent = name;
-
-    document.getElementById('memberUsername').textContent =
-        '@' + username;
-
-    document.getElementById('membership').textContent =
-        membership + ' MEMBER';
-
-    document.getElementById('loading').style.display = 'none';
-
-    document.getElementById('dashboardContent').style.display =
-        'block';
 }
+
+document.getElementById('retryDashboard')
+.addEventListener('click', loadDashboard);
+
+document.getElementById('retryProfile')
+.addEventListener('click', loadDashboard);
 
 document.getElementById('logoutButton')
 .addEventListener('click', async function() {
 
-    const { error } = await supabase.auth.signOut();
-
-    if (error) {
-        alert(error.message);
+    if (!supabase) {
+        alert('Account service is unavailable. Please try again shortly.');
         return;
     }
 
-    window.location.href = 'login.html';
+    try {
+        const { error } = await supabase.auth.signOut();
+        if (error) throw error;
+        window.location.href = 'login.html';
+    } catch {
+        alert('We could not sign you out. Please try again.');
+    }
 
 });
 

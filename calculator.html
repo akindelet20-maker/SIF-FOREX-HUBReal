@@ -148,7 +148,7 @@ footer {
 <body>
 
 <header>
-    <a href="dashboard.html">← Back to Dashboard</a>
+    <a href="index.html">← Home</a>
 </header>
 
 <div class="container">
@@ -157,34 +157,35 @@ footer {
 
     <p class="subtitle">
         Calculate your trading risk and estimate your
-        position size before entering a trade.
+        position size before entering a trade. This in-browser tool
+        is open to guests and does not save an account profile.
     </p>
 
-    <div class="calculator">
+    <form class="calculator" id="riskForm">
 
-        <label>Account Balance ($)</label>
+        <label for="balance">Account Balance ($)</label>
         <input type="number" id="balance"
-        placeholder="Example: 300" min="0" step="any">
+        placeholder="Example: 300" min="0" step="any" required>
 
-        <label>Risk Percentage (%)</label>
+        <label for="risk">Risk Percentage (%)</label>
         <input type="number" id="risk"
-        placeholder="Example: 1" min="0.01" max="100" step="any">
+        placeholder="Example: 1" min="0.01" max="100" step="any" required>
 
-        <label>Stop Loss Distance (Pips)</label>
+        <label for="stopLoss">Stop Loss Distance (Pips)</label>
         <input type="number" id="stopLoss"
-        placeholder="Example: 30" min="0" step="any">
+        placeholder="Example: 30" min="0" step="any" required>
 
-        <label>Pip Value per 1 Standard Lot ($)</label>
+        <label for="pipValue">Pip Value per 1 Standard Lot ($)</label>
         <input type="number" id="pipValue"
-        value="10" min="0" step="any">
+        value="10" min="0" step="any" required>
 
-        <button onclick="calculateRisk()">
+        <button type="submit">
             CALCULATE MY POSITION SIZE
         </button>
 
-        <p class="error" id="error"></p>
+        <p class="error" id="error" role="alert" aria-live="assertive"></p>
 
-        <div class="results" id="results">
+        <div class="results" id="results" aria-live="polite" aria-atomic="true">
 
             <h3 style="color:#24e69a;margin-bottom:12px;">
                 Your Calculation
@@ -206,13 +207,18 @@ footer {
             </div>
 
             <div class="result-item">
-                <span>Estimated Lot Size</span>
+                <span>Estimated Lot Size (rounded down to 0.001)</span>
                 <strong id="lotSize">0 lots</strong>
+            </div>
+
+            <div class="result-item">
+                <span>Estimated risk at rounded size</span>
+                <strong id="actualRisk">$0</strong>
             </div>
 
         </div>
 
-    </div>
+    </form>
 
     <div class="note">
         <strong>Important:</strong> This is an educational
@@ -220,7 +226,7 @@ footer {
         that the pip value you enter is accurate for your
         trading pair and account currency. Actual losses
         may differ because of spreads, commissions,
-        slippage and execution.
+        slippage and execution. Lot size is rounded down to the nearest 0.001 lot to avoid exceeding the selected risk. If the estimate is below 0.001 lots, no tradable size is shown.
     </div>
 
 </div>
@@ -230,70 +236,59 @@ footer {
 </footer>
 
 <script>
-
 function calculateRisk() {
-
-    const balance = Number(
-        document.getElementById("balance").value
-    );
-
-    const risk = Number(
-        document.getElementById("risk").value
-    );
-
-    const stopLoss = Number(
-        document.getElementById("stopLoss").value
-    );
-
-    const pipValue = Number(
-        document.getElementById("pipValue").value
-    );
-
+    const balance = Number(document.getElementById("balance").value);
+    const risk = Number(document.getElementById("risk").value);
+    const stopLoss = Number(document.getElementById("stopLoss").value);
+    const pipValue = Number(document.getElementById("pipValue").value);
     const error = document.getElementById("error");
     const results = document.getElementById("results");
 
     error.style.display = "none";
     results.style.display = "none";
 
-    if (
-        !Number.isFinite(balance) ||
-        !Number.isFinite(risk) ||
-        !Number.isFinite(stopLoss) ||
-        !Number.isFinite(pipValue) ||
-        balance <= 0 ||
-        risk <= 0 ||
-        risk > 100 ||
-        stopLoss <= 0 ||
-        pipValue <= 0
-    ) {
-
-        error.textContent =
-        "Please enter valid positive numbers. Risk must not exceed 100%.";
-
+    if (!Number.isFinite(balance) || !Number.isFinite(risk) ||
+        !Number.isFinite(stopLoss) || !Number.isFinite(pipValue) ||
+        balance <= 0 || risk <= 0 || risk > 100 || stopLoss <= 0 || pipValue <= 0) {
+        error.textContent = "Please enter valid positive values. Risk must be between 0 and 100 percent.";
         error.style.display = "block";
         return;
     }
 
     const amountAtRisk = balance * (risk / 100);
+    const rawLotSize = amountAtRisk / (stopLoss * pipValue);
+    if (!Number.isFinite(amountAtRisk) || !Number.isFinite(rawLotSize) || rawLotSize <= 0) {
+        error.textContent = "These values are outside the calculator's supported range. Please use smaller, realistic values.";
+        error.style.display = "block";
+        return;
+    }
 
-    const lotSize =
-        amountAtRisk / (stopLoss * pipValue);
+    const lotSize = Math.floor(rawLotSize * 1000) / 1000;
+    if (!Number.isFinite(lotSize) || lotSize < 0.001) {
+        error.textContent = "The estimated size is below 0.001 lots. No rounded size is shown because rounding up could exceed the selected risk.";
+        error.style.display = "block";
+        return;
+    }
 
-    document.getElementById("riskAmount").textContent =
-        "$" + amountAtRisk.toFixed(2);
+    const actualRisk = lotSize * stopLoss * pipValue;
+    if (!Number.isFinite(actualRisk)) {
+        error.textContent = "The estimated risk could not be calculated from these values. Please check your inputs.";
+        error.style.display = "block";
+        return;
+    }
 
-    document.getElementById("riskPercent").textContent =
-        risk + "%";
-
-    document.getElementById("stopResult").textContent =
-        stopLoss + " pips";
-
-    document.getElementById("lotSize").textContent =
-        lotSize.toFixed(3) + " lots";
-
+    document.getElementById("riskAmount").textContent = "$" + amountAtRisk.toFixed(2);
+    document.getElementById("riskPercent").textContent = risk + "%";
+    document.getElementById("stopResult").textContent = stopLoss + " pips";
+    document.getElementById("lotSize").textContent = lotSize.toFixed(3) + " lots";
+    document.getElementById("actualRisk").textContent = "$" + actualRisk.toFixed(2);
     results.style.display = "block";
 }
 
+document.getElementById("riskForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    calculateRisk();
+});
 </script>
 
 </body>

@@ -185,6 +185,48 @@ button {
     font-size: 13px;
 }
 
+.storage-warning {
+    background: #172c40;
+    border-left: 4px solid #d7b56e;
+    border-radius: 8px;
+    color: #d5e1eb;
+    line-height: 1.6;
+    margin: 14px 0 20px;
+    padding: 13px 15px;
+}
+
+.journal-gate {
+    background: #10243a;
+    border: 1px solid #23445c;
+    border-radius: 13px;
+    margin: 18px 0 22px;
+    padding: 20px;
+}
+
+.journal-gate p {
+    color: #d5e1eb;
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.journal-gate a {
+    color: #8de8bf;
+    margin-right: 14px;
+}
+
+.journal-gate .gate-action {
+    display: inline-block;
+    background: #24e69a;
+    border-radius: 8px;
+    color: #071426;
+    font-weight: bold;
+    margin: 0 10px 8px 0;
+    padding: 12px 15px;
+    text-decoration: none;
+}
+
+[hidden] { display: none !important; }
+
 footer {
     text-align: center;
     padding: 25px;
@@ -206,13 +248,22 @@ footer {
     }
 }
 </style></head><body><header>
-    <a href="dashboard.html">← Back to Dashboard</a>
+    <a href="index.html">← Home</a>
 </header><div class="container"><h1>📒 SIF Trading Journal</h1>
 
 <p class="subtitle">
-    Record your trades, monitor your performance
-    and develop better trading discipline.
+    Your personal practice journal. Sign in is required; public lessons and non-personal tools remain open to guests.
 </p>
+
+<div id="journalGate" class="journal-gate" role="region" aria-labelledby="journalGateMessage">
+    <p id="journalGateMessage" role="status" aria-live="polite">Checking your sign-in before opening this personal journal…</p>
+    <a class="gate-action" href="login.html?next=journal.html">Sign in to open your journal</a>
+    <a class="gate-action" href="register.html?next=journal.html">Create an account</a>
+    <a href="index.html">Explore public lessons and tools</a>
+    <button id="retryJournalAuth" type="button" hidden>Try again</button>
+</div>
+
+<div id="journalApp" hidden>
 
 <div class="stats">
 
@@ -233,6 +284,14 @@ footer {
 
 </div>
 
+<p class="privacy-note">Entries are stored only in this browser under a separate key for your signed-in account; they are not synced or encrypted. Anyone with access to this browser profile or its storage may inspect them. Avoid sensitive details and keep a separate backup.</p>
+
+<p class="privacy-note">Older entries saved before account-specific storage are not migrated automatically, so they are not assigned to the first account that signs in. Any old shared-key data is left untouched.</p>
+
+<div id="journalStorageWarning" class="storage-warning" role="status" aria-live="polite" hidden>
+    Some saved journal data could not be read and may be hidden. The original browser data has not been overwritten; adding and deleting entries is paused to protect it.
+</div>
+
 <section class="panel">
 
     <h2>➕ Record a New Trade</h2>
@@ -242,13 +301,13 @@ footer {
         <div class="form-grid">
 
             <div>
-                <label>Currency Pair</label>
+                <label for="pair">Currency Pair</label>
                 <input id="pair"
                 placeholder="Example: EURUSD" required>
             </div>
 
             <div>
-                <label>Trade Direction</label>
+                <label for="direction">Trade Direction</label>
                 <select id="direction" required>
                     <option value="BUY">BUY</option>
                     <option value="SELL">SELL</option>
@@ -256,25 +315,25 @@ footer {
             </div>
 
             <div>
-                <label>Entry Price</label>
+                <label for="entry">Entry Price</label>
                 <input type="number" id="entry"
                 step="any" min="0" required>
             </div>
 
             <div>
-                <label>Exit Price</label>
+                <label for="exit">Exit Price</label>
                 <input type="number" id="exit"
                 step="any" min="0" required>
             </div>
 
             <div>
-                <label>Profit or Loss ($)</label>
+                <label for="result">Profit or Loss ($)</label>
                 <input type="number" id="result"
                 step="any" required>
             </div>
 
             <div>
-                <label>Strategy Used</label>
+                <label for="strategy">Strategy Used</label>
                 <select id="strategy">
                     <option>Market Structure</option>
                     <option>Smart Money Concepts</option>
@@ -287,7 +346,7 @@ footer {
             </div>
 
             <div class="full">
-                <label>Trade Notes</label>
+                <label for="notes">Trade Notes</label>
                 <textarea id="notes"
                 placeholder="Why did you enter this trade? What did you learn?"></textarea>
             </div>
@@ -298,7 +357,7 @@ footer {
             SAVE TRADE
         </button>
 
-        <div id="message"></div>
+        <div id="message" role="status" aria-live="polite" aria-atomic="true"></div>
 
     </form>
 
@@ -316,37 +375,123 @@ footer {
 
 </section>
 
+</div>
+
 </div><footer>
 © 2026 SIF FOREX HUB V2.0
-</footer><script>
+</footer><script type="module">
 
-const STORAGE_KEY = "sif_forex_journal_v1";
+const SUPABASE_URL = "https://kfaqrjhwbmkawnxkcrld.supabase.co";
+const SUPABASE_KEY = "sb_publishable_-kdg7Pmr_mWPPfnv83VTMA_n2hhKXhk";
+const STORAGE_KEY_PREFIX = "sif_forex_journal_account_v2:";
+
+let supabase;
+let STORAGE_KEY = null;
+let currentUserId = null;
+let authListenerAttached = false;
 
 let trades = [];
+let journalUnreadable = false;
 
-try {
-    const saved = JSON.parse(
-        localStorage.getItem(STORAGE_KEY) || "[]"
-    );
+function isValidTrade(trade) {
+    return trade && typeof trade === "object" &&
+        typeof trade.id === "string" && typeof trade.pair === "string" && trade.pair.trim() !== "" &&
+        ["BUY", "SELL"].includes(trade.direction) &&
+        Number.isFinite(Number(trade.entry)) && Number(trade.entry) > 0 &&
+        Number.isFinite(Number(trade.exit)) && Number(trade.exit) > 0 &&
+        Number.isFinite(Number(trade.result)) &&
+        typeof trade.strategy === "string" && typeof trade.notes === "string" &&
+        typeof trade.date === "string";
+}
 
-    trades = Array.isArray(saved) ? saved : [];
-
-} catch {
+function loadJournalForSignedInUser() {
     trades = [];
+    journalUnreadable = false;
+    try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw !== null) {
+            const saved = JSON.parse(raw);
+            if (Array.isArray(saved)) {
+                trades = saved.filter(isValidTrade);
+                journalUnreadable = trades.length !== saved.length;
+            } else {
+                journalUnreadable = true;
+            }
+        }
+    } catch {
+        journalUnreadable = true;
+    }
+}
+
+function showJournalGate(message, allowRetry = false) {
+    document.getElementById("journalGateMessage").textContent = message;
+    document.getElementById("journalGate").hidden = false;
+    document.getElementById("journalApp").hidden = true;
+    document.getElementById("retryJournalAuth").hidden = !allowRetry;
+    document.getElementById("tradeHistory").textContent = "Sign in to view personal journal entries.";
+    document.getElementById("totalTrades").textContent = "—";
+    document.getElementById("winningTrades").textContent = "—";
+    document.getElementById("netProfit").textContent = "—";
+    document.getElementById("message").textContent = "";
+}
+
+async function initJournal() {
+    showJournalGate("Checking your sign-in before opening this personal journal…");
+    try {
+        if (!supabase) {
+            const { createClient } = await import("https://esm.sh/@supabase/supabase-js@2");
+            supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+        }
+
+        const { data, error } = await supabase.auth.getUser();
+        if (error) throw error;
+        if (!data?.user) {
+            showJournalGate("Sign in is required for your personal journal. Public lessons, charts and practice tools remain open without an account.");
+            return;
+        }
+
+        currentUserId = String(data.user.id || "");
+        if (!currentUserId) throw new Error("No authenticated user ID was returned.");
+        STORAGE_KEY = STORAGE_KEY_PREFIX + currentUserId;
+        loadJournalForSignedInUser();
+
+        if (!authListenerAttached && typeof supabase.auth.onAuthStateChange === "function") {
+            supabase.auth.onAuthStateChange((_event, session) => {
+                if (currentUserId && (!session?.user || String(session.user.id) !== currentUserId)) {
+                    currentUserId = null;
+                    STORAGE_KEY = null;
+                    trades = [];
+                    journalUnreadable = false;
+                    showJournalGate("Your sign-in ended or changed. Sign in again to reopen the personal journal.");
+                }
+            });
+            authListenerAttached = true;
+        }
+
+        document.getElementById("journalGate").hidden = true;
+        document.getElementById("journalApp").hidden = false;
+        renderJournal();
+    } catch {
+        showJournalGate("We could not verify your sign-in. Check your connection and the Supabase setup, then try again.", true);
+    }
 }
 
 const form = document.getElementById("tradeForm");
 
 function saveTrades() {
-    localStorage.setItem(
-        STORAGE_KEY,
-        JSON.stringify(trades)
-    );
+    if (!currentUserId || !STORAGE_KEY || journalUnreadable) return false;
+    try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(trades));
+        return true;
+    } catch {
+        return false;
+    }
 }
 
 function renderJournal() {
 
     const history = document.getElementById("tradeHistory");
+    document.getElementById("journalStorageWarning").hidden = !journalUnreadable;
 
     const total = trades.length;
 
@@ -421,6 +566,8 @@ function renderJournal() {
         const deleteButton = document.createElement("button");
         deleteButton.className = "delete-btn";
         deleteButton.textContent = "DELETE TRADE";
+        deleteButton.disabled = journalUnreadable;
+        if (journalUnreadable) deleteButton.title = "Deletion is paused to protect unreadable saved data.";
 
         deleteButton.addEventListener("click", () => {
             deleteTrade(trade.id);
@@ -476,9 +623,17 @@ form.addEventListener("submit", function(event) {
         return;
     }
 
-    trades.unshift(trade);
+    const previousTrades = trades;
+    trades = [trade, ...trades];
 
-    saveTrades();
+    if (!saveTrades()) {
+        trades = previousTrades;
+        document.getElementById("message").textContent =
+            journalUnreadable
+                ? "Saved journal data could not be read. This trade was not saved; the original browser data remains unchanged."
+                : "Your browser could not save this trade. No change was kept; check browser storage and try again.";
+        return;
+    }
 
     renderJournal();
 
@@ -491,19 +646,36 @@ form.addEventListener("submit", function(event) {
 
 function deleteTrade(id) {
 
+    if (!currentUserId || !STORAGE_KEY || journalUnreadable) {
+        document.getElementById("message").textContent =
+            journalUnreadable
+                ? "Saved journal data could not be read. No change was made; the original browser data remains unchanged."
+                : "Sign in again before changing journal entries.";
+        return;
+    }
+
     if (!confirm("Are you sure you want to delete this trade?")) {
         return;
     }
 
+    const previousTrades = trades;
     trades = trades.filter(trade => trade.id !== id);
 
-    saveTrades();
+    if (!saveTrades()) {
+        trades = previousTrades;
+        document.getElementById("message").textContent =
+            journalUnreadable
+                ? "Saved journal data could not be read. No change was made; the original browser data remains unchanged."
+                : "Your browser could not save this change. No change was kept; check browser storage and try again.";
+        return;
+    }
 
     renderJournal();
 
 }
 
-renderJournal();
+document.getElementById("retryJournalAuth").addEventListener("click", initJournal);
+initJournal();
 
 </script></body>
 </html>
