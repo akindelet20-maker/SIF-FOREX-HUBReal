@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Forex Academy | SIF FOREX HUB</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #071426;
+    color: white;
+}
+
+header {
+    background: #10243a;
+    padding: 18px;
+    border-bottom: 1px solid #23445c;
+}
+
+header a {
+    color: #24e69a;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 22px 18px;
+}
+
+.hero {
+    background: linear-gradient(120deg, #123d42, #173b60);
+    padding: 28px;
+    border-radius: 15px;
+    margin-bottom: 28px;
+}
+
+.hero h1 {
+    color: #24e69a;
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    color: #d5e1eb;
+    line-height: 1.7;
+}
+
+.section-title {
+    margin: 28px 0 16px;
+}
+
+.courses {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.course {
+    background: #10243a;
+    border: 1px solid #23445c;
+    border-radius: 13px;
+    padding: 20px;
+}
+
+.course h3 {
+    color: #24e69a;
+    margin-bottom: 10px;
+}
+
+.course p {
+    color: #aabaca;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.lesson {
+    background: #091a2c;
+    border: 1px solid #23445c;
+    border-radius: 9px;
+    margin-top: 9px;
+    overflow: hidden;
+}
+
+.lesson button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    background: transparent;
+    color: white;
+    text-align: left;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.lesson button:hover {
+    color: #24e69a;
+}
+
+.content {
+    display: none;
+    padding: 14px;
+    color: #bdcbd8;
+    font-size: 13px;
+    line-height: 1.8;
+    border-top: 1px solid #23445c;
+}
+
+.content h4 {
+    color: #24e69a;
+    margin: 12px 0 5px;
+}
+
+.content ul {
+    padding-left: 20px;
+}
+
+.quiz {
+    background: #10243a;
+    padding: 22px;
+    border-radius: 13px;
+    border: 1px solid #23445c;
+    margin-top: 28px;
+}
+
+.quiz h2 {
+    color: #24e69a;
+    margin-bottom: 15px;
+}
+
+.quiz p {
+    margin-bottom: 13px;
+    line-height: 1.6;
+}
+
+.quiz label {
+    display: block;
+    padding: 10px;
+    background: #091a2c;
+    border-radius: 7px;
+    margin: 8px 0;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.quiz button {
+    background: #24e69a;
+    color: #071426;
+    border: none;
+    padding: 13px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 15px;
+    width: 100%;
+}
+
+#quizResult {
+    margin-top: 15px;
+    color: #24e69a;
+    line-height: 1.6;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #71869a;
+    font-size: 12px;
+}
+
+@media(max-width:650px) {
+    .courses {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 23px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="dashboard.html">← Back to Dashboard</a>
+</header>
+
+<div class="container">
+
+<section class="hero">
+
+    <h1>🎓 SIF FOREX ACADEMY</h1>
+
+    <p>
+        Welcome to your trading education centre.
+        Develop your understanding of the forex market,
+        technical analysis, Smart Money Concepts and
+        professional risk management.
+    </p>
+
+</section>
+
+<h2 class="section-title">Our Learning Programmes</h2>
+
+<div class="courses">
+
+<!-- BEGINNER -->
+
+<div class="course">
+
+<h3>📘 BEGINNER COURSE</h3>
+
+<p>
+Start your forex journey by understanding the
+fundamentals of the foreign exchange market.
+</p>
+
+<div class="lesson">
+<button onclick="toggleLesson(this)">Lesson 1: Introduction to Forex ▼</button>
+<div class="content">
+<h4>What is Forex?</h4>
+Forex means Foreign Exchange. It is the global market
+where currencies are exchanged against one another.
+
+<h4>Example</h4>
+EUR/USD represents the euro against the US dollar.
+
+<h4>Important Terms</h4>
+<ul>
+<li>Currency pairs</li>
+<li>Base currency</li>
+<li>Quote currency</li>
+<li>Spread</li>
+<li>Leverage</li>
+<li>Broker</li>
+</ul>
+</div>
+</div>
+
+<div class="lesson">
+<button onclick="toggleLesson(this)">Lesson 2: Currency Pairs ▼</button>
+<div class="content">
+<h4>Types of Currency Pairs</h4>
+<ul>
+<li>Major pairs: EUR/USD, GBP/USD, USD/JPY.</li>
+<li>Minor pairs: EUR/GBP, EUR/JPY.</li>
+<li>Exotic pairs: USD/NGN and USD/TRY.</li>
+</ul>
+
+Currency pairs show the value of one currency
+relative to another.
+</div>
+</div>
+
+<div class="lesson">
+<button onclick="toggleLesson(this)">Lesson 3: Pips and Lots ▼</button>
+<div class="content">
+<h4>What is a Pip?</h4>
+A pip is a standard unit used to measure price movement.
+
+<h4>What is a Lot?</h4>
+A lot describes the size of a forex trade.
+
+<ul>
+<li>Standard lot: 100,000 units.</li>
+<li>Mini lot: 10,000 units.</li>
+<li>Micro lot: 1,000 units.</li>
+</ul>
+</div>
+</div>
+
+<div class="lesson">
+<button onclick="toggleLesson(this)">Lesson 4: Trading Sessions ▼</button>
+<div class="content">
+The four commonly discussed forex trading sessions are:
+
+<ul>
+<li>Sydney session.</li>
+<li>Tokyo session.</li>
+<li>London session.</li>
+<li>New York session.</li>
+</ul>
+
+Session opening times change with daylight saving
+time and should be checked against the relevant
+market calendar.
+</div>
+</div>
+
+</div>
+
+<!-- INTERMEDIATE -->
+
+<div class="course">
+
+<h3>📗 INTERMEDIATE COURSE</h3>
+
+<p>
+Develop your technical analysis and learn how
+price moves across different market conditions.
+</p>
+
+<div class="lesson">
+<button onclick="toggleLesson(this)">Lesson 5: Market Structure ▼</button>
+<div class="content">
+<h4>What is Market Structure?</h4>
+Market structure describes how price forms
+swing highs and swing lows.
+
+<h4>Uptrend</h4>
+Higher Highs (HH) and Higher Lows (HL).
+
+<h4>Downtrend</h4>
+Lower Highs (LH) and Lower Lows (LL).
+
+<h4>Ranging Market</h4>
+Price moves between support and resistance
+without a clear directional trend.
+</div>
+</div>
+
+<div class="lesson">
+<button onclick="toggleLesson(this)">Lesson 6: Support and Resistance ▼</button>
+<div class="content">
+<h4>Support</h4>
+An area where buying interest has previously
+prevented or slowed a decline.
+
+<h4>Resistance</h4>
+An area where selling interest has previously
+prevented or slowed a rise.
+
+These are zones of interest, not guaranteed
+reversal points.
+</div>
+</div>
+
+<div class="lesson">
+<button onclick="toggleLesson(this)">Lesson 7: Trend Analysis ▼</button>
+<div class="content">
+<h4>Three Market Conditions</h4>
+<ul>
+<li>Bullish trend: generally rising prices.</li>
+<li>Bearish trend: generally falling prices.</li>
+<li>Sideways market: price moving within a range.</li>
+</ul>
+
+Always consider the timeframe when analysing
+market direction.
+</div>
+</div>
+
+<div class="lesson">
+<button onclick="toggleLesson(this)">Lesson 8: Risk Management ▼</button>
+<div class="content">
+<h4>Why Risk Management Matters</h4>
+Risk management helps control potential losses.
+
+Important principles:
+
+<ul>
+<li>Know your risk before entering a trade.</li>
+<li>Use an appropriate stop loss.</li>
+<li>Avoid excessive leverage.</li>
+<li>Do not risk money you cannot afford to lose.</li>
+<li>Maintain a trading journal.</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<!-- ADVANCED SMC -->
+
+<div class="course">
+
+<h3>📕 ADVANCED SMC COURSE</h3>
+
+<p>
+Explore Smart Money Concepts and advanced
+price-action analysis.
+</p>
+
+<div class="lesson">
+<button onclick="toggleLesson(this)">Lesson 9: Liquidity ▼</button>
+<div class="content">
+<h4>What is Liquidity?</h4>
+In trading analysis, liquidity refers to areas where
+orders may be concentrated.
+
+<h4>Common Liquidity Areas</h4>
+<ul>
+<li>Equal highs.</li>
+<li>Equal lows.</li>
+<li>Previous day high.</li>
+<li>Previous day low.</li>
+<li>Previous swing highs and lows.</li>
+</ul>
+</div>
+</div>
+
+<div class="lesson">
+<button onclick="toggleLesson(this)">Lesson 10: Break of Structure (BOS) ▼</button>
+<div class="content">
+<h4>What is BOS?</h4>
+Break of Structure describes price breaking an
+important swing level in the direction of the
+existing market structure.
+
+It can provide evidence of continuation,
+but context and confirmation matter.
+</div>
+</div>
+
+<div class="lesson">
+<button onclick="toggleLesson(this)">Lesson 11: Change of Character (CHoCH) ▼</button>
+<div class="content">
+<h4>What is CHoCH?</h4>
+Change of Character describes a potential
+shift in price behaviour when price breaks
+a significant swing point against the previous
+direction.
+
+It may indicate a possible change in market
+direction, but does not guarantee one.
+</div>
+</div>
+
+<div class="lesson">
+<button onclick="toggleLesson(this)">Lesson 12: Fair Value Gap (FVG) ▼</button>
+<div class="content">
+<h4>What is FVG?</h4>
+A Fair Value Gap is a three-candle price pattern
+that traders interpret as an imbalance in price
+delivery.
+
+<h4>Types</h4>
+<ul>
+<li>Bullish FVG.</li>
+<li>Bearish FVG.</li>
+</ul>
+
+Traders may study these areas as potential
+zones of interest.
+</div>
+</div>
+
+</div>
+
+<!-- PSYCHOLOGY -->
+
+<div class="course">
+
+<h3>🧠 TRADING PSYCHOLOGY</h3>
+
+<p>
+Understand the mental discipline required
+for responsible trading.
+</p>
+
+<div class="lesson">
+<button onclick="toggleLesson(this)">Lesson 13: Trading Discipline ▼</button>
+<div class="content">
+Discipline means following a trading plan
+rather than making emotional decisions.
+
+Important habits:
+
+<ul>
+<li>Follow your trading rules.</li>
+<li>Avoid revenge trading.</li>
+<li>Accept that losses are part of trading.</li>
+<li>Do not chase the market.</li>
+<li>Review your performance regularly.</li>
+</ul>
+</div>
+</div>
+
+<div class="lesson">
+<button onclick="toggleLesson(this)">Lesson 14: Trading Plan ▼</button>
+<div class="content">
+A trading plan should contain:
+
+<ul>
+<li>Trading strategy.</li>
+<li>Preferred currency pairs.</li>
+<li>Trading sessions.</li>
+<li>Entry conditions.</li>
+<li>Stop-loss rules.</li>
+<li>Take-profit rules.</li>
+<li>Risk limits.</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<!-- QUIZ -->
+
+<section class="quiz">
+
+<h2>📝 Forex Knowledge Test</h2>
+
+<p><strong>Question 1:</strong> What does Forex mean?</p>
+
+<label>
+<input type="radio" name="q1" value="a">
+ Foreign Exchange
+</label>
+
+<label>
+<input type="radio" name="q1" value="b">
+ Foreign Examination
+</label>
+
+<label>
+<input type="radio" name="q1" value="c">
+ Financial Exchange Office
+</label>
+
+<br>
+
+<p><strong>Question 2:</strong> What is a bullish market?</p>
+
+<label>
+<input type="radio" name="q2" value="a">
+ A market generally moving downwards
+</label>
+
+<label>
+<input type="radio" name="q2" value="b">
+ A market generally moving upwards
+</label>
+
+<label>
+<input type="radio" name="q2" value="c">
+ A market that never moves
+</label>
+
+<br>
+
+<p><strong>Question 3:</strong> What does BOS mean?</p>
+
+<label>
+<input type="radio" name="q3" value="a">
+ Balance of Sales
+</label>
+
+<label>
+<input type="radio" name="q3" value="b">
+ Break of Structure
+</label>
+
+<label>
+<input type="radio" name="q3" value="c">
+ Bank of Signals
+</label>
+
+<button onclick="checkQuiz()">SUBMIT MY ANSWERS</button>
+
+<div id="quizResult"></div>
+
+</section>
+
+</div>
+
+<footer>
+© 2026 SIF FOREX HUB V2.0. All Rights Reserved.
+</footer>
+
+<script>
+
+function toggleLesson(button) {
+
+    const content = button.nextElementSibling;
+
+    if (content.style.display === "block") {
+        content.style.display = "none";
+    } else {
+        content.style.display = "block";
+    }
+
+}
+
+function checkQuiz() {
+
+    const answers = {
+        q1: "a",
+        q2: "b",
+        q3: "b"
+    };
+
+    let score = 0;
+    let unanswered = 0;
+
+    for (let question in answers) {
+
+        const selected = document.querySelector(
+            'input[name="' + question + '"]:checked'
+        );
+
+        if (!selected) {
+            unanswered++;
+        } else if (selected.value === answers[question]) {
+            score++;
+        }
+
+    }
+
+    const result = document.getElementById("quizResult");
+
+    if (unanswered > 0) {
+        result.textContent =
+        "Please answer all three questions before submitting.";
+        return;
+    }
+
+    result.innerHTML =
+        "Your Score: <strong>" + score +
+        "/3</strong><br>" +
+        (score === 3
+        ? "Excellent work! You passed this test. 🎉"
+        : "Keep studying and try again. Learning takes practice!");
+
+}
+
+</script>
+
+</body>
+</html>

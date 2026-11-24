@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Advanced Charts | SIF FOREX HUB</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #071426;
+    color: white;
+}
+
+header {
+    background: #10243a;
+    padding: 18px;
+    border-bottom: 1px solid #23445c;
+}
+
+header a {
+    color: #24e69a;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    color: #24e69a;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #aabaca;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.chart-box {
+    background: #10243a;
+    border: 1px solid #23445c;
+    border-radius: 12px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.tradingview-widget-container {
+    width: 100%;
+    height: 600px;
+}
+
+.tradingview-widget-container iframe {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.tools {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.tool {
+    background: #10243a;
+    padding: 17px;
+    border: 1px solid #23445c;
+    border-radius: 10px;
+}
+
+.tool h3 {
+    color: #24e69a;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.tool p {
+    color: #aabaca;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.coach {
+    margin-top: 25px;
+    padding: 22px;
+    background: linear-gradient(120deg, #123d42, #173b60);
+    border-radius: 12px;
+}
+
+.coach h2 {
+    color: #24e69a;
+    margin-bottom: 10px;
+}
+
+.coach p {
+    color: #d5e1eb;
+    line-height: 1.6;
+    font-size: 13px;
+}
+
+footer {
+    text-align: center;
+    color: #71869a;
+    padding: 25px;
+    font-size: 12px;
+}
+
+@media(max-width:700px) {
+    .tradingview-widget-container {
+        height: 480px;
+    }
+
+    .tools {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width:400px) {
+    .tools {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="dashboard.html">← Back to Dashboard</a>
+</header>
+
+<div class="container">
+
+    <h1>📊 SIF Advanced Charts</h1>
+
+    <p class="subtitle">
+        Explore financial markets using interactive charts
+        and technical analysis.
+    </p>
+
+    <div class="chart-box">
+
+        <div class="tradingview-widget-container">
+
+            <div class="tradingview-widget-container__widget"></div>
+
+            <script
+                type="text/javascript"
+                src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js"
+                async>
+            {
+                "autosize": true,
+                "symbol": "FX:EURUSD",
+                "interval": "60",
+                "timezone": "Africa/Lagos",
+                "theme": "dark",
+                "style": "1",
+                "locale": "en",
+                "allow_symbol_change": true,
+                "calendar": false,
+                "support_host": "https://www.tradingview.com"
+            }
+            </script>
+
+        </div>
+
+    </div>
+
+    <h2 style="margin-top:25px;">Chart Features</h2>
+
+    <div class="tools">
+
+        <div class="tool">
+            <h3>📈 Candlesticks</h3>
+            <p>Study price movements through candlestick charts.</p>
+        </div>
+
+        <div class="tool">
+            <h3>⏱ Timeframes</h3>
+            <p>Explore different trading timeframes.</p>
+        </div>
+
+        <div class="tool">
+            <h3>📐 Indicators</h3>
+            <p>Explore technical indicators supported by the chart.</p>
+        </div>
+
+        <div class="tool">
+            <h3>✏️ Drawing Tools</h3>
+            <p>Use chart drawing tools where supported.</p>
+        </div>
+
+        <div class="tool">
+            <h3>🌍 Forex Markets</h3>
+            <p>Explore available forex instruments.</p>
+        </div>
+
+        <div class="tool">
+            <h3>🔍 Market Analysis</h3>
+            <p>Study trends and important price levels.</p>
+        </div>
+
+    </div>
+
+    <section class="coach" id="ai-coach">
+
+        <h2>🤖 SIF AI Chart Coach</h2>
+
+        <p>
+            Upload your trading chart to receive educational
+            explanations of market structure, liquidity,
+            BOS, CHoCH, Fair Value Gaps and possible market
+            scenarios.
+        </p>
+
+        <p style="margin-top:12px;">
+            AI chart analysis will be connected in a later
+            development stage.
+        </p>
+
+    </section>
+
+    <div style="
+        margin-top:20px;
+        color:#aabaca;
+        font-size:12px;
+        line-height:1.6;
+    ">
+        Market data and chart services are provided by
+        TradingView. Data availability may vary by instrument
+        and provider.
+    </div>
+
+</div>
+
+<footer>
+    © 2026 SIF FOREX HUB V2.0
+</footer>
+
+</body>
+</html>

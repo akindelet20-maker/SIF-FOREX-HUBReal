@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIF FOREX HUB - Trading Simulator</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#07111f;
+ color:#fff;
+}
+header{
+ padding:20px;
+ background:#0c1b2e;
+ border-bottom:1px solid #20364e;
+}
+header h2{margin:0;color:#20d69a}
+header p{margin:7px 0 0;color:#a8b7c9;font-size:13px}
+.container{max-width:1000px;margin:auto;padding:18px}
+.card{
+ background:#102238;
+ border:1px solid #263d55;
+ border-radius:14px;
+ padding:18px;
+ margin-bottom:17px;
+}
+.balance{
+ font-size:30px;
+ color:#20d69a;
+ font-weight:bold;
+ margin-top:8px;
+}
+.small{font-size:12px;color:#a8b7c9}
+label{
+ display:block;
+ margin:13px 0 7px;
+ font-size:13px;
+ color:#c8d5e3;
+}
+input,select{
+ width:100%;
+ padding:13px;
+ border-radius:8px;
+ border:1px solid #34506d;
+ background:#071626;
+ color:white;
+ font-size:15px;
+}
+button{
+ border:0;
+ padding:13px;
+ border-radius:8px;
+ font-weight:bold;
+ cursor:pointer;
+}
+.buy{background:#16bd83;color:#061b15}
+.sell{background:#f05265;color:white}
+.update{background:#2879e8;color:white;width:100%;margin-top:12px}
+.close{background:#e64c5c;color:white;padding:9px 12px}
+.reset{background:#34465b;color:white;width:100%;margin-top:10px}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:12px;
+}
+.actions{display:flex;gap:10px;margin-top:15px}
+.actions button{width:50%}
+table{
+ width:100%;
+ border-collapse:collapse;
+ font-size:13px;
+ min-width:550px;
+}
+th,td{
+ padding:12px 9px;
+ border-bottom:1px solid #294057;
+ text-align:left;
+}
+th{color:#20d69a}
+.table-wrap{overflow-x:auto}
+.profit{color:#20d69a}
+.loss{color:#ff6675}
+.empty{color:#9aabba;text-align:center;padding:20px}
+.notice{
+ background:#172d43;
+ border-left:4px solid #20d69a;
+ padding:12px;
+ border-radius:6px;
+ font-size:12px;
+ color:#c8d5e3;
+ line-height:1.6;
+}
+@media(max-width:550px){
+ .grid{grid-template-columns:1fr}
+ .balance{font-size:25px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <h2>📈 SIF FOREX HUB</h2>
+ <p>Trading Simulator • Practise Without Risking Real Money</p>
+</header>
+
+<div class="container">
+
+ <div class="card">
+  <div class="small">VIRTUAL ACCOUNT BALANCE</div>
+  <div class="balance" id="balance">$10,000.00</div>
+  <p class="small">Your simulated trading account</p>
+ </div>
+
+ <div class="card">
+  <h3>⚙️ Market Settings</h3>
+
+  <div class="grid">
+   <div>
+    <label>Trading Pair</label>
+    <select id="pair">
+     <option>EURUSD</option>
+     <option>GBPUSD</option>
+     <option>USDJPY</option>
+     <option>USDCHF</option>
+     <option>AUDUSD</option>
+     <option>NZDUSD</option>
+     <option>USDCAD</option>
+     <option>XAUUSD</option>
+    </select>
+   </div>
+
+   <div>
+    <label>Simulated Market Price</label>
+    <input id="marketPrice" type="number" step="any" value="1.08500">
+   </div>
+
+   <div>
+    <label>Pip Size</label>
+    <input id="pipSize" type="number" step="any" value="0.0001">
+   </div>
+
+   <div>
+    <label>Pip Value per 1.00 Lot ($)</label>
+    <input id="pipValue" type="number" step="any" value="10">
+   </div>
+  </div>
+
+  <button class="update" onclick="updateMarket()">UPDATE SIMULATED PRICE</button>
+  <p class="small">Prices are manually entered for practice. They are not live market prices.</p>
+ </div>
+
+ <div class="card">
+  <h3>🚀 Open a Practice Trade</h3>
+
+  <label>Trade Direction</label>
+  <select id="direction">
+   <option value="BUY">BUY</option>
+   <option value="SELL">SELL</option>
+  </select>
+
+  <div class="grid">
+   <div>
+    <label>Entry Price</label>
+    <input id="entry" type="number" step="any" placeholder="Enter entry price">
+   </div>
+
+   <div>
+    <label>Lot Size</label>
+    <input id="lots" type="number" step="0.01" min="0.01" value="0.10">
+   </div>
+  </div>
+
+  <div class="actions">
+   <button class="buy" onclick="openTrade('BUY')">BUY TRADE</button>
+   <button class="sell" onclick="openTrade('SELL')">SELL TRADE</button>
+  </div>
+
+  <p class="small">The current simulated market price will be used as your entry price.</p>
+ </div>
+
+ <div class="card">
+  <h3>📊 Open Positions</h3>
+
+  <div class="table-wrap">
+   <table>
+    <thead>
+     <tr>
+      <th>Pair</th>
+      <th>Type</th>
+      <th>Entry</th>
+      <th>Market</th>
+      <th>Lots</th>
+      <th>Floating P/L</th>
+      <th>Action</th>
+     </tr>
+    </thead>
+    <tbody id="openPositions"></tbody>
+   </table>
+  </div>
+ </div>
+
+ <div class="card">
+  <h3>📚 Trade History</h3>
+
+  <div class="table-wrap">
+   <table>
+    <thead>
+     <tr>
+      <th>Pair</th>
+      <th>Type</th>
+      <th>Entry</th>
+      <th>Exit</th>
+      <th>Lots</th>
+      <th>Profit/Loss</th>
+     </tr>
+    </thead>
+    <tbody id="history"></tbody>
+   </table>
+  </div>
+ </div>
+
+ <div class="card">
+  <h3>📈 Account Statistics</h3>
+  <div class="grid">
+   <div>
+    <div class="small">Total Trades</div>
+    <h2 id="totalTrades">0</h2>
+   </div>
+   <div>
+    <div class="small">Winning Trades</div>
+    <h2 class="profit" id="wins">0</h2>
+   </div>
+   <div>
+    <div class="small">Losing Trades</div>
+    <h2 class="loss" id="losses">0</h2>
+   </div>
+   <div>
+    <div class="small">Win Rate</div>
+    <h2 id="winRate">0%</h2>
+   </div>
+  </div>
+ </div>
+
+ <div class="notice">
+  <strong>Educational Notice:</strong> This is a virtual trading simulator.
+  It does not connect to a broker, execute real orders or provide live market prices.
+  Pip values and pip sizes are simplified assumptions. Actual trading results may differ
+  because of spreads, commissions, swaps, currency conversion and execution conditions.
+ </div>
+
+ <button class="reset" onclick="resetAccount()">RESET PRACTICE ACCOUNT</button>
+
+ <p class="small" style="text-align:center;margin:25px 0">
+  © 2026 SIF FOREX HUB • Learn • Practise • Improve
+ </p>
+
+</div>
+
+<script>
+const STORAGE_KEY = "sif_simulator_v1";
+
+let account = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {
+ balance:10000,
+ positions:[],
+ history:[]
+};
+
+function save(){
+ localStorage.setItem(STORAGE_KEY,JSON.stringify(account));
+ render();
+}
+
+function money(value){
+ return "$" + Number(value).toFixed(2);
+}
+
+function getPrice(){
+ return Number(document.getElementById("marketPrice").value);
+}
+
+function getPipSize(){
+ return Number(document.getElementById("pipSize").value);
+}
+
+function getPipValue(){
+ return Number(document.getElementById("pipValue").value);
+}
+
+function calculatePL(trade,price){
+ const difference = trade.direction === "BUY"
+  ? price - trade.entry
+  : trade.entry - price;
+
+ return (difference / trade.pipSize) * trade.pipValue * trade.lots;
+}
+
+function updateMarket(){
+ const price = getPrice();
+
+ if(!Number.isFinite(price) || price <= 0){
+  alert("Enter a valid simulated market price.");
+  return;
+ }
+
+ save();
+ alert("Simulated market price updated.");
+}
+
+function openTrade(direction){
+ const pair = document.getElementById("pair").value;
+ const lots = Number(document.getElementById("lots").value);
+ const price = getPrice();
+ const pipSize = getPipSize();
+ const pipValue = getPipValue();
+
+ if(!Number.isFinite(price) || price <= 0 ||
+    !Number.isFinite(lots) || lots <= 0 ||
+    !Number.isFinite(pipSize) || pipSize <= 0 ||
+    !Number.isFinite(pipValue) || pipValue <= 0){
+  alert("Please enter valid price, lot size, pip size and pip value.");
+  return;
+ }
+
+ const trade = {
+  id:Date.now() + Math.random(),
+  pair,
+  direction,
+  entry:price,
+  market:price,
+  lots,
+  pipSize,
+  pipValue,
+  opened:new Date().toLocaleString()
+ };
+
+ account.positions.push(trade);
+ save();
+
+ alert(direction + " practice trade opened successfully!");
+}
+
+function closeTrade(id){
+ const index = account.positions.findIndex(t => t.id === id);
+
+ if(index === -1) return;
+
+ const trade = account.positions[index];
+ const exitPrice = getPrice();
+
+ if(!Number.isFinite(exitPrice) || exitPrice <= 0){
+  alert("Enter a valid simulated market price first.");
+  return;
+ }
+
+ const pl = calculatePL(trade,exitPrice);
+
+ trade.exit = exitPrice;
+ trade.profit = pl;
+ trade.closed = new Date().toLocaleString();
+
+ account.balance += pl;
+ account.history.unshift(trade);
+ account.positions.splice(index,1);
+
+ save();
+}
+
+function render(){
+ document.getElementById("balance").textContent = money(account.balance);
+
+ const open = document.getElementById("openPositions");
+
+ if(account.positions.length === 0){
+  open.innerHTML = '<tr><td colspan="7" class="empty">No open trades yet.</td></tr>';
+ }else{
+  open.innerHTML = account.positions.map(t => {
+   const pl = calculatePL(t,t.market);
+
+   return `
+    <tr>
+     <td>${t.pair}</td>
+     <td>${t.direction}</td>
+     <td>${t.entry}</td>
+     <td>${t.market}</td>
+     <td>${t.lots}</td>
+     <td class="${pl >= 0 ? 'profit':'loss'}">${money(pl)}</td>
+     <td><button class="close" onclick="closeTrade(${t.id})">Close</button></td>
+    </tr>
+   `;
+  }).join("");
+ }
+
+ const history = document.getElementById("history");
+
+ if(account.history.length === 0){
+  history.innerHTML = '<tr><td colspan="6" class="empty">Your closed trades will appear here.</td></tr>';
+ }else{
+  history.innerHTML = account.history.map(t => `
+   <tr>
+    <td>${t.pair}</td>
+    <td>${t.direction}</td>
+    <td>${t.entry}</td>
+    <td>${t.exit}</td>
+    <td>${t.lots}</td>
+    <td class="${t.profit >= 0 ? 'profit':'loss'}">${money(t.profit)}</td>
+   </tr>
+  `).join("");
+ }
+
+ const total = account.history.length;
+ const wins = account.history.filter(t => t.profit > 0).length;
+ const losses = account.history.filter(t => t.profit < 0).length;
+ const rate = total ? (wins / total * 100) : 0;
+
+ document.getElementById("totalTrades").textContent = total;
+ document.getElementById("wins").textContent = wins;
+ document.getElementById("losses").textContent = losses;
+ document.getElementById("winRate").textContent = rate.toFixed(1) + "%";
+}
+
+function resetAccount(){
+ if(!confirm("Are you sure you want to reset your entire practice account and trade history?")){
+  return;
+ }
+
+ account = {
+  balance:10000,
+  positions:[],
+  history:[]
+ };
+
+ save();
+}
+
+render();
+</script>
+
+</body>
+</html>

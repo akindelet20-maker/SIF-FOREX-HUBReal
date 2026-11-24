@@ -1,0 +1,509 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trading Journal | SIF FOREX HUB</title><style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #071426;
+    color: white;
+}
+
+header {
+    background: #10243a;
+    padding: 18px;
+    border-bottom: 1px solid #23445c;
+}
+
+header a {
+    color: #24e69a;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 22px 16px;
+}
+
+h1 {
+    color: #24e69a;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #aabaca;
+    margin-bottom: 22px;
+    line-height: 1.6;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.stat {
+    background: #10243a;
+    padding: 17px;
+    border-radius: 11px;
+    border: 1px solid #23445c;
+}
+
+.stat p {
+    color: #aabaca;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.stat strong {
+    color: #24e69a;
+    font-size: 20px;
+}
+
+.panel {
+    background: #10243a;
+    padding: 20px;
+    border: 1px solid #23445c;
+    border-radius: 13px;
+    margin-bottom: 22px;
+}
+
+.panel h2 {
+    color: #24e69a;
+    margin-bottom: 18px;
+    font-size: 19px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+label {
+    display: block;
+    color: #d5e1eb;
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 13px;
+    background: #091a2c;
+    border: 1px solid #34536a;
+    border-radius: 8px;
+    color: white;
+    outline: none;
+}
+
+textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #24e69a;
+}
+
+.full {
+    grid-column: 1 / -1;
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+    padding: 13px 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add-btn {
+    width: 100%;
+    background: #24e69a;
+    color: #071426;
+    margin-top: 17px;
+}
+
+.trade {
+    background: #091a2c;
+    border: 1px solid #23445c;
+    border-radius: 10px;
+    padding: 16px;
+    margin-top: 12px;
+}
+
+.trade-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.trade h3 {
+    color: #24e69a;
+}
+
+.trade p {
+    color: #bdcbd8;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.win {
+    color: #24e69a !important;
+}
+
+.loss {
+    color: #ff7777 !important;
+}
+
+.delete-btn {
+    background: #8b303b;
+    color: white;
+    padding: 8px 12px;
+    margin-top: 12px;
+}
+
+.empty {
+    text-align: center;
+    padding: 25px;
+    color: #aabaca;
+}
+
+#message {
+    margin-top: 12px;
+    color: #24e69a;
+    font-size: 13px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #71869a;
+    font-size: 12px;
+}
+
+@media(max-width:600px) {
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trade-top {
+        flex-direction: column;
+    }
+}
+</style></head><body><header>
+    <a href="dashboard.html">← Back to Dashboard</a>
+</header><div class="container"><h1>📒 SIF Trading Journal</h1>
+
+<p class="subtitle">
+    Record your trades, monitor your performance
+    and develop better trading discipline.
+</p>
+
+<div class="stats">
+
+    <div class="stat">
+        <p>TOTAL TRADES</p>
+        <strong id="totalTrades">0</strong>
+    </div>
+
+    <div class="stat">
+        <p>WINNING TRADES</p>
+        <strong id="winningTrades">0</strong>
+    </div>
+
+    <div class="stat">
+        <p>NET PROFIT / LOSS</p>
+        <strong id="netProfit">$0.00</strong>
+    </div>
+
+</div>
+
+<section class="panel">
+
+    <h2>➕ Record a New Trade</h2>
+
+    <form id="tradeForm">
+
+        <div class="form-grid">
+
+            <div>
+                <label>Currency Pair</label>
+                <input id="pair"
+                placeholder="Example: EURUSD" required>
+            </div>
+
+            <div>
+                <label>Trade Direction</label>
+                <select id="direction" required>
+                    <option value="BUY">BUY</option>
+                    <option value="SELL">SELL</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Entry Price</label>
+                <input type="number" id="entry"
+                step="any" min="0" required>
+            </div>
+
+            <div>
+                <label>Exit Price</label>
+                <input type="number" id="exit"
+                step="any" min="0" required>
+            </div>
+
+            <div>
+                <label>Profit or Loss ($)</label>
+                <input type="number" id="result"
+                step="any" required>
+            </div>
+
+            <div>
+                <label>Strategy Used</label>
+                <select id="strategy">
+                    <option>Market Structure</option>
+                    <option>Smart Money Concepts</option>
+                    <option>Break of Structure</option>
+                    <option>Fair Value Gap</option>
+                    <option>Support and Resistance</option>
+                    <option>Supply and Demand</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+            <div class="full">
+                <label>Trade Notes</label>
+                <textarea id="notes"
+                placeholder="Why did you enter this trade? What did you learn?"></textarea>
+            </div>
+
+        </div>
+
+        <button class="add-btn" type="submit">
+            SAVE TRADE
+        </button>
+
+        <div id="message"></div>
+
+    </form>
+
+</section>
+
+<section class="panel">
+
+    <h2>📊 Your Trading History</h2>
+
+    <div id="tradeHistory">
+        <div class="empty">
+            No trades recorded yet.
+        </div>
+    </div>
+
+</section>
+
+</div><footer>
+© 2026 SIF FOREX HUB V2.0
+</footer><script>
+
+const STORAGE_KEY = "sif_forex_journal_v1";
+
+let trades = [];
+
+try {
+    const saved = JSON.parse(
+        localStorage.getItem(STORAGE_KEY) || "[]"
+    );
+
+    trades = Array.isArray(saved) ? saved : [];
+
+} catch {
+    trades = [];
+}
+
+const form = document.getElementById("tradeForm");
+
+function saveTrades() {
+    localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(trades)
+    );
+}
+
+function renderJournal() {
+
+    const history = document.getElementById("tradeHistory");
+
+    const total = trades.length;
+
+    const wins = trades.filter(
+        trade => Number(trade.result) > 0
+    ).length;
+
+    const net = trades.reduce(
+        (sum, trade) => sum + Number(trade.result), 0
+    );
+
+    document.getElementById("totalTrades").textContent = total;
+
+    document.getElementById("winningTrades").textContent = wins;
+
+    const netElement = document.getElementById("netProfit");
+
+    netElement.textContent =
+        (net < 0 ? "-$" : "$") + Math.abs(net).toFixed(2);
+
+    netElement.style.color = net >= 0 ? "#24e69a" : "#ff7777";
+
+    if (total === 0) {
+        history.innerHTML =
+            '<div class="empty">No trades recorded yet.</div>';
+        return;
+    }
+
+    history.innerHTML = "";
+
+    trades.forEach(trade => {
+
+        const card = document.createElement("div");
+        card.className = "trade";
+
+        const profitClass =
+            Number(trade.result) >= 0 ? "win" : "loss";
+
+        const profitText =
+            (Number(trade.result) < 0 ? "-$" : "$") +
+            Math.abs(Number(trade.result)).toFixed(2);
+
+        const top = document.createElement("div");
+        top.className = "trade-top";
+
+        const title = document.createElement("h3");
+        title.textContent =
+            trade.pair + " — " + trade.direction;
+
+        const date = document.createElement("span");
+        date.textContent = trade.date;
+        date.style.color = "#aabaca";
+        date.style.fontSize = "12px";
+
+        top.append(title, date);
+
+        const details = document.createElement("p");
+        details.textContent =
+            "Entry: " + trade.entry +
+            " | Exit: " + trade.exit;
+
+        const strategy = document.createElement("p");
+        strategy.textContent = "Strategy: " + trade.strategy;
+
+        const result = document.createElement("p");
+        result.className = profitClass;
+        result.textContent = "Profit/Loss: " + profitText;
+
+        const notes = document.createElement("p");
+        notes.textContent = "Notes: " + (trade.notes || "None");
+
+        const deleteButton = document.createElement("button");
+        deleteButton.className = "delete-btn";
+        deleteButton.textContent = "DELETE TRADE";
+
+        deleteButton.addEventListener("click", () => {
+            deleteTrade(trade.id);
+        });
+
+        card.append(
+            top, details, strategy, result, notes, deleteButton
+        );
+
+        history.appendChild(card);
+
+    });
+
+}
+
+form.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const trade = {
+
+        id: Date.now().toString() + Math.random(),
+
+        pair: document.getElementById("pair").value
+            .trim().toUpperCase(),
+
+        direction: document.getElementById("direction").value,
+
+        entry: Number(document.getElementById("entry").value),
+
+        exit: Number(document.getElementById("exit").value),
+
+        result: Number(document.getElementById("result").value),
+
+        strategy: document.getElementById("strategy").value,
+
+        notes: document.getElementById("notes").value.trim(),
+
+        date: new Date().toLocaleString()
+
+    };
+
+    if (
+        !trade.pair ||
+        !Number.isFinite(trade.entry) ||
+        !Number.isFinite(trade.exit) ||
+        !Number.isFinite(trade.result) ||
+        trade.entry <= 0 ||
+        trade.exit <= 0
+    ) {
+        document.getElementById("message").textContent =
+            "Please enter valid trade information.";
+        return;
+    }
+
+    trades.unshift(trade);
+
+    saveTrades();
+
+    renderJournal();
+
+    form.reset();
+
+    document.getElementById("message").textContent =
+        "Trade saved successfully!";
+
+});
+
+function deleteTrade(id) {
+
+    if (!confirm("Are you sure you want to delete this trade?")) {
+        return;
+    }
+
+    trades = trades.filter(trade => trade.id !== id);
+
+    saveTrades();
+
+    renderJournal();
+
+}
+
+renderJournal();
+
+</script></body>
+</html>

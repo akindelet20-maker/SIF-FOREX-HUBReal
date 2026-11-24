@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Risk Calculator | SIF FOREX HUB</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #071426;
+    color: white;
+    padding-bottom: 30px;
+}
+
+header {
+    background: #10243a;
+    padding: 18px;
+    border-bottom: 1px solid #23445c;
+}
+
+header a {
+    color: #24e69a;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 600px;
+    margin: 25px auto;
+    padding: 18px;
+}
+
+h1 {
+    color: #24e69a;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #aabaca;
+    line-height: 1.6;
+    margin-bottom: 22px;
+}
+
+.calculator {
+    background: #10243a;
+    padding: 22px;
+    border: 1px solid #23445c;
+    border-radius: 15px;
+}
+
+label {
+    display: block;
+    margin: 17px 0 8px;
+    color: #d5e1eb;
+    font-size: 14px;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    background: #091a2c;
+    color: white;
+    border: 1px solid #34536a;
+    border-radius: 8px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #24e69a;
+}
+
+button {
+    width: 100%;
+    margin-top: 22px;
+    padding: 15px;
+    background: #24e69a;
+    color: #071426;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.results {
+    display: none;
+    margin-top: 22px;
+    background: #091a2c;
+    border-radius: 12px;
+    padding: 18px;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 13px 0;
+    border-bottom: 1px solid #23445c;
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+.result-item span:first-child {
+    color: #aabaca;
+}
+
+.result-item strong {
+    color: #24e69a;
+    text-align: right;
+}
+
+.note {
+    margin-top: 20px;
+    padding: 15px;
+    background: #172c40;
+    border-left: 4px solid #24e69a;
+    border-radius: 7px;
+    color: #bdcbd8;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.error {
+    display: none;
+    color: #ffaaaa;
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+footer {
+    text-align: center;
+    color: #71869a;
+    font-size: 12px;
+    margin-top: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="dashboard.html">← Back to Dashboard</a>
+</header>
+
+<div class="container">
+
+    <h1>🧮 Forex Risk Calculator</h1>
+
+    <p class="subtitle">
+        Calculate your trading risk and estimate your
+        position size before entering a trade.
+    </p>
+
+    <div class="calculator">
+
+        <label>Account Balance ($)</label>
+        <input type="number" id="balance"
+        placeholder="Example: 300" min="0" step="any">
+
+        <label>Risk Percentage (%)</label>
+        <input type="number" id="risk"
+        placeholder="Example: 1" min="0.01" max="100" step="any">
+
+        <label>Stop Loss Distance (Pips)</label>
+        <input type="number" id="stopLoss"
+        placeholder="Example: 30" min="0" step="any">
+
+        <label>Pip Value per 1 Standard Lot ($)</label>
+        <input type="number" id="pipValue"
+        value="10" min="0" step="any">
+
+        <button onclick="calculateRisk()">
+            CALCULATE MY POSITION SIZE
+        </button>
+
+        <p class="error" id="error"></p>
+
+        <div class="results" id="results">
+
+            <h3 style="color:#24e69a;margin-bottom:12px;">
+                Your Calculation
+            </h3>
+
+            <div class="result-item">
+                <span>Amount at Risk</span>
+                <strong id="riskAmount">$0</strong>
+            </div>
+
+            <div class="result-item">
+                <span>Risk Percentage</span>
+                <strong id="riskPercent">0%</strong>
+            </div>
+
+            <div class="result-item">
+                <span>Stop Loss</span>
+                <strong id="stopResult">0 pips</strong>
+            </div>
+
+            <div class="result-item">
+                <span>Estimated Lot Size</span>
+                <strong id="lotSize">0 lots</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="note">
+        <strong>Important:</strong> This is an educational
+        position-size estimate. The calculation assumes
+        that the pip value you enter is accurate for your
+        trading pair and account currency. Actual losses
+        may differ because of spreads, commissions,
+        slippage and execution.
+    </div>
+
+</div>
+
+<footer>
+    © 2026 SIF FOREX HUB V2.0
+</footer>
+
+<script>
+
+function calculateRisk() {
+
+    const balance = Number(
+        document.getElementById("balance").value
+    );
+
+    const risk = Number(
+        document.getElementById("risk").value
+    );
+
+    const stopLoss = Number(
+        document.getElementById("stopLoss").value
+    );
+
+    const pipValue = Number(
+        document.getElementById("pipValue").value
+    );
+
+    const error = document.getElementById("error");
+    const results = document.getElementById("results");
+
+    error.style.display = "none";
+    results.style.display = "none";
+
+    if (
+        !Number.isFinite(balance) ||
+        !Number.isFinite(risk) ||
+        !Number.isFinite(stopLoss) ||
+        !Number.isFinite(pipValue) ||
+        balance <= 0 ||
+        risk <= 0 ||
+        risk > 100 ||
+        stopLoss <= 0 ||
+        pipValue <= 0
+    ) {
+
+        error.textContent =
+        "Please enter valid positive numbers. Risk must not exceed 100%.";
+
+        error.style.display = "block";
+        return;
+    }
+
+    const amountAtRisk = balance * (risk / 100);
+
+    const lotSize =
+        amountAtRisk / (stopLoss * pipValue);
+
+    document.getElementById("riskAmount").textContent =
+        "$" + amountAtRisk.toFixed(2);
+
+    document.getElementById("riskPercent").textContent =
+        risk + "%";
+
+    document.getElementById("stopResult").textContent =
+        stopLoss + " pips";
+
+    document.getElementById("lotSize").textContent =
+        lotSize.toFixed(3) + " lots";
+
+    results.style.display = "block";
+}
+
+</script>
+
+</body>
+</html>

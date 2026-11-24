@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard | SIF FOREX HUB</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #071426;
+    color: white;
+}
+
+header {
+    background: #10243a;
+    padding: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #23445c;
+}
+
+.logo {
+    color: #24e69a;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.logout {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px 18px;
+}
+
+.welcome {
+    background: linear-gradient(120deg, #123d42, #173b60);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 22px;
+}
+
+.welcome h1 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    color: #c1d4df;
+    line-height: 1.6;
+}
+
+.membership {
+    display: inline-block;
+    background: #24e69a;
+    color: #071426;
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.section-title {
+    margin: 28px 0 16px;
+    font-size: 19px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.card {
+    background: #10243a;
+    border: 1px solid #23445c;
+    padding: 22px 16px;
+    border-radius: 13px;
+    text-decoration: none;
+    color: white;
+    transition: .2s;
+}
+
+.card:hover {
+    border-color: #24e69a;
+    transform: translateY(-3px);
+}
+
+.icon {
+    font-size: 29px;
+    margin-bottom: 13px;
+}
+
+.card h3 {
+    font-size: 16px;
+    margin-bottom: 9px;
+}
+
+.card p {
+    color: #aabaca;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.notice {
+    background: #172c40;
+    border-left: 4px solid #24e69a;
+    padding: 16px;
+    margin-top: 25px;
+    border-radius: 8px;
+    color: #bdcbd8;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.loading {
+    text-align: center;
+    padding: 50px 20px;
+    color: #24e69a;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #71869a;
+    font-size: 12px;
+}
+
+@media(max-width:700px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .welcome h1 {
+        font-size: 21px;
+    }
+}
+
+@media(max-width:400px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">SIF FOREX HUB</div>
+    <button class="logout" id="logoutButton">LOGOUT</button>
+</header>
+
+<div class="container">
+
+    <div id="loading" class="loading">
+        Loading your trading dashboard...
+    </div>
+
+    <div id="dashboardContent" style="display:none;">
+
+        <section class="welcome">
+
+            <h1>
+                Welcome, <span id="memberName">Trader</span>!
+            </h1>
+
+            <p>
+                Welcome to your personal trading education
+                and analysis centre.
+            </p>
+
+            <p style="margin-top:10px;">
+                Username: <strong id="memberUsername">---</strong>
+            </p>
+
+            <span class="membership" id="membership">
+                FREE MEMBER
+            </span>
+
+        </section>
+
+        <h2 class="section-title">Your Trading Workspace</h2>
+
+        <div class="grid">
+
+            <a href="charts.html" class="card">
+                <div class="icon">📊</div>
+                <h3>Advanced Charts</h3>
+                <p>Explore market charts and technical analysis tools.</p>
+            </a>
+
+            <a href="academy.html" class="card">
+                <div class="icon">🎓</div>
+                <h3>Forex Academy</h3>
+                <p>Learn forex from beginner to advanced level.</p>
+            </a>
+
+            <a href="simulator.html" class="card">
+                <div class="icon">🎮</div>
+                <h3>Trading Simulator</h3>
+                <p>Practise trading with simulated funds.</p>
+            </a>
+
+            <a href="calculator.html" class="card">
+                <div class="icon">🧮</div>
+                <h3>Risk Calculator</h3>
+                <p>Calculate position size and trading risk.</p>
+            </a>
+
+            <a href="journal.html" class="card">
+                <div class="icon">📒</div>
+                <h3>Trading Journal</h3>
+                <p>Record and review your trading activities.</p>
+            </a>
+
+            <a href="charts.html#ai-coach" class="card">
+                <div class="icon">🤖</div>
+                <h3>AI Chart Coach</h3>
+                <p>Study market structure and possible trading scenarios.</p>
+            </a>
+
+        </div>
+
+        <div class="notice">
+            <strong>Important Trading Notice</strong><br>
+            SIF FOREX HUB is an educational platform.
+            Trading involves financial risk. No profits
+            or trading outcomes are guaranteed.
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2026 SIF FOREX HUB V2.0. All Rights Reserved.
+</footer>
+
+<script type="module">
+
+import { createClient } from
+'https://esm.sh/@supabase/supabase-js@2';
+
+const SUPABASE_URL =
+'https://kfaqrjhwbmkawnxkcrld.supabase.co';
+
+const SUPABASE_KEY =
+'sb_publishable_-kdg7Pmr_mWPPfnv83VTMA_n2hhKXhk';
+
+const supabase = createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+async function loadDashboard() {
+
+    const { data: authData, error: authError } =
+        await supabase.auth.getUser();
+
+    if (authError || !authData.user) {
+        window.location.href = 'login.html';
+        return;
+    }
+
+    const user = authData.user;
+
+    const { data: profile, error } =
+        await supabase
+        .from('profiles')
+        .select('full_name, username, membership')
+        .eq('id', user.id)
+        .maybeSingle();
+
+    if (error) {
+        document.getElementById('loading').textContent =
+            'Could not load your profile. Please refresh the page.';
+        return;
+    }
+
+    const name =
+        profile?.full_name ||
+        user.user_metadata?.full_name ||
+        'Trader';
+
+    const username =
+        profile?.username ||
+        user.user_metadata?.username ||
+        'Member';
+
+    const membership =
+        profile?.membership || 'FREE';
+
+    document.getElementById('memberName').textContent = name;
+
+    document.getElementById('memberUsername').textContent =
+        '@' + username;
+
+    document.getElementById('membership').textContent =
+        membership + ' MEMBER';
+
+    document.getElementById('loading').style.display = 'none';
+
+    document.getElementById('dashboardContent').style.display =
+        'block';
+}
+
+document.getElementById('logoutButton')
+.addEventListener('click', async function() {
+
+    const { error } = await supabase.auth.signOut();
+
+    if (error) {
+        alert(error.message);
+        return;
+    }
+
+    window.location.href = 'login.html';
+
+});
+
+loadDashboard();
+
+</script>
+
+</body>
+</html>

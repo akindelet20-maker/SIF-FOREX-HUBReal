@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login | SIF FOREX HUB</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #071426, #102b3d, #071426);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 430px;
+    background: #10243a;
+    padding: 30px 24px;
+    border-radius: 18px;
+    border: 1px solid #23445c;
+    box-shadow: 0 15px 40px rgba(0,0,0,.3);
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo h1 {
+    color: #24e69a;
+    font-size: 27px;
+}
+
+.logo p {
+    color: #aabaca;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #aabaca;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 13px;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #34536a;
+    background: #091a2c;
+    border-radius: 9px;
+    color: white;
+    outline: none;
+    margin-bottom: 18px;
+}
+
+input:focus {
+    border-color: #24e69a;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: #24e69a;
+    color: #071426;
+    border: none;
+    border-radius: 9px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: .6;
+}
+
+.message {
+    display: none;
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.success {
+    background: #123d32;
+    color: #70ffc4;
+}
+
+.error {
+    background: #4a2028;
+    color: #ffaaaa;
+}
+
+.links {
+    text-align: center;
+    margin-top: 22px;
+    color: #aabaca;
+    font-size: 14px;
+    line-height: 2;
+}
+
+a {
+    color: #24e69a;
+    text-decoration: none;
+}
+
+.footer {
+    text-align: center;
+    color: #71869a;
+    font-size: 11px;
+    margin-top: 25px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="logo">
+        <h1>SIF FOREX HUB</h1>
+        <p>LEARN TO EARN • TRADE WITH KNOWLEDGE</p>
+    </div>
+
+    <h2>Welcome Back!</h2>
+
+    <p class="subtitle">
+        Login to access your trading education platform.
+    </p>
+
+    <form id="loginForm">
+
+        <label>Email Address</label>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+        >
+
+        <label>Password</label>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            required
+        >
+
+        <button type="submit" id="loginButton">
+            LOGIN TO YOUR ACCOUNT
+        </button>
+
+        <div id="message" class="message"></div>
+
+    </form>
+
+    <div class="links">
+        <a href="#" id="forgotPassword">Forgot Password?</a>
+        <br><br>
+        Don't have an account?
+        <a href="register.html">Create Account</a>
+    </div>
+
+    <div class="footer">
+        © 2026 SIF FOREX HUB. All Rights Reserved.
+    </div>
+
+</div>
+
+<script type="module">
+
+import { createClient } from
+'https://esm.sh/@supabase/supabase-js@2';
+
+const SUPABASE_URL =
+'https://kfaqrjhwbmkawnxkcrld.supabase.co';
+
+const SUPABASE_KEY =
+'sb_publishable_-kdg7Pmr_mWPPfnv83VTMA_n2hhKXhk';
+
+const supabase = createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+const form = document.getElementById('loginForm');
+const button = document.getElementById('loginButton');
+const message = document.getElementById('message');
+
+function showMessage(text, type) {
+    message.textContent = text;
+    message.className = 'message ' + type;
+    message.style.display = 'block';
+}
+
+form.addEventListener('submit', async function(event) {
+
+    event.preventDefault();
+
+    const email =
+        document.getElementById('email').value.trim();
+
+    const password =
+        document.getElementById('password').value;
+
+    button.disabled = true;
+    button.textContent = 'LOGGING IN...';
+
+    message.style.display = 'none';
+
+    try {
+
+        const { data, error } =
+            await supabase.auth.signInWithPassword({
+                email: email,
+                password: password
+            });
+
+        if (error) {
+            throw error;
+        }
+
+        showMessage(
+            'Login successful! Opening your dashboard...',
+            'success'
+        );
+
+        setTimeout(() => {
+            window.location.href = 'dashboard.html';
+        }, 1200);
+
+    } catch (error) {
+
+        showMessage(
+            error.message || 'Login failed. Please check your details.',
+            'error'
+        );
+
+        button.disabled = false;
+        button.textContent = 'LOGIN TO YOUR ACCOUNT';
+
+    }
+
+});
+
+document.getElementById('forgotPassword')
+.addEventListener('click', async function(event) {
+
+    event.preventDefault();
+
+    const email =
+        document.getElementById('email').value.trim();
+
+    if (!email) {
+        showMessage(
+            'Enter your email address first.',
+            'error'
+        );
+        return;
+    }
+
+    try {
+
+        const { error } = await supabase.auth
+        .resetPasswordForEmail(email);
+
+        if (error) throw error;
+
+        showMessage(
+            'Password reset instructions have been sent if this email is registered.',
+            'success'
+        );
+
+    } catch (error) {
+
+        showMessage(error.message, 'error');
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

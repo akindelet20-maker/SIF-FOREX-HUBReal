@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Account | SIF FOREX HUB</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #071426, #102b3d, #071426);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 430px;
+    background: #10243a;
+    padding: 30px 24px;
+    border-radius: 18px;
+    border: 1px solid #23445c;
+    box-shadow: 0 15px 40px rgba(0,0,0,.3);
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.logo h1 {
+    color: #24e69a;
+    font-size: 27px;
+}
+
+.logo p {
+    color: #aabaca;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #aabaca;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 13px;
+    color: #d5e1eb;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #34536a;
+    background: #091a2c;
+    border-radius: 9px;
+    color: white;
+    outline: none;
+    margin-bottom: 17px;
+}
+
+input:focus {
+    border-color: #24e69a;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: #24e69a;
+    color: #071426;
+    border: none;
+    border-radius: 9px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+.message {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+    display: none;
+    overflow-wrap: anywhere;
+}
+
+.success {
+    background: #123d32;
+    color: #70ffc4;
+}
+
+.error {
+    background: #4a2028;
+    color: #ffaaaa;
+}
+
+.login {
+    text-align: center;
+    margin-top: 22px;
+    color: #aabaca;
+    font-size: 14px;
+}
+
+a {
+    color: #24e69a;
+    text-decoration: none;
+}
+
+.footer {
+    text-align: center;
+    color: #71869a;
+    font-size: 11px;
+    margin-top: 25px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="logo">
+        <h1>SIF FOREX HUB</h1>
+        <p>LEARN TO EARN • TRADE WITH KNOWLEDGE</p>
+    </div>
+
+    <h2>Create Your Account</h2>
+
+    <p class="subtitle">
+        Join our trading education community.
+    </p>
+
+    <form id="registerForm">
+
+        <label>Full Name</label>
+        <input
+            type="text"
+            id="fullName"
+            placeholder="Enter your full name"
+            required
+        >
+
+        <label>Username</label>
+        <input
+            type="text"
+            id="username"
+            placeholder="Choose a username"
+            minlength="3"
+            maxlength="20"
+            pattern="[A-Za-z0-9_]+"
+            required
+        >
+
+        <label>Email Address</label>
+        <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+        >
+
+        <label>Password</label>
+        <input
+            type="password"
+            id="password"
+            placeholder="Minimum 8 characters"
+            minlength="8"
+            required
+        >
+
+        <label>Confirm Password</label>
+        <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Enter password again"
+            minlength="8"
+            required
+        >
+
+        <button type="submit" id="registerButton">
+            CREATE ACCOUNT
+        </button>
+
+        <div id="message" class="message"></div>
+
+    </form>
+
+    <div class="login">
+        Already have an account?
+        <a href="login.html">Login here</a>
+    </div>
+
+    <div class="footer">
+        © 2026 SIF FOREX HUB. All Rights Reserved.
+    </div>
+
+</div>
+
+<script type="module">
+
+import { createClient } from
+'https://esm.sh/@supabase/supabase-js@2';
+
+const SUPABASE_URL =
+'https://kfaqrjhwbmkawnxkcrld.supabase.co';
+
+const SUPABASE_KEY =
+'sb_publishable_-kdg7Pmr_mWPPfnv83VTMA_n2hhKXhk';
+
+const supabase = createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+const form = document.getElementById('registerForm');
+const button = document.getElementById('registerButton');
+const message = document.getElementById('message');
+
+function showMessage(text, type) {
+    message.textContent = text;
+    message.className = 'message ' + type;
+    message.style.display = 'block';
+}
+
+form.addEventListener('submit', async function(event) {
+
+    event.preventDefault();
+
+    const fullName =
+        document.getElementById('fullName').value.trim();
+
+    const username =
+        document.getElementById('username').value.trim().toLowerCase();
+
+    const email =
+        document.getElementById('email').value.trim();
+
+    const password =
+        document.getElementById('password').value;
+
+    const confirmPassword =
+        document.getElementById('confirmPassword').value;
+
+    if (password !== confirmPassword) {
+        showMessage('Your passwords do not match.', 'error');
+        return;
+    }
+
+    if (!/^[a-zA-Z0-9_]{3,20}$/.test(username)) {
+        showMessage(
+            'Username must contain 3–20 letters, numbers or underscores.',
+            'error'
+        );
+        return;
+    }
+
+    if (password.length < 8) {
+        showMessage(
+            'Your password must contain at least 8 characters.',
+            'error'
+        );
+        return;
+    }
+
+    button.disabled = true;
+    button.textContent = 'CREATING ACCOUNT...';
+
+    message.style.display = 'none';
+
+    try {
+
+        const { data, error } = await supabase.auth.signUp({
+
+            email: email,
+
+            password: password,
+
+            options: {
+                data: {
+                    full_name: fullName,
+                    username: username
+                }
+            }
+
+        });
+
+        if (error) {
+            throw error;
+        }
+
+        if (data.session) {
+
+            showMessage(
+                'Account created successfully! Opening your dashboard...',
+                'success'
+            );
+
+            setTimeout(() => {
+                window.location.href = 'dashboard.html';
+            }, 1500);
+
+        } else {
+
+            showMessage(
+                'Registration successful! Please check your email and click the confirmation link before logging in.',
+                'success'
+            );
+
+            button.textContent = 'ACCOUNT CREATED';
+
+        }
+
+    } catch (error) {
+
+        showMessage(
+            error.message || 'Registration failed. Please try again.',
+            'error'
+        );
+
+        button.disabled = false;
+        button.textContent = 'CREATE ACCOUNT';
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
