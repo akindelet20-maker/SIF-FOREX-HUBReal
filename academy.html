@@ -3,645 +3,443 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Forex Academy | SIF FOREX HUB</title>
-
+<meta name="description" content="Start learning forex with four short beginner lessons, quick checks and a short quiz. Open to everyone; no account required.">
+<title>Start Here: Forex Academy | SIF FOREX HUB</title>
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+:root {
+    color-scheme: dark;
+    --page: #071426;
+    --panel: #10243a;
+    --panel-deep: #091a2c;
+    --line: #23445c;
+    --text: #f4f8fc;
+    --muted: #b3c2d1;
+    --accent: #24e69a;
+    --accent-dark: #073b31;
+    --warning: #ffd58a;
 }
-
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
-    background: #071426;
-    color: white;
+    margin: 0;
+    background: var(--page);
+    color: var(--text);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.6;
 }
-
-header {
-    background: #10243a;
-    padding: 18px;
-    border-bottom: 1px solid #23445c;
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible {
+    outline: 3px solid #9af5cf;
+    outline-offset: 3px;
 }
-
-header a {
-    color: #24e69a;
-    text-decoration: none;
+.site-header {
+    padding: 16px max(20px, calc((100% - 1080px) / 2));
+    background: #0a1220;
+    border-bottom: 1px solid var(--line);
 }
-
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 22px 18px;
-}
-
+.site-header a { font-size: 14px; font-weight: 700; text-decoration: none; }
+.container { width: min(100% - 32px, 1040px); margin: 0 auto; padding: 28px 0 56px; }
 .hero {
-    background: linear-gradient(120deg, #123d42, #173b60);
-    padding: 28px;
-    border-radius: 15px;
-    margin-bottom: 28px;
-}
-
-.hero h1 {
-    color: #24e69a;
-    font-size: 27px;
-    margin-bottom: 12px;
-}
-
-.hero p {
-    color: #d5e1eb;
-    line-height: 1.7;
-}
-
-.section-title {
-    margin: 28px 0 16px;
-}
-
-.courses {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-}
-
-.course {
-    background: #10243a;
-    border: 1px solid #23445c;
-    border-radius: 13px;
-    padding: 20px;
-}
-
-.course h3 {
-    color: #24e69a;
-    margin-bottom: 10px;
-}
-
-.course p {
-    color: #aabaca;
-    font-size: 13px;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-.lesson {
-    background: #091a2c;
-    border: 1px solid #23445c;
-    border-radius: 9px;
-    margin-top: 9px;
+    position: relative;
     overflow: hidden;
+    padding: clamp(24px, 5vw, 48px);
+    border: 1px solid #1d6256;
+    border-radius: 20px;
+    background: radial-gradient(circle at 95% 10%, #1c5365 0, transparent 38%), linear-gradient(130deg, #103b3d, #10243a 72%);
 }
-
-.lesson button {
-    width: 100%;
-    padding: 14px;
-    border: none;
-    background: transparent;
-    color: white;
-    text-align: left;
-    font-size: 14px;
+.eyebrow { color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.hero h1 { max-width: 720px; margin: 8px 0 12px; font-size: clamp(30px, 5vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+.hero p { max-width: 690px; margin: 0; color: #d5e1eb; }
+.hero-note { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 22px; color: #c9d8e3; font-size: 13px; }
+.hero-note span::before { content: "• "; color: var(--accent); font-weight: 900; }
+.section-heading { margin: 34px 0 14px; }
+.section-heading h2 { margin: 0; font-size: clamp(23px, 4vw, 32px); }
+.section-heading p { margin: 6px 0 0; color: var(--muted); }
+.path-summary, .quiz, .more-topics { margin-top: 22px; padding: 22px; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; }
+.path-summary { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px 24px; align-items: center; }
+.path-summary strong { display: block; }
+.progress-caption { color: var(--muted); font-size: 13px; }
+progress { width: 100%; height: 10px; grid-column: 1 / -1; accent-color: var(--accent); }
+progress::-webkit-progress-bar { background: #071426; border-radius: 99px; }
+progress::-webkit-progress-value { background: var(--accent); border-radius: 99px; }
+progress::-moz-progress-bar { background: var(--accent); border-radius: 99px; }
+.storage-note { grid-column: 1 / -1; margin: 0; color: var(--muted); font-size: 12px; }
+.reset-button, .check-button, .continue-button, .quiz-submit {
+    min-height: 42px;
+    border: 0;
+    border-radius: 9px;
+    padding: 10px 15px;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 800;
     cursor: pointer;
 }
-
-.lesson button:hover {
-    color: #24e69a;
+.reset-button { border: 1px solid #426074; background: transparent; color: #e2edf5; }
+.reset-button:hover { border-color: var(--accent); color: var(--accent); }
+.lesson-list { display: grid; gap: 14px; }
+.lesson-card { padding: clamp(18px, 3vw, 26px); border: 1px solid var(--line); border-radius: 16px; background: var(--panel); scroll-margin-top: 18px; }
+.lesson-card.is-complete { border-color: #277c67; }
+.lesson-topline { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.step-label { display: block; color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.lesson-card h3 { margin: 3px 0 8px; font-size: 21px; line-height: 1.3; }
+.lesson-state { flex: 0 0 auto; color: var(--muted); font-size: 12px; font-weight: 700; }
+.lesson-card.is-complete .lesson-state { color: var(--accent); }
+.lesson-copy { color: #d1dce6; }
+.lesson-copy p { margin: 8px 0; }
+.example { margin: 14px 0; padding: 12px 15px; border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; background: var(--panel-deep); color: #d8e5ef; }
+.quick-check { margin-top: 18px; padding-top: 17px; border-top: 1px solid var(--line); }
+.quick-check fieldset, .quiz fieldset { min-width: 0; margin: 0 0 14px; padding: 0; border: 0; }
+.quick-check legend, .quiz legend { margin-bottom: 9px; font-weight: 750; }
+.answer-option { display: flex; gap: 10px; align-items: flex-start; margin: 7px 0; padding: 10px 12px; border: 1px solid #28445a; border-radius: 9px; background: var(--panel-deep); cursor: pointer; }
+.answer-option:hover { border-color: #4d7a8c; }
+.answer-option input { margin: 4px 0 0; accent-color: var(--accent); }
+.check-button, .quiz-submit { background: var(--accent); color: #061b16; }
+.check-button:hover, .quiz-submit:hover, .continue-button:hover { filter: brightness(1.08); }
+.check-feedback, #quiz-result { min-height: 1.5em; margin: 10px 0 0; color: #c6d6e3; font-size: 14px; }
+.check-feedback.is-correct { color: var(--accent); }
+.check-feedback.is-retry { color: var(--warning); }
+.continue-button { display: block; margin-top: 12px; background: #d7f5e8; color: #07291e; }
+.quiz h2 { margin: 0 0 6px; font-size: 24px; }
+.quiz-intro { margin: 0 0 18px; color: var(--muted); }
+.quiz fieldset + fieldset { padding-top: 14px; border-top: 1px solid var(--line); }
+.more-topics > h2 { margin: 0 0 6px; font-size: 24px; }
+.more-topics > p { margin: 0 0 16px; color: var(--muted); }
+.topic-group { margin-top: 10px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel-deep); }
+.topic-group summary { color: #eaf3f8; font-weight: 750; cursor: pointer; }
+.topic-group ul { margin: 12px 0 0; padding-left: 22px; color: #c4d2de; }
+.topic-group li + li { margin-top: 8px; }
+.disclaimer { margin: 24px 0 0; padding: 15px 17px; border: 1px solid #5a4a2a; border-radius: 10px; color: #e8d9b8; font-size: 13px; }
+footer { padding: 20px; border-top: 1px solid #152c41; color: #8193a5; text-align: center; font-size: 12px; }
+[hidden] { display: none !important; }
+@media (max-width: 620px) {
+    .container { width: min(100% - 24px, 1040px); padding-top: 16px; }
+    .site-header { padding: 14px 16px; }
+    .path-summary { grid-template-columns: 1fr; }
+    progress, .storage-note { grid-column: 1; }
+    .reset-button { justify-self: start; }
+    .lesson-topline { gap: 8px; }
 }
-
-.content {
-    display: none;
-    padding: 14px;
-    color: #bdcbd8;
-    font-size: 13px;
-    line-height: 1.8;
-    border-top: 1px solid #23445c;
-}
-
-.content h4 {
-    color: #24e69a;
-    margin: 12px 0 5px;
-}
-
-.content ul {
-    padding-left: 20px;
-}
-
-.quiz {
-    background: #10243a;
-    padding: 22px;
-    border-radius: 13px;
-    border: 1px solid #23445c;
-    margin-top: 28px;
-}
-
-.quiz h2 {
-    color: #24e69a;
-    margin-bottom: 15px;
-}
-
-.quiz p {
-    margin-bottom: 13px;
-    line-height: 1.6;
-}
-
-.quiz label {
-    display: block;
-    padding: 10px;
-    background: #091a2c;
-    border-radius: 7px;
-    margin: 8px 0;
-    cursor: pointer;
-    font-size: 13px;
-}
-
-.quiz button {
-    background: #24e69a;
-    color: #071426;
-    border: none;
-    padding: 13px;
-    border-radius: 8px;
-    font-weight: bold;
-    margin-top: 15px;
-    width: 100%;
-}
-
-#quizResult {
-    margin-top: 15px;
-    color: #24e69a;
-    line-height: 1.6;
-}
-
-footer {
-    text-align: center;
-    padding: 25px;
-    color: #71869a;
-    font-size: 12px;
-}
-
-@media(max-width:650px) {
-    .courses {
-        grid-template-columns: 1fr;
-    }
-
-    .hero h1 {
-        font-size: 23px;
-    }
-}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
 </head>
-
 <body>
-
-<header>
-    <a href="index.html">← Home</a>
+<header class="site-header">
+    <a href="index.html">← SIF FOREX HUB home</a>
 </header>
-
-<div class="container">
-
-<section class="hero">
-
-    <h1>🎓 SIF FOREX ACADEMY</h1>
-
-    <p>
-        Welcome to your trading education centre.
-        Develop your understanding of the forex market,
-        technical analysis, Smart Money Concepts and
-        practical risk management. No account is required;
-        lesson and quiz progress is not saved between visits.
-    </p>
-
-</section>
-
-<h2 class="section-title">Our Learning Programmes</h2>
-
-<div class="courses">
-
-<!-- BEGINNER -->
-
-<div class="course">
-
-<h3>📘 BEGINNER COURSE</h3>
-
-<p>
-Start your forex journey by understanding the
-fundamentals of the foreign exchange market.
-</p>
-
-<div class="lesson">
-<button onclick="toggleLesson(this)">Lesson 1: Introduction to Forex ▼</button>
-<div class="content">
-<h4>What is Forex?</h4>
-Forex means Foreign Exchange. It is the global market
-where currencies are exchanged against one another.
-
-<h4>Example</h4>
-EUR/USD represents the euro against the US dollar.
-
-<h4>Important Terms</h4>
-<ul>
-<li>Currency pairs</li>
-<li>Base currency</li>
-<li>Quote currency</li>
-<li>Spread</li>
-<li>Leverage</li>
-<li>Broker</li>
-</ul>
-</div>
-</div>
-
-<div class="lesson">
-<button onclick="toggleLesson(this)">Lesson 2: Currency Pairs ▼</button>
-<div class="content">
-<h4>Types of Currency Pairs</h4>
-<ul>
-<li>Major pairs: EUR/USD, GBP/USD, USD/JPY.</li>
-<li>Minor pairs: EUR/GBP, EUR/JPY.</li>
-<li>Exotic pairs: USD/NGN and USD/TRY.</li>
-</ul>
-
-Currency pairs show the value of one currency
-relative to another.
-</div>
-</div>
-
-<div class="lesson">
-<button onclick="toggleLesson(this)">Lesson 3: Pips and Lots ▼</button>
-<div class="content">
-<h4>What is a Pip?</h4>
-A pip is a standard unit used to measure price movement.
-
-<h4>What is a Lot?</h4>
-A lot describes the size of a forex trade.
-
-<ul>
-<li>Standard lot: 100,000 units.</li>
-<li>Mini lot: 10,000 units.</li>
-<li>Micro lot: 1,000 units.</li>
-</ul>
-</div>
-</div>
-
-<div class="lesson">
-<button onclick="toggleLesson(this)">Lesson 4: Trading Sessions ▼</button>
-<div class="content">
-The four commonly discussed forex trading sessions are:
-
-<ul>
-<li>Sydney session.</li>
-<li>Tokyo session.</li>
-<li>London session.</li>
-<li>New York session.</li>
-</ul>
-
-Session opening times change with daylight saving
-time and should be checked against the relevant
-market calendar.
-</div>
-</div>
-
-</div>
-
-<!-- INTERMEDIATE -->
-
-<div class="course">
-
-<h3>📗 INTERMEDIATE COURSE</h3>
-
-<p>
-Develop your technical analysis and learn how
-price moves across different market conditions.
-</p>
-
-<div class="lesson">
-<button onclick="toggleLesson(this)">Lesson 5: Market Structure ▼</button>
-<div class="content">
-<h4>What is Market Structure?</h4>
-Market structure describes how price forms
-swing highs and swing lows.
-
-<h4>Uptrend</h4>
-Higher Highs (HH) and Higher Lows (HL).
-
-<h4>Downtrend</h4>
-Lower Highs (LH) and Lower Lows (LL).
-
-<h4>Ranging Market</h4>
-Price moves between support and resistance
-without a clear directional trend.
-</div>
-</div>
-
-<div class="lesson">
-<button onclick="toggleLesson(this)">Lesson 6: Support and Resistance ▼</button>
-<div class="content">
-<h4>Support</h4>
-An area where buying interest has previously
-prevented or slowed a decline.
-
-<h4>Resistance</h4>
-An area where selling interest has previously
-prevented or slowed a rise.
-
-These are zones of interest, not guaranteed
-reversal points.
-</div>
-</div>
-
-<div class="lesson">
-<button onclick="toggleLesson(this)">Lesson 7: Trend Analysis ▼</button>
-<div class="content">
-<h4>Three Market Conditions</h4>
-<ul>
-<li>Bullish trend: generally rising prices.</li>
-<li>Bearish trend: generally falling prices.</li>
-<li>Sideways market: price moving within a range.</li>
-</ul>
-
-Always consider the timeframe when analysing
-market direction.
-</div>
-</div>
-
-<div class="lesson">
-<button onclick="toggleLesson(this)">Lesson 8: Risk Management ▼</button>
-<div class="content">
-<h4>Why Risk Management Matters</h4>
-Risk management helps control potential losses.
-
-Important principles:
-
-<ul>
-<li>Know your risk before entering a trade.</li>
-<li>Use an appropriate stop loss.</li>
-<li>Avoid excessive leverage.</li>
-<li>Do not risk money you cannot afford to lose.</li>
-<li>Maintain a trading journal.</li>
-</ul>
-</div>
-</div>
-
-</div>
-
-<!-- ADVANCED SMC -->
-
-<div class="course">
-
-<h3>📕 ADVANCED SMC COURSE</h3>
-
-<p>
-Explore Smart Money Concepts and advanced
-price-action analysis.
-</p>
-
-<div class="lesson">
-<button onclick="toggleLesson(this)">Lesson 9: Liquidity ▼</button>
-<div class="content">
-<h4>What is Liquidity?</h4>
-In trading analysis, liquidity refers to areas where
-orders may be concentrated.
-
-<h4>Common Liquidity Areas</h4>
-<ul>
-<li>Equal highs.</li>
-<li>Equal lows.</li>
-<li>Previous day high.</li>
-<li>Previous day low.</li>
-<li>Previous swing highs and lows.</li>
-</ul>
-</div>
-</div>
-
-<div class="lesson">
-<button onclick="toggleLesson(this)">Lesson 10: Break of Structure (BOS) ▼</button>
-<div class="content">
-<h4>What is BOS?</h4>
-Break of Structure describes price breaking an
-important swing level in the direction of the
-existing market structure.
-
-It can provide evidence of continuation,
-but context and confirmation matter.
-</div>
-</div>
-
-<div class="lesson">
-<button onclick="toggleLesson(this)">Lesson 11: Change of Character (CHoCH) ▼</button>
-<div class="content">
-<h4>What is CHoCH?</h4>
-Change of Character describes a potential
-shift in price behaviour when price breaks
-a significant swing point against the previous
-direction.
-
-It may indicate a possible change in market
-direction, but does not guarantee one.
-</div>
-</div>
-
-<div class="lesson">
-<button onclick="toggleLesson(this)">Lesson 12: Fair Value Gap (FVG) ▼</button>
-<div class="content">
-<h4>What is FVG?</h4>
-A Fair Value Gap is a three-candle price pattern
-that traders interpret as an imbalance in price
-delivery.
-
-<h4>Types</h4>
-<ul>
-<li>Bullish FVG.</li>
-<li>Bearish FVG.</li>
-</ul>
-
-Traders may study these areas as potential
-zones of interest.
-</div>
-</div>
-
-</div>
-
-<!-- PSYCHOLOGY -->
-
-<div class="course">
-
-<h3>🧠 TRADING PSYCHOLOGY</h3>
-
-<p>
-Understand the mental discipline required
-for responsible trading.
-</p>
-
-<div class="lesson">
-<button onclick="toggleLesson(this)">Lesson 13: Trading Discipline ▼</button>
-<div class="content">
-Discipline means following a trading plan
-rather than making emotional decisions.
-
-Important habits:
-
-<ul>
-<li>Follow your trading rules.</li>
-<li>Avoid revenge trading.</li>
-<li>Accept that losses are part of trading.</li>
-<li>Do not chase the market.</li>
-<li>Review your performance regularly.</li>
-</ul>
-</div>
-</div>
-
-<div class="lesson">
-<button onclick="toggleLesson(this)">Lesson 14: Trading Plan ▼</button>
-<div class="content">
-A trading plan should contain:
-
-<ul>
-<li>Trading strategy.</li>
-<li>Preferred currency pairs.</li>
-<li>Trading sessions.</li>
-<li>Entry conditions.</li>
-<li>Stop-loss rules.</li>
-<li>Take-profit rules.</li>
-<li>Risk limits.</li>
-</ul>
-</div>
-</div>
-
-</div>
-
-</div>
-
-<!-- QUIZ -->
-
-<section class="quiz">
-
-<h2>📝 Forex Knowledge Test</h2>
-
-<p><strong>Question 1:</strong> What does Forex mean?</p>
-
-<label>
-<input type="radio" name="q1" value="a">
- Foreign Exchange
-</label>
-
-<label>
-<input type="radio" name="q1" value="b">
- Foreign Examination
-</label>
-
-<label>
-<input type="radio" name="q1" value="c">
- Financial Exchange Office
-</label>
-
-<br>
-
-<p><strong>Question 2:</strong> What is a bullish market?</p>
-
-<label>
-<input type="radio" name="q2" value="a">
- A market generally moving downwards
-</label>
-
-<label>
-<input type="radio" name="q2" value="b">
- A market generally moving upwards
-</label>
-
-<label>
-<input type="radio" name="q2" value="c">
- A market that never moves
-</label>
-
-<br>
-
-<p><strong>Question 3:</strong> What does BOS mean?</p>
-
-<label>
-<input type="radio" name="q3" value="a">
- Balance of Sales
-</label>
-
-<label>
-<input type="radio" name="q3" value="b">
- Break of Structure
-</label>
-
-<label>
-<input type="radio" name="q3" value="c">
- Bank of Signals
-</label>
-
-<button onclick="checkQuiz()">SUBMIT MY ANSWERS</button>
-
-<div id="quizResult" role="status" aria-live="polite" aria-atomic="true"></div>
-
-</section>
-
-</div>
-
-<footer>
-© 2026 SIF FOREX HUB V2.0. All Rights Reserved.
-</footer>
-
+<main class="container">
+    <section class="hero" aria-labelledby="page-title">
+        <span class="eyebrow">Forex Academy · Beginner path</span>
+        <h1 id="page-title">Start here: your first forex lessons</h1>
+        <p>Take four short lessons in order. Each ends with a quick check and a clear next step; finish with a five-question quiz. The lessons and quiz are open to everyone, with no account required.</p>
+        <div class="hero-note" aria-label="Path details">
+            <span>4 short lessons</span>
+            <span>Quick check after each</span>
+            <span>Free to explore</span>
+        </div>
+    </section>
+
+    <section class="path-summary" aria-label="Your learning progress">
+        <div>
+            <strong id="progress-label">Your progress: 0 of 4 lessons complete</strong>
+            <span class="progress-caption">Complete each quick check to mark a lesson done.</span>
+        </div>
+        <button class="reset-button" id="reset-progress" type="button">Reset progress</button>
+        <progress id="path-progress" max="4" value="0" aria-label="Beginner path progress">0 of 4</progress>
+        <p class="storage-note" id="storage-note">Progress is saved on this device only. Sign-in is not needed to learn; account-based progress sync is not set up yet.</p>
+    </section>
+
+    <section aria-labelledby="start-title">
+        <div class="section-heading">
+            <h2 id="start-title">The Start Here path</h2>
+            <p>Read a lesson, answer its check, then use the next-step button to keep your place.</p>
+        </div>
+        <div class="lesson-list">
+            <article class="lesson-card" id="lesson-1" data-lesson="1">
+                <div class="lesson-topline">
+                    <div><span class="step-label">Lesson 1 · The basics</span><h3 tabindex="-1">What forex is—and how to read a pair</h3></div>
+                    <span class="lesson-state" aria-label="Lesson status">Lesson 1 of 4</span>
+                </div>
+                <div class="lesson-copy">
+                    <p>Forex (foreign exchange) is a market where one currency is exchanged for another. A pair compares the value of its first currency with its second.</p>
+                    <div class="example"><strong>Example: EUR/USD</strong><br>EUR is the <em>base currency</em>; USD is the <em>quote currency</em>. A price of 1.0800 means one euro is quoted at 1.08 US dollars. It is an illustration, not a live quote.</div>
+                    <p>A pair’s price can move up or down. Knowing the pair’s direction does not tell you whether a trade is suitable or profitable.</p>
+                </div>
+                <div class="quick-check">
+                    <fieldset>
+                        <legend>Quick check: In EUR/USD, which currency is the base currency?</legend>
+                        <label class="answer-option"><input type="radio" name="check-1" value="a"> <span>EUR, the first currency in the pair</span></label>
+                        <label class="answer-option"><input type="radio" name="check-1" value="b"> <span>USD, the second currency in the pair</span></label>
+                    </fieldset>
+                    <button class="check-button" type="button" data-check="1">Check answer</button>
+                    <p class="check-feedback" id="feedback-1" role="status" aria-live="polite"></p>
+                    <button class="continue-button" type="button" data-next="2" hidden>Continue to lesson 2 →</button>
+                </div>
+            </article>
+
+            <article class="lesson-card" id="lesson-2" data-lesson="2">
+                <div class="lesson-topline">
+                    <div><span class="step-label">Lesson 2 · Price and costs</span><h3 tabindex="-1">Pips and the spread</h3></div>
+                    <span class="lesson-state" aria-label="Lesson status">Lesson 2 of 4</span>
+                </div>
+                <div class="lesson-copy">
+                    <p>A <em>pip</em> is a commonly used unit for describing a currency pair’s price movement. For many pairs it is 0.0001; for many yen pairs it is 0.01. Some platforms display an extra fractional pip.</p>
+                    <div class="example"><strong>The spread</strong><br>The spread is the difference between a market’s buy (ask) and sell (bid) prices. It is one of the costs to understand before trading, and it can vary with the pair and market conditions.</div>
+                    <p>Actual pricing and costs depend on the provider and account terms. Check those details rather than assuming every pair or platform is the same.</p>
+                </div>
+                <div class="quick-check">
+                    <fieldset>
+                        <legend>Quick check: What does the spread describe?</legend>
+                        <label class="answer-option"><input type="radio" name="check-2" value="a"> <span>The difference between the ask and bid prices</span></label>
+                        <label class="answer-option"><input type="radio" name="check-2" value="b"> <span>A guarantee that a trade will close without a loss</span></label>
+                    </fieldset>
+                    <button class="check-button" type="button" data-check="2">Check answer</button>
+                    <p class="check-feedback" id="feedback-2" role="status" aria-live="polite"></p>
+                    <button class="continue-button" type="button" data-next="3" hidden>Continue to lesson 3 →</button>
+                </div>
+            </article>
+
+            <article class="lesson-card" id="lesson-3" data-lesson="3">
+                <div class="lesson-topline">
+                    <div><span class="step-label">Lesson 3 · Leverage and risk</span><h3 tabindex="-1">Leverage can magnify outcomes</h3></div>
+                    <span class="lesson-state" aria-label="Lesson status">Lesson 3 of 4</span>
+                </div>
+                <div class="lesson-copy">
+                    <p><em>Leverage</em> lets a trader control a larger market exposure than the funds set aside as margin. Margin is collateral required to maintain that exposure; it is not a cap on possible loss.</p>
+                    <div class="example"><strong>Keep in mind</strong><br>Leverage can magnify gains and losses. A relatively small market move can have a large effect on account equity, and losses can exceed expectations. Rules and protections vary by provider and location.</div>
+                    <p>Understand the provider’s leverage, margin and close-out terms before using any leveraged product. Practising on this site does not remove real-world risk.</p>
+                </div>
+                <div class="quick-check">
+                    <fieldset>
+                        <legend>Quick check: What is a key effect of leverage?</legend>
+                        <label class="answer-option"><input type="radio" name="check-3" value="a"> <span>It makes possible losses disappear</span></label>
+                        <label class="answer-option"><input type="radio" name="check-3" value="b"> <span>It can magnify both gains and losses</span></label>
+                    </fieldset>
+                    <button class="check-button" type="button" data-check="3">Check answer</button>
+                    <p class="check-feedback" id="feedback-3" role="status" aria-live="polite"></p>
+                    <button class="continue-button" type="button" data-next="4" hidden>Continue to lesson 4 →</button>
+                </div>
+            </article>
+
+            <article class="lesson-card" id="lesson-4" data-lesson="4">
+                <div class="lesson-topline">
+                    <div><span class="step-label">Lesson 4 · Before you practise</span><h3 tabindex="-1">Plan first; protect your limits</h3></div>
+                    <span class="lesson-state" aria-label="Lesson status">Lesson 4 of 4</span>
+                </div>
+                <div class="lesson-copy">
+                    <p>A trading plan sets out the conditions you would use to make and review a decision. It can include what you are learning, how you would enter and exit a practice trade, and what would make you stand aside.</p>
+                    <div class="example"><strong>Before a practice trade</strong><br>Know the possible loss, choose a position size that fits your own limits, and decide how you will respond if the idea is wrong. Stop orders may not fill at the requested price in fast or gapping markets.</div>
+                    <p>There is no universally safe risk amount. Never trade money you cannot afford to lose, and do not treat this learning material as personal financial advice.</p>
+                </div>
+                <div class="quick-check">
+                    <fieldset>
+                        <legend>Quick check: Why set your limits before entering a trade?</legend>
+                        <label class="answer-option"><input type="radio" name="check-4" value="a"> <span>To know the possible loss and avoid making the decision impulsively</span></label>
+                        <label class="answer-option"><input type="radio" name="check-4" value="b"> <span>To make sure the trade will be profitable</span></label>
+                    </fieldset>
+                    <button class="check-button" type="button" data-check="4">Check answer</button>
+                    <p class="check-feedback" id="feedback-4" role="status" aria-live="polite"></p>
+                    <button class="continue-button" type="button" data-next="quiz" hidden>Continue to the short quiz →</button>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="quiz" id="first-quiz" aria-labelledby="quiz-title">
+        <span class="eyebrow">Quick review · 5 questions</span>
+        <h2 id="quiz-title">Your first forex quiz</h2>
+        <p class="quiz-intro">Choose one answer for each question, then check your score. You can retry as often as you like.</p>
+        <form id="quiz-form">
+            <fieldset>
+                <legend>1. In GBP/USD, which currency is the quote currency?</legend>
+                <label class="answer-option"><input type="radio" name="q1" value="a"> <span>GBP</span></label>
+                <label class="answer-option"><input type="radio" name="q1" value="b"> <span>USD</span></label>
+            </fieldset>
+            <fieldset>
+                <legend>2. What does the spread compare?</legend>
+                <label class="answer-option"><input type="radio" name="q2" value="a"> <span>The ask and bid prices</span></label>
+                <label class="answer-option"><input type="radio" name="q2" value="b"> <span>Two different trading sessions</span></label>
+            </fieldset>
+            <fieldset>
+                <legend>3. What can leverage do?</legend>
+                <label class="answer-option"><input type="radio" name="q3" value="a"> <span>Magnify both gains and losses</span></label>
+                <label class="answer-option"><input type="radio" name="q3" value="b"> <span>Guarantee a maximum loss in all conditions</span></label>
+            </fieldset>
+            <fieldset>
+                <legend>4. What is a sensible purpose of a trading plan?</legend>
+                <label class="answer-option"><input type="radio" name="q4" value="a"> <span>To make every trade profitable</span></label>
+                <label class="answer-option"><input type="radio" name="q4" value="b"> <span>To define a process and limits before a decision</span></label>
+            </fieldset>
+            <fieldset>
+                <legend>5. Do these lessons or quiz results predict future trading performance?</legend>
+                <label class="answer-option"><input type="radio" name="q5" value="a"> <span>Yes, a high score predicts future profits</span></label>
+                <label class="answer-option"><input type="radio" name="q5" value="b"> <span>No, they are educational and do not predict outcomes</span></label>
+            </fieldset>
+            <button class="quiz-submit" type="submit">Check my score</button>
+            <div id="quiz-result" role="status" aria-live="polite" aria-atomic="true"></div>
+        </form>
+    </section>
+
+    <section class="more-topics" aria-labelledby="more-title">
+        <h2 id="more-title">Explore more topics</h2>
+        <p>When you are ready, continue with the existing intermediate and advanced material.</p>
+        <details class="topic-group">
+            <summary>Intermediate: market structure, trends and risk</summary>
+            <ul>
+                <li><strong>Market structure:</strong> swing highs and lows can help describe an uptrend, downtrend or range; they do not guarantee what happens next.</li>
+                <li><strong>Support and resistance:</strong> areas where buying or selling interest has previously slowed a move. These are zones of interest, not guaranteed turning points.</li>
+                <li><strong>Trend analysis:</strong> describe a market as generally rising, falling or moving sideways, while keeping the chosen timeframe in view.</li>
+                <li><strong>Risk management:</strong> understand possible loss, position size, stop orders and leverage before practice; no tool prevents all losses.</li>
+            </ul>
+        </details>
+        <details class="topic-group">
+            <summary>Advanced: Smart Money Concepts (SMC)</summary>
+            <ul>
+                <li><strong>Liquidity:</strong> traders may study areas where orders could be concentrated, such as prior highs and lows; this is an analytical idea, not a promise of price behaviour.</li>
+                <li><strong>Break of Structure (BOS):</strong> a break of a swing level in the direction of a described structure, which may be interpreted as continuation evidence.</li>
+                <li><strong>Change of Character (CHoCH):</strong> a break against a prior direction that some traders watch for a possible shift; it does not confirm a reversal.</li>
+                <li><strong>Fair Value Gap (FVG):</strong> a three-candle pattern some traders interpret as an imbalance and study as a possible area of interest.</li>
+            </ul>
+        </details>
+        <details class="topic-group">
+            <summary>Psychology and planning</summary>
+            <ul>
+                <li><strong>Discipline:</strong> practise following a written process rather than chasing a move or reacting emotionally to a loss.</li>
+                <li><strong>Trading plan:</strong> write down the conditions, review process and risk limits you intend to follow. A plan cannot guarantee a result.</li>
+            </ul>
+        </details>
+    </section>
+
+    <p class="disclaimer">Forex and leveraged products involve substantial risk and may not be suitable for everyone. This material is for general education, not personal financial advice, a trade signal or a promise of results.</p>
+</main>
+<footer>© 2026 SIF FOREX HUB · Learn at your own pace</footer>
 <script>
-
-function toggleLesson(button) {
-    const content = button.nextElementSibling;
-    const isOpen = button.getAttribute("aria-expanded") === "true";
-    button.setAttribute("aria-expanded", String(!isOpen));
-    content.hidden = isOpen;
-    content.style.display = isOpen ? "none" : "block";
-}
-
-document.querySelectorAll(".lesson > button").forEach((button, index) => {
-    const content = button.nextElementSibling;
-    if (!content) return;
-    content.id = "lesson-content-" + (index + 1);
-    content.hidden = true;
-    button.setAttribute("aria-controls", content.id);
-    button.setAttribute("aria-expanded", "false");
-});
-
-function checkQuiz() {
-
+(() => {
+    const STORAGE_KEY = "sifForexAcademyStartHere.v1";
     const answers = {
-        q1: "a",
-        q2: "b",
-        q3: "b"
+        "1": { correct: "a", explanation: "Correct. In EUR/USD, EUR is first, so it is the base currency." },
+        "2": { correct: "a", explanation: "Correct. The spread is the difference between the ask and bid prices." },
+        "3": { correct: "b", explanation: "Correct. Leverage can magnify both gains and losses." },
+        "4": { correct: "a", explanation: "Correct. Setting limits first helps you understand possible loss and follow a planned process; it cannot guarantee profit." }
     };
+    const quizAnswers = [
+        { correct: "b", explanation: "USD is the second currency in GBP/USD, so it is the quote currency." },
+        { correct: "a", explanation: "The spread is the difference between the ask and bid prices." },
+        { correct: "a", explanation: "Leverage can magnify gains and losses." },
+        { correct: "b", explanation: "A plan can define a process and limits, but cannot ensure a profitable outcome." },
+        { correct: "b", explanation: "A learning quiz does not predict future market outcomes or personal performance." }
+    ];
+    const validIds = ["1", "2", "3", "4"];
+    let completed = new Set();
+    let storageAvailable = true;
 
-    let score = 0;
-    let unanswered = 0;
-
-    for (let question in answers) {
-
-        const selected = document.querySelector(
-            'input[name="' + question + '"]:checked'
-        );
-
-        if (!selected) {
-            unanswered++;
-        } else if (selected.value === answers[question]) {
-            score++;
+    try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
+        if (saved && Array.isArray(saved.completed)) {
+            completed = new Set(saved.completed.map(String).filter(id => validIds.includes(id)));
         }
-
+    } catch (error) {
+        storageAvailable = false;
     }
 
-    const result = document.getElementById("quizResult");
+    const progress = document.getElementById("path-progress");
+    const progressLabel = document.getElementById("progress-label");
+    const storageNote = document.getElementById("storage-note");
 
-    if (unanswered > 0) {
-        result.textContent =
-        "Please answer all three questions before submitting.";
-        return;
+    function updateProgress() {
+        progress.value = completed.size;
+        progressLabel.textContent = `Your progress: ${completed.size} of 4 lessons complete`;
+        if (!storageAvailable) {
+            storageNote.textContent = "Progress will last only for this visit because this browser is not allowing local storage.";
+        }
+        document.querySelectorAll("[data-lesson]").forEach(card => {
+            const id = card.dataset.lesson;
+            const isComplete = completed.has(id);
+            const state = card.querySelector(".lesson-state");
+            const continueButton = card.querySelector(".continue-button");
+            card.classList.toggle("is-complete", isComplete);
+            state.textContent = isComplete ? "Complete" : `Lesson ${id} of 4`;
+            state.setAttribute("aria-label", isComplete ? "Lesson complete" : `Lesson ${id} of 4`);
+            continueButton.hidden = !isComplete;
+        });
     }
 
-    result.innerHTML =
-        "Your Score: <strong>" + score +
-        "/3</strong><br>" +
-        (score === 3
-        ? "Excellent work! You passed this test. 🎉"
-        : "Keep studying and try again. Learning takes practice!");
+    function saveProgress() {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify({ completed: [...completed] }));
+        } catch (error) {
+            storageAvailable = false;
+        }
+        updateProgress();
+    }
 
-}
+    document.querySelectorAll("[data-check]").forEach(button => {
+        button.addEventListener("click", () => {
+            const id = button.dataset.check;
+            const selected = document.querySelector(`input[name="check-${id}"]:checked`);
+            const feedback = document.getElementById(`feedback-${id}`);
+            feedback.classList.remove("is-correct", "is-retry");
+            if (!selected) {
+                feedback.textContent = "Choose an answer first, then check it.";
+                feedback.classList.add("is-retry");
+                return;
+            }
+            if (selected.value !== answers[id].correct) {
+                feedback.textContent = "Not quite. Review the lesson and try the other answer.";
+                feedback.classList.add("is-retry");
+                return;
+            }
+            feedback.textContent = answers[id].explanation;
+            feedback.classList.add("is-correct");
+            completed.add(id);
+            saveProgress();
+        });
+    });
 
+    document.querySelectorAll(".continue-button").forEach(button => {
+        button.addEventListener("click", () => {
+            const destination = button.dataset.next === "quiz" ? document.getElementById("first-quiz") : document.getElementById(`lesson-${button.dataset.next}`);
+            if (!destination) return;
+            destination.scrollIntoView({ behavior: "smooth", block: "start" });
+            const heading = destination.querySelector("h2, h3");
+            if (heading) heading.focus({ preventScroll: true });
+        });
+    });
+
+    document.getElementById("reset-progress").addEventListener("click", () => {
+        completed = new Set();
+        try { localStorage.removeItem(STORAGE_KEY); } catch (error) { storageAvailable = false; }
+        document.querySelectorAll(".check-feedback").forEach(feedback => {
+            feedback.textContent = "";
+            feedback.classList.remove("is-correct", "is-retry");
+        });
+        document.querySelectorAll(".quick-check input").forEach(input => { input.checked = false; });
+        updateProgress();
+    });
+
+    document.getElementById("quiz-form").addEventListener("submit", event => {
+        event.preventDefault();
+        const selected = quizAnswers.map((_, index) => document.querySelector(`input[name="q${index + 1}"]:checked`));
+        const result = document.getElementById("quiz-result");
+        result.replaceChildren();
+        if (selected.some(answer => !answer)) {
+            result.textContent = "Please answer all five questions before checking your score.";
+            return;
+        }
+        const score = selected.reduce((total, answer, index) => total + (answer.value === quizAnswers[index].correct ? 1 : 0), 0);
+        const heading = document.createElement("p");
+        heading.textContent = `Your score: ${score} out of 5. ${score === 5 ? "Excellent recall." : "Review any missed lesson and try again."}`;
+        result.append(heading);
+        const list = document.createElement("ul");
+        quizAnswers.forEach((item, index) => {
+            const line = document.createElement("li");
+            line.textContent = `${index + 1}. ${item.explanation}`;
+            list.append(line);
+        });
+        result.append(list);
+    });
+
+    updateProgress();
+})();
 </script>
-
 </body>
 </html>
