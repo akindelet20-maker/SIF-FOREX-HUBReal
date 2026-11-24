@@ -85,34 +85,43 @@
                 <h3>Trading Dashboard</h3>
             </div>
 
-            <span class="live-indicator">● DEMO PREVIEW</span>
+            <span class="live-indicator">● LIVE CHART</span>
         </div>
 
         <div class="market-card">
 
             <div class="market-heading">
-                <span>EUR/USD</span>
-                <span class="positive">+0.45%</span>
+                <span class="market-symbol">EUR/USD</span>
+                <span class="market-provider">TradingView · FX:EURUSD · 1H</span>
             </div>
 
-            <h2>1.08450</h2>
-
-            <p>Illustrative market price</p>
-
-            <div class="chart">
-                <div class="candle green" style="height:45%"></div>
-                <div class="candle red" style="height:35%"></div>
-                <div class="candle green" style="height:60%"></div>
-                <div class="candle green" style="height:72%"></div>
-                <div class="candle red" style="height:50%"></div>
-                <div class="candle green" style="height:80%"></div>
-                <div class="candle green" style="height:90%"></div>
-                <div class="candle red" style="height:65%"></div>
-                <div class="candle green" style="height:95%"></div>
-                <div class="candle green" style="height:100%"></div>
-                <div class="candle red" style="height:70%"></div>
-                <div class="candle green" style="height:85%"></div>
+            <div class="dashboard-chart" role="region" aria-label="Live EUR/USD chart from TradingView">
+                <div class="tradingview-widget-container">
+                    <div class="tradingview-widget-container__widget"></div>
+                    <script
+                        type="text/javascript"
+                        src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js"
+                        async>
+                    {
+                        "autosize": true,
+                        "symbol": "FX:EURUSD",
+                        "interval": "60",
+                        "timezone": "Africa/Lagos",
+                        "theme": "dark",
+                        "style": "1",
+                        "locale": "en",
+                        "allow_symbol_change": false,
+                        "hide_top_toolbar": true,
+                        "calendar": false,
+                        "support_host": "https://www.tradingview.com"
+                    }
+                    </script>
+                </div>
             </div>
+
+            <p class="market-data-note">
+                Indicative forex data is real-time per <a href="https://www.tradingview.com/widget-docs/faq/data/" target="_blank" rel="noopener noreferrer">TradingView</a>; availability may vary. If the chart doesn't load, <a href="charts.html">open the full chart →</a>
+            </p>
 
         </div>
 
