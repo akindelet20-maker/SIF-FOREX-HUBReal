@@ -1,432 +1,412 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>SIF FOREX HUB | Professional Trading Ecosystem</title><meta name="description" content="SIF FOREX HUB - Your complete trading ecosystem for chart analysis, trading education, market tools and performance tracking."><link rel="stylesheet" href="style.css"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"></head><body><header class="header"><a href="index.html" class="logo">
+    <span class="logo-icon">S</span>
+    <span>SIF <b>FOREX HUB</b></span>
+</a>
 
-<title>SIF FOREX HUB | Professional Trading Ecosystem</title>
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
-<meta name="description" content="Open forex lessons, charts, a practice simulator and a risk calculator without an account. Sign in for the personal journal or dashboard.">
+<nav id="navigation">
+    <a href="#home">Home</a>
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#about">About</a>
 
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-</head>
-
-<body>
-
-<header class="header">
-
-    <a href="index.html" class="logo">
-        <span class="logo-icon">S</span>
-        <span>SIF <b>FOREX HUB</b></span>
+    <a href="login.html" class="nav-login" id="nav-login">
+        Login
     </a>
 
-    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="navigation" aria-expanded="false" onclick="toggleMenu()">☰</button>
+    <a href="register.html" class="nav-register" id="nav-register">
+        Get Started
+    </a>
+</nav>
 
-    <nav id="navigation" aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#features">Features</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#about">About</a>
-        <a href="login.html" class="nav-login">Login</a>
-        <a href="register.html" class="nav-register">Create Account</a>
-    </nav>
+</header><main><section class="hero" id="home"><div class="hero-content">
 
-</header>
-
-
-<main>
-
-<section class="hero" id="home">
-
-    <div class="hero-content">
-
-        <div class="badge">
-            ✦ THE FUTURE OF SMART TRADING
-        </div>
-
-        <h1>
-            TRADE SMARTER.<br>
-            <span>LEARN FASTER.</span><br>
-            GROW BETTER.
-        </h1>
-
-        <p>
-            Explore forex lessons, charts, a virtual simulator and a risk calculator directly—no account required. Sign in only for the personal journal or dashboard. These tools are educational and do not guarantee trading outcomes.
-        </p>
-
-        <div class="hero-buttons">
-            <a href="academy.html" class="primary-btn">
-                Explore Free Lessons →
-            </a>
-
-            <a href="simulator.html" class="secondary-btn">
-                Open Practice Simulator
-            </a>
-        </div>
-
-        <div class="trust-text">
-            ✓ Open to guests
-            <span>✓ Learn & Practise</span>
-            <span>✓ No trading outcome is guaranteed</span>
-        </div>
-
+    <div class="badge">
+        ✦ THE FUTURE OF SMART TRADING
     </div>
 
+    <h1>
+        TRADE SMARTER.<br>
+        <span>LEARN FASTER.</span><br>
+        GROW BETTER.
+    </h1>
 
-    <div class="hero-dashboard">
+    <p>
+        Welcome to SIF FOREX HUB, your all-in-one trading ecosystem.
+        Access professional charting tools, AI-powered chart education,
+        trading simulators and advanced performance analytics.
+    </p>
 
-        <div class="dashboard-top">
-            <div>
-                <small>MARKET OVERVIEW</small>
-                <h3>Trading Dashboard</h3>
-            </div>
+    <div class="hero-buttons">
 
-            <span class="live-indicator">● LIVE CHART</span>
-        </div>
+        <a href="register.html" class="primary-btn auth-link">
+            Create Free Account →
+        </a>
 
-        <div class="market-card">
-
-            <div class="market-heading">
-                <div class="market-pair-selection">
-                    <label for="pair-selector">Choose currency pair</label>
-                    <select id="pair-selector" name="pair-selector">
-                        <option value="FX:EURUSD" selected>EUR/USD</option>
-                        <option value="FX:GBPUSD">GBP/USD</option>
-                        <option value="FX:USDJPY">USD/JPY</option>
-                        <option value="FX:USDCHF">USD/CHF</option>
-                        <option value="FX:USDCAD">USD/CAD</option>
-                        <option value="FX:AUDUSD">AUD/USD</option>
-                        <option value="FX:NZDUSD">NZD/USD</option>
-                    </select>
-                </div>
-                <span class="market-provider" id="market-provider" aria-live="polite">TradingView · FX:EURUSD · 1H</span>
-            </div>
-
-            <div class="dashboard-chart" role="region" aria-label="Live EUR/USD chart from TradingView">
-            </div>
-
-            <p class="market-data-note">
-                Indicative forex data is real-time per <a href="https://www.tradingview.com/widget-docs/faq/data/" target="_blank" rel="noopener noreferrer">TradingView</a>; availability may vary. If the chart doesn't load, <a href="charts.html">open the full chart →</a>
-            </p>
-
-        </div>
-
-
-        <div class="stats-grid">
-
-            <div class="stat-card">
-                <small>Trading Tools</small>
-                <h3>15+</h3>
-                <span>Learning tools</span>
-            </div>
-
-            <div class="stat-card">
-                <small>AI Assistant</small>
-                <h3>01</h3>
-                <span>Chart Coach</span>
-            </div>
-
-        </div>
-
-        <div class="dashboard-footer">
-            SIF FOREX HUB · YOUR TRADING JOURNEY STARTS HERE
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="features-section" id="features">
-
-    <div class="section-heading">
-        <span>OUR ECOSYSTEM</span>
-        <h2>Public Lessons & Practice Tools</h2>
-        <p>Open the lessons and non-personal tools directly. Sign in is reserved for account-specific features.</p>
-    </div>
-
-
-    <div class="features-grid">
-
-        <div class="feature-card">
-            <div class="feature-icon">📊</div>
-            <h3>Professional Charts</h3>
-            <p>Open the public TradingView chart view. No SIF account is required.</p>
-            <a href="charts.html">Explore Charts →</a>
-        </div>
-
-        <div class="feature-card">
-            <div class="feature-icon">🤖</div>
-            <h3>SIF AI Chart Coach</h3>
-            <p>Planned only. Chart uploads and AI analysis are not available yet.</p>
-            <a href="charts.html#ai-coach">See feature status →</a>
-        </div>
-
-        <div class="feature-card">
-            <div class="feature-icon">🎯</div>
-            <h3>Trading Simulator</h3>
-            <p>Practise with fictional funds. No account is required; practice data stays in this browser.</p>
-            <a href="simulator.html">Start Practising →</a>
-        </div>
-
-        <div class="feature-card">
-            <div class="feature-icon">📈</div>
-            <h3>Strategy Tester</h3>
-            <p>Not available yet. This site does not currently test strategies against historical data.</p>
-            <span class="coming-soon-label">Not available yet</span>
-        </div>
-
-        <div class="feature-card">
-            <div class="feature-icon">📓</div>
-            <h3>Trading Journal</h3>
-            <p>Sign in required. Your practice journal is stored locally under your signed-in account.</p>
-            <a href="journal.html">Open Journal →</a>
-        </div>
-
-        <div class="feature-card">
-            <div class="feature-icon">🧮</div>
-            <h3>Risk Calculator</h3>
-            <p>Use the in-browser estimate without an account. Estimates are not a guarantee of actual risk or results.</p>
-            <a href="calculator.html">Calculate Risk →</a>
-        </div>
-
-        <div class="feature-card">
-            <div class="feature-icon">🎓</div>
-            <h3>Forex Academy</h3>
-            <p>Start with four guided beginner lessons, quick checks and a short quiz. No account is required; progress stays on this device.</p>
-            <a href="academy.html">Start Here →</a>
-        </div>
-
-        <div class="feature-card">
-            <div class="feature-icon">⏪</div>
-            <h3>Market Replay</h3>
-            <p>Not available yet. Historical market replay is not currently implemented.</p>
-            <span class="coming-soon-label">Not available yet</span>
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="about-section" id="about">
-
-    <div class="about-content">
-
-        <span>WHY SIF FOREX HUB?</span>
-
-        <h2>Built for the Next Generation of Traders.</h2>
-
-        <p>
-            Our mission is to make professional trading education,
-            analytical tools and performance tracking accessible
-            to traders around the world.
-        </p>
-
-        <a href="academy.html" class="primary-btn">
-            Explore the Academy →
+        <a href="#features" class="secondary-btn">
+            Explore Features
         </a>
 
     </div>
 
-</section>
+    <div class="trust-text">
+        ✓ Beginner Friendly
+        <span>✓ Professional Tools</span>
+        <span>✓ Learn & Practise</span>
+    </div>
+
+</div>
 
 
-<section class="pricing-section" id="pricing">
+<div class="hero-dashboard">
 
-    <div class="section-heading">
+    <div class="dashboard-top">
+        <div>
+            <small>MARKET OVERVIEW</small>
+            <h3>Trading Dashboard</h3>
+        </div>
 
-        <span>MEMBERSHIP PLANS</span>
+        <span class="live-indicator">● DEMO PREVIEW</span>
+    </div>
 
-        <h2>Choose Your Trading Experience</h2>
+    <div class="market-card">
 
-        <p>Compare the planned tiers. Paid access and payment processing are not active.</p>
+        <div class="market-heading">
+            <span>EUR/USD</span>
+            <span class="positive">+0.45%</span>
+        </div>
+
+        <h2>1.08450</h2>
+
+        <p>Illustrative market price</p>
+
+        <div class="chart">
+            <div class="candle green" style="height:45%"></div>
+            <div class="candle red" style="height:35%"></div>
+            <div class="candle green" style="height:60%"></div>
+            <div class="candle green" style="height:72%"></div>
+            <div class="candle red" style="height:50%"></div>
+            <div class="candle green" style="height:80%"></div>
+            <div class="candle green" style="height:90%"></div>
+            <div class="candle red" style="height:65%"></div>
+            <div class="candle green" style="height:95%"></div>
+            <div class="candle green" style="height:100%"></div>
+            <div class="candle red" style="height:70%"></div>
+            <div class="candle green" style="height:85%"></div>
+        </div>
 
     </div>
 
 
-    <div class="pricing-grid">
+    <div class="stats-grid">
 
-        <div class="price-card">
-
-            <h3>FREE</h3>
-
-            <h2>₦0 <small>/ month</small></h2>
-
-            <p>For beginners exploring the trading world.</p>
-
-            <ul>
-                <li>✓ Basic trading tools</li>
-                <li>✓ Public academy lessons</li>
-                <li>✓ Public charts and risk calculator</li>
-                <li>✓ Guest practice simulator</li>
-            </ul>
-
-            <a href="register.html" class="price-button">
-                Start Learning — No Account
-            </a>
-
+        <div class="stat-card">
+            <small>Trading Tools</small>
+            <h3>15+</h3>
+            <span>Learning tools</span>
         </div>
 
-
-        <div class="price-card featured-price">
-
-            <div class="popular">POPULAR</div>
-
-            <h3>SIF PRO</h3>
-
-            <h2>₦3,000 <small>/ month</small></h2>
-
-            <p>For traders who want more analytical tools.</p>
-
-            <ul>
-                <li>✓ Advanced charting tools</li>
-                <li>✓ Extended trading journal</li>
-                <li>✓ Advanced simulator</li>
-                <li>✓ AI Chart Coach allowance</li>
-                <li>✓ Premium lessons</li>
-            </ul>
-
-            <span class="price-button is-disabled" aria-disabled="true">Coming soon</span>
-
-        </div>
-
-
-        <div class="price-card">
-
-            <h3>SIF VIP</h3>
-
-            <h2>₦5,000 <small>/ month</small></h2>
-
-            <p>For serious traders seeking an advanced experience.</p>
-
-            <ul>
-                <li>✓ Everything in PRO</li>
-                <li>✓ Higher AI usage allowance</li>
-                <li>✓ Advanced analytics</li>
-                <li>✓ Exclusive learning resources</li>
-                <li>✓ Priority support</li>
-            </ul>
-
-            <span class="price-button is-disabled" aria-disabled="true">Coming soon</span>
-
+        <div class="stat-card">
+            <small>AI Assistant</small>
+            <h3>01</h3>
+            <span>Chart Coach</span>
         </div>
 
     </div>
 
-    <p class="pricing-note">
-        Proposed launch prices only. PRO and VIP are not available for purchase; no subscription or payment is being collected.
+    <div class="dashboard-footer">
+        SIF FOREX HUB · YOUR TRADING JOURNEY STARTS HERE
+    </div>
+
+</div>
+
+</section><section class="features-section" id="features"><div class="section-heading">
+    <span>OUR ECOSYSTEM</span>
+    <h2>Everything You Need to Trade Smarter</h2>
+    <p>One platform. Powerful trading tools. Endless learning opportunities.</p>
+</div>
+
+
+<div class="features-grid">
+
+    <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Professional Charts</h3>
+        <p>Study financial markets using interactive charts, indicators and drawing tools.</p>
+        <a href="charts.html">Explore Charts →</a>
+    </div>
+
+    <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <h3>SIF AI Chart Coach</h3>
+        <p>Upload charts and receive educational explanations of market structure, liquidity and SMC concepts.</p>
+        <a href="dashboard.html">Explore AI Coach →</a>
+    </div>
+
+    <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>Trading Simulator</h3>
+        <p>Practise trading with virtual funds without risking real money.</p>
+        <a href="simulator.html">Start Practising →</a>
+    </div>
+
+    <div class="feature-card">
+        <div class="feature-icon">📈</div>
+        <h3>Strategy Tester</h3>
+        <p>Evaluate trading strategies using historical market data.</p>
+        <a href="dashboard.html">Discover More →</a>
+    </div>
+
+    <div class="feature-card">
+        <div class="feature-icon">📓</div>
+        <h3>Trading Journal</h3>
+        <p>Record your trades, monitor performance and understand your trading habits.</p>
+        <a href="journal.html">Open Journal →</a>
+    </div>
+
+    <div class="feature-card">
+        <div class="feature-icon">🧮</div>
+        <h3>Risk Calculator</h3>
+        <p>Calculate position sizes, stop-loss distances and potential account risk.</p>
+        <a href="calculator.html">Calculate Risk →</a>
+    </div>
+
+    <div class="feature-card">
+        <div class="feature-icon">🎓</div>
+        <h3>Forex Academy</h3>
+        <p>Learn forex from beginner fundamentals to advanced Smart Money Concepts.</p>
+        <a href="academy.html">Start Learning →</a>
+    </div>
+
+    <div class="feature-card">
+        <div class="feature-icon">⏪</div>
+        <h3>Market Replay</h3>
+        <p>Study historical price movements and practise identifying trading opportunities.</p>
+        <a href="dashboard.html">Explore Replay →</a>
+    </div>
+
+</div>
+
+</section><section class="about-section" id="about"><div class="about-content">
+
+    <span>WHY SIF FOREX HUB?</span>
+
+    <h2>Built for the Next Generation of Traders.</h2>
+
+    <p>
+        Our mission is to make professional trading education,
+        analytical tools and performance tracking accessible
+        to traders around the world.
     </p>
 
-</section>
-
-
-<section class="cta-section">
-
-    <h2>Start Learning and Practising</h2>
-
-    <p>Open the public lessons and tools directly. Create an account only if you want account-specific features.</p>
-
-    <a href="academy.html" class="primary-btn">
-        Start Learning →
+    <a href="register.html" class="primary-btn auth-link">
+        Join SIF FOREX HUB →
     </a>
 
-</section>
+</div>
 
-</main>
+</section><section class="pricing-section" id="pricing"><div class="section-heading">
+
+    <span>MEMBERSHIP PLANS</span>
+
+    <h2>Choose Your Trading Experience</h2>
+
+    <p>Start free and upgrade when you need more advanced tools.</p>
+
+</div>
 
 
-<footer>
+<div class="pricing-grid">
 
-    <div class="footer-logo">
-        SIF <span>FOREX HUB</span>
+    <div class="price-card">
+
+        <h3>FREE</h3>
+
+        <h2>₦0 <small>/ month</small></h2>
+
+        <p>For beginners exploring the trading world.</p>
+
+        <ul>
+            <li>✓ Basic trading tools</li>
+            <li>✓ Selected academy lessons</li>
+            <li>✓ Basic risk calculator</li>
+            <li>✓ Limited simulator access</li>
+        </ul>
+
+        <a href="register.html" class="price-button auth-link">
+            Get Started
+        </a>
+
     </div>
 
-    <p>Learn. Analyse. Practise. Improve.</p>
 
-    <p class="disclaimer">
-        Trading involves significant financial risk.
-        Educational information on this platform is not financial advice.
-    </p>
+    <div class="price-card featured-price">
 
-    <div class="copyright">
-        © 2026 SIF FOREX HUB. All Rights Reserved.
+        <div class="popular">POPULAR</div>
+
+        <h3>SIF PRO</h3>
+
+        <h2>₦3,000 <small>/ month</small></h2>
+
+        <p>For traders who want more analytical tools.</p>
+
+        <ul>
+            <li>✓ Advanced charting tools</li>
+            <li>✓ Extended trading journal</li>
+            <li>✓ Advanced simulator</li>
+            <li>✓ AI Chart Coach allowance</li>
+            <li>✓ Premium lessons</li>
+        </ul>
+
+        <a href="register.html" class="price-button auth-link">
+            Choose PRO
+        </a>
+
     </div>
 
-</footer>
 
+    <div class="price-card">
 
-<script>
+        <h3>SIF VIP</h3>
 
-const navigation = document.getElementById("navigation");
-const menuButton = document.querySelector(".menu-toggle");
+        <h2>₦5,000 <small>/ month</small></h2>
 
-function closeMenu() {
-    navigation.classList.remove("active");
-    menuButton.setAttribute("aria-expanded", "false");
-    menuButton.setAttribute("aria-label", "Open navigation");
-}
+        <p>For serious traders seeking an advanced experience.</p>
 
+        <ul>
+            <li>✓ Everything in PRO</li>
+            <li>✓ Higher AI usage allowance</li>
+            <li>✓ Advanced analytics</li>
+            <li>✓ Exclusive learning resources</li>
+            <li>✓ Priority support</li>
+        </ul>
+
+        <a href="register.html" class="price-button auth-link">
+            Choose VIP
+        </a>
+
+    </div>
+
+</div>
+
+<p class="pricing-note">
+    Proposed launch prices. Premium features and subscription
+    payments will become available after implementation.
+</p>
+
+</section><section class="cta-section"><h2>Your Trading Journey Deserves Better Tools.</h2>
+
+<p>Join the SIF FOREX HUB community and take your learning further.</p>
+
+<a href="register.html" class="primary-btn auth-link">
+    Create Your Free Account →
+</a>
+
+</section></main><footer><div class="footer-logo">
+    SIF <span>FOREX HUB</span>
+</div>
+
+<p>Learn. Analyse. Practise. Improve.</p>
+
+<p class="disclaimer">
+    Trading involves significant financial risk.
+    Educational information on this platform is not financial advice.
+</p>
+
+<div class="copyright">
+    © 2026 SIF FOREX HUB. All Rights Reserved.
+</div>
+
+</footer><script>
 function toggleMenu() {
-    const isOpen = navigation.classList.toggle("active");
-    menuButton.setAttribute("aria-expanded", String(isOpen));
-    menuButton.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+    document.getElementById("navigation").classList.toggle("active");
 }
 
 document.querySelectorAll("#navigation a").forEach(link => {
-    link.addEventListener("click", closeMenu);
+    link.addEventListener("click", () => {
+        document.getElementById("navigation").classList.remove("active");
+    });
 });
+</script><!-- SUPABASE LOGIN SESSION CHECK --><script type="module">
 
-const pairSelector = document.getElementById("pair-selector");
-const dashboardChart = document.querySelector(".dashboard-chart");
-const marketProvider = document.getElementById("market-provider");
+import { createClient } from
+'https://esm.sh/@supabase/supabase-js@2';
 
-function renderHomepageChart() {
-    const symbol = pairSelector.value;
-    const pairName = pairSelector.options[pairSelector.selectedIndex].textContent.trim();
-    marketProvider.textContent = `TradingView · ${symbol} · 1H`;
-    dashboardChart.setAttribute("aria-label", `Live ${pairName} chart from TradingView`);
+const supabase = createClient(
+    'https://kfaqrjhwbmkawnxkcrld.supabase.co',
+    'sb_publishable_-kdg7Pmr_mWPPfnv83VTMA_n2hhKXhk'
+);
 
-    const widgetContainer = document.createElement("div");
-    widgetContainer.className = "tradingview-widget-container";
+const dashboard = 'dashboard.html';
 
-    const widgetTarget = document.createElement("div");
-    widgetTarget.className = "tradingview-widget-container__widget";
+function updateHomepage(session) {
 
-    const widgetScript = document.createElement("script");
-    widgetScript.type = "text/javascript";
-    widgetScript.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
-    widgetScript.async = true;
-    widgetScript.textContent = JSON.stringify({
-        autosize: true,
-        symbol,
-        interval: "60",
-        timezone: "Africa/Lagos",
-        theme: "dark",
-        style: "1",
-        locale: "en",
-        allow_symbol_change: false,
-        hide_top_toolbar: true,
-        calendar: false,
-        support_host: "https://www.tradingview.com"
+    const loggedIn = !!session;
+
+    const loginButton = document.getElementById('nav-login');
+    const registerButton = document.getElementById('nav-register');
+
+    // Navigation buttons
+
+    if (loggedIn) {
+
+        loginButton.textContent = 'Dashboard';
+        loginButton.href = dashboard;
+
+        registerButton.style.display = 'none';
+
+    } else {
+
+        loginButton.textContent = 'Login';
+        loginButton.href = 'login.html';
+
+        registerButton.style.display = '';
+        registerButton.textContent = 'Get Started';
+        registerButton.href = 'register.html';
+
+    }
+
+    // Homepage registration buttons
+
+    document.querySelectorAll('.auth-link').forEach(button => {
+
+        if (loggedIn) {
+
+            button.href = dashboard;
+            button.textContent = 'Open Dashboard →';
+
+        } else {
+
+            button.href = 'register.html';
+
+        }
+
     });
 
-    widgetContainer.append(widgetTarget, widgetScript);
-    dashboardChart.replaceChildren(widgetContainer);
 }
 
-pairSelector.addEventListener("change", renderHomepageChart);
-renderHomepageChart();
+// Check the existing login session
 
-document.addEventListener("keydown", event => {
-    if (event.key === "Escape") closeMenu();
+const { data, error } = await supabase.auth.getSession();
+
+if (error) {
+    console.error('Session check error:', error.message);
+}
+
+updateHomepage(data.session);
+
+// Listen for login and logout changes
+
+supabase.auth.onAuthStateChange((event, session) => {
+
+    updateHomepage(session);
+
 });
 
-</script>
-
-</body>
+</script></body>
 </html>
