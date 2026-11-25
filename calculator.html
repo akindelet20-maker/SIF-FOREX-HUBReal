@@ -129,6 +129,20 @@ button {
     line-height: 1.7;
 }
 
+.guided-note, .guided-next-step {
+    margin: 18px 0;
+    padding: 15px;
+    border: 1px solid #277c67;
+    border-radius: 10px;
+    background: #103b3d;
+    color: #e4f3ec;
+    line-height: 1.65;
+}
+.guided-note p, .guided-next-step p { margin: 6px 0 0; }
+.guided-note a, .guided-next-step a { display: inline-flex; align-items: center; min-height: 44px; margin-top: 10px; padding: 9px 12px; border-radius: 8px; background: #24e69a; color: #071426; font-weight: 800; text-decoration: none; }
+.guided-next-step { display: none; border-color: #34536a; background: #091a2c; }
+.guided-next-step a { width: 100%; justify-content: center; text-align: center; }
+
 .error {
     display: none;
     color: #ffaaaa;
@@ -160,6 +174,12 @@ footer {
         position size before entering a trade. This in-browser tool
         is open to guests and does not save an account profile.
     </p>
+
+    <aside class="guided-note" id="guided-note" aria-labelledby="guided-note-title" hidden>
+        <strong id="guided-note-title">Academy guided exercise · fictional inputs</strong>
+        <p>These prefilled numbers are for arithmetic practice only. They are not a recommended risk level, account size, or real-money trading setup. You may change the example values before calculating.</p>
+        <a href="academy.html#guided-exercise">Back to the Academy exercise</a>
+    </aside>
 
     <form class="calculator" id="riskForm">
 
@@ -218,6 +238,12 @@ footer {
 
         </div>
 
+        <div class="guided-next-step" id="guided-next-step" aria-live="polite">
+            <strong>Next · virtual practice only</strong>
+            <p id="guided-result-note">This carries the calculator’s sample lot-size estimate to the simulator. It does not set a stop loss, select a direction, or open a practice trade.</p>
+            <a id="simulator-link" href="simulator.html">Continue to the simulator →</a>
+        </div>
+
     </form>
 
     <div class="note">
@@ -236,6 +262,29 @@ footer {
 </footer>
 
 <script>
+const calculatorParams = new URLSearchParams(window.location.search);
+const isGuidedExercise = calculatorParams.get("guided") === "1";
+const guidedNote = document.getElementById("guided-note");
+const guidedNextStep = document.getElementById("guided-next-step");
+const simulatorLink = document.getElementById("simulator-link");
+
+if (isGuidedExercise) {
+    guidedNote.hidden = false;
+    const exampleFields = {
+        balance: { id: "balance", fallback: 10000, min: 1, max: 100000000 },
+        risk: { id: "risk", fallback: 1, min: 0.01, max: 100 },
+        stopLoss: { id: "stopLoss", fallback: 20, min: 0.01, max: 100000 },
+        pipValue: { id: "pipValue", fallback: 10, min: 0.01, max: 100000 }
+    };
+    Object.entries(exampleFields).forEach(([parameter, field]) => {
+        const raw = calculatorParams.get(parameter);
+        const value = raw === null ? field.fallback : Number(raw);
+        document.getElementById(field.id).value = Number.isFinite(value) && value >= field.min && value <= field.max
+            ? String(value)
+            : String(field.fallback);
+    });
+}
+
 function calculateRisk() {
     const balance = Number(document.getElementById("balance").value);
     const risk = Number(document.getElementById("risk").value);
@@ -246,6 +295,7 @@ function calculateRisk() {
 
     error.style.display = "none";
     results.style.display = "none";
+    if (isGuidedExercise) guidedNextStep.style.display = "none";
 
     if (!Number.isFinite(balance) || !Number.isFinite(risk) ||
         !Number.isFinite(stopLoss) || !Number.isFinite(pipValue) ||
@@ -283,7 +333,27 @@ function calculateRisk() {
     document.getElementById("lotSize").textContent = lotSize.toFixed(3) + " lots";
     document.getElementById("actualRisk").textContent = "$" + actualRisk.toFixed(2);
     results.style.display = "block";
+
+    if (isGuidedExercise) {
+        const simulatorUrl = new URL("simulator.html", window.location.href);
+        simulatorUrl.searchParams.set("guided", "1");
+        simulatorUrl.searchParams.set("pair", "EURUSD");
+        simulatorUrl.searchParams.set("price", "1.08500");
+        simulatorUrl.searchParams.set("pipSize", "0.0001");
+        simulatorUrl.searchParams.set("pipValue", String(pipValue));
+        simulatorUrl.searchParams.set("lots", lotSize.toFixed(3));
+        simulatorLink.href = simulatorUrl.toString();
+        document.getElementById("guided-result-note").textContent = `The fictional calculation produced ${lotSize.toFixed(3)} lots. Carrying it forward only fills simulator inputs; it does not set a stop loss, select a direction, or open a practice trade.`;
+        guidedNextStep.style.display = "block";
+    }
 }
+
+document.getElementById("riskForm").addEventListener("input", function() {
+    if (isGuidedExercise) {
+        guidedNextStep.style.display = "none";
+        document.getElementById("results").style.display = "none";
+    }
+});
 
 document.getElementById("riskForm").addEventListener("submit", function(event) {
     event.preventDefault();

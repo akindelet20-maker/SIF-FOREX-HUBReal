@@ -95,6 +95,8 @@ th{color:#20d69a}
  color:#c8d5e3;
  line-height:1.6;
 }
+.notice p{margin:7px 0 0}
+.notice a{display:inline-block;margin-top:9px;color:#20d69a;font-weight:bold}
 [hidden]{display:none !important}
 @media(max-width:550px){
  .grid{grid-template-columns:1fr}
@@ -115,6 +117,13 @@ th{color:#20d69a}
 
  <div id="storageWarning" class="notice" role="status" aria-live="polite" hidden>
   Your saved simulator data could not be read completely. It has not been overwritten; some saved items may be missing from this view, and new changes are paused. Use RESET PRACTICE ACCOUNT only if you intentionally want to replace the saved data.
+ </div>
+
+ <div id="guidedExampleNotice" class="notice" role="status" aria-live="polite" hidden>
+  <strong>Academy guided exercise · fictional example</strong>
+  <p id="guidedExampleSummary"></p>
+  <p>Nothing was opened or saved automatically. The demo direction is intentionally unselected; BUY and SELL here are only virtual-practice choices. This simulator does not enforce a stop loss and its price is not live.</p>
+  <a href="academy.html#guided-exercise">Return to the Academy exercise</a>
  </div>
 
  <div class="card">
@@ -166,7 +175,8 @@ th{color:#20d69a}
 
   <label for="direction">Trade Direction</label>
   <select id="direction">
-   <option value="BUY">BUY</option>
+   <option value="">Choose for virtual practice…</option>
+   <option value="BUY" selected>BUY</option>
    <option value="SELL">SELL</option>
   </select>
 
@@ -507,8 +517,35 @@ function resetAccount(){
 
 const pairSelect = document.getElementById("pair");
 const marketPriceInput = document.getElementById("marketPrice");
+const directionSelect = document.getElementById("direction");
+const lotsInput = document.getElementById("lots");
 const initialPrice = account.marketPrices[pairSelect.value];
 if(Number.isFinite(initialPrice)) marketPriceInput.value = String(initialPrice);
+
+const guidedSimulatorParams = new URLSearchParams(window.location.search);
+if(guidedSimulatorParams.get("guided") === "1"){
+ const pair = guidedSimulatorParams.get("pair");
+ const price = Number(guidedSimulatorParams.get("price"));
+ const pipSize = Number(guidedSimulatorParams.get("pipSize"));
+ const pipValue = Number(guidedSimulatorParams.get("pipValue"));
+ const lots = Number(guidedSimulatorParams.get("lots"));
+ const validExample = supportedPairs.has(pair) &&
+  Number.isFinite(price) && price > 0 && price < 1000000 &&
+  Number.isFinite(pipSize) && pipSize > 0 && pipSize < 1000 &&
+  Number.isFinite(pipValue) && pipValue > 0 && pipValue < 100000 &&
+  Number.isFinite(lots) && lots > 0 && lots <= 10000;
+ if(validExample){
+  pairSelect.value = pair;
+  marketPriceInput.value = String(price);
+  document.getElementById("pipSize").value = String(pipSize);
+  document.getElementById("pipValue").value = String(pipValue);
+  lotsInput.value = String(lots);
+  directionSelect.value = "";
+  document.getElementById("guidedExampleSummary").textContent =
+   `Loaded fictional inputs: ${pair}, demo price ${price}, estimated size ${lots.toFixed(3)} lots, pip size ${pipSize}, and pip value $${pipValue} per pip per standard lot.`;
+  document.getElementById("guidedExampleNotice").hidden = false;
+ }
+}
 
 pairSelect.addEventListener("change", () => {
  const pairPrice = account.marketPrices[pairSelect.value];
