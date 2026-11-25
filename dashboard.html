@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard | SIF FOREX HUB</title>
-
-<style>
+<title>Dashboard | SIF FOREX HUB</title><style>
 * {
     margin: 0;
     padding: 0;
@@ -40,6 +37,12 @@ header {
     padding: 10px 15px;
     border-radius: 7px;
     cursor: pointer;
+    font-weight: bold;
+}
+
+.logout:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 .container {
@@ -135,32 +138,12 @@ header {
     color: #24e69a;
 }
 
-.profile-notice {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 12px;
-    background: #172c40;
-    border-left: 4px solid #d7b56e;
-    padding: 14px 16px;
-    margin-bottom: 18px;
-    border-radius: 8px;
-    color: #d7e1e8;
-    font-size: 14px;
-    line-height: 1.6;
+.error-message {
+    text-align: center;
+    padding: 30px 20px;
+    color: #ff8c82;
+    line-height: 1.7;
 }
-
-.profile-notice button, .loading button {
-    background: #24e69a;
-    color: #071426;
-    border: 0;
-    border-radius: 6px;
-    padding: 9px 13px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-[hidden] { display: none !important; }
 
 footer {
     text-align: center;
@@ -184,109 +167,99 @@ footer {
         grid-template-columns: 1fr;
     }
 }
-</style>
-</head>
-
-<body>
-
-<header>
+</style></head><body><header>
     <div class="logo">SIF FOREX HUB</div>
     <button class="logout" id="logoutButton">LOGOUT</button>
-</header>
+</header><div class="container"><div id="loading" class="loading">
+    Checking your account and loading your dashboard...
+</div>
 
-<main class="container">
+<div id="errorMessage" class="error-message" style="display:none;"></div>
 
-    <div id="loading" class="loading" role="status" aria-live="polite">
-        <span id="loadingMessage">Loading your trading dashboard...</span>
-        <button type="button" id="retryDashboard" hidden>Try again</button>
-    </div>
+<div id="dashboardContent" style="display:none;">
 
-    <div id="dashboardContent" style="display:none;">
+    <section class="welcome">
 
-        <div id="profileNotice" class="profile-notice" role="status" aria-live="polite" hidden>
-            <span id="profileNoticeText"></span>
-            <button type="button" id="retryProfile">Retry profile</button>
-        </div>
+        <h1>
+            Welcome, <span id="memberName">Trader</span>!
+        </h1>
 
-        <section class="welcome">
+        <p>
+            Welcome to your personal trading education
+            and analysis centre.
+        </p>
 
-            <h1>
-                Welcome, <span id="memberName">Trader</span>!
-            </h1>
+        <p style="margin-top:10px;">
+            Username: <strong id="memberUsername">---</strong>
+        </p>
 
-            <p>
-                Welcome to your personal trading education
-                and analysis centre.
-            </p>
+        <p style="margin-top:8px;">
+            Email: <strong id="memberEmail">---</strong>
+        </p>
 
-            <p style="margin-top:10px;">
-                Username: <strong id="memberUsername">---</strong>
-            </p>
+        <span class="membership" id="membership">
+            FREE MEMBER
+        </span>
 
-            <span class="membership" id="membership">
-                FREE MEMBER
-            </span>
+    </section>
 
-        </section>
+    <h2 class="section-title">Your Trading Workspace</h2>
 
-        <h2 class="section-title">Your Trading Workspace</h2>
+    <div class="grid">
 
-        <div class="grid">
+        <a href="charts.html" class="card">
+            <div class="icon">📊</div>
+            <h3>Advanced Charts</h3>
+            <p>Explore market charts and technical analysis tools.</p>
+        </a>
 
-            <a href="charts.html" class="card">
-                <div class="icon">📊</div>
-                <h3>Advanced Charts</h3>
-                <p>Explore market charts and technical analysis tools.</p>
-            </a>
+        <a href="academy.html" class="card">
+            <div class="icon">🎓</div>
+            <h3>Forex Academy</h3>
+            <p>Learn forex from beginner to advanced level.</p>
+        </a>
 
-            <a href="academy.html" class="card">
-                <div class="icon">🎓</div>
-                <h3>Forex Academy</h3>
-                <p>Learn forex from beginner to advanced level.</p>
-            </a>
+        <a href="simulator.html" class="card">
+            <div class="icon">🎮</div>
+            <h3>Trading Simulator</h3>
+            <p>Practise trading with simulated funds.</p>
+        </a>
 
-            <a href="simulator.html" class="card">
-                <div class="icon">🎮</div>
-                <h3>Trading Simulator</h3>
-                <p>Practise trading with simulated funds.</p>
-            </a>
+        <a href="calculator.html" class="card">
+            <div class="icon">🧮</div>
+            <h3>Risk Calculator</h3>
+            <p>Calculate position size and trading risk.</p>
+        </a>
 
-            <a href="calculator.html" class="card">
-                <div class="icon">🧮</div>
-                <h3>Risk Calculator</h3>
-                <p>Calculate position size and trading risk.</p>
-            </a>
+        <a href="journal.html" class="card">
+            <div class="icon">📒</div>
+            <h3>Trading Journal</h3>
+            <p>Record and review your trading activities.</p>
+        </a>
 
-            <a href="journal.html" class="card">
-                <div class="icon">📒</div>
-                <h3>Trading Journal</h3>
-                <p>Record and review your trading activities.</p>
-            </a>
-
-            <a href="charts.html#ai-coach" class="card">
-                <div class="icon">🤖</div>
-                <h3>AI Chart Coach</h3>
-                <p>Study market structure and possible trading scenarios.</p>
-            </a>
-
-        </div>
-
-        <div class="notice">
-            <strong>Important Trading Notice</strong><br>
-            SIF FOREX HUB is an educational platform.
-            Trading involves financial risk. No profits
-            or trading outcomes are guaranteed.
-        </div>
+        <a href="charts.html#ai-coach" class="card">
+            <div class="icon">🤖</div>
+            <h3>AI Chart Coach</h3>
+            <p>Study market structure and possible trading scenarios.</p>
+        </a>
 
     </div>
 
-</main>
+    <div class="notice">
+        <strong>Important Trading Notice</strong><br>
+        SIF FOREX HUB is an educational platform.
+        Trading involves financial risk. No profits
+        or trading outcomes are guaranteed.
+    </div>
 
-<footer>
+</div>
+
+</div><footer>
     © 2026 SIF FOREX HUB V2.0. All Rights Reserved.
-</footer>
+</footer><script type="module">
 
-<script type="module">
+import { createClient } from
+'https://esm.sh/@supabase/supabase-js@2';
 
 const SUPABASE_URL =
 'https://kfaqrjhwbmkawnxkcrld.supabase.co';
@@ -294,103 +267,140 @@ const SUPABASE_URL =
 const SUPABASE_KEY =
 'sb_publishable_-kdg7Pmr_mWPPfnv83VTMA_n2hhKXhk';
 
-let supabase;
+const supabase = createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+const loading = document.getElementById('loading');
+const dashboardContent = document.getElementById('dashboardContent');
+const errorMessage = document.getElementById('errorMessage');
+const logoutButton = document.getElementById('logoutButton');
+
+function showError(message) {
+    loading.style.display = 'none';
+    dashboardContent.style.display = 'none';
+    errorMessage.style.display = 'block';
+    errorMessage.textContent = message;
+}
 
 async function loadDashboard() {
 
-    const loading = document.getElementById('loading');
-    const loadingMessage = document.getElementById('loadingMessage');
-    const retryButton = document.getElementById('retryDashboard');
-    const profileNotice = document.getElementById('profileNotice');
-    const profileNoticeText = document.getElementById('profileNoticeText');
-
-    loading.style.display = 'block';
-    loadingMessage.textContent = 'Loading your trading dashboard...';
-    retryButton.hidden = true;
-    profileNotice.hidden = true;
-
     try {
-        if (!supabase) {
-            const { createClient } = await import('https://esm.sh/@supabase/supabase-js@2');
-            supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
-        }
 
-        const { data: authData, error: authError } = await supabase.auth.getUser();
-        if (authError) throw authError;
-        if (!authData.user) {
-            window.location.href = 'login.html';
+        // STEP 1: Verify the authenticated user
+
+        const { data: authData, error: authError } =
+            await supabase.auth.getUser();
+
+        if (authError || !authData.user) {
+
+            window.location.replace('login.html');
             return;
+
         }
 
         const user = authData.user;
-        let profileData = null;
-        let profileError = false;
-        try {
-            const result = await supabase
+
+        // STEP 2: Retrieve the member's profile
+
+        const { data: profile, error: profileError } =
+            await supabase
                 .from('profiles')
                 .select('full_name, username, membership')
                 .eq('id', user.id)
                 .maybeSingle();
-            profileData = result.data;
-            profileError = Boolean(result.error);
-        } catch {
-            profileError = true;
+
+        if (profileError) {
+            console.error('Profile loading error:', profileError.message);
         }
 
-        const profile = profileError ? null : profileData;
-        const name = profile?.full_name || user.user_metadata?.full_name || 'Trader';
-        const username = profile?.username || user.user_metadata?.username || 'Member';
-        const membership = profile?.membership;
+        // STEP 3: Use profile details or signup information
+
+        const name =
+            profile?.full_name ||
+            user.user_metadata?.full_name ||
+            'Trader';
+
+        const username =
+            profile?.username ||
+            user.user_metadata?.username ||
+            'Member';
+
+        const membership =
+            profile?.membership ||
+            'FREE';
+
+        // STEP 4: Display member information
 
         document.getElementById('memberName').textContent = name;
-        document.getElementById('memberUsername').textContent = '@' + username;
-        document.getElementById('membership').textContent = membership
-            ? String(membership).toUpperCase() + ' MEMBER'
-            : 'MEMBERSHIP STATUS UNAVAILABLE';
 
-        if (profileError || !profile) {
-            profileNoticeText.textContent = profileError
-                ? 'Your saved profile could not be loaded. Showing account details where available; membership status cannot be confirmed.'
-                : 'No saved profile was found. Showing account details where available; membership status cannot be confirmed.';
-            profileNotice.hidden = false;
-        }
+        document.getElementById('memberUsername').textContent =
+            '@' + username;
+
+        document.getElementById('memberEmail').textContent =
+            user.email || 'Not available';
+
+        document.getElementById('membership').textContent =
+            String(membership).toUpperCase() + ' MEMBER';
+
+        // STEP 5: Show the dashboard
 
         loading.style.display = 'none';
-        document.getElementById('dashboardContent').style.display = 'block';
+        errorMessage.style.display = 'none';
+        dashboardContent.style.display = 'block';
 
-    } catch {
-        loadingMessage.textContent = 'We could not connect to your account right now. Check your connection and try again.';
-        retryButton.hidden = false;
+    } catch (error) {
+
+        console.error('Dashboard error:', error);
+
+        showError(
+            'We could not load your dashboard. Please check your internet connection and refresh the page.'
+        );
+
     }
+
 }
 
-document.getElementById('retryDashboard')
-.addEventListener('click', loadDashboard);
 
-document.getElementById('retryProfile')
-.addEventListener('click', loadDashboard);
+// LOGOUT FUNCTION
 
-document.getElementById('logoutButton')
-.addEventListener('click', async function() {
+logoutButton.addEventListener('click', async function() {
 
-    if (!supabase) {
-        alert('Account service is unavailable. Please try again shortly.');
-        return;
-    }
+    const confirmLogout = confirm(
+        'Are you sure you want to log out of SIF FOREX HUB?'
+    );
+
+    if (!confirmLogout) return;
+
+    logoutButton.disabled = true;
+    logoutButton.textContent = 'LOGGING OUT...';
 
     try {
+
         const { error } = await supabase.auth.signOut();
-        if (error) throw error;
-        window.location.href = 'login.html';
-    } catch {
-        alert('We could not sign you out. Please try again.');
+
+        if (error) {
+            throw error;
+        }
+
+        window.location.replace('login.html');
+
+    } catch (error) {
+
+        alert('Logout failed: ' + error.message);
+
+        logoutButton.disabled = false;
+        logoutButton.textContent = 'LOGOUT';
+
     }
 
 });
 
+
+// START DASHBOARD
+
 loadDashboard();
 
-</script>
-
-</body>
+</script></body>
 </html>
