@@ -116,6 +116,27 @@ progress::-moz-progress-bar { background: var(--accent); border-radius: 99px; }
 .challenge-notice h2 { margin: 3px 0 4px; font-size: 18px; }
 .challenge-notice p { margin: 0; color: #d5e1eb; }
 .challenge-notice a { flex: 0 0 auto; font-weight: 800; text-decoration: none; }
+.guided-exercise {
+    margin-top: 16px;
+    padding: clamp(17px, 3vw, 24px);
+    border: 1px solid #277c67;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #103b3d, #10243a 72%);
+}
+.guided-exercise h3 { margin: 4px 0 8px; font-size: 21px; }
+.guided-exercise > p { margin: 0; color: #d5e1eb; }
+.guided-exercise-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 16px; }
+.guided-exercise-step { min-width: 0; padding: 14px; border: 1px solid #31566a; border-radius: 10px; background: #091a2c; }
+.guided-exercise-step strong { display: block; margin-bottom: 6px; color: var(--accent); }
+.guided-exercise-step p { margin: 0; color: #c8d7e2; font-size: 13px; }
+.example-values { margin: 10px 0 0; color: #e6f0f5; font-size: 13px; }
+.example-values div { display: flex; justify-content: space-between; gap: 10px; padding: 4px 0; border-bottom: 1px solid #1d374d; }
+.example-values div:last-child { border-bottom: 0; }
+.example-values dt { color: var(--muted); }
+.example-values dd { margin: 0; font-weight: 750; text-align: right; }
+.guided-exercise-link { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; margin-top: 11px; padding: 9px 12px; border-radius: 8px; background: var(--accent); color: #061b16; font-size: 13px; font-weight: 850; text-decoration: none; }
+.guided-exercise-link:hover { filter: brightness(1.08); }
+.guided-safety-note { margin-top: 13px !important; padding: 11px 13px; border-left: 3px solid var(--warning); border-radius: 0 8px 8px 0; background: #1a2633; color: #f0dfbd !important; font-size: 13px; }
 .result-share-card {
     margin-top: 18px;
     padding: 20px;
@@ -153,6 +174,8 @@ footer { padding: 20px; border-top: 1px solid #152c41; color: #8193a5; text-alig
     .reset-button { justify-self: start; }
     .lesson-topline { gap: 8px; }
     .challenge-notice { align-items: flex-start; flex-direction: column; gap: 10px; padding: 16px; }
+    .guided-exercise-grid { grid-template-columns: 1fr; }
+    .guided-exercise-link { width: 100%; text-align: center; }
     .share-actions { display: grid; grid-template-columns: 1fr; }
     .share-actions button { width: 100%; }
     .challenge-link-row { grid-template-columns: 1fr; }
@@ -290,6 +313,34 @@ footer { padding: 20px; border-top: 1px solid #152c41; color: #8193a5; text-alig
                 </div>
             </article>
         </div>
+
+        <section class="guided-exercise" id="guided-exercise" aria-labelledby="guided-exercise-title">
+            <span class="eyebrow">Lesson 4 · Educational practice</span>
+            <h3 id="guided-exercise-title">Connect planning, position size and the simulator</h3>
+            <p>Follow this optional, no-account exercise using made-up values only. It demonstrates how the tools connect; it does not suggest a suitable risk level, account size, or trade.</p>
+            <div class="guided-exercise-grid">
+                <div class="guided-exercise-step">
+                    <strong>1 · Start with a fictional example</strong>
+                    <p>These inputs exist only to illustrate the calculator’s arithmetic.</p>
+                    <dl class="example-values">
+                        <div><dt>Demo balance</dt><dd>$10,000</dd></div>
+                        <div><dt>Demo risk input</dt><dd>1%</dd></div>
+                        <div><dt>Demo stop distance</dt><dd>20 pips</dd></div>
+                        <div><dt>Demo pip value</dt><dd>$10 / pip / standard lot</dd></div>
+                    </dl>
+                    <a class="guided-exercise-link" href="calculator.html?guided=1&amp;balance=10000&amp;risk=1&amp;stopLoss=20&amp;pipValue=10">Open the example in the calculator →</a>
+                </div>
+                <div class="guided-exercise-step">
+                    <strong>2 · Review the estimate</strong>
+                    <p>Calculate, check what each result means, and notice how changing an input changes the estimate. The example is not a recommendation.</p>
+                </div>
+                <div class="guided-exercise-step">
+                    <strong>3 · Explore virtual practice</strong>
+                    <p>Only after calculating, you can carry the example size into the simulator. It will not choose a direction or open a practice trade for you.</p>
+                </div>
+            </div>
+            <p class="guided-safety-note"><strong>Educational example only:</strong> the 1% input, balance, stop distance and pip value are fictional—not a real-money risk level or trade setup. The simulator uses its own virtual account and does not enforce a stop loss. Do not use the sample as personal financial advice.</p>
+        </section>
     </section>
 
     <section class="quiz" id="first-quiz" aria-labelledby="quiz-title">
