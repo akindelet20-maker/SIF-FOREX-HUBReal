@@ -218,8 +218,39 @@ nav a:hover {
 
 .market-heading {
     display: flex;
+    align-items: flex-end;
     justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
     font-size: 13px;
+}
+
+.market-pair-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.market-pair-selection label {
+    color: #8495a9;
+    font-size: 10px;
+}
+
+.market-pair-selection select {
+    min-width: 120px;
+    padding: 8px 30px 8px 10px;
+    border: 1px solid #304259;
+    border-radius: 7px;
+    background: #101d2d;
+    color: #f4f7fb;
+    font: inherit;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.market-pair-selection select:focus-visible {
+    outline: 2px solid #00e59b;
+    outline-offset: 2px;
 }
 
 .positive {
@@ -245,6 +276,7 @@ nav a:hover {
     color: #8495a9;
     font-size: 9px;
     text-align: right;
+    margin-bottom: 7px;
 }
 
 .dashboard-chart {
@@ -702,6 +734,11 @@ footer p {
 
     .market-provider {
         font-size: 8px;
+        margin-bottom: 5px;
+    }
+
+    .market-heading {
+        align-items: flex-start;
     }
 
     .dashboard-chart {
