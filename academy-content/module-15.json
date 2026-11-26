@@ -1,0 +1,1027 @@
+{
+  "id": 15,
+  "title": "Brokers and Trading Accounts",
+  "description": "Learn how brokers and account terms shape the practical side of Forex, so you can assess them carefully before making any decisions.",
+  "lessons": [
+    {
+      "id": "m15-l1",
+      "title": "What Is a Forex Broker?",
+      "intro": "A Forex broker is a service provider that gives customers access to currency-market services and accounts. Understanding what a broker is helps you tell the intermediary apart from the market and ask useful questions before evaluating a provider.",
+      "objectives": [
+        "Define a Forex broker in simple terms",
+        "Distinguish a broker from the wider currency market",
+        "Identify the basic services a broker may provide"
+      ],
+      "explanation": [
+        "A Forex broker is a company or platform provider that offers customers access to currency trading services. It may provide an account interface, display currency prices, accept customer orders, calculate margin, and handle account records and payments. The broker is an intermediary or service provider; it is not the whole foreign-exchange market. That market includes a wide network of banks, financial firms, businesses, governments, and other participants.",
+        "Retail customers commonly interact with currency markets through a broker or another intermediary. The exact services, contract, and legal responsibilities depend on the provider and the entity serving the customer. A broker account can involve fees and substantial financial risk, especially when leverage is available. This is general education, not personal financial advice, and defining a broker does not establish whether trading or any particular provider is suitable for someone."
+      ],
+      "steps": [
+        "Find the broker’s exact legal name and the entity that would hold an account",
+        "List the account, pricing, order, and payment services it says it provides",
+        "Separate statements about the broker from claims about the wider market",
+        "Read the official account terms to understand the provider’s role and limits"
+      ],
+      "example": "In a fictional illustration, a learner uses the imaginary Harbor FX platform to view currency quotes and read account statements. Harbor FX provides the interface and account service, while the broader FX market consists of many participants and institutions. This distinction explains why one broker is not the market itself and cannot be assumed to control all currency prices.",
+      "remember": [
+        "A broker provides services and account access",
+        "The FX market is broader than any one broker",
+        "A broker’s role and obligations depend on its legal entity and terms"
+      ],
+      "mistakes": [
+        "Mistake: A broker is the global currency market. Correction: it is one provider or intermediary within a much wider market.",
+        "Mistake: Every provider offers identical services and protections. Correction: products, legal entities, and terms vary."
+      ],
+      "summary": "A Forex broker is a provider of access and account services, not the entire currency market. Learn the exact entity and scope of its services before assessing its terms.",
+      "visual": {
+        "type": "broker",
+        "caption": "A simple diagram distinguishes one retail broker and its customer account from the wider network of foreign-exchange market participants."
+      },
+      "quiz": [
+        {
+          "question": "Which description best defines a Forex broker?",
+          "options": [
+            "A company or service that offers customers account access and related currency services",
+            "The single institution that sets every currency price worldwide",
+            "A guarantee that each customer earns a profit",
+            "A government department that insures every trade"
+          ],
+          "correct": 0,
+          "explanation": "A broker provides an account and related services. It is not the whole FX market, and its role does not guarantee profits or universal insurance."
+        },
+        {
+          "question": "Which statement distinguishes a broker from the wider FX market?",
+          "options": [
+            "A broker and the global market are always the same entity",
+            "A broker is one provider in a broad network of market participants",
+            "The broker controls every currency transaction",
+            "The FX market exists only inside retail platforms"
+          ],
+          "correct": 1,
+          "explanation": "The FX market involves many participants, while a broker is one intermediary or service provider. A retail platform is a point of access, not the entire market."
+        },
+        {
+          "question": "Which service might a broker provide?",
+          "options": [
+            "A guarantee that a customer cannot lose",
+            "Authority to set all national exchange rates",
+            "An account interface and customer order services",
+            "A promise that the market never changes"
+          ],
+          "correct": 2,
+          "explanation": "Account interfaces and order services are common broker functions. A broker does not guarantee outcomes or set every national exchange rate."
+        },
+        {
+          "question": "What should a beginner learn before assuming what a broker does?",
+          "options": [
+            "Only the logo colors",
+            "Only the number of chart indicators",
+            "Only what social media calls it",
+            "The exact legal entity and its official account terms"
+          ],
+          "correct": 3,
+          "explanation": "The legal entity and account terms explain which provider serves the customer and what services and obligations apply. Branding alone does not establish those details."
+        },
+        {
+          "question": "Does defining a broker establish that trading is suitable for a particular person?",
+          "options": [
+            "No; the definition is general education and does not assess personal circumstances",
+            "Yes; every broker account is suitable for everyone",
+            "Yes; brokers remove financial risk",
+            "No; only a broker can decide a customer’s personal goals"
+          ],
+          "correct": 0,
+          "explanation": "A general definition explains a concept but cannot evaluate an individual’s finances or circumstances. It is not a personal suitability assessment or a claim that risk disappears."
+        }
+      ]
+    },
+    {
+      "id": "m15-l2",
+      "title": "How Forex Brokers Work.",
+      "intro": "A broker’s order handling affects how a displayed quote becomes an actual account transaction. Learning the basic process helps you understand why prices, execution, and costs may differ from what a screen first suggests.",
+      "objectives": [
+        "Describe how an order can pass through a broker",
+        "Explain why an execution price may differ from a displayed quote",
+        "Locate the provider’s official order-handling disclosures"
+      ],
+      "explanation": [
+        "A broker may show bid and ask prices, receive a customer order, check account and margin conditions, and process the order under its stated model. It may route an order to external liquidity providers, match it internally, or combine approaches. The precise process depends on the provider, product, account, and legal terms. The broker may also report fills and update account balances after execution.",
+        "Prices can move between the moment an order is submitted and the moment it is filled. Available liquidity, fast market conditions, partial execution, and technical delay can affect the result; a fill may therefore differ from the last displayed quote. Such a difference is not automatically evidence of misconduct, but customers can compare it with the provider’s execution policy and seek an explanation. This is general education, not personal financial advice, and no execution method removes market risk."
+      ],
+      "steps": [
+        "Read the entity’s official order-execution and routing explanation",
+        "Check how the provider describes margin checks, order rejections, and partial fills",
+        "Compare displayed bid and ask prices with the stated spread and any commission",
+        "Note how the firm describes slippage and volatile-market limitations"
+      ],
+      "example": "In a fictional illustration, an imaginary platform displays EUR/USD at 1.1000 bid and 1.1002 ask. A learner submits a simulated order while prices are moving; the order is recorded at 1.1003. The difference can result from price movement or execution conditions. The example illustrates why a quote shown on screen is not necessarily a guaranteed fill.",
+      "remember": [
+        "Order handling follows the provider’s disclosed model and terms",
+        "Execution may involve routing, internal matching, or a combination",
+        "Displayed quotes and actual fills can differ"
+      ],
+      "mistakes": [
+        "Mistake: A displayed quote guarantees that exact execution. Correction: prices, liquidity, and technical conditions may change before the fill.",
+        "Mistake: Every price difference proves misconduct. Correction: investigate using execution records and official policies rather than assuming a cause."
+      ],
+      "summary": "A broker receives and processes orders according to its model and account terms. Moving prices, liquidity, and operational conditions mean actual execution can differ from a displayed quote.",
+      "visual": {
+        "type": "broker",
+        "caption": "A schematic path from the customer’s order through account checks and broker handling to a possible fill, showing that execution may vary."
+      },
+      "quiz": [
+        {
+          "question": "What may happen after a customer submits an order?",
+          "options": [
+            "The quote becomes a guaranteed global market price",
+            "The broker processes it through routing, internal matching, or a combination",
+            "The order is always filled by a government agency",
+            "The customer’s account becomes risk-free"
+          ],
+          "correct": 1,
+          "explanation": "Order processing depends on the broker’s disclosed model and may involve external routing, internal matching, or both. It does not make a quote global or remove risk."
+        },
+        {
+          "question": "Why can the final fill differ from the quote most recently displayed?",
+          "options": [
+            "The customer always entered the wrong password",
+            "Every platform must change prices randomly",
+            "Prices or available liquidity may change before execution",
+            "The displayed quote is a guaranteed forecast"
+          ],
+          "correct": 2,
+          "explanation": "Markets can move and liquidity can change while an order is being processed. A displayed quote is not a guaranteed forecast or necessarily the final execution price."
+        },
+        {
+          "question": "Where should a customer look to understand stated order handling?",
+          "options": [
+            "The provider’s official execution policy and account documents",
+            "An unrelated advertisement",
+            "A chart’s background color",
+            "A stranger’s unverified message"
+          ],
+          "correct": 0,
+          "explanation": "Official execution and account documents describe the provider’s stated process and limitations. Advertisements or unrelated messages are not a reliable substitute."
+        },
+        {
+          "question": "What does slippage generally refer to in order execution?",
+          "options": [
+            "A guaranteed refund of a trading cost",
+            "An account password error",
+            "The difference between a requested or expected price and the actual fill price",
+            "A legal guarantee against losses"
+          ],
+          "correct": 2,
+          "explanation": "Slippage describes a difference between an expected or requested price and the execution price. It may occur in changing market conditions and does not itself promise a refund."
+        },
+        {
+          "question": "If a fill differs from a quote, what is a careful next step?",
+          "options": [
+            "Assume fraud without checking records",
+            "Review the transaction details and compare them with the official execution policy",
+            "Send credentials to an online commenter",
+            "Ignore all account statements"
+          ],
+          "correct": 1,
+          "explanation": "Transaction details and the provider’s official policy can help explain the fill and support a reasoned query. Immediate assumptions, credential sharing, or ignoring records do not clarify what occurred."
+        }
+      ]
+    },
+    {
+      "id": "m15-l3",
+      "title": "Types of Forex Brokers.",
+      "intro": "Broker labels can describe different ways orders and prices are handled. Learning what the labels do and do not mean prevents a beginner from treating marketing language as a guarantee.",
+      "objectives": [
+        "Recognize common broker-model labels",
+        "Explain that labels alone do not prove service quality",
+        "Locate disclosures about execution and conflicts"
+      ],
+      "explanation": [
+        "Common descriptions include dealing-desk or market-maker models, agency or no-dealing-desk models, and electronic communication network (ECN) or straight-through-processing (STP) labels. In broad terms, a market maker may quote prices and take the other side of some customer trades; an agency-style provider may route orders to outside counterparties. In practice, arrangements can be hybrid, and terminology is not used identically by every firm.",
+        "A label alone does not tell you the total cost, the quality of execution, or how conflicts are managed. Spreads, commissions, liquidity sources, order routing, and the provider's legal obligations all matter. Read the relevant entity's official product and execution disclosures, including how it handles volatility, rejected orders, and slippage. A firm's description may be simplified marketing, so treat it as a starting point for questions rather than an independent quality rating."
+      ],
+      "steps": [
+        "List the exact model terms the provider uses",
+        "Look for a plain-language description of who may be counterparty to an order",
+        "Check whether spreads, commissions, or both apply",
+        "Read the order-execution and conflict-of-interest disclosures for the account entity"
+      ],
+      "example": "Two fictional firms describe themselves differently. Northstar FX calls itself an agency broker and shows a small variable spread plus a commission; Cedar Markets calls itself a market maker and quotes a wider spread with no separate commission. These descriptions alone do not establish which has lower total costs or better execution; a careful comparison would use the same currency pair, time, account terms, and execution disclosures.",
+      "remember": [
+        "Broker-model labels are not standardized guarantees",
+        "Some providers use hybrid arrangements",
+        "Compare disclosed execution and total costs, not labels alone"
+      ],
+      "mistakes": [
+        "Mistake: Every ECN or STP label means direct, conflict-free access. Correction: verify the actual routing and legal disclosures.",
+        "Mistake: A market-maker label automatically means a scam. Correction: evaluate regulation, terms, execution, and conflicts rather than relying on a label."
+      ],
+      "summary": "Broker categories provide clues about order handling, but providers may use different or hybrid structures. Read the official terms and compare all costs and disclosures before drawing conclusions.",
+      "visual": {
+        "type": "broker",
+        "caption": "A comparison diagram of illustrative market-maker, agency, and hybrid routing paths, emphasizing that labels do not determine reliability."
+      },
+      "quiz": [
+        {
+          "question": "What is the best way to interpret a broker-model label such as ECN or STP?",
+          "options": [
+            "As a guarantee of the lowest costs",
+            "As a clue that must be checked against actual execution disclosures",
+            "As proof that the provider is regulated everywhere",
+            "As a promise that orders cannot slip"
+          ],
+          "correct": 1,
+          "explanation": "Labels can suggest an approach, but use varies and hybrid models exist. Disclosures are needed to understand routing, costs, and execution limits; the label guarantees none of those outcomes."
+        },
+        {
+          "question": "In broad terms, what may a market maker do?",
+          "options": [
+            "Quote prices and take the other side of some customer trades",
+            "Set prices for every bank in the world",
+            "Remove all spreads and commissions",
+            "Guarantee that customers never lose"
+          ],
+          "correct": 0,
+          "explanation": "A market maker may quote prices and act as counterparty for some trades. That broad description does not mean it controls the global FX market or guarantees customer outcomes."
+        },
+        {
+          "question": "Why compare total trading costs rather than just the broker's model name?",
+          "options": [
+            "The model name always includes every cost",
+            "A narrow spread proves execution is best",
+            "Costs can include spreads, commissions, and other charges that differ by account",
+            "Commissions are irrelevant if the broker is regulated"
+          ],
+          "correct": 2,
+          "explanation": "A realistic cost comparison includes all applicable charges, not just a model label or headline spread. Regulation does not make fees irrelevant, and a narrow quote alone cannot establish execution quality."
+        },
+        {
+          "question": "What does the term 'hybrid model' suggest?",
+          "options": [
+            "The broker must use only one routing method",
+            "The provider may combine approaches depending on circumstances or products",
+            "The account is automatically a demo",
+            "The provider has no contractual terms"
+          ],
+          "correct": 1,
+          "explanation": "Hybrid describes a combination of approaches. The exact arrangement should be stated in the provider's documents; it does not imply a demo account or the absence of terms."
+        },
+        {
+          "question": "Which document is most useful for understanding how a provider handles orders?",
+          "options": [
+            "An advertisement promising fast access",
+            "A customer review from an unrelated account",
+            "The relevant entity's official execution and order-handling disclosure",
+            "A social-media poll about broker models"
+          ],
+          "correct": 2,
+          "explanation": "Official execution disclosures describe the provider's stated process and limitations for the relevant entity. Marketing claims, reviews, and polls can be incomplete or unrelated to the account terms."
+        }
+      ]
+    },
+    {
+      "id": "m15-l4",
+      "title": "Choosing a Reliable Broker.",
+      "intro": "A broker choice affects access to funds, order handling, and the information available when problems arise. A structured review is safer than choosing from a bonus, a ranking, or a single online opinion.",
+      "objectives": [
+        "Build a basic broker due-diligence checklist",
+        "Verify which legal entity serves a customer",
+        "Separate evidence from promotional claims"
+      ],
+      "explanation": [
+        "Reliability is not established by a polished website or a high search ranking. Start with the provider's exact legal name, the entity that would contract with you, its regulator and permissions where applicable, and the protections available in your jurisdiction. Then examine its official fee schedule, account agreement, order-execution policy, deposit and withdrawal rules, and customer-support routes. Confirm that the website domain and contact details belong to the stated company rather than an impersonator.",
+        "Independent reviews can reveal useful questions, but individual reports may be outdated, biased, or about a different entity. No checklist can guarantee fair treatment, uninterrupted access, or recovery of funds. Rules, compensation arrangements, leverage limits, and complaint processes vary by jurisdiction and provider; check original official sources and consider qualified independent help if unsure. This lesson is educational, not personalized financial advice, and does not recommend a particular broker."
+      ],
+      "steps": [
+        "Write down the provider's legal name, website domain, and contracting entity",
+        "Verify the entity and permitted activities in the regulator's official register",
+        "Read the actual account, fee, execution, funding, and complaint terms",
+        "Check whether independent contact details match the official company information",
+        "Record unresolved questions rather than relying on a promotional claim"
+      ],
+      "example": "A fictional beginner sees two websites using the name Blue Harbor FX. The official register lists Blue Harbor Markets Ltd, but one website spells the legal entity differently and lists a different address. Instead of assuming the sites are connected, the beginner pauses and checks the regulator and company contact details directly. The mismatch is a reason for further verification, not by itself a final legal conclusion.",
+      "remember": [
+        "Identify the contracting entity, not only the brand",
+        "Use official registers and original documents to verify key claims",
+        "No review or checklist can guarantee safety or suitability"
+      ],
+      "mistakes": [
+        "Mistake: A popular broker ranking proves reliability. Correction: rankings may be commercial or outdated; verify primary documents.",
+        "Mistake: A familiar brand name means the same protections everywhere. Correction: one brand may have different legal entities and terms across regions."
+      ],
+      "summary": "Assess a broker through verifiable legal, operational, and account information. Because terms and protections vary, confirm the exact entity and original official sources for your jurisdiction.",
+      "visual": {
+        "type": "broker",
+        "caption": "A due-diligence checklist connecting legal entity, regulator register, account terms, fees, funding rules, and customer support."
+      },
+      "quiz": [
+        {
+          "question": "Which information should a beginner identify first when checking a broker?",
+          "options": [
+            "Its most popular social-media post",
+            "The exact legal entity that would provide the account",
+            "The number of currency pairs advertised",
+            "Whether a bonus is available"
+          ],
+          "correct": 1,
+          "explanation": "The contracting legal entity determines which terms and regulatory framework may apply. Branding, pair count, and bonuses do not identify the party responsible for the account."
+        },
+        {
+          "question": "Where is a strong first place to verify a regulatory claim?",
+          "options": [
+            "The broker's banner advertisement",
+            "A forum user's screenshot",
+            "The regulator's official register for the relevant jurisdiction",
+            "A comparison page with no source links"
+          ],
+          "correct": 2,
+          "explanation": "A regulator's official register can help verify the legal entity and its listed permissions. It should be checked directly; advertisements and unsourced posts are not authoritative evidence."
+        },
+        {
+          "question": "Why may a review of a broker brand not apply to your account?",
+          "options": [
+            "The brand may operate through different legal entities with different terms",
+            "Reviews always refer to demo accounts",
+            "All customer reviews are legally binding",
+            "The same brand must offer identical protections worldwide"
+          ],
+          "correct": 0,
+          "explanation": "A company can serve customers through separate entities in different jurisdictions. Their regulators, protections, and contracts may differ, so the relevant entity matters more than the brand alone."
+        },
+        {
+          "question": "What should you conclude from a mismatch between a website and an official company listing?",
+          "options": [
+            "It proves fraud beyond doubt",
+            "It is irrelevant if the site looks professional",
+            "It is a reason to stop and verify identity and contact details before proceeding",
+            "It proves the regulator has approved every website with that name"
+          ],
+          "correct": 2,
+          "explanation": "A mismatch is a warning sign that needs verification, not automatically a final legal finding. A professional design does not resolve identity doubts, and registration does not authenticate every lookalike site."
+        },
+        {
+          "question": "What can a broker checklist guarantee?",
+          "options": [
+            "That funds can always be recovered",
+            "That no withdrawal delay will occur",
+            "That trading will be profitable",
+            "Nothing guarantees outcomes, but a checklist can help surface risks and unanswered questions"
+          ],
+          "correct": 3,
+          "explanation": "Due diligence can improve understanding but cannot guarantee performance, access, or recovery of money. It is a way to find evidence and uncertainties before deciding what to do."
+        }
+      ]
+    },
+    {
+      "id": "m15-l5",
+      "title": "Broker Regulation.",
+      "intro": "Regulation can set rules for a financial firm, but it does not remove market risk or make every claim safe. Knowing how to verify authorization and understand its limits is an important part of broker due diligence.",
+      "objectives": [
+        "Explain what authorization may indicate",
+        "Verify a firm using an official regulator source",
+        "Recognize that protections vary by entity and jurisdiction"
+      ],
+      "explanation": [
+        "A financial regulator may authorize firms for particular activities, supervise compliance, set conduct or capital requirements, and provide a route for complaints. The exact rules depend on the country, the type of product, and the firm's legal entity. A company may be registered for one activity but not permitted to offer every service it advertises. A regulator's register is therefore useful for checking the exact name, status, permissions, and any warnings.",
+        "Regulation is not an insurance policy against trading losses, operational failure, or every form of misconduct. Compensation schemes, segregation rules, negative-balance protections, leverage limits, and complaint routes differ and may have eligibility conditions. Check the current regulator and the broker's official legal documents for the entity that would serve you; do not rely on a logo or a claim that regulation applies 'worldwide.' This is general education, not a legal or financial opinion."
+      ],
+      "steps": [
+        "Identify the provider's exact legal entity and registration number",
+        "Open the relevant regulator's official register independently",
+        "Match the legal name, website, address, status, and permitted activities",
+        "Check regulator warnings and the broker's current customer-protection disclosures",
+        "Confirm which protections apply to the specific account and jurisdiction"
+      ],
+      "example": "In a fictional case, a site says that Silver Maple Trading is regulated. An official register shows Silver Maple Trading Ltd is authorized for a limited set of services, while the account agreement names Silver Maple Offshore Ltd. The customer should not assume the authorization of one company applies to the other; the relevant entity and protections require direct confirmation.",
+      "remember": [
+        "Verify the specific legal entity and its permissions",
+        "A regulator listing is not a guarantee against loss",
+        "Protections differ by jurisdiction, product, and eligibility"
+      ],
+      "mistakes": [
+        "Mistake: Any regulated company name protects every account under its brand. Correction: match the account's contracting entity to the register.",
+        "Mistake: Regulation means customers cannot lose money. Correction: market and leveraged trading risks remain, and protections have limits."
+      ],
+      "summary": "Regulation provides a framework of oversight, not a promise of safety or profits. Verify the serving entity and read current official terms to learn which protections actually apply.",
+      "visual": {
+        "type": "broker",
+        "caption": "A verification path from the broker brand to the contracting entity, official register entry, permissions, and account-specific protections."
+      },
+      "quiz": [
+        {
+          "question": "What does an official regulator register help a customer check?",
+          "options": [
+            "Whether an entity has listed status and particular permissions",
+            "Whether a trading strategy will work",
+            "Whether all customers will recover every loss",
+            "Whether a broker's spreads will remain fixed"
+          ],
+          "correct": 0,
+          "explanation": "Registers can show an entity's status and permitted activities. They do not assess strategy success, guarantee recovery, or make market prices and spreads fixed."
+        },
+        {
+          "question": "Why must the legal entity in an account agreement be matched to the regulator entry?",
+          "options": [
+            "A brand name automatically covers every related company",
+            "Different companies in a group may have different authorizations and protections",
+            "Regulators list only website colors",
+            "The entity name has no effect on terms"
+          ],
+          "correct": 1,
+          "explanation": "A financial group may use multiple legal entities. Authorization and protections may attach to one entity but not another, so the contract name is essential to the check."
+        },
+        {
+          "question": "Which statement about regulation is accurate?",
+          "options": [
+            "It guarantees that trading cannot lose money",
+            "It removes the possibility of operational problems",
+            "It can impose oversight and conduct rules but does not eliminate trading risk",
+            "It ensures every advertised service is authorized"
+          ],
+          "correct": 2,
+          "explanation": "Regulation can create oversight and rules, but market losses and operational issues remain possible. A firm must be checked for permissions relevant to the actual service."
+        },
+        {
+          "question": "Which protection should be assumed to apply automatically to every Forex account?",
+          "options": [
+            "Full reimbursement of all trading losses",
+            "No protection should be assumed; check current eligibility and jurisdiction-specific terms",
+            "Unlimited negative-balance protection",
+            "A guaranteed complaint outcome"
+          ],
+          "correct": 1,
+          "explanation": "Protections vary by jurisdiction, product, entity, and eligibility. Assuming universal compensation or negative-balance protection can be misleading; verify the official terms."
+        },
+        {
+          "question": "What is the safest way to check a regulator claim?",
+          "options": [
+            "Click a logo and assume the link is authentic",
+            "Search a social-media post from the broker",
+            "Use the regulator's official source and match exact entity details",
+            "Ask another customer to guess"
+          ],
+          "correct": 2,
+          "explanation": "Going independently to the regulator's official source and matching entity details reduces reliance on copied or misleading claims. Logos and hearsay do not confirm authorization."
+        }
+      ]
+    },
+    {
+      "id": "m15-l6",
+      "title": "Demo vs Live Accounts.",
+      "intro": "A demo account can help you learn a platform without risking actual trading funds, while a live account introduces real financial consequences. Knowing the differences keeps practice results in perspective.",
+      "objectives": [
+        "Compare demo and live account conditions",
+        "Explain why demo performance may not match live outcomes",
+        "Identify which account terms to check"
+      ],
+      "explanation": [
+        "A demo account typically uses simulated funds and simulated order execution. It can help a beginner explore platform menus, order types, chart display, and record-keeping without placing a live trade. A demo is a learning environment, not evidence that a person is ready to trade or that a method will work. Providers may set demo balances, prices, spreads, and execution behavior that differ from the live account.",
+        "A live account uses real funds and can involve real losses, fees, slippage, and emotional pressure. Market depth, execution, available products, leverage, and protections may also differ from the demo. Before opening or using any account, read the provider's official terms, including inactivity rules and account eligibility. There is no need to deposit or trade to understand these concepts, and this material is general education rather than personal financial advice."
+      ],
+      "steps": [
+        "Use a demo only to learn platform functions and terminology",
+        "Compare the demo's spreads, order types, and execution notes with live-account documents",
+        "Check whether the demo expires or has simulated balance resets",
+        "Keep a learning journal that distinguishes simulated results from real outcomes",
+        "Review risks and account terms before considering any live activity"
+      ],
+      "example": "A fictional learner records ten simulated EUR/USD orders and sees each fill at the displayed price. This may help the learner practice reading the order ticket, but it does not show how real orders behave during thin liquidity or fast news. A live account could have slippage, fees, and real losses, so the simulation cannot be treated as a forecast.",
+      "remember": [
+        "Demo funds are simulated, not withdrawable trading profits",
+        "Demo execution may differ from live execution",
+        "Practice does not guarantee skill, readiness, or future results"
+      ],
+      "mistakes": [
+        "Mistake: A successful demo period proves a person will succeed live. Correction: conditions and emotional stakes differ, and future outcomes are uncertain.",
+        "Mistake: Demo losses are real debts owed to the broker. Correction: demo balances are ordinarily simulated, but check the provider's account terms."
+      ],
+      "summary": "Demo accounts can teach platform mechanics without risking real funds, but they cannot reproduce every live condition. Treat simulated outcomes as practice, not as evidence of likely live performance.",
+      "visual": {
+        "type": "platform",
+        "caption": "Side-by-side demo and live account panels highlighting simulated funds, real financial exposure, and possible differences in execution and costs."
+      },
+      "quiz": [
+        {
+          "question": "What is a demo account usually designed to provide?",
+          "options": [
+            "A guaranteed way to earn withdrawable profits",
+            "A simulated setting for learning platform functions",
+            "Insurance for a future live account",
+            "Proof that a strategy will work"
+          ],
+          "correct": 1,
+          "explanation": "Demo accounts generally simulate funds and execution so users can explore platform mechanics. Simulated balances are not profits, insurance, or proof of future performance."
+        },
+        {
+          "question": "Why might demo results differ from live outcomes?",
+          "options": [
+            "Live accounts always have better prices",
+            "Demo platforms cannot show charts",
+            "Execution, liquidity, costs, and emotional stakes may differ",
+            "Demo trading is always regulated as a live trade"
+          ],
+          "correct": 2,
+          "explanation": "Demo and live settings can differ in execution, liquidity, fees, and the real emotional impact of losses. A demo is useful practice but not a precise predictor."
+        },
+        {
+          "question": "Which is an appropriate use of a demo account?",
+          "options": [
+            "Learning where the order ticket and account statements are",
+            "Proving that a person should deposit money",
+            "Estimating guaranteed future income",
+            "Avoiding the need to read account terms"
+          ],
+          "correct": 0,
+          "explanation": "A demo can help users learn platform layout and records. It does not prove readiness, forecast income, or replace understanding official terms."
+        },
+        {
+          "question": "What does a long series of simulated gains establish?",
+          "options": [
+            "That the same gains will occur live",
+            "That the broker guarantees the outcome",
+            "That future losses are impossible",
+            "Only that gains occurred within those simulation assumptions"
+          ],
+          "correct": 3,
+          "explanation": "A simulated record reflects its particular assumptions and period. It cannot establish future live results, eliminate risk, or create a broker guarantee."
+        },
+        {
+          "question": "Which item is important to check for a demo account?",
+          "options": [
+            "Whether simulated balances can be withdrawn",
+            "The expiration, reset, and simulation conditions",
+            "Whether demo success qualifies for compensation",
+            "Whether the demo predicts live market gaps"
+          ],
+          "correct": 1,
+          "explanation": "Demo terms may specify expiration, resets, and simulated execution. The account is generally not a source of withdrawable money and cannot predict gaps or determine compensation."
+        }
+      ]
+    },
+    {
+      "id": "m15-l7",
+      "title": "Depositing Funds.",
+      "intro": "Funding an account is a financial action, so the payment route and the provider's terms deserve careful checking. Learning the process helps you notice costs, delays, and warning signs without being urged to deposit.",
+      "objectives": [
+        "Identify common deposit methods and possible costs",
+        "Check official funding and account terms",
+        "Recognize safer payment and record-keeping practices"
+      ],
+      "explanation": [
+        "Brokers may accept bank transfers, cards, or certain electronic payment services, but available methods and processing times vary by provider, country, currency, and account. A bank or payment company may charge its own fee or use an exchange rate that differs from the broker's. The broker may set minimums, source-of-funds checks, name-matching requirements, or restrictions on third-party payments. Read the current funding page and account agreement for the specific legal entity.",
+        "Never treat a deposit as a way to unlock guaranteed returns, recover losses, or satisfy pressure from an unsolicited contact. Use only the provider's verified official website and a payment method in your own name when its terms require that. Keep receipts and account records, and understand whether a deposit can be reversed or disputed with your payment provider. Do not share passwords, one-time codes, or remote access. This is educational information, not a recommendation to fund an account."
+      ],
+      "steps": [
+        "Read official deposit methods, limits, currencies, fees, and processing estimates",
+        "Confirm the website and legal entity independently before entering payment details",
+        "Check whether the payment name must match the account holder",
+        "Save transaction references and receipts in a secure location",
+        "Do not send funds in response to pressure or a promise of guaranteed returns"
+      ],
+      "example": "In a fictional scenario, a provider lists a 100-unit deposit in currency A, while the customer's bank converts currency B and charges its own fee. The credited account amount may therefore be lower than the amount paid. Before any payment, a learner would compare the broker's conversion policy with the bank's rate and fees; the numbers do not imply that depositing is advisable.",
+      "remember": [
+        "Funding methods, fees, timing, and limits vary",
+        "Verify the official destination and account-name requirements",
+        "A deposit is not a promise of profit or a way to recover past losses"
+      ],
+      "mistakes": [
+        "Mistake: The broker's displayed deposit amount includes every bank or currency-conversion fee. Correction: payment providers can add separate costs.",
+        "Mistake: A caller asking for a deposit to unlock profits must be legitimate. Correction: guaranteed returns and urgent payment pressure are serious warning signs."
+      ],
+      "summary": "Deposits can involve provider, bank, currency, and identity requirements. Check the official terms and payment route carefully; there is no recommendation here to deposit funds.",
+      "visual": {
+        "type": "broker",
+        "caption": "A funding flow showing customer, payment provider, currency conversion, broker account credit, and possible independent fees or delays."
+      },
+      "quiz": [
+        {
+          "question": "Why may the amount credited differ from the amount sent?",
+          "options": [
+            "A broker must always remove half",
+            "Banks or payment providers may apply conversion rates or fees",
+            "Deposits are automatically traded immediately",
+            "Currencies never convert at the same rate"
+          ],
+          "correct": 1,
+          "explanation": "A bank or payment service may charge a fee or convert currency at its own rate, so the credited amount may differ. The exact result depends on the route and official terms."
+        },
+        {
+          "question": "What should be checked before entering payment details?",
+          "options": [
+            "A social post promising a bonus",
+            "A message from an unknown account",
+            "The provider's verified official website and funding terms",
+            "The broker's chart color"
+          ],
+          "correct": 2,
+          "explanation": "Confirming the official website and current funding terms helps reduce impersonation and misunderstanding risks. A bonus post, unsolicited message, or design detail is not verification."
+        },
+        {
+          "question": "Which payment practice is generally safer?",
+          "options": [
+            "Use a method and account name consistent with the provider's official requirements",
+            "Pay an employee's personal wallet on request",
+            "Share a one-time password with support",
+            "Send more funds when a stranger creates urgency"
+          ],
+          "correct": 0,
+          "explanation": "Following verified account-name and payment requirements supports traceability. Personal wallets, one-time-code sharing, and urgency-driven payments are unsafe warning signs."
+        },
+        {
+          "question": "What is a sound response to a demand to deposit more money to release guaranteed profits?",
+          "options": [
+            "Pay quickly before the offer expires",
+            "Borrow money to meet the demand",
+            "Share account credentials for verification",
+            "Pause, do not send money, and verify independently through official channels"
+          ],
+          "correct": 3,
+          "explanation": "Guaranteed profit claims and urgent release fees are common warning signs. Pause and independently verify rather than sending money or exposing credentials."
+        },
+        {
+          "question": "Why keep deposit receipts and transaction references?",
+          "options": [
+            "They guarantee compensation",
+            "They provide a record useful for tracking and raising payment questions",
+            "They prove the broker is suitable",
+            "They prevent currency conversion"
+          ],
+          "correct": 1,
+          "explanation": "Records help identify and trace a payment if questions arise. They do not guarantee compensation, assess suitability, or prevent conversion fees."
+        }
+      ]
+    },
+    {
+      "id": "m15-l8",
+      "title": "Withdrawing Funds.",
+      "intro": "Knowing how withdrawals are supposed to work makes it easier to spot unclear rules or unusual demands. Withdrawal policies are not identical, so the provider's official terms and the account entity matter.",
+      "objectives": [
+        "Find and interpret withdrawal rules",
+        "Understand common processing stages and possible delays",
+        "Recognize warning signs around withdrawal requests"
+      ],
+      "explanation": [
+        "A withdrawal usually involves a request from the account, identity or source-of-funds checks where required, processing by the provider, and transfer through a payment network. Timeframes can vary with the provider, payment method, bank holidays, currency conversion, compliance review, and whether account information is complete. Some firms return money to the original payment method where permitted. Fees, minimum amounts, limits, and required documents should be described in the current account terms.",
+        "A delay can have several explanations, but a provider should be able to explain the status and applicable rule. Keep dated request confirmations and messages, and communicate through verified official support channels. Be cautious if someone demands an extra payment to release supposed profits or asks for passwords or remote access. Never assume a withdrawal is guaranteed by a screenshot or an account balance display. Rules and complaint routes vary by jurisdiction; this general education is not legal or financial advice."
+      ],
+      "steps": [
+        "Read the withdrawal policy, fees, limits, processing estimates, and identity requirements",
+        "Check whether the original payment route must be used",
+        "Keep dated request receipts and official support correspondence",
+        "Ask for a written explanation if a request is delayed or rejected",
+        "Escalate unresolved concerns using official complaint routes for the relevant entity and jurisdiction"
+      ],
+      "example": "A fictional customer requests 250 units from an account. The broker shows the request as received, but the bank transfer takes several business days and a requested identity document is still under review. The customer checks the published time estimate and asks official support for the outstanding requirement instead of paying an unrelated person a supposed release fee.",
+      "remember": [
+        "Withdrawal timing depends on several providers and checks",
+        "Read the account's official rules and keep request records",
+        "Do not pay an unsolicited fee or share credentials to release funds"
+      ],
+      "mistakes": [
+        "Mistake: A displayed balance means money is already in the customer's bank. Correction: a separate withdrawal request and payment processing may be required.",
+        "Mistake: Every delay proves fraud. Correction: checks and payment networks can cause delays, but unexplained or changing demands merit careful escalation."
+      ],
+      "summary": "Withdrawals involve account rules and payment processing, and timelines can vary. Use official channels, keep records, and treat demands for extra release payments as a warning sign.",
+      "visual": {
+        "type": "timeline",
+        "caption": "A simple withdrawal timeline from request to verification, provider processing, payment network, and receipt, with possible delay points."
+      },
+      "quiz": [
+        {
+          "question": "Which factors can affect a withdrawal timeframe?",
+          "options": [
+            "Only the number of currency pairs",
+            "Payment method, verification, banks, and holidays",
+            "The customer's chart theme",
+            "A guaranteed universal processing clock"
+          ],
+          "correct": 1,
+          "explanation": "Withdrawals may pass through provider checks and payment networks, and holidays or incomplete documents can add time. There is no universal timeframe for every provider and method."
+        },
+        {
+          "question": "What is a useful first step if a withdrawal is delayed?",
+          "options": [
+            "Send your password to an unofficial contact",
+            "Pay an unrelated wallet immediately",
+            "Check the stated policy and ask verified official support for the status",
+            "Delete all account records"
+          ],
+          "correct": 2,
+          "explanation": "The official policy and support channel can clarify the status and any outstanding requirement. Unofficial contacts and unrelated payments increase risk, while deleting records removes useful evidence."
+        },
+        {
+          "question": "What does an account balance display mean about a withdrawal?",
+          "options": [
+            "It necessarily means the funds arrived at the bank",
+            "It guarantees same-day payment",
+            "It replaces identity checks",
+            "It may show an account amount, but separate processing is needed for funds to reach a payment account"
+          ],
+          "correct": 3,
+          "explanation": "A balance display is not proof that a withdrawal has been requested or completed. Provider and payment-network steps may remain, and timing can vary."
+        },
+        {
+          "question": "Which demand is a serious warning sign?",
+          "options": [
+            "An official request for a document described in the account terms",
+            "A stranger demanding an extra payment to release guaranteed profits",
+            "A published processing estimate",
+            "A receipt for a submitted request"
+          ],
+          "correct": 1,
+          "explanation": "An extra payment demanded by a stranger to unlock profits is a common scam pattern. An official, documented identity check can be legitimate, though it should be verified independently."
+        },
+        {
+          "question": "Why keep withdrawal request confirmations?",
+          "options": [
+            "They guarantee the outcome",
+            "They replace the complaint process",
+            "They provide dated evidence for follow-up and escalation",
+            "They remove all bank delays"
+          ],
+          "correct": 2,
+          "explanation": "Dated confirmations help establish what was requested and when, supporting follow-up or a complaint. They do not guarantee payment or eliminate processing delays."
+        }
+      ]
+    },
+    {
+      "id": "m15-l9",
+      "title": "Understanding Broker Fees.",
+      "intro": "Trading costs can be less visible than the price shown on a chart. Learning the main fee types helps you read account terms without assuming that a low headline spread means a low total cost.",
+      "objectives": [
+        "Name common Forex account charges",
+        "Distinguish spread from commission and financing",
+        "Compare costs using official account terms"
+      ],
+      "explanation": [
+        "The spread is the difference between a quoted bid and ask. Some accounts charge a separate commission, while others include more of their charge in the spread. Positions held overnight may incur a financing or swap adjustment; its amount and direction can depend on the pair, position, dates, and provider's calculation. Other possible costs include currency conversion, inactivity, deposit or withdrawal charges, and third-party bank fees. The exact list differs by product and account.",
+        "A headline spread is not necessarily the total cost: spreads can vary by time, market conditions, and account type, and commissions may be charged per side or per transaction. Compare the official fee schedule and product terms for the specific legal entity, including examples and any changes the firm may make under the contract. Fees and rules vary by provider and jurisdiction. This general lesson is educational, not a personal recommendation or a prediction of trading results."
+      ],
+      "steps": [
+        "Find the official fee schedule for the exact account and entity",
+        "List spread, commission, overnight financing, conversion, and payment-related charges",
+        "Check whether stated costs are fixed or variable and when they apply",
+        "Read how commissions are charged and how overnight rates are calculated",
+        "Compare like-for-like assumptions without treating a headline price as a guarantee"
+      ],
+      "example": "A fictional comparison uses an illustrative one-unit position: Harbor FX quotes a 1.2-pip spread with no separate commission, while Pine FX quotes a 0.4-pip spread plus a 0.5-pip-equivalent commission. The simple displayed components total 1.2 and 0.9 pip-equivalents before financing or other costs. These invented figures show how to add listed charges, not which account is cheaper in real conditions or suitable for anyone.",
+      "remember": [
+        "Total cost may include several separate charges",
+        "Spreads and financing can change with conditions and terms",
+        "Use the current official fee schedule for the specific account"
+      ],
+      "mistakes": [
+        "Mistake: No commission means no trading cost. Correction: a cost may be included in the spread or arise elsewhere.",
+        "Mistake: The smallest advertised spread is the full cost. Correction: check variable spreads, commissions, financing, conversions, and payment fees."
+      ],
+      "summary": "Broker costs can include spreads, commissions, financing, and account or payment charges. Compare the full official schedule for the relevant entity and remember that variable costs may change.",
+      "visual": {
+        "type": "broker",
+        "caption": "An illustrative fee breakdown separating bid-ask spread, commission, overnight financing, currency conversion, and payment-provider charges."
+      },
+      "quiz": [
+        {
+          "question": "What is the spread in a Forex quote?",
+          "options": [
+            "The difference between the bid and ask prices",
+            "A guaranteed monthly account fee",
+            "The customer's deposit amount",
+            "A regulator's compensation limit"
+          ],
+          "correct": 0,
+          "explanation": "The spread is the gap between the bid and ask. It is one possible trading cost, not a monthly fee, deposit, or compensation limit."
+        },
+        {
+          "question": "Why is 'no commission' not enough to conclude an account has no costs?",
+          "options": [
+            "The account may still have spread, financing, conversion, or other fees",
+            "Commissions are paid only to regulators",
+            "No-commission accounts cannot trade currencies",
+            "It means all costs are guaranteed to be zero"
+          ],
+          "correct": 0,
+          "explanation": "Other charges may apply, including spread and overnight financing. A commission-free description does not establish that every cost is zero."
+        },
+        {
+          "question": "What is an overnight financing or swap adjustment generally related to?",
+          "options": [
+            "The color of the account interface",
+            "Holding a position over a provider-defined rollover period",
+            "A guaranteed refund on a losing trade",
+            "The account's password length"
+          ],
+          "correct": 1,
+          "explanation": "An overnight financing adjustment may apply when a position is held across a rollover period. Its amount and direction depend on product and provider terms; it is not a refund or interface feature."
+        },
+        {
+          "question": "When comparing two fee schedules, what should be included?",
+          "options": [
+            "Only each broker's lowest advertised spread",
+            "Only the logo and brand name",
+            "Spread, commission, financing, and other relevant charges under similar assumptions",
+            "A promise that costs will never change"
+          ],
+          "correct": 2,
+          "explanation": "A like-for-like comparison should account for all applicable cost categories. Headline spreads alone omit possible commissions, financing, and service or payment fees, and costs may vary."
+        },
+        {
+          "question": "Where should a beginner verify current account charges?",
+          "options": [
+            "An old forum post",
+            "A friend's memory",
+            "A marketing slogan",
+            "The official fee schedule and terms for the relevant account entity"
+          ],
+          "correct": 3,
+          "explanation": "The current official fee schedule and account terms are the primary sources for charges on that entity and account. Posts and slogans may be outdated or incomplete."
+        }
+      ]
+    },
+    {
+      "id": "m15-l10",
+      "title": "Common Forex Scams.",
+      "intro": "Scams often imitate legitimate trading language and exploit urgency, trust, or the hope of quick returns. Recognizing recurring patterns gives beginners a reason to pause and verify claims independently.",
+      "objectives": [
+        "Recognize common Forex-related scam patterns",
+        "Check a provider or contact through independent official sources",
+        "Identify basic steps to take after a suspicious interaction"
+      ],
+      "explanation": [
+        "Common patterns include guaranteed-profit claims, fabricated account screenshots, pressure to send more money, fake broker websites, impersonation of a regulated firm, paid signal promises, and requests for remote access or one-time codes. Some fraudsters claim that a tax, fee, or insurance payment is required to release profits. A convincing brand, copied registration number, or polished platform can be used to create a false sense of legitimacy. No trading method can guarantee profits in uncertain markets.",
+        "Pause before sending money or information, and verify the exact legal entity, domain, and contact details through original regulator and company sources reached independently. Do not install remote-access software at a stranger's request or share passwords or codes. If money or credentials may have been exposed, contact the bank or payment provider and relevant official authorities promptly, change affected credentials using a trusted device, and preserve records. Reporting routes and recovery options vary; beware of recovery scammers who promise to get lost funds back for an advance fee."
+      ],
+      "steps": [
+        "Pause when a message uses urgency, secrecy, or guaranteed-return language",
+        "Verify the legal entity and contact details independently using official sources",
+        "Do not share passwords, one-time codes, or remote access",
+        "Save messages, receipts, wallet details, and dates if something seems suspicious",
+        "If exposed, contact your payment provider and appropriate official reporting channels promptly"
+      ],
+      "example": "A fictional account named 'FX Mentor Pro' messages a beginner claiming a 20% weekly return is guaranteed, then asks for a payment to unlock withdrawals. The beginner does not pay, avoids the link, saves the message, and independently contacts the named firm through details in an official register. The scenario illustrates verification, not a claim about a real company or a guarantee of recovering money.",
+      "remember": [
+        "Guaranteed returns and urgency are major warning signs",
+        "Verify people, domains, and entities independently",
+        "Recovery promises that demand upfront fees may be another scam"
+      ],
+      "mistakes": [
+        "Mistake: A copied regulator number proves a website is genuine. Correction: match the exact entity and domain directly with official sources.",
+        "Mistake: Paying a recovery agent upfront is a reliable way to get money back. Correction: advance-fee recovery offers can target people who have already suffered losses."
+      ],
+      "summary": "Scams exploit urgency and promises that cannot be guaranteed. Pause, verify independently, protect credentials, and contact official financial or reporting channels if you may have been exposed.",
+      "visual": {
+        "type": "broker",
+        "caption": "A scam-warning flow that contrasts urgent profit promises and copied identities with independent verification, secure credentials, and official reporting."
+      },
+      "quiz": [
+        {
+          "question": "Which statement is a strong warning sign of a Forex scam?",
+          "options": [
+            "A published fee schedule",
+            "A promise of guaranteed high returns with urgent payment pressure",
+            "A regulator's official register entry",
+            "A clear statement that losses are possible"
+          ],
+          "correct": 1,
+          "explanation": "Guaranteed high returns paired with pressure are classic warning signs because trading outcomes are uncertain. Transparent fees and risk disclosure are not proof of safety, but are not this particular red flag."
+        },
+        {
+          "question": "How should you check whether a website really belongs to a regulated firm?",
+          "options": [
+            "Trust the logo on its homepage",
+            "Use the phone number in an unsolicited message",
+            "Match the exact entity and domain using independent official sources",
+            "Assume any copied registration number is valid"
+          ],
+          "correct": 2,
+          "explanation": "Impersonators can copy logos and registration numbers. Independently checking the regulator and company's official contact details helps establish whether the domain matches the real entity."
+        },
+        {
+          "question": "A stranger asks for your one-time login code to help withdraw funds. What is the safest response?",
+          "options": [
+            "Do not share it; use verified official support instead",
+            "Send it if they know your account balance",
+            "Share it only by text message",
+            "Provide remote access so they can verify it"
+          ],
+          "correct": 0,
+          "explanation": "One-time codes can grant account access, so they should not be shared. Knowing account details does not verify a stranger; contact support through official channels."
+        },
+        {
+          "question": "What is a sensible first response if payment details may have been exposed?",
+          "options": [
+            "Delete all messages and wait",
+            "Pay a recovery service upfront",
+            "Send more money to test the account",
+            "Contact the payment provider promptly, secure credentials, and preserve records"
+          ],
+          "correct": 3,
+          "explanation": "Promptly contacting the bank or payment provider and securing affected accounts can help limit harm. Preserve evidence, and be wary of recovery agents demanding advance payment."
+        },
+        {
+          "question": "Why can a polished website still be fraudulent?",
+          "options": [
+            "All professional sites are fake",
+            "Scammers can copy branding and presentation",
+            "Legitimate providers never use websites",
+            "Design quality determines authorization"
+          ],
+          "correct": 1,
+          "explanation": "Visual polish is easy to imitate and does not establish identity or authorization. Check the legal entity and domain independently rather than relying on appearance."
+        }
+      ]
+    },
+    {
+      "id": "m15-l11",
+      "title": "Protecting Trading Accounts.",
+      "intro": "An account can contain identity and payment information even if a person is only learning. Basic security habits reduce avoidable access risks and make suspicious activity easier to detect.",
+      "objectives": [
+        "Apply basic account-security practices",
+        "Recognize phishing and unauthorized-access warning signs",
+        "Know what to do if credentials may be compromised"
+      ],
+      "explanation": [
+        "Use a unique, strong password for the broker account and enable multi-factor authentication where available. A password manager can help create and store unique credentials. Keep the email account tied to the broker secure too, because email may be used for password resets. Use updated devices, screen locks, and trusted networks; avoid logging in from shared computers or links in unexpected messages. Never disclose passwords, recovery phrases, or one-time codes to someone claiming to be support.",
+        "Review login alerts, account statements, and contact details for unfamiliar changes. Be alert to phishing pages that imitate a broker's domain and to requests for remote-control software. If you suspect access, contact the provider through a verified channel, change credentials from a trusted device, secure linked email, and ask about session revocation and account safeguards. Security tools reduce risk but cannot eliminate it, and the broker's available controls vary. This is general education, not a guarantee of account protection."
+      ],
+      "steps": [
+        "Create a unique password and use multi-factor authentication if offered",
+        "Secure the email account used for password resets",
+        "Open the broker site from a saved official address instead of unexpected links",
+        "Review login notifications, account records, and profile changes regularly",
+        "If access seems compromised, contact verified support and change credentials from a trusted device"
+      ],
+      "example": "A fictional learner receives an email saying the account will close unless a link is clicked immediately. The learner does not use the link, opens the saved official website separately, and checks for account alerts. Because the message is suspicious, the learner reports it through verified support and changes the email password after checking the device. The example teaches a security response, not a guarantee that every phishing attempt will be caught.",
+      "remember": [
+        "Use unique credentials and protect the linked email account",
+        "Never share passwords, one-time codes, or remote access",
+        "Act quickly through verified channels when access looks suspicious"
+      ],
+      "mistakes": [
+        "Mistake: A one-time code is safe to share with support. Correction: legitimate support should not need you to disclose authentication codes.",
+        "Mistake: A strong broker password alone secures the account. Correction: email security, phishing awareness, device updates, and account monitoring also matter."
+      ],
+      "summary": "Account security depends on multiple habits, including unique credentials, secure email, and careful link handling. If access seems compromised, use verified channels promptly and remember that no measure removes every risk.",
+      "visual": {
+        "type": "platform",
+        "caption": "A layered account-security diagram linking unique password, multi-factor authentication, secure email, trusted access, and account monitoring."
+      },
+      "quiz": [
+        {
+          "question": "Which password practice best reduces reuse risk?",
+          "options": [
+            "Use one memorable password for every account",
+            "Use a unique strong password for the broker account",
+            "Write the password in a public profile",
+            "Send the password to a support agent"
+          ],
+          "correct": 1,
+          "explanation": "A unique password limits the effect of a breach on another service. Reusing or publicly sharing credentials increases risk, and support should not need the password."
+        },
+        {
+          "question": "Why should the email account linked to a broker also be protected?",
+          "options": [
+            "It may be used for password resets and account notices",
+            "It sets currency exchange rates",
+            "It prevents every market loss",
+            "It replaces the broker's account terms"
+          ],
+          "correct": 0,
+          "explanation": "Linked email can be central to password recovery and security alerts. Securing it helps protect the broker account, but does not control markets or replace account terms."
+        },
+        {
+          "question": "What is the safest response to an unexpected urgent login link?",
+          "options": [
+            "Enter the password quickly to avoid account closure",
+            "Forward the one-time code to the sender",
+            "Open the saved official site independently and verify the alert",
+            "Install remote software from the message"
+          ],
+          "correct": 2,
+          "explanation": "Opening the known official site independently avoids trusting a potentially fraudulent link. Sharing codes or installing remote software can hand control to an attacker."
+        },
+        {
+          "question": "What should you do if you suspect someone accessed the account?",
+          "options": [
+            "Ignore it unless a trade appears",
+            "Post the password publicly to warn others",
+            "Use the suspicious message's phone number",
+            "Contact verified support, secure credentials from a trusted device, and check linked email"
+          ],
+          "correct": 3,
+          "explanation": "Verified support can advise on account safeguards while changing credentials from a trusted device and securing email addresses potential access routes. An unverified contact or public password worsens risk."
+        },
+        {
+          "question": "What does multi-factor authentication do?",
+          "options": [
+            "Guarantees an account can never be compromised",
+            "Adds another verification step beyond a password",
+            "Makes every email legitimate",
+            "Eliminates the need for unique passwords"
+          ],
+          "correct": 1,
+          "explanation": "Multi-factor authentication adds another check, improving security, but it is not an absolute guarantee. It also does not make phishing safe or justify password reuse."
+        }
+      ]
+    }
+  ]
+}

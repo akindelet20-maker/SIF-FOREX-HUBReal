@@ -1,0 +1,619 @@
+{
+  "id": 1,
+  "title": "Introduction to Forex",
+  "description": "Build a clear foundation for understanding the global currency market and its risks.",
+  "lessons": [
+    {
+      "id": "m1-l1",
+      "title": "What is Forex Trading?",
+      "intro": "Forex is the market where one currency is exchanged for another. Understanding the basic idea of a currency pair makes later market concepts easier to follow.",
+      "objectives": [
+        "Define the foreign exchange market in plain language.",
+        "Read a currency pair and identify its two currencies.",
+        "Explain what a quoted exchange rate represents."
+      ],
+      "explanation": [
+        "Forex, short for foreign exchange, is the worldwide network in which currencies are exchanged. A currency pair such as EUR/USD compares the euro with the US dollar. The first currency is called the base currency and the second is the quote currency. A rate of 1.1000 means one euro is quoted as worth 1.10 US dollars under that quotation; it is not a promise that a transaction can be completed at that exact rate.",
+        "People and institutions exchange currencies for many reasons, including paying for imports, travel, investment, or managing currency exposure. Some participants also speculate on whether one currency may rise or fall relative to another. In retail trading, a person generally uses a provider's platform and may trade a contract rather than receive or deliver physical banknotes. This module is general education, not personal financial advice; suitability depends on an individual's circumstances and local rules.",
+        "Exchange rates move as buyers and sellers respond to economic news, policy expectations, risk appetite, and other factors. A quoted price can differ between providers and may include a spread or other costs. Currency values can move in either direction, and a correct guess about direction does not by itself ensure a profitable result after costs and position sizing."
+      ],
+      "steps": [
+        "Write down the base and quote currency for a sample pair such as GBP/USD.",
+        "Translate a sample rate into the words 'one unit of the base currency is quoted as ... of the quote currency.'",
+        "Compare two sample quotes and note that providers may show slightly different prices.",
+        "Look up a currency-pair definition in an educational glossary, not a signal service."
+      ],
+      "example": "For a fictional classroom quote, EUR/USD is 1.1000. This says one euro is quoted at 1.10 US dollars. If a later fictional quote is 1.1050, the euro has strengthened relative to the dollar in this quotation; the example ignores spreads and does not imply a trade or prediction.",
+      "remember": [
+        "Forex exchanges one currency against another.",
+        "The first currency in a pair is the base; the second is the quote currency.",
+        "A displayed rate is a quote, not a guaranteed fill or forecast."
+      ],
+      "mistakes": [
+        "Mistake: EUR/USD is the euro's value in every possible currency. Correction: it compares euros specifically with US dollars.",
+        "Mistake: A rising pair means both currencies are becoming more valuable. Correction: it means the base currency is rising relative to the quote currency in that pair."
+      ],
+      "summary": "Forex is the exchange of currencies, commonly described through pairs. Learn how a quote works before interpreting price movement or considering risk.",
+      "visual": {
+        "type": "pairs",
+        "caption": "A schematic EUR/USD label separates base currency, quote currency, and an example exchange-rate quote."
+      },
+      "quiz": [
+        {
+          "question": "In GBP/USD, which currency is the base currency?",
+          "options": ["GBP", "USD", "Both are base currencies", "Neither; it is always the broker's currency"],
+          "correct": 0,
+          "explanation": "The base currency is written first, so GBP is the base. USD is the quote currency, which tells how many dollars are quoted for one pound."
+        },
+        {
+          "question": "What does a fictional EUR/USD quote of 1.20 mean?",
+          "options": ["One euro is quoted as 1.20 US dollars", "One US dollar is guaranteed to buy 1.20 euros", "The euro will rise by 20 percent", "A trade will earn 1.20 dollars"],
+          "correct": 0,
+          "explanation": "The quote expresses the price of one unit of the base currency in the quote currency. It is neither a forecast nor a statement about profit."
+        },
+        {
+          "question": "Which is a common real-world reason to exchange currencies?",
+          "options": ["Paying a supplier in another country", "Making every exchange risk-free", "Ensuring that an exchange rate never changes", "Avoiding all transaction costs"],
+          "correct": 0,
+          "explanation": "Cross-border payments often require a payer to obtain the recipient's currency. The exchange can still involve costs and changing rates."
+        },
+        {
+          "question": "Which statement best describes many retail forex products?",
+          "options": ["They may be contracts through a provider rather than delivery of banknotes", "They always deliver physical currency to the trader", "They are shares in a currency company", "They cannot involve leverage"],
+          "correct": 0,
+          "explanation": "Retail providers commonly offer contracts tracking currency prices. The exact legal product and protections depend on the provider and jurisdiction."
+        },
+        {
+          "question": "Why might the same currency pair show slightly different quotes at different providers?",
+          "options": ["Pricing sources, spreads, and timing can differ", "One quote must be fake because there is one global screen", "Currencies have no exchange value", "All providers are required to show identical prices"],
+          "correct": 0,
+          "explanation": "Forex is decentralized and provider quotes can vary, including because of spreads and timing. A displayed quote is not a universal guaranteed execution price."
+        }
+      ]
+    },
+    {
+      "id": "m1-l2",
+      "title": "History of the Forex Market",
+      "intro": "Today's currency market grew from older ways of linking money and settling international trade. A short history explains why modern exchange rates can move more freely and why the market has no single central exchange.",
+      "objectives": [
+        "Describe the broad shift from fixed currency arrangements to more flexible exchange rates.",
+        "Recognize how technology changed access to currency trading.",
+        "Explain why market history does not predict future prices."
+      ],
+      "explanation": [
+        "For much of modern history, governments used monetary systems that linked currencies to precious metals or to other currencies at stated values. After the Second World War, the Bretton Woods system linked many currencies to the US dollar, while the dollar was convertible into gold for official foreign holders. The system came under strain as economic conditions changed, and the United States ended dollar convertibility into gold in 1971. The transition that followed helped establish today's broader use of floating exchange rates, though some currencies still use pegs or managed arrangements.",
+        "As cross-border trade and finance expanded, banks and other institutions built networks to exchange currencies and settle obligations. Electronic dealing, communications networks, and online platforms later made prices and order access more immediate for many participants. These changes did not create one central forex exchange: trading remains distributed across banks, dealers, platforms, and other venues, with market structure differing by product and region.",
+        "History provides context, not a reliable script. A past arrangement, crisis, or technology shift cannot establish what a currency will do next. Institutions, regulations, and market access also change over time and differ by jurisdiction. For current legal protections or product details, consult the relevant regulator and provider's original official terms rather than assuming that historical practice still applies."
+      ],
+      "steps": [
+        "Place the gold-linked era, Bretton Woods, and the post-1971 transition in chronological order.",
+        "Explain in one sentence how a fixed exchange rate differs from a floating one.",
+        "Identify one way electronic communications changed market access.",
+        "Check a dated source when researching current rules instead of treating history as current policy."
+      ],
+      "example": "Imagine two fictional currencies, A and B. Under a fixed arrangement, their authorities announce a target rate of 2 A per 1 B and may act to maintain it. Under a floating arrangement, the rate can move as market conditions change. This illustration shows different systems, not a forecast about any actual currency.",
+      "remember": [
+        "Currency systems have included both fixed and floating arrangements.",
+        "The post-1971 transition expanded floating rates, but not every currency floats freely.",
+        "Historical events explain context; they do not guarantee a future market outcome."
+      ],
+      "mistakes": [
+        "Mistake: Every currency has always floated freely. Correction: monetary arrangements have varied, and some currencies remain pegged or managed.",
+        "Mistake: A past crisis pattern will repeat exactly. Correction: conditions and institutions change, so history cannot guarantee a market result."
+      ],
+      "summary": "The modern forex market developed through changing monetary systems and advances in communication. Its history is useful context, not a dependable prediction tool.",
+      "visual": {
+        "type": "timeline",
+        "caption": "A schematic timeline connects gold-linked arrangements, Bretton Woods, the 1971 transition, and electronic dealing."
+      },
+      "quiz": [
+        {
+          "question": "What was a key feature of the Bretton Woods arrangement?",
+          "options": ["Many currencies were linked to the US dollar", "All currencies floated without intervention", "Every retail trader held gold", "A single global exchange set all prices"],
+          "correct": 0,
+          "explanation": "Bretton Woods established a system in which many currencies were linked to the US dollar, which had an official gold-convertibility arrangement. It was not a universal free float."
+        },
+        {
+          "question": "What major monetary change did the United States announce in 1971?",
+          "options": ["It ended dollar convertibility into gold for official foreign holders", "It created the first currency pair", "It made every currency permanently fixed", "It banned international currency exchange"],
+          "correct": 0,
+          "explanation": "The end of official dollar-gold convertibility was a key turning point in the system's transition. It did not ban currency exchange or fix every currency."
+        },
+        {
+          "question": "Which description best fits much of today's forex market structure?",
+          "options": ["Distributed across participants and venues rather than one central exchange", "One building where all global currency orders must be matched", "A government-only market with no banks", "A market that only operates through physical cash counters"],
+          "correct": 0,
+          "explanation": "Forex trading is decentralized across networks and venues. This means there is no single central venue that represents every quote or transaction."
+        },
+        {
+          "question": "What is one effect of electronic communications on currency markets?",
+          "options": ["They made price information and dealing more immediate for many participants", "They eliminated all market risk", "They forced every provider to quote the same price", "They stopped currencies from fluctuating"],
+          "correct": 0,
+          "explanation": "Electronic systems accelerated communication and access. They did not remove volatility or require identical prices across providers."
+        },
+        {
+          "question": "How should a beginner use market history?",
+          "options": ["As context, while recognizing it cannot guarantee future prices", "As proof that one old event must repeat", "As a substitute for checking current rules", "As evidence that risk no longer exists"],
+          "correct": 0,
+          "explanation": "History can explain how institutions and practices developed. Because conditions change, it does not ensure repetition or replace checking current official information."
+        }
+      ]
+    },
+    {
+      "id": "m1-l3",
+      "title": "How the Forex Market Works",
+      "intro": "Forex prices emerge through a network of participants, quotes, and transactions rather than a single worldwide trading floor. Knowing the basic mechanics helps you understand both price movement and the costs or execution uncertainties a screen may not make obvious.",
+      "objectives": [
+        "Describe the decentralized nature and near-continuous weekday trading of major forex markets.",
+        "Distinguish bid, ask, and spread at a basic level.",
+        "Explain why execution prices can differ from displayed prices."
+      ],
+      "explanation": [
+        "There is no single central exchange for the global spot forex market. Banks, dealers, businesses, funds, brokers, and other participants communicate quotes and transact through networks and venues. Trading in major financial centres follows a rolling schedule across time zones, so activity often continues through much of the business week. It is not literally open in the same way at every moment: weekends, holidays, local session overlap, and instrument-specific rules affect access and liquidity.",
+        "A provider may show a bid, the price at which it is willing to buy, and an ask, the price at which it is willing to sell. The difference is the spread, one possible transaction cost. Other charges can include commissions, financing or rollover adjustments, and conversion costs; exact fees depend on the provider, product, account, and jurisdiction. The provider's official fee schedule and product terms are the appropriate source for current details.",
+        "A displayed price is not necessarily the price at which an order will execute. In fast or thin markets, a quote can change before execution; slippage is the difference between an expected and actual fill. Gaps can occur when prices reopen at a different level after a closure or abrupt event, so a stop order may execute at a worse price than its trigger. Execution rules, liquidity, and protections vary, and losses can exceed expectations, especially when leverage is involved."
+      ],
+      "steps": [
+        "On a fictional quote screen, point out the bid, ask, and the gap between them.",
+        "Check whether an educational example includes commission or financing costs, and list what it omits.",
+        "Describe how a price gap could affect an order triggered at a specified level.",
+        "Consult the provider's official product and execution terms when learning how a platform handles orders."
+      ],
+      "example": "In a fictional illustration, a platform displays EUR/USD bid 1.0998 and ask 1.1000. The spread is 0.0002, or two quoted points at this precision. If fast conditions lead to a hypothetical buy fill at 1.1003, the difference from the displayed ask illustrates slippage. The figures are invented and exclude any other costs; they are not a trade suggestion.",
+      "remember": [
+        "Forex is decentralized; displayed prices can differ among providers.",
+        "The spread is the difference between bid and ask, not the only possible cost.",
+        "Slippage and gaps can make execution differ from an expected price."
+      ],
+      "mistakes": [
+        "Mistake: The market is a single exchange that never closes. Correction: it is a distributed market with trading hours and weekend or holiday closures that vary by instrument.",
+        "Mistake: A stop guarantees the exact exit price. Correction: it commonly triggers an order, but gaps and fast markets can produce a different fill; terms vary."
+      ],
+      "summary": "Currency prices form across a network of participants and venues. Quotes, fees, liquidity, and execution conditions all matter, and displayed prices are not guarantees.",
+      "visual": {
+        "type": "liquidity",
+        "caption": "A schematic quote flow shows multiple participants, a bid-ask spread, and a possible price change before execution."
+      },
+      "quiz": [
+        {
+          "question": "What does 'decentralized' mean for the forex market?",
+          "options": ["Trading occurs through a network of participants and venues, not one central exchange", "No prices are ever quoted", "Only one bank can take part", "All trading must happen in a physical marketplace"],
+          "correct": 0,
+          "explanation": "Decentralized describes the market's distributed structure. It does not mean the market lacks prices or that only one institution participates."
+        },
+        {
+          "question": "On a provider's quote, what is the spread?",
+          "options": ["The difference between the ask and the bid", "The trader's entire account balance", "The time between two sessions", "A guaranteed daily price range"],
+          "correct": 0,
+          "explanation": "The spread is the ask-minus-bid difference. It is one cost component, while commissions and financing may also apply."
+        },
+        {
+          "question": "What is slippage?",
+          "options": ["The fill price differs from the expected or requested price", "A currency pair has two currencies", "A fee that is always exactly one pip", "A market that is open on weekends"],
+          "correct": 0,
+          "explanation": "Slippage describes execution at a different price than expected, which can happen when prices move or liquidity is limited. It can be unfavorable or, less commonly, favorable."
+        },
+        {
+          "question": "Why can a stop order fill beyond its trigger during a gap?",
+          "options": ["The market may reopen with no available prices near the trigger", "A stop freezes the exchange rate", "The base currency disappears", "A stop always converts into a limit order"],
+          "correct": 0,
+          "explanation": "A stop trigger does not ensure a counterparty at that exact price. A gap can leave the next available price materially farther away."
+        },
+        {
+          "question": "Where should a learner verify a provider's actual fees and execution rules?",
+          "options": ["The provider's current official fee schedule and product terms", "A generic online comment with no date", "A historical chart only", "A social-media prediction"],
+          "correct": 0,
+          "explanation": "Fees and order handling are provider- and jurisdiction-specific, so original current official documents are the relevant source."
+        }
+      ]
+    },
+    {
+      "id": "m1-l4",
+      "title": "Why People Trade Forex",
+      "intro": "People interact with foreign exchange for very different purposes, from paying overseas bills to taking speculative risk. Separating those motives prevents the mistaken idea that every participant is trying to profit from short-term price changes.",
+      "objectives": [
+        "Name practical, risk-management, and speculative reasons for currency activity.",
+        "Distinguish hedging from speculation.",
+        "Recognize that a motive does not guarantee a successful outcome."
+      ],
+      "explanation": [
+        "Businesses may exchange currencies to pay suppliers or receive sales proceeds abroad. Travelers exchange money for local spending, while investors may need foreign currency to purchase overseas assets. These are functional reasons to exchange currency, not necessarily attempts to make a trading profit. Participants may also use currency contracts to reduce uncertainty about a future payment or investment value.",
+        "Hedging means taking steps intended to reduce exposure to an unwanted price change. For example, an importer expecting to pay a foreign supplier might plan how to manage the risk of the supplier's currency rising. A hedge can reduce some uncertainty but may also introduce costs, imperfect matching, or opportunity costs if rates move favorably. Hedging arrangements and accounting or legal treatment vary, so this example is educational rather than personal or business advice.",
+        "Speculators take exposure because they expect price movement to create a gain, but the same movement can create a loss. Participants can have competing views, different time horizons, and information or execution advantages. The presence of large institutions or high trading volume does not make outcomes predictable for a retail participant. Any decision about whether to engage requires consideration of personal circumstances; this course is general education, not individualized financial advice."
+      ],
+      "steps": [
+        "Classify sample currency activities as payment, investment conversion, hedging, or speculation.",
+        "For a fictional business exposure, identify which currency movement creates uncertainty.",
+        "List one cost or limitation that could remain even if a hedge reduces one risk.",
+        "Ask whether an example describes a real currency need or a price-direction view."
+      ],
+      "example": "A fictional importer expects to owe 10,000 units of currency B in three months. A movement that makes B more expensive in the importer's home currency could raise the bill. The company might explore a hedge to make costs more predictable, but the hedge can have a price, imperfect timing, or lost benefit if B becomes cheaper. This is a classroom scenario, not a recommendation.",
+      "remember": [
+        "Many currency exchanges serve payments, travel, or investment needs.",
+        "A hedge aims to reduce a particular exposure; it cannot remove every risk.",
+        "Speculation seeks gains from price movement and also carries loss risk."
+      ],
+      "mistakes": [
+        "Mistake: Everyone in forex is speculating. Correction: many exchanges support trade, travel, investment, or risk management.",
+        "Mistake: A hedge guarantees a better financial result. Correction: hedges can reduce some uncertainty while adding costs or limiting favorable outcomes."
+      ],
+      "summary": "Forex activity can support practical currency needs, risk management, or speculation. The reason for an exchange does not remove costs or guarantee a favorable outcome.",
+      "visual": {
+        "type": "macro",
+        "caption": "A schematic separates currency activity into payments, hedging, investment conversion, and speculation, with distinct purposes."
+      },
+      "quiz": [
+        {
+          "question": "Which is a practical, non-speculative reason to exchange currency?",
+          "options": ["Paying a foreign supplier", "Trying to predict tomorrow's price solely for a gain", "Assuming every currency will rise", "Avoiding the need to understand exchange rates"],
+          "correct": 0,
+          "explanation": "A cross-border payment can require the payer to obtain the recipient's currency. The other choices either describe speculation or misunderstand exchange risk."
+        },
+        {
+          "question": "What is the main purpose of a hedge?",
+          "options": ["Reduce exposure to a particular unwanted price change", "Guarantee a profit on every exchange", "Remove all costs from international business", "Predict every future currency move"],
+          "correct": 0,
+          "explanation": "A hedge is intended to offset or limit a defined exposure. It does not guarantee a profit or eliminate every cost and risk."
+        },
+        {
+          "question": "How can a hedge have an opportunity cost?",
+          "options": ["It may limit the benefit if the exchange rate moves favorably", "It makes all future prices known", "It cannot involve any fees", "It always creates a second profit"],
+          "correct": 0,
+          "explanation": "A protective arrangement can reduce harm from an adverse move but also reduce gains from a favorable move, depending on its structure."
+        },
+        {
+          "question": "Which statement best describes speculation?",
+          "options": ["Taking price exposure in expectation of a gain while accepting possible loss", "Exchanging currency only to pay an invoice", "A method that guarantees the correct forecast", "A legal exemption from provider fees"],
+          "correct": 0,
+          "explanation": "Speculation involves exposure to price movement for potential gain, with loss possible if the movement is unfavorable. It is not a guarantee."
+        },
+        {
+          "question": "Does a participant's reason for exchanging currency guarantee the result?",
+          "options": ["No; purpose and outcome are separate, and costs and market moves still matter", "Yes, if the reason is business-related", "Yes, if the participant is an institution", "Only when a currency pair is widely traded"],
+          "correct": 0,
+          "explanation": "A functional need or hedge can explain why an exchange occurs, but it cannot guarantee the exchange's ultimate financial outcome."
+        }
+      ]
+    },
+    {
+      "id": "m1-l5",
+      "title": "Who Participates in the Forex Market?",
+      "intro": "Forex brings together participants with different objectives, resources, and access to information. Knowing who they are helps beginners avoid assuming that every market move reflects the same motive or that all participants face equal conditions.",
+      "objectives": [
+        "Identify major categories of forex participants.",
+        "Explain why participants may transact for different reasons.",
+        "Recognize that retail access and protections depend on provider and jurisdiction."
+      ],
+      "explanation": [
+        "Participants include commercial banks, central banks, multinational businesses, investment funds, asset managers, insurers, and governments. Banks and dealers may facilitate client transactions and manage their own exposure. Businesses may exchange money for trade or manage currency risks. Investment institutions can adjust portfolios or hedge exposures. Central banks may hold reserves or influence monetary conditions; some intervene in currency markets, but their actions and objectives vary.",
+        "Retail individuals usually access currency products through a broker, dealer, or another provider rather than directly through the same institutional networks used by large participants. The provider may act as counterparty, route orders, or use another model, as described in its legal terms. Retail products may be leveraged and may offer fewer protections than a learner assumes. Regulation, compensation arrangements, leverage limits, complaint routes, and product availability vary across jurisdictions and firms.",
+        "Large turnover does not mean that a retail trader can observe every order or know why a participant acted. Public price charts show price history, not complete intent. Terms such as smart money concepts (SMC), order blocks, liquidity grabs, and other pattern labels are interpretive frameworks, not objective proof of what institutions did and not guarantees of future movement. Check original regulator registers and provider terms for current jurisdiction-specific information."
+      ],
+      "steps": [
+        "Match a sample activity, such as paying an export invoice, to a likely participant category.",
+        "Compare how a central bank, business, and retail customer might have different currency motives.",
+        "Find the official regulator's register for a jurisdiction and learn what a listing does and does not establish.",
+        "Treat chart labels and SMC terminology as hypotheses to evaluate, not verified institutional intent."
+      ],
+      "example": "In a fictional scenario, a company exchanges currency to pay an overseas invoice, while an investment fund adjusts currency exposure in its portfolio. A retail learner sees the same pair's price chart through a provider, but cannot infer from that chart alone which institution caused a move. Their purposes and access differ; the scenario makes no claim about a real market event.",
+      "remember": [
+        "Participants include banks, central banks, businesses, funds, and retail customers.",
+        "Different participants may have very different reasons and market access.",
+        "Chart patterns and SMC labels are interpretive, not proof of institutional intent."
+      ],
+      "mistakes": [
+        "Mistake: Every market move is caused by a single identifiable institution. Correction: prices reflect many interacting orders, and public charts do not reveal every motive.",
+        "Mistake: A provider's regulatory status means every product is safe everywhere. Correction: protections and permissions depend on jurisdiction, entity, and product; check official terms."
+      ],
+      "summary": "The forex market includes institutions, companies, public authorities, and retail customers. Their purposes and protections differ, and chart interpretations cannot reveal every participant's intent.",
+      "visual": {
+        "type": "structure",
+        "caption": "A schematic participant map shows banks, businesses, public authorities, funds, and retail customers connected through providers and venues."
+      },
+      "quiz": [
+        {
+          "question": "Which participant commonly exchanges currency to pay an overseas supplier?",
+          "options": ["A commercial business", "Only a central bank", "Only an individual speculator", "A charting indicator"],
+          "correct": 0,
+          "explanation": "A business may need the supplier's currency to settle an invoice. Other participant types may also trade, but this is a common commercial use."
+        },
+        {
+          "question": "What may a central bank do in relation to foreign currency?",
+          "options": ["Hold reserves or, in some circumstances, intervene", "Set every global retail quote permanently", "Guarantee every business's exchange rate", "Publish all market orders in real time"],
+          "correct": 0,
+          "explanation": "Central banks can hold foreign reserves and some may intervene, depending on policy and circumstances. They do not set every retail quote or reveal every order."
+        },
+        {
+          "question": "How do many retail customers access forex products?",
+          "options": ["Through a provider such as a broker or dealer", "By joining a single worldwide central exchange directly in all cases", "Only by exchanging cash at a border", "By becoming a central bank"],
+          "correct": 0,
+          "explanation": "Retail access commonly comes through a broker or dealer, whose execution model and legal terms should be reviewed."
+        },
+        {
+          "question": "What can a public price chart prove about an institution's intention?",
+          "options": ["It cannot by itself establish the institution's identity or intent", "It proves which bank placed each order", "It guarantees what the next move will be", "It shows all private transactions"],
+          "correct": 0,
+          "explanation": "A chart displays price information, not a complete record of participant identity and motivation. Pattern interpretations remain hypotheses."
+        },
+        {
+          "question": "What should a learner do before relying on a claim about provider regulation?",
+          "options": ["Check the relevant regulator's official register and the provider's entity and product terms", "Assume every similarly named firm is authorized", "Rely only on an influencer's description", "Assume regulation is identical in all countries"],
+          "correct": 0,
+          "explanation": "Regulatory permissions and protections vary by firm, entity, jurisdiction, and product. Official registers and original provider terms help verify the applicable details."
+        }
+      ]
+    },
+    {
+      "id": "m1-l6",
+      "title": "How Traders Make Money",
+      "intro": "A trade's outcome depends on more than correctly guessing whether a price goes up or down. Learning the basic mechanics of price change, costs, and position exposure helps explain both potential gains and the possibility of losses.",
+      "objectives": [
+        "Explain how a price movement can create a gain or loss on a position.",
+        "Identify costs that reduce a gross trading result.",
+        "Describe why leverage magnifies exposure and risk."
+      ],
+      "explanation": [
+        "In a simplified currency-price contract, a long position generally gains value if the relevant price rises and loses value if it falls; a short position generally has the reverse relationship. The actual calculation depends on the product, position size, quote currency, account currency, contract specifications, and provider. A small price movement can have a larger monetary effect when the position is larger, so learning the units and contract rules matters before interpreting any example.",
+        "A gross gain or loss is not the same as the final result. Spread, commissions, financing or rollover, conversion charges, and slippage can change the net outcome. An order may also fail to execute at an expected level. With leverage, a relatively small amount of margin controls a larger exposure. This magnifies both gains and losses; a sharp move or gap can lead to rapid losses and, depending on product and jurisdiction, possibly more than the amount expected or deposited.",
+        "No strategy or outcome is assured. A stop-loss instruction can help define an intended exit, but it does not guarantee the exact execution price, especially during gaps or fast markets. This course uses fictional numbers solely to explain concepts. It is general education, not personal financial advice, and it does not recommend deposits, live trading, signals, or any particular firm."
+      ],
+      "steps": [
+        "Label a fictional position as long or short and state which price direction would help it before costs.",
+        "List all costs omitted from a simple gross-profit calculation.",
+        "Compare the notional exposure with the margin in a fictional product specification.",
+        "Read official product terms to understand margin close-out and negative-balance rules, if any."
+      ],
+      "example": "For a simplified fictional calculation, assume a position's value changes by $10 for each pip and the relevant price moves 8 pips in the position's favor. The gross change is $80 before spread, commission, financing, conversion, and slippage. A move 8 pips against it would instead be a gross $80 loss in this simplified setup. Actual products calculate value differently, so the example is not a forecast or recommendation.",
+      "remember": [
+        "A price move may help or hurt depending on the position direction.",
+        "Gross results omit costs and execution differences unless explicitly included.",
+        "Leverage magnifies exposure and can magnify losses as well as gains."
+      ],
+      "mistakes": [
+        "Mistake: Correctly predicting direction guarantees profit. Correction: size, entry and exit prices, costs, and execution all affect the result.",
+        "Mistake: Margin is the maximum possible loss. Correction: margin is collateral for exposure; loss limits and protections depend on product and local rules."
+      ],
+      "summary": "A currency position's result depends on price direction, size, product details, costs, and execution. Leverage increases exposure and can make losses substantial or rapid.",
+      "visual": {
+        "type": "risk",
+        "caption": "A schematic compares gross price movement with costs and shows how larger leveraged exposure magnifies both favorable and unfavorable changes."
+      },
+      "quiz": [
+        {
+          "question": "In a simplified long position, which price movement generally helps before costs?",
+          "options": ["A rise in the relevant price", "A fall in the relevant price", "Any movement, regardless of direction", "No movement because price is irrelevant"],
+          "correct": 0,
+          "explanation": "A long position generally benefits from a rise in the relevant price and loses from a fall, before costs and subject to the product's specifications."
+        },
+        {
+          "question": "Why is a gross result not necessarily the final result?",
+          "options": ["Fees, financing, spread, and execution differences may affect it", "Gross results always include every cost", "Currency prices cannot change after entry", "A long position has no costs"],
+          "correct": 0,
+          "explanation": "Gross calculations often exclude costs such as spread, commission, financing, conversion, and slippage. These can reduce or alter the net outcome."
+        },
+        {
+          "question": "What does leverage do to a position?",
+          "options": ["It gives exposure larger than the margin amount and magnifies both gains and losses", "It guarantees profit with a smaller deposit", "It removes the need to understand contract size", "It prevents gaps"],
+          "correct": 0,
+          "explanation": "Leverage lets a smaller margin support larger exposure, so a given market move has a larger impact on the account in both directions."
+        },
+        {
+          "question": "What is an important limitation of a stop-loss instruction?",
+          "options": ["It may not execute at the trigger price during gaps or fast markets", "It guarantees that no loss can occur", "It eliminates financing charges", "It predicts the next price move"],
+          "correct": 0,
+          "explanation": "A stop can trigger an order but cannot guarantee a matching fill when prices jump or liquidity is limited. Execution rules vary."
+        },
+        {
+          "question": "In the fictional example, what is the gross effect of an 8-pip favorable move at $10 per pip?",
+          "options": ["$80 before costs", "$18 before costs", "$10 before costs", "It cannot be estimated from the given assumptions"],
+          "correct": 0,
+          "explanation": "Eight pips multiplied by $10 per pip equals $80 gross. This excludes costs and relies entirely on the fictional simplified assumptions."
+        }
+      ]
+    },
+    {
+      "id": "m1-l7",
+      "title": "Advantages and Disadvantages of Forex",
+      "intro": "Forex has features that some learners find appealing, but every convenience has limits and risks. A balanced comparison is more useful than treating market access or trading hours as automatic benefits.",
+      "objectives": [
+        "Identify commonly cited features of forex access and liquidity.",
+        "Explain key risks including leverage, costs, and volatility.",
+        "Assess why benefits and protections vary by product and jurisdiction."
+      ],
+      "explanation": [
+        "Commonly cited features include access to many currency pairs, trading activity across global time zones during the business week, and the ability to study both rising and falling prices through certain products. Major currency pairs often have substantial activity, which can support tighter spreads at some times. These are general tendencies, not guarantees: liquidity varies by pair, venue, time, news conditions, provider, and product, while access and trading hours differ across platforms.",
+        "Disadvantages include volatility, leverage, variable spreads, commissions or financing charges, execution slippage, and gaps. Leverage can make a small market move have a large account impact. A stop may not fill at its trigger, and sudden events can make prices move quickly. A market that is open for much of the week may also encourage over-monitoring or impulsive decisions; access does not make a product appropriate for every person.",
+        "Broker fees, regulation, client-money handling, dispute routes, leverage limits, and product protections vary by provider and jurisdiction. Verify the exact legal entity and current terms through original official documents and the appropriate regulator. A regulated status is not a promise of profits or freedom from loss. Forex products are complex and may not be suitable for all people; this module is general education, not personal financial advice."
+      ],
+      "steps": [
+        "Make a two-column list separating possible conveniences from the risks that accompany them.",
+        "For a sample pair and time, identify what information is needed to assess spread and liquidity.",
+        "Compare a provider's official costs and risk disclosure with the exact legal entity and product.",
+        "Explain why long trading hours can be access, but not proof that constant monitoring is helpful."
+      ],
+      "example": "A fictional learner sees a narrow spread on a major pair during an active session, then a wider spread during a quiet period or around major news. This illustrates that liquidity and cost can change with conditions. The example does not claim that any pair is always liquid or that a particular time is suitable for trading.",
+      "remember": [
+        "Access, pair choice, and active trading periods are features, not guarantees of advantage.",
+        "Leverage, volatility, costs, slippage, and gaps can produce substantial losses.",
+        "Provider protections and fees must be checked for the exact firm, product, and jurisdiction."
+      ],
+      "mistakes": [
+        "Mistake: High liquidity means a trade cannot lose. Correction: liquidity affects execution conditions, not whether price moves against a position.",
+        "Mistake: A regulated provider eliminates trading risk. Correction: regulation may set standards, but it does not prevent market losses; protections vary."
+      ],
+      "summary": "Forex offers broad access and flexible market hours in some products, but also carries meaningful market and provider risks. Evaluate the precise product and terms rather than relying on general claims.",
+      "visual": {
+        "type": "risk",
+        "caption": "A balanced schematic places possible access features beside volatility, leverage, execution, cost, and regulatory limitations."
+      },
+      "quiz": [
+        {
+          "question": "Which is a possible feature of the forex market, rather than a guaranteed benefit?",
+          "options": ["Access to multiple currency pairs", "Guaranteed positive returns", "No trading costs", "Identical spreads at all times"],
+          "correct": 0,
+          "explanation": "Many providers offer multiple pairs, but pair availability and access depend on the product and provider. No feature guarantees returns or eliminates costs."
+        },
+        {
+          "question": "Why can a spread vary over time?",
+          "options": ["Liquidity and market conditions can change", "A spread is permanently fixed for every provider", "Currencies stop having bid and ask prices", "Every global venue must quote one identical spread"],
+          "correct": 0,
+          "explanation": "Spreads can widen or narrow with liquidity, volatility, time, and provider pricing. They are not universally fixed."
+        },
+        {
+          "question": "Which is a major risk associated with leverage?",
+          "options": ["A modest price move can have a large effect on account equity", "It makes losses impossible", "It ensures a stop will fill exactly", "It removes market volatility"],
+          "correct": 0,
+          "explanation": "Leverage increases exposure relative to margin, amplifying account impact from both favorable and unfavorable price changes."
+        },
+        {
+          "question": "What does a provider's regulatory status not mean?",
+          "options": ["That market losses are impossible or profits are assured", "That its exact legal entity should be checked", "That protections can depend on jurisdiction", "That official terms are worth reviewing"],
+          "correct": 0,
+          "explanation": "Regulation does not guarantee profit or prevent market losses. The exact entity, product, and protections still require verification."
+        },
+        {
+          "question": "Why is 'forex is open most of the business week' not automatically an advantage for everyone?",
+          "options": ["Access can also encourage over-monitoring, and suitability varies", "It means no price gaps can occur", "It guarantees profitable opportunities", "It removes the need for rest or planning"],
+          "correct": 0,
+          "explanation": "Long access hours can be convenient, but can also invite excessive monitoring and do not establish that trading is suitable or profitable."
+        }
+      ]
+    },
+    {
+      "id": "m1-l8",
+      "title": "Forex Trading vs Binary Options",
+      "intro": "Forex and binary options are different products, even when both reference currency prices. Comparing their payoff structures and rules helps a beginner avoid confusing a market with a particular contract offered on it.",
+      "objectives": [
+        "Distinguish a currency-market exposure from a fixed-outcome binary contract.",
+        "Explain expiration and payout in a simplified binary option.",
+        "Recognize that legal availability and product protections vary."
+      ],
+      "explanation": [
+        "Forex describes the market and the currency exposure being referenced; retail providers may offer different products linked to that market. A common retail forex contract may gain or lose as the quoted exchange rate moves, with the result depending on position size, entry and exit, costs, and product terms. Some such contracts are leveraged. Product labels can differ, so it is important to learn what the legal contract actually is instead of assuming that every provider's 'forex' offer works the same way.",
+        "A binary option is generally structured around a yes-or-no outcome at a specified expiry, such as whether a reference price is above a stated level. Its payout may be fixed or otherwise defined by the contract, and the buyer can lose the amount staked if the condition is not met. Exact payout, early exit, settlement source, and maximum loss depend on the contract. The all-or-nothing structure can be difficult to evaluate and may create a high risk of loss.",
+        "Binary options are restricted or prohibited for retail customers in some jurisdictions, while rules differ elsewhere and can change. Do not assume a product is legal, regulated, or protected based on its name or a website claim. Check the relevant regulator's current official material and the provider's original terms. Neither product makes price prediction easy; both can result in loss. This comparison is general education, not personal financial advice."
+      ],
+      "steps": [
+        "For each fictional product description, identify whether its payoff varies with price movement or resolves at a stated expiry condition.",
+        "Write down the maximum stated loss, payout, fees, and settlement reference from a hypothetical contract.",
+        "Check current official jurisdictional rules before making claims about a product's legal status.",
+        "Avoid comparing products using marketing labels alone; inspect the underlying legal terms."
+      ],
+      "example": "Suppose a fictional binary contract pays $70 if a specified rate is above 1.2000 at expiry and otherwise loses a $100 stake. A separate fictional currency contract changes value with each price movement and has costs and possible leverage. These are simplified illustrations; the actual payoff and loss depend on the written terms, and neither example is a recommendation.",
+      "remember": [
+        "Forex is a market exposure; retail providers may package it in different contracts.",
+        "A binary option usually resolves by a defined condition at expiry with a stated payout structure.",
+        "Legality, protections, and contract terms vary by jurisdiction and provider."
+      ],
+      "mistakes": [
+        "Mistake: All products tied to currency prices have the same payoff. Correction: contract structure, leverage, expiry, costs, and loss limits can differ substantially.",
+        "Mistake: A website offering binary options proves they are permitted locally. Correction: verify current rules with the relevant official regulator."
+      ],
+      "summary": "Forex exposure and binary-option contracts have different structures and risks. Always identify the actual contract and verify its current legal status and official terms.",
+      "visual": {
+        "type": "structure",
+        "caption": "A schematic contrasts a price-responsive currency exposure with a binary contract that resolves at a stated expiry condition."
+      },
+      "quiz": [
+        {
+          "question": "What typically determines the outcome of a basic binary option?",
+          "options": ["Whether a defined condition is met at a specified expiry", "Every tick of a continuously held currency position", "The number of currencies in a country", "Whether the trader has read a chart"],
+          "correct": 0,
+          "explanation": "A basic binary option commonly resolves based on a yes-or-no condition at expiry. The actual settlement and payout are defined by its contract."
+        },
+        {
+          "question": "What can determine the result of a price-responsive retail forex contract?",
+          "options": ["Price change, position size, costs, and contract terms", "Only the trader's starting balance", "A fixed binary outcome in all cases", "The name of the currency pair alone"],
+          "correct": 0,
+          "explanation": "A price-responsive contract's outcome depends on the movement relative to the position, its size, costs, and specifications. Labels alone are insufficient."
+        },
+        {
+          "question": "In the fictional binary example, what happens if the condition is not met?",
+          "options": ["The stated $100 stake is lost under the simplified terms", "The buyer automatically earns $70", "The provider must refund the stake", "The contract becomes a forex spot exchange"],
+          "correct": 0,
+          "explanation": "The example states that the $100 stake is lost if the condition fails. Real contracts must be checked for their exact payout and settlement terms."
+        },
+        {
+          "question": "Why should a learner verify binary-option rules locally?",
+          "options": ["Restrictions and permissions vary by jurisdiction and may change", "Every country has identical product laws", "A provider's advertisement is the official regulator", "Market products are exempt from regulation"],
+          "correct": 0,
+          "explanation": "Legal treatment differs across jurisdictions and can change. The relevant regulator's current official material is more reliable than marketing claims."
+        },
+        {
+          "question": "Which comparison is most accurate?",
+          "options": ["The contract terms determine the product's payoff; names alone are not enough", "All binary options are ordinary currency exchanges", "All forex contracts have unlimited duration", "Every retail product has the same leverage and protections"],
+          "correct": 0,
+          "explanation": "Product names do not specify all mechanics. Reviewing the original contract reveals the payoff, expiry, costs, leverage, and protections."
+        }
+      ]
+    },
+    {
+      "id": "m1-l9",
+      "title": "Is Forex Trading a Business or Gambling?",
+      "intro": "Forex participation can be approached with careful record-keeping, but no process makes uncertain prices controllable. Examining the difference between disciplined risk management and chance-based behavior helps learners think clearly about both risk and claims of expertise.",
+      "objectives": [
+        "Compare the features of a documented decision process with impulsive wagering.",
+        "Explain why planning does not remove uncertainty or make returns reliable.",
+        "Identify warning signs of misleading profit claims and unclear provider terms."
+      ],
+      "explanation": [
+        "Forex is a financial market, and participants may use structured analysis, written rules, records, and risk limits. These practices can make decisions more consistent and reviewable, similar to processes used in many businesses. But calling activity a business does not make it one in every legal or tax sense, nor does planning make it profitable. Whether a person's activity qualifies as a business for taxes or regulation depends on local law and individual facts; professional local advice may be needed.",
+        "Trading can resemble gambling when decisions are impulsive, based on a desire to recover losses, or made without understanding the possible downside. Even a careful process faces uncertainty, changing conditions, execution problems, and losing periods. A backtest or past record may not represent future conditions, and a strategy can stop working. Gambling-like behavior is a useful risk comparison, not a diagnosis or universal legal classification of all forex products.",
+        "A cautious educational process includes defining what is being studied, recording assumptions and costs, reviewing errors without selectively hiding losses, and avoiding pressure to risk money. Beware claims of guaranteed returns, effortless account growth, or certain challenge passes. If considering a proprietary trading firm or broker for research, examine its original official rules: fees, payout conditions, prohibited practices, and other terms vary by firm and jurisdiction. This course is general education, not personal financial advice, and does not recommend deposits or live trading."
+      ],
+      "steps": [
+        "Draft a paper-only decision log with the question, assumptions, possible outcomes, and costs.",
+        "Review a fictional set of results including losing periods instead of selecting only the best example.",
+        "Check whether a profit claim explains risks, fees, sample size, and verifiable evidence.",
+        "For research on any firm, read its current official contract and rules and identify fees, payout conditions, and jurisdiction."
+      ],
+      "example": "Two fictional learners study the same historical currency chart. One records a hypothesis, the conditions that would disprove it, and hypothetical costs; the other repeatedly changes direction after losses to try to recover them. The first has a more reviewable process, but neither method guarantees a profit. This comparison is about learning behavior, not a recommendation to trade.",
+      "remember": [
+        "Planning and record-keeping can improve review, but cannot remove market uncertainty.",
+        "Impulsive loss-chasing resembles gambling behavior and can increase harm.",
+        "Claims, legal classifications, and firm conditions require careful verification from official sources."
+      ],
+      "mistakes": [
+        "Mistake: A trading plan guarantees that forex is a profitable business. Correction: process quality does not control prices or guarantee financial outcomes.",
+        "Mistake: Every forex product has one universal legal classification. Correction: product terms and local tax, consumer, and financial laws differ."
+      ],
+      "summary": "A documented process is more reviewable than impulsive decisions, but it cannot make uncertain outcomes safe or reliable. Treat profit claims skeptically and check original rules and local requirements.",
+      "visual": {
+        "type": "psychology",
+        "caption": "A schematic contrasts a documented, reviewable learning loop with impulsive loss-chasing while showing that both face uncertainty."
+      },
+      "quiz": [
+        {
+          "question": "What can a written decision log help a learner do?",
+          "options": ["Review assumptions and decisions consistently", "Guarantee a profitable outcome", "Prevent all market gaps", "Prove that future prices will repeat"],
+          "correct": 0,
+          "explanation": "A log makes reasoning and assumptions easier to review. It cannot control market conditions or guarantee future results."
+        },
+        {
+          "question": "Which behavior is a warning sign of gambling-like decision-making?",
+          "options": ["Increasing risk impulsively to recover a loss", "Recording a hypothetical cost assumption", "Reviewing both gains and losses", "Checking an official product document"],
+          "correct": 0,
+          "explanation": "Chasing losses can escalate exposure and is a risky, emotionally driven pattern. The other choices are examples of reflective learning or verification."
+        },
+        {
+          "question": "Does a careful process guarantee that trading is profitable?",
+          "options": ["No; process can be reviewed, but outcomes remain uncertain", "Yes, if it includes a spreadsheet", "Yes, if the participant calls it a business", "Only when a past test was positive"],
+          "correct": 0,
+          "explanation": "A plan can support consistency, but price uncertainty, costs, and execution remain. Historical success does not guarantee future performance."
+        },
+        {
+          "question": "Why might 'forex as a business' have a different legal meaning in different places?",
+          "options": ["Tax and regulatory classifications depend on local law and facts", "Every jurisdiction uses one universal definition", "A broker decides all tax law", "A trading journal automatically creates a business"],
+          "correct": 0,
+          "explanation": "Business status for legal or tax purposes depends on jurisdiction-specific rules and individual circumstances, not simply a label or journal."
+        },
+        {
+          "question": "What should be checked when reviewing a proprietary trading firm's conditions?",
+          "options": ["Its current official fees, payout conditions, prohibited practices, and jurisdictional terms", "Only its promotional headline", "A claim that every challenge pass is guaranteed", "An unrelated firm's historic rules"],
+          "correct": 0,
+          "explanation": "Firm rules and conditions differ and can change. The exact firm's current official documents are needed to understand fees, payouts, restrictions, and applicable jurisdiction."
+        }
+      ]
+    }
+  ]
+}

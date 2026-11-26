@@ -1,10 +1,16 @@
 # SIF FOREX HUB
 
-A static forex learning and practice site. The Academy, charts, risk calculator, and simulator open directly without account creation. Sign-in is required for the personal journal and dashboard. Academy lessons and quizzes save progress only in this browser; progress is not synced to an account.
+A static forex learning and practice site. The Academy, the separate SIF Question assessment section, charts, risk calculator, and simulator open directly without account creation. Sign-in is required for the personal journal and dashboard. Academy progress saves in browser storage; optional account sync is prepared but requires the separate migration described below.
 
 ## Preview locally
 
 From this folder, run `python3 -m http.server 8000` and open `http://localhost:8000/`. A local HTTP server is more reliable than opening individual files. Supabase auth and the TradingView chart need an internet connection and their external services.
+
+## Academy and SIF Question
+
+The beginner curriculum contains 18 modules and 206 lessons. Lesson pages focus on introductions, objectives, explanations, practical examples, labelled schematic visuals, takeaways, mistakes, and summaries. Assessments live separately at `sif-question.html`; each lesson links to its five-question assessment. A score of 4/5 passes and unlocks the next lesson. Failed attempts can be retried, and answer explanations appear after submission.
+
+The JSON lesson sources are in `academy-content/module-01.json` through `module-18.json`. To validate the curriculum and regenerate the compact browser index, run `python3 scripts/build-academy-data.py`. The browser fetches detailed content only when a learner opens that module's lesson or assessment. Progress uses `sifForexAcademyProgress.v2`; the previous four-lesson key is migrated forward without being deleted. Certificates recognize study only, not trading performance or a professional qualification.
 
 ## Account and data behavior
 
@@ -20,7 +26,9 @@ The browser client in login, registration, dashboard, and journal needs the proj
 
 Before deployment, confirm that `public.profiles` has `id`, `full_name`, `username`, and `membership`, with `id` corresponding to the authenticated user ID. If profile data is needed, configure and test a trusted server-side signup row-creation path. Keep RLS enabled and verify that an authenticated user can read only their own profile row. Test both new and existing accounts with RLS enabled. Do not apply SQL copied from documentation without matching it to the actual deployed schema and policies.
 
-The journal is currently local-only. If it must be private across devices or protected against other users of the same browser profile, store entries server-side in an owner-scoped table with verified RLS; that backend is not configured here. PRO/VIP plans and payment processing are preview-only and unavailable.
+The additive migration `supabase/migrations/20261126190000_academy_progress.sql` creates one JSONB progress row per authenticated user, enables RLS, and grants users access only to their own row. It does not change `public.profiles` or delete existing data. The migration has **not** been applied to production; until the owner approves the exact review build and authorizes a separate release step, Academy and SIF Question use browser storage and show a clear local-save fallback when account sync is unavailable. No build or test automatically applies this migration.
+
+The journal is currently local-only. If it must be private across devices or protected against other users of the same browser profile, store entries server-side in an owner-scoped table with verified RLS; that backend is not configured here. PRO/VIP plans and payment processing remain unavailable until a real paid feature is ready.
 
 ## Scope and safety
 

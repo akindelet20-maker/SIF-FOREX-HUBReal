@@ -1,0 +1,927 @@
+{
+  "id": 6,
+  "title": "Charts and Timeframes",
+  "description": "Learn how Forex charts turn price history into readable context, so you can study markets with care rather than guesswork.",
+  "lessons": [
+    {
+      "id": "m6-l1",
+      "title": "Introduction to Line Charts",
+      "intro": "A line chart is often the simplest way to see how a currency pair's price has moved over time. Learning what it shows—and what it leaves out—helps you build a clear foundation before reading more detailed charts.",
+      "objectives": [
+        "Identify the time and price axes on a basic Forex line chart.",
+        "Explain why line charts usually connect closing prices.",
+        "Describe one useful feature and one limitation of a line chart."
+      ],
+      "explanation": [
+        "A chart displays recorded prices across time. In a common line chart, the horizontal axis represents time and the vertical axis represents price. The chart draws a line by connecting one selected price from each time interval, often the interval's closing price. For example, a one-hour chart may connect the recorded close of each hour. The result is a simple outline of the market's path, rather than a complete record of every movement inside each hour.",
+        "Line charts can make broad direction and turning areas easier to notice because they remove much of the detail that can distract a beginner. However, they hide each interval's high, low, and opening price, and they do not show the route price took between closes. Chart settings and data providers can also differ. This is general education, not personal financial advice; a clean-looking line is a record of selected prices, not a forecast or proof that a move will continue."
+      ],
+      "steps": [
+        "Open a chart for a currency pair in a learning environment and select line display.",
+        "Locate and read the time axis and price axis, including their labels.",
+        "Choose two nearby points and describe whether the recorded closes rose, fell, or stayed similar.",
+        "Switch briefly to another chart type and note which details the line view did not show."
+      ],
+      "example": "Suppose a fictional EUR/USD line chart connects hourly closes at 1.0800, 1.0810, and 1.0795. The line rises and then falls, so it summarizes a short upward move followed by a lower close. It does not reveal whether price briefly reached 1.0830 or 1.0780 during either hour, so the example supports description, not a prediction or recommendation.",
+      "remember": [
+        "A line chart connects selected prices, commonly closes.",
+        "Time is usually horizontal and price vertical.",
+        "A simple view is useful, but it omits intraperiod detail."
+      ],
+      "mistakes": [
+        "Mistake: assuming the line shows every price movement. Correction: it connects selected observations and hides movements between them.",
+        "Mistake: treating an upward line as a promise of further gains. Correction: past prices describe history and cannot guarantee what follows."
+      ],
+      "summary": "Line charts provide a stripped-down view of price over time, often using closing prices. Their simplicity is helpful for orientation, but they cannot explain the full movement inside each interval.",
+      "visual": {
+        "type": "trend",
+        "caption": "A schematic line connects four interval closes across a time axis, with a note that intraperiod highs and lows are hidden."
+      },
+      "quiz": [
+        {
+          "question": "What does a typical line chart connect from one time interval to the next?",
+          "options": [
+            "Every price tick recorded during the interval",
+            "A selected price, often the closing price",
+            "Only the highest price in each interval",
+            "The broker's spread at the start of each interval"
+          ],
+          "correct": 1,
+          "explanation": "A common line chart connects selected observations such as interval closes. It is tempting to think the continuous line contains every tick, but the chart simplifies the data and omits the path between those observations."
+        },
+        {
+          "question": "On a standard chart, what does the horizontal axis most often represent?",
+          "options": [
+            "Price level",
+            "Trading costs",
+            "Time",
+            "Currency strength"
+          ],
+          "correct": 2,
+          "explanation": "The horizontal axis usually orders observations through time, while the vertical axis displays price. A chart may have other layouts, but reversing these two standard roles is a common beginner mix-up."
+        },
+        {
+          "question": "Which detail is usually hidden by a line chart based on closes?",
+          "options": [
+            "The currency pair name",
+            "The order of time intervals",
+            "The closing price used for each point",
+            "The high and low reached within each interval"
+          ],
+          "correct": 3,
+          "explanation": "A close-only line does not show each interval's high and low. The plotted closes and their order remain visible, but the unseen intraperiod extremes can be important context."
+        },
+        {
+          "question": "Why might a beginner choose a line chart when first studying broad movement?",
+          "options": [
+            "It reduces detail and can make the overall path easier to see",
+            "It guarantees that short-term noise disappears from the market",
+            "It shows more price details than every other chart type",
+            "It identifies the correct future direction automatically"
+          ],
+          "correct": 0,
+          "explanation": "A line chart's reduced detail can make the broad path easier to follow. It does not change market noise or predict direction, and more detailed displays exist for examining intervals."
+        },
+        {
+          "question": "What is a careful conclusion from a line that slopes upward?",
+          "options": [
+            "Price must rise in the next interval",
+            "The selected recorded prices rose across the displayed period",
+            "The pair had no downward moves during that period",
+            "The chart provider's data must be complete tick data"
+          ],
+          "correct": 1,
+          "explanation": "An upward line supports a statement about the selected observations shown. It cannot establish that no dips occurred between them or that the next interval will rise; those are stronger claims than the display supports."
+        }
+      ]
+    },
+    {
+      "id": "m6-l2",
+      "title": "Bar Charts",
+      "intro": "Bar charts pack more information about each period into a small mark than a simple line does. Reading a bar carefully helps you distinguish where a period began and ended from its highest and lowest recorded prices.",
+      "objectives": [
+        "Identify the open, high, low, and close represented by an OHLC bar.",
+        "Read the left and right ticks on a standard bar.",
+        "Explain why an OHLC bar still does not reveal every price path."
+      ],
+      "explanation": [
+        "A common Forex bar is an OHLC bar: it summarizes four prices for one chosen interval. The vertical stroke reaches from the interval's low to its high. A short tick extending left marks the open, or first recorded price in the interval, and a tick extending right marks the close, or last recorded price. The bar's height therefore shows the observed range for that period, while the side ticks show its start and finish.",
+        "OHLC bars let learners compare range and closing position without displaying every tick. A close above the open means the interval finished above where it began, but it does not mean price moved upward in a straight line. Bars may be drawn differently by platforms, especially when colors or tick directions are customized, so confirm the legend and data convention. High and low do not show the sequence or speed of movement, and an OHLC summary is not a forecast."
+      ],
+      "steps": [
+        "Find a clearly labeled OHLC bar and identify its full vertical range.",
+        "Use the platform legend to confirm which side tick marks open and which marks close.",
+        "Read the four values for one bar and state them in the order open, high, low, close.",
+        "Compare the bar's close with its open without assuming how price moved between them."
+      ],
+      "example": "For a fictional USD/JPY four-hour bar, suppose open is 150.10, high is 150.45, low is 149.95, and close is 150.30. The close is above the open, and the bar spans 0.50 yen. The four values do not tell us whether the high came before the low, so the example describes the interval only.",
+      "remember": [
+        "OHLC means open, high, low, and close.",
+        "The vertical stroke marks the interval's high-to-low range.",
+        "Four prices summarize a period but not its exact path."
+      ],
+      "mistakes": [
+        "Mistake: reading the left and right ticks as the high and low. Correction: on a standard OHLC bar they mark open and close; the vertical extremes are high and low.",
+        "Mistake: assuming close above open means price rose continuously. Correction: the bar reports endpoints and extremes, not their order."
+      ],
+      "summary": "An OHLC bar condenses four prices into one interval marker. It adds range and endpoints to a chart, while leaving the detailed sequence of price changes unknown.",
+      "visual": {
+        "type": "candles",
+        "caption": "A labeled OHLC bar points to its vertical high-low stroke and the left-open and right-close ticks."
+      },
+      "quiz": [
+        {
+          "question": "What does the vertical stroke of a standard OHLC bar show?",
+          "options": [
+            "Open to close only",
+            "The interval's high-to-low range",
+            "The spread at the close",
+            "The sequence of every price change"
+          ],
+          "correct": 1,
+          "explanation": "The vertical stroke extends between the recorded low and high. It does not trace every price change or just the open-to-close distance; the small side ticks mark open and close."
+        },
+        {
+          "question": "On a standard OHLC bar, where is the open usually marked?",
+          "options": [
+            "At the top of the vertical stroke",
+            "At the bottom of the vertical stroke",
+            "By the short tick extending left",
+            "By the short tick extending right"
+          ],
+          "correct": 2,
+          "explanation": "The standard convention places the open on a short tick extending left. The right-facing tick marks the close, while top and bottom of the vertical stroke mark high and low."
+        },
+        {
+          "question": "A bar closes above its open. What can you conclude from that fact alone?",
+          "options": [
+            "It finished the interval above its opening price",
+            "It rose without any pullbacks",
+            "It will open higher next time",
+            "Its high occurred after its low"
+          ],
+          "correct": 0,
+          "explanation": "The close-above-open comparison establishes only that the interval ended above its start. It reveals neither the path between them nor the order of the high and low, and it says nothing certain about the next interval."
+        },
+        {
+          "question": "What does OHLC stand for?",
+          "options": [
+            "Order, history, level, currency",
+            "Open, high, low, close",
+            "Opening, hourly, lowest, current",
+            "Offer, hedge, leverage, carry"
+          ],
+          "correct": 1,
+          "explanation": "OHLC is the standard abbreviation for open, high, low, and close. The other choices may sound market-related, but they are not the four prices summarized in the bar."
+        },
+        {
+          "question": "Why check a platform's legend before interpreting bar ticks?",
+          "options": [
+            "All platforms always use color as the only price source",
+            "The legend predicts the next bar",
+            "Bar markings and colors can be customized or presented differently",
+            "The legend converts historical prices into guaranteed outcomes"
+          ],
+          "correct": 2,
+          "explanation": "Platforms may customize colors or display conventions, so the legend helps verify what is being shown. It provides chart-reading context, not a price forecast or outcome guarantee."
+        }
+      ]
+    },
+    {
+      "id": "m6-l3",
+      "title": "Candlestick Charts",
+      "intro": "Candlestick charts display the same basic open, high, low, and close information as OHLC bars in a shape many people find easier to scan. Understanding the parts prevents you from mistaking a visual pattern for certainty about what comes next.",
+      "objectives": [
+        "Label the body, upper wick, and lower wick of a candle.",
+        "Relate a candle's body to its open and close.",
+        "Recognize that candle color conventions and interpretations can vary."
+      ],
+      "explanation": [
+        "A candlestick represents one selected time interval and usually shows four values: open, high, low, and close. The rectangular body spans the open and close. Thin lines called wicks or shadows extend from the body toward the interval's high and low. If the close is higher than the open, many platforms color the candle bullish; if the close is lower, they color it bearish. Exact colors are user-configurable, so color alone is not a universal code.",
+        "Candles can make the relationship between open and close easy to compare across periods, and the wicks retain information that a close-only line chart omits. A single candle still compresses a sequence of movements, so it cannot show which extreme came first, how long price stayed there, or what caused a move. Candle shapes and named patterns are interpretive tools, not objective guarantees. Context, data quality, and the selected interval all affect what a candle can reasonably tell you."
+      ],
+      "steps": [
+        "Select candlestick display and identify the body and both possible wicks.",
+        "Read one candle's open and close from the body endpoints.",
+        "Trace each wick to the high or low for that interval.",
+        "Check the platform's color legend and compare its colors with the open-close relationship."
+      ],
+      "example": "In a fictional 30-minute GBP/USD candle, the open is 1.2650, close 1.2670, high 1.2682, and low 1.2642. Its body runs from 1.2650 to 1.2670, with a longer upper wick than lower wick. This records the interval's endpoints and extremes but does not reveal whether the high preceded the low or imply a future direction.",
+      "remember": [
+        "The body marks the open-close interval.",
+        "Wicks show the high and low beyond the body.",
+        "One candle summarizes activity; it does not reveal the full sequence."
+      ],
+      "mistakes": [
+        "Mistake: assuming the candle's body reaches the high and low. Correction: the wicks usually show extremes beyond the body.",
+        "Mistake: treating a candle color as a universal forecast. Correction: colors are configurable and describe a past interval, not a certain future."
+      ],
+      "summary": "Candlesticks visually combine open, high, low, and close for each period. Their shape makes comparisons accessible, but interpretation remains limited and uncertain.",
+      "visual": {
+        "type": "candles",
+        "caption": "A single candle labels the open-close body, upper wick to high, and lower wick to low, with a note about configurable colors."
+      },
+      "quiz": [
+        {
+          "question": "Which prices define the rectangular body of a standard candlestick?",
+          "options": [
+            "The high and the low",
+            "The open and the close",
+            "The bid and the ask",
+            "The first and last tick of the whole trading day"
+          ],
+          "correct": 1,
+          "explanation": "The body spans the open and close of that candle's interval. The high and low are typically shown by wicks, while bid and ask are different quote concepts."
+        },
+        {
+          "question": "What does an upper wick generally indicate?",
+          "options": [
+            "The interval's high extended above the body",
+            "The interval opened at the day's low",
+            "The spread was fixed for the interval",
+            "Price necessarily closed at the high"
+          ],
+          "correct": 0,
+          "explanation": "The upper wick connects the top of the body with the interval's high when that high lies above the body. A wick is not evidence that the close occurred there or that a spread stayed fixed."
+        },
+        {
+          "question": "What information is usually present in both a candlestick and an OHLC bar?",
+          "options": [
+            "Only the interval close",
+            "Only the high and low",
+            "Open, high, low, and close",
+            "The future price and volatility"
+          ],
+          "correct": 2,
+          "explanation": "Both common displays summarize open, high, low, and close. The candle changes how those values are drawn; it does not add future information."
+        },
+        {
+          "question": "Why should you check the color legend on a candlestick chart?",
+          "options": [
+            "Colors can be configured, so their meaning is not universal",
+            "Colors tell you the exact order of all ticks",
+            "Color proves a pattern will continue",
+            "Every platform must use the same colors"
+          ],
+          "correct": 0,
+          "explanation": "Many platforms allow users to choose candle colors, so the legend clarifies the local convention. Color cannot expose every tick or prove what a later candle will do."
+        },
+        {
+          "question": "What is a key limitation of a single candle?",
+          "options": [
+            "It never displays the interval close",
+            "It cannot show any price range",
+            "It cannot reveal the exact sequence of movement inside the interval",
+            "It always represents one calendar day"
+          ],
+          "correct": 2,
+          "explanation": "A candle compresses activity into four summary prices, so it does not show the exact path or sequence between them. It can show a close and range, and its interval may be minutes, hours, or another setting."
+        }
+      ]
+    },
+    {
+      "id": "m6-l4",
+      "title": "Understanding Japanese Candlesticks",
+      "intro": "Japanese candlesticks use a visual vocabulary that makes each period's range and close position quick to inspect. Learning the vocabulary is useful, but pattern names should be treated as descriptions to investigate, not signals with guaranteed meaning.",
+      "objectives": [
+        "Define body, shadow, real body, and candle range in plain language.",
+        "Distinguish a small-body candle from a large-body candle.",
+        "Explain why candle-pattern interpretations depend on context and are uncertain."
+      ],
+      "explanation": [
+        "In Japanese candlestick terminology, the real body is the thick section between open and close, while shadows are the thin extensions toward the high and low. The full range is the distance from high to low. A large real body means the open and close were relatively far apart during that interval; a small body means they were relatively close. These are comparisons, not fixed measurements, so the same body can look large or small depending on the pair, interval, and chart scale.",
+        "Some candlestick names describe shapes or sequences, but a name does not explain why price moved or establish what must happen next. A small body can occur during quiet activity or after a volatile period, and a long shadow can have different meanings in different settings. The chart's timeframe, surrounding prices, data source, and market conditions matter. Pattern reading is interpretive rather than objective proof; even repeated historical observations do not ensure the same outcome in the future."
+      ],
+      "steps": [
+        "On a sample chart, mark the real body, upper shadow, lower shadow, and full range.",
+        "Compare two candles on the same chart and describe their body sizes relative to one another.",
+        "Note the candle's interval and surrounding candles before describing its shape.",
+        "Use descriptive wording first, and treat any pattern name as a hypothesis to examine."
+      ],
+      "example": "A fictional EUR/GBP hourly candle opens at 0.8550, closes at 0.8552, reaches 0.8561, and falls to 0.8544. Its real body is small compared with its full range, and it has shadows on both sides. That shape shows a narrow open-close difference amid a wider range; by itself, it does not establish indecision, reversal, or a future move.",
+      "remember": [
+        "The real body spans open to close; shadows extend toward extremes.",
+        "Body size is relative to the chart and comparison period.",
+        "Pattern labels invite interpretation, not certainty."
+      ],
+      "mistakes": [
+        "Mistake: assuming a small body always means market indecision. Correction: it only shows that open and close were relatively near; context is needed to interpret it.",
+        "Mistake: believing a named candle pattern guarantees a reversal. Correction: pattern outcomes are uncertain and depend on context."
+      ],
+      "summary": "Japanese candlestick language describes bodies, shadows, and ranges in a compact visual format. The vocabulary helps observation, while any pattern interpretation remains a tentative reading of historical data.",
+      "visual": {
+        "type": "candles",
+        "caption": "A schematic candle labels real body, upper and lower shadows, and the complete high-low range, alongside a reminder that shape alone is not a forecast."
+      },
+      "quiz": [
+        {
+          "question": "What is the real body of a candlestick?",
+          "options": [
+            "The section between the high and low",
+            "The thick section between the open and close",
+            "The space between two separate candles",
+            "The difference between bid and ask"
+          ],
+          "correct": 1,
+          "explanation": "The real body is the thick open-to-close section. The full high-to-low distance includes shadows as well, so it is broader than the real body."
+        },
+        {
+          "question": "What do the shadows of a candle extend toward?",
+          "options": [
+            "The interval's recorded high and low beyond the body",
+            "The pair's weekly average only",
+            "The next interval's opening price",
+            "A broker's margin level"
+          ],
+          "correct": 0,
+          "explanation": "Shadows extend from the body toward the high and low of that interval. They do not encode future prices, averages by definition, or account margin."
+        },
+        {
+          "question": "What does a relatively small real body directly tell you?",
+          "options": [
+            "The high and low were identical",
+            "The open and close were relatively close together",
+            "The next candle must reverse",
+            "The interval had no price movement"
+          ],
+          "correct": 1,
+          "explanation": "A small real body means the open and close were near each other relative to the comparison. The candle may still have a substantial range, and no future direction follows automatically."
+        },
+        {
+          "question": "Why is body size best compared with candles from a similar context?",
+          "options": [
+            "Because chart scale, pair, and timeframe affect what looks large",
+            "Because every candle must have the same range",
+            "Because larger bodies always indicate more profit",
+            "Because shadows are excluded from all charts"
+          ],
+          "correct": 0,
+          "explanation": "A body's apparent size depends on scale, pair characteristics, and interval, so comparison with similar candles gives more meaning. Body size alone does not measure profit or guarantee a result."
+        },
+        {
+          "question": "How should a learner treat a named candlestick pattern?",
+          "options": [
+            "As an objective guarantee of a reversal",
+            "As a reason to ignore timeframe and surrounding prices",
+            "As an interpretive description that needs context and remains uncertain",
+            "As proof of the cause of a price move"
+          ],
+          "correct": 2,
+          "explanation": "Pattern names summarize visual arrangements, but their meaning depends on context and cannot guarantee an outcome. A shape alone does not reveal the underlying cause or replace careful observation."
+        }
+      ]
+    },
+    {
+      "id": "m6-l5",
+      "title": "Bullish and Bearish Candles",
+      "intro": "Bullish and bearish are common labels for whether a candle closed above or below its open. These labels help describe a completed interval, but they do not tell you whether the whole market is rising or falling.",
+      "objectives": [
+        "Classify a candle as bullish or bearish by comparing close and open.",
+        "Identify a neutral or equal-open-close case where applicable.",
+        "Separate a single candle's direction from broader trend and future outcome."
+      ],
+      "explanation": [
+        "A candle is commonly called bullish when its close is above its open, and bearish when its close is below its open. This terminology describes the net change over that candle's interval, not a person's outlook or an absolute market condition. If the open and close are equal or nearly equal, the candle may be described as a doji or small-body candle, depending on the platform and convention. The label and colors may vary, so comparing the actual prices is more reliable than relying on color alone.",
+        "One bullish candle can occur during a broader decline, and one bearish candle can appear during a broader rise. The candle records only one interval and can include both upward and downward movement. A longer body reflects a larger open-close difference in that interval, but it does not by itself prove stronger underlying demand, future continuation, or a reversal. These are general chart-reading concepts, not personal financial advice; price labels do not account for costs, risk, or an individual's circumstances."
+      ],
+      "steps": [
+        "Read the open and close from a completed candle's data display.",
+        "Compare the two values to classify the interval as close-above-open, close-below-open, or approximately equal.",
+        "Check the platform legend rather than assuming a color convention.",
+        "Describe the candle separately from the broader sequence of candles around it."
+      ],
+      "example": "Suppose a fictional AUD/USD 15-minute candle opens at 0.6600 and closes at 0.6592. It is bearish for that interval because its close is lower than its open. If nearby candles had been making higher closes, this single candle would not erase that broader history or prove a lasting change; more context would be needed to describe the sequence.",
+      "remember": [
+        "Bullish usually means close above open; bearish means close below open.",
+        "These labels describe one completed interval.",
+        "A candle's label does not predict the next candle or define the broader trend."
+      ],
+      "mistakes": [
+        "Mistake: calling every bullish candle evidence of an uptrend. Correction: a single interval and a multi-interval trend are different observations.",
+        "Mistake: trusting color without checking settings. Correction: verify the open and close and consult the platform legend."
+      ],
+      "summary": "Bullish and bearish candle labels compare close with open for a single interval. They are useful descriptions, not forecasts or complete summaries of market context.",
+      "visual": {
+        "type": "candles",
+        "caption": "Two labeled candles compare close above open with close below open, while a third equal-open-close example is marked as convention-dependent."
+      },
+      "quiz": [
+        {
+          "question": "A candle closes higher than it opened. What is its common label?",
+          "options": [
+            "Bearish",
+            "Bullish",
+            "Gap-only",
+            "Invalid"
+          ],
+          "correct": 1,
+          "explanation": "The common bullish label means the close is above the open for that interval. It does not mean the candle's entire path was upward or that the next interval must rise."
+        },
+        {
+          "question": "A candle opens at 1.2000 and closes at 1.1990. What can be said?",
+          "options": [
+            "It is bearish for that interval",
+            "The pair is in a long-term downtrend for certain",
+            "It must be colored red on every platform",
+            "The next open must be below 1.1990"
+          ],
+          "correct": 0,
+          "explanation": "The close is below the open, so the interval is commonly called bearish. That comparison does not determine a long-term trend, a universal color, or the next opening price."
+        },
+        {
+          "question": "What does a bullish candle label describe most directly?",
+          "options": [
+            "The close was above the open during that interval",
+            "All movement during the interval was upward",
+            "The pair will rise tomorrow",
+            "The currency is stronger than every other currency"
+          ],
+          "correct": 0,
+          "explanation": "Bullish describes the net open-to-close relationship. Price may have moved down and up within the candle, and this label alone does not compare currencies or forecast tomorrow."
+        },
+        {
+          "question": "Why should a candle's direction be separated from the broader trend?",
+          "options": [
+            "A single interval can differ from the pattern across many intervals",
+            "A candle never has a close price",
+            "Trends are shown only on line charts",
+            "A trend is fixed by candle color settings"
+          ],
+          "correct": 0,
+          "explanation": "A one-interval close-to-open result can differ from the sequence across a longer period. Trend descriptions use broader context, not merely the chosen color or a single mark."
+        },
+        {
+          "question": "If open and close are equal or nearly equal, what is the careful approach?",
+          "options": [
+            "Assume the market was motionless",
+            "Treat it as a small-body case and check the platform's convention",
+            "Call it bullish because every candle must be bullish",
+            "Infer that the next candle will be bearish"
+          ],
+          "correct": 1,
+          "explanation": "An equal or near-equal open and close creates a small body, sometimes called a doji under particular conventions. The interval may still have moved widely, and the shape does not establish a next direction."
+        }
+      ]
+    },
+    {
+      "id": "m6-l6",
+      "title": "Understanding Different Timeframes",
+      "intro": "A timeframe sets how much clock time each candle or bar summarizes. Knowing which timeframe you are viewing is essential because the same price history can look very different when grouped into shorter or longer intervals.",
+      "objectives": [
+        "Explain what an individual chart timeframe represents.",
+        "Compare how shorter and longer intervals aggregate price activity.",
+        "Recognize that timeframes do not change the underlying price history or remove uncertainty."
+      ],
+      "explanation": [
+        "A chart timeframe, sometimes called a period or interval, defines the duration represented by each candle or bar. On a five-minute chart, one candle summarizes the selected price data for five minutes; on a daily chart, one candle summarizes a day according to the platform's session and data rules. A chart with more frequent intervals generally contains more individual candles for the same calendar span. The pair's price history is grouped differently, rather than being changed by the display choice.",
+        "Shorter timeframes expose more detail and can make small changes look prominent, while longer timeframes compress that detail and emphasize broader movement. Neither view is inherently more truthful or certain; each answers a different descriptive question. Session boundaries, time zones, missing data, and provider settings can affect how bars are assembled. Switching timeframes can change the apparent shape of a move, so state the timeframe whenever you describe a chart and avoid treating one view as a complete account of market conditions."
+      ],
+      "steps": [
+        "Find the timeframe selector and note the active interval before reading the chart.",
+        "View the same pair and date span at a short and a longer interval.",
+        "Compare the number of candles and the amount of detail represented in each.",
+        "Write a one-sentence description that names the timeframe to keep observations precise."
+      ],
+      "example": "A fictional EUR/USD move from Monday to Tuesday might appear as dozens of small candles on a 15-minute chart, but as two daily candles on a daily chart. The short view makes intraday swings visible; the daily view compresses them. Neither presentation changes the recorded market history, and neither one alone proves what will happen next.",
+      "remember": [
+        "Each candle represents the selected duration, subject to platform data rules.",
+        "Shorter intervals show more detail; longer intervals summarize more time.",
+        "Always state the timeframe when describing a chart observation."
+      ],
+      "mistakes": [
+        "Mistake: believing the chart timeframe changes actual market prices. Correction: it changes how historical data is grouped and displayed.",
+        "Mistake: assuming more candles mean more certainty. Correction: extra detail is not the same as reliable prediction."
+      ],
+      "summary": "Timeframes group price data into intervals of different lengths. Comparing them can reveal different levels of detail, but the display choice cannot remove uncertainty or change the past prices themselves.",
+      "visual": {
+        "type": "timeline",
+        "caption": "A shared fictional price path is grouped into many short candles and a few long candles to show aggregation without changing the underlying path."
+      },
+      "quiz": [
+        {
+          "question": "What does a five-minute candle represent on a standard five-minute chart?",
+          "options": [
+            "Five units of price movement",
+            "A summary of selected price data for five minutes",
+            "Five trading sessions",
+            "The next five-minute forecast"
+          ],
+          "correct": 1,
+          "explanation": "The timeframe is the duration grouped into each candle, so a five-minute candle summarizes that period's data. It is not a prediction or a fixed amount of price change."
+        },
+        {
+          "question": "Why can the same move look different on short and long timeframes?",
+          "options": [
+            "Each view groups the underlying data into intervals of different lengths",
+            "The market rewrites old prices when the timeframe changes",
+            "Long timeframes use fictional prices",
+            "Short timeframes remove all data between candles"
+          ],
+          "correct": 0,
+          "explanation": "Different aggregation changes the number and shape of displayed candles. The underlying history is not rewritten, although platform session and data settings can affect the grouping."
+        },
+        {
+          "question": "What is a useful description when sharing a chart observation?",
+          "options": [
+            "Name the timeframe being viewed",
+            "Avoid mentioning the pair or any time context",
+            "State that the view is guaranteed to be correct",
+            "Describe only the candle color"
+          ],
+          "correct": 0,
+          "explanation": "Naming the timeframe makes clear the duration each displayed candle represents and helps others understand the observation. It does not guarantee an interpretation, but it prevents a key context from being omitted."
+        },
+        {
+          "question": "Which statement about shorter timeframes is most accurate?",
+          "options": [
+            "They usually expose more granular movements for a fixed span",
+            "They automatically remove uncertainty",
+            "They always show the broadest trend most clearly",
+            "They guarantee more complete market data"
+          ],
+          "correct": 0,
+          "explanation": "A shorter interval usually yields more candles and finer detail over a fixed period. More detail can also make small fluctuations prominent; it does not eliminate uncertainty or ensure complete data."
+        },
+        {
+          "question": "Does changing a chart from hourly to daily change the actual past prices?",
+          "options": [
+            "Yes, daily mode recalculates past markets",
+            "No, it changes how data is grouped for display",
+            "Yes, only when candle colors differ",
+            "It replaces prices with averages in every platform"
+          ],
+          "correct": 1,
+          "explanation": "Changing timeframe ordinarily changes the aggregation and display, not the historical market prices. Particular platform rules can alter bar boundaries, but a timeframe selection is not a market-moving operation."
+        }
+      ]
+    },
+    {
+      "id": "m6-l7",
+      "title": "Scalping Timeframes",
+      "intro": "Scalping is commonly associated with studying very short-lived price changes, so chart timeframe and data quality matter greatly to how a chart appears. This lesson explains those choices for education without recommending a trading style or suggesting that short-term outcomes are predictable.",
+      "objectives": [
+        "Recognize common short chart intervals used in scalping discussions.",
+        "Explain why short intervals can magnify noise, costs, and execution uncertainty.",
+        "Identify non-trading checks for reading a short-timeframe chart responsibly."
+      ],
+      "explanation": [
+        "Scalping generally refers to a style focused on brief periods, and discussions often examine charts such as one-minute or five-minute intervals. These examples are conventions, not requirements; people use different chart settings and definitions. A one-minute candle only summarizes one minute of selected price data, and a small visible change can look important simply because the chart shows fine detail. A short chart does not guarantee that an apparent move is meaningful or that a reader can act in time.",
+        "Very short intervals are especially sensitive to spread, commissions, slippage, delayed data, and rapid price changes. Leverage can magnify both gains and losses, and stop orders may fill at a different price during fast markets or gaps; a stop cannot guarantee a maximum loss. These factors can make a clean historical chart differ from a real transaction. As an educational exercise, examine the time label, data source, and scale, and remember that this material is not personal financial advice or an invitation to trade."
+      ],
+      "steps": [
+        "Read the exact interval label before interpreting a short chart.",
+        "Compare the same moment with a five-minute and a longer chart to see what is magnified or compressed.",
+        "Check whether displayed prices are delayed and learn what the chart includes about costs, without assuming it includes all costs.",
+        "Use a replay or historical chart to practice describing observations rather than issuing trade instructions."
+      ],
+      "example": "In a fictional educational replay, a one-minute EUR/USD candle moves from 1.0900 to 1.0904 and the next returns near 1.0900. On a five-minute view, these changes may be part of one small candle. The example shows that finer grouping exposes fluctuations, not that either move offered a reliable opportunity or that execution costs would be negligible.",
+      "remember": [
+        "One-minute and five-minute charts are common examples, not rules.",
+        "Fine detail can magnify noise and makes data quality important.",
+        "Leverage, costs, slippage, gaps, and stops all involve risk."
+      ],
+      "mistakes": [
+        "Mistake: assuming short candles make a move easier to predict. Correction: more granular data can also make noise more visible and outcomes uncertain.",
+        "Mistake: believing a stop order guarantees the intended exit price. Correction: fast movement, slippage, or gaps can produce a different fill."
+      ],
+      "summary": "Scalping discussions often use short intervals, but no timeframe is universally required or inherently advantageous. Short charts deserve careful attention to noise, data, execution costs, and risk rather than confidence in quick outcomes.",
+      "visual": {
+        "type": "timeline",
+        "caption": "A brief fictional price wiggle appears as several candles on a one-minute view and a compressed segment on a five-minute view, with cost and uncertainty labels."
+      },
+      "quiz": [
+        {
+          "question": "Which chart intervals are commonly discussed in relation to scalping, without being mandatory?",
+          "options": [
+            "One-minute or five-minute intervals",
+            "Only annual intervals",
+            "Exactly one daily candle",
+            "No chart interval can be used"
+          ],
+          "correct": 0,
+          "explanation": "Scalping commonly focuses on brief periods, and one- or five-minute charts are frequent examples. Conventions vary, so these examples should not be mistaken for a required setup or recommendation."
+        },
+        {
+          "question": "Why can short-timeframe charts be harder to interpret?",
+          "options": [
+            "They show no prices at all",
+            "Small fluctuations and data noise become more visible",
+            "They combine every year into one candle",
+            "They prevent costs from affecting a transaction"
+          ],
+          "correct": 1,
+          "explanation": "Finer intervals expose more small changes, including noise that may not be meaningful. The increased detail is not automatically clearer evidence and does not shield a transaction from costs."
+        },
+        {
+          "question": "What does a one-minute candle summarize?",
+          "options": [
+            "The price data selected for a one-minute interval",
+            "The next minute's guaranteed range",
+            "One full trading week",
+            "A fixed amount of one pip"
+          ],
+          "correct": 0,
+          "explanation": "The timeframe describes the period summarized by the candle. The interval does not encode a guaranteed next range, a week, or a fixed price movement."
+        },
+        {
+          "question": "Which risk is especially relevant to very short-term price interpretation and execution?",
+          "options": [
+            "Slippage and costs may be significant relative to a small move",
+            "All spreads disappear on short charts",
+            "A stop always fills at its exact level",
+            "Gaps cannot affect a short-term position"
+          ],
+          "correct": 0,
+          "explanation": "When observed moves are small, spread, fees, or a different fill can matter substantially. Stops do not guarantee an exact fill, and fast markets or gaps can affect execution."
+        },
+        {
+          "question": "What is a responsible educational exercise with a short-timeframe chart?",
+          "options": [
+            "Describe the interval and compare how it appears on a longer chart",
+            "Treat every one-minute movement as a signal",
+            "Assume a replay includes real-world slippage exactly",
+            "Increase leverage to make the display meaningful"
+          ],
+          "correct": 0,
+          "explanation": "Describing the interval and comparing views builds chart literacy without turning an observation into an instruction. A replay may not reproduce real execution conditions, and leverage is not needed to study a chart."
+        }
+      ]
+    },
+    {
+      "id": "m6-l8",
+      "title": "Day Trading Timeframes",
+      "intro": "Day trading describes a holding-period style, while a chart timeframe describes how much data each candle groups. Keeping those ideas separate helps beginners discuss intraday charts without treating any interval as a prescribed method.",
+      "objectives": [
+        "Distinguish an intraday trading horizon from a chart timeframe.",
+        "Recognize examples of short and longer intraday chart intervals.",
+        "Explain why session boundaries and overnight risks matter when studying daily charts."
+      ],
+      "explanation": [
+        "Day trading generally refers to opening and closing positions within a day, but definitions and practices differ. It does not specify one chart interval. Educational chart reviews may compare, for example, 5-, 15-, or 60-minute candles to inspect different levels of intraday detail. A 15-minute chart groups data into quarter-hour intervals; it is not automatically the right chart for any person. The chart interval and a trader's intended holding period are related choices, but they are not the same thing.",
+        "Intraday charts depend on how the platform defines sessions and timestamps, including time zone and daylight-saving settings. A daily candle may also include a provider-defined period that does not match a local calendar day. Markets can move while a person is away, and gaps or fast changes can affect prices and stop execution. For learning, compare a short and a longer intraday view and note what each omits. This is general education rather than personal financial advice, and no timeframe makes outcomes certain."
+      ],
+      "steps": [
+        "Write down the difference between the intended holding period and the candle duration.",
+        "Compare a fictional or historical intraday chart at 5-, 15-, and 60-minute intervals.",
+        "Check the platform's displayed time zone and session boundaries.",
+        "Note how periods outside the displayed session and possible gaps limit the view."
+      ],
+      "example": "In a fictional learning chart, an EUR/USD observation covers 09:00 to 12:00 local platform time. A 15-minute view draws twelve candles in that span, while a 60-minute view draws three. They summarize the same span at different detail. This count does not tell us whether a person should hold anything overnight or whether any timeframe is suitable.",
+      "remember": [
+        "Day trading is a holding-period idea; a timeframe is chart aggregation.",
+        "Intraday chart examples include several possible interval lengths.",
+        "Time zone, session definition, gaps, and execution matter to interpretation."
+      ],
+      "mistakes": [
+        "Mistake: assuming all day traders use one specific chart. Correction: styles and chart intervals vary.",
+        "Mistake: assuming a daily candle always matches local midnight-to-midnight. Correction: provider session and time-zone settings can define its boundary."
+      ],
+      "summary": "Day trading and chart timeframe describe different things: a broad holding horizon and the duration represented by each candle. Comparing intraday views is educational, but session rules and risks remain important context.",
+      "visual": {
+        "type": "timeline",
+        "caption": "A single three-hour fictional session is subdivided into 15-minute and 60-minute candles, with a separate label for the broader holding horizon."
+      },
+      "quiz": [
+        {
+          "question": "What is the difference between a day-trading horizon and a chart timeframe?",
+          "options": [
+            "The horizon describes an intended holding period; timeframe describes each candle's duration",
+            "Both always mean a 15-minute candle",
+            "The timeframe is the broker's commission",
+            "The horizon is a chart color setting"
+          ],
+          "correct": 0,
+          "explanation": "The holding horizon describes how long an activity is intended to last, while timeframe defines the data duration grouped in each bar. They can relate, but one does not determine the other."
+        },
+        {
+          "question": "Which set contains examples of intraday chart intervals?",
+          "options": [
+            "5, 15, and 60 minutes",
+            "Only 10 years",
+            "Bid, ask, and spread",
+            "Open, close, and account balance"
+          ],
+          "correct": 0,
+          "explanation": "Five-, 15-, and 60-minute intervals are all possible intraday chart settings. They are examples rather than a prescribed combination or a guarantee of suitability."
+        },
+        {
+          "question": "Why check a chart's time zone and session boundary?",
+          "options": [
+            "They affect how intervals and daily candles are timestamped",
+            "They prove the next move's direction",
+            "They remove all overnight market movement",
+            "They define the currency pair's spread everywhere"
+          ],
+          "correct": 0,
+          "explanation": "Session and time-zone settings determine where platforms group and label time intervals. They do not forecast price, erase movement outside a session, or set a universal spread."
+        },
+        {
+          "question": "If a three-hour span is shown with 15-minute candles, how many candles cover it, assuming continuous intervals?",
+          "options": [
+            "3",
+            "6",
+            "12",
+            "15"
+          ],
+          "correct": 2,
+          "explanation": "Three hours contain 180 minutes, and 180 divided by 15 equals 12 intervals. The count depends on continuous data and the stated span; a 60-minute view would have three."
+        },
+        {
+          "question": "What should a learner avoid concluding from the phrase 'day trading'?",
+          "options": [
+            "That a particular candle interval is required for everyone",
+            "That the term relates to an intraday horizon in common usage",
+            "That different chart intervals can be compared",
+            "That platform sessions may have time settings"
+          ],
+          "correct": 0,
+          "explanation": "The term does not prescribe a single chart interval; practices differ. It is still useful to discuss its common intraday meaning and to compare settings while checking session details."
+        }
+      ]
+    },
+    {
+      "id": "m6-l9",
+      "title": "Swing Trading Timeframes",
+      "intro": "Swing trading commonly refers to studying moves over more than one day, but a chart interval does not prescribe how long anyone should hold an exposure. Learning to compare wider views can help you separate broad structure from short-lived fluctuation.",
+      "objectives": [
+        "Recognize chart intervals often used to study multi-day price movement.",
+        "Explain how shorter views can provide detail while longer views provide context.",
+        "Identify overnight, weekend, gap, and leverage risks as limitations rather than chart patterns."
+      ],
+      "explanation": [
+        "Swing trading is commonly described as seeking to study or hold through moves lasting multiple days, though definitions vary. Learners often compare hourly charts with four-hour or daily charts to see both intermediate detail and a wider context. These are examples, not a standard recipe. The chart interval tells you how much data each candle aggregates; it does not tell you the correct holding time, entry, or exit, and choosing a longer chart does not make an interpretation inherently more reliable.",
+        "A multi-day horizon means price can change during overnight periods, weekends, and scheduled events. Gaps can occur when trading resumes at a different price, and a stop order may not execute at its requested level. Leverage and margin can amplify losses or lead to forced position closure under provider rules. Historical candles compress these conditions and may not show a realistic fill. For education, compare several intervals and label observations carefully; this is not individualized financial advice or an instruction to hold a position."
+      ],
+      "steps": [
+        "Select a historical period long enough to include multiple daily intervals.",
+        "View that period on hourly, four-hour, and daily charts and note what changes.",
+        "Mark the platform's day and week boundaries and identify any visible gaps.",
+        "Write observations as descriptions of price history, not as prescribed holding or exit instructions."
+      ],
+      "example": "In a fictional GBP/JPY study, three daily closes are 191.20, 191.65, and 191.40, while four-hour candles show intervening rises and falls. The daily view summarizes the net sequence; the four-hour view shows more variation. A weekend gap or a later price change could alter the picture, so these invented values are descriptive and not a forecast or recommendation.",
+      "remember": [
+        "Swing trading often studies multi-day movement, but definitions vary.",
+        "Hourly, four-hour, and daily charts can show complementary levels of detail.",
+        "Overnight moves, gaps, leverage, and margin can create substantial risk."
+      ],
+      "mistakes": [
+        "Mistake: assuming a daily chart makes a multi-day position safe. Correction: a longer interval does not remove market or leverage risk.",
+        "Mistake: expecting a stop to guarantee a set exit during a gap. Correction: execution may differ from the requested level."
+      ],
+      "summary": "Longer chart intervals can help learners examine multi-day context, while shorter ones show more intervening detail. Neither timeframe determines a suitable holding period or removes overnight and execution risks.",
+      "visual": {
+        "type": "timeline",
+        "caption": "A fictional multi-day path is represented as hourly, four-hour, and daily candles, with overnight and weekend boundaries marked as possible sources of gaps."
+      },
+      "quiz": [
+        {
+          "question": "What is swing trading commonly associated with studying?",
+          "options": [
+            "Moves that may span multiple days",
+            "Only movements within one second",
+            "Only currency conversion fees",
+            "A mandatory daily chart setting"
+          ],
+          "correct": 0,
+          "explanation": "Swing trading is commonly associated with multi-day movement, although definitions differ. It does not mandate a daily chart or define a single correct interval for everyone."
+        },
+        {
+          "question": "Why might a learner compare four-hour and daily charts?",
+          "options": [
+            "To see different levels of detail in the same broader history",
+            "To guarantee the longer chart is correct",
+            "To remove weekend gaps from price history",
+            "To make the broker's fees disappear"
+          ],
+          "correct": 0,
+          "explanation": "The two intervals aggregate data differently, so comparison can show intermediate changes alongside broader summaries. Neither view guarantees accuracy of a forecast or alters fees and gaps."
+        },
+        {
+          "question": "What can happen to a price when a market resumes after a weekend?",
+          "options": [
+            "It can reopen at a different level, creating a gap",
+            "It must return to Friday's close",
+            "All stops are guaranteed at their exact requested price",
+            "The previous week's candles are deleted"
+          ],
+          "correct": 0,
+          "explanation": "A price gap is possible when trading resumes away from the prior close. This can affect stop execution; the historical chart is not rewritten, and exact fills are not guaranteed."
+        },
+        {
+          "question": "How can leverage and margin affect risk over a longer holding period?",
+          "options": [
+            "They can amplify losses and provider rules may trigger closure",
+            "They guarantee that a position survives every gap",
+            "They remove overnight price changes",
+            "They ensure a stop fills exactly at its requested price"
+          ],
+          "correct": 0,
+          "explanation": "Leverage magnifies exposure relative to funds, and margin rules can lead to forced closure. It does not protect against gaps, remove overnight changes, or guarantee stop prices."
+        },
+        {
+          "question": "What does choosing a daily chart determine by itself?",
+          "options": [
+            "The correct holding period and exit",
+            "The duration summarized by each candle, subject to platform rules",
+            "The probability of a profitable outcome",
+            "The maximum possible loss"
+          ],
+          "correct": 1,
+          "explanation": "A daily setting defines the interval each candle summarizes, subject to provider conventions. It cannot decide a suitable holding period, determine an outcome probability, or cap risk."
+        }
+      ]
+    },
+    {
+      "id": "m6-l10",
+      "title": "Multi-Timeframe Analysis",
+      "intro": "Multi-timeframe analysis means looking at the same market on more than one chart interval to compare broader context with finer detail. A simple, consistent process can improve the precision of your observations without turning them into certain forecasts.",
+      "objectives": [
+        "Define multi-timeframe analysis and distinguish its descriptive purpose from prediction.",
+        "Use a top-down sequence to compare broader and finer chart views.",
+        "Explain why conflicting timeframes and subjective interpretations should be recorded with uncertainty."
+      ],
+      "explanation": [
+        "Multi-timeframe analysis is the practice of examining the same instrument across different chart intervals. A learner might first describe the broad structure on a daily chart, then inspect a four-hour or hourly view for more detail. This does not mean that one timeframe is always correct or that shorter intervals must agree with longer ones. Because each chart aggregates data differently, a move can appear strong in one view and modest or mixed in another.",
+        "A useful educational routine is to name the pair and date range, record the broader view, inspect a finer view, and state where the descriptions agree or differ. Avoid forcing agreement or selecting only the timeframe that supports a preferred story. Terms such as support, resistance, or market structure can be interpreted differently by different readers; they are not objective guarantees. Multi-timeframe reading cannot remove uncertainty, account for all costs, or serve as personal financial advice. It is a way to organize observations, not a standalone decision rule."
+      ],
+      "steps": [
+        "Choose one historical currency-pair period and keep the date range consistent across views.",
+        "Describe broad movement on a longer timeframe without naming a trade direction.",
+        "Move to a shorter timeframe and note added detail and any differences.",
+        "Record uncertainty, platform settings, and alternative readings instead of forcing a single conclusion."
+      ],
+      "example": "For a fictional USD/CAD study, the daily chart shows closes rising over three days, while the one-hour chart contains several declines and recoveries within that rise. A careful note might say, 'The daily closes increased over this sample; the hourly path was mixed.' This describes two levels of aggregation without asserting that the move will continue or recommending action.",
+      "remember": [
+        "Compare the same instrument and date span across intervals.",
+        "Longer and shorter views can provide different, valid descriptions.",
+        "Record disagreements and uncertainty instead of treating a pattern as proof."
+      ],
+      "mistakes": [
+        "Mistake: believing every timeframe must agree. Correction: different aggregation can show different features of the same price history.",
+        "Mistake: selecting a timeframe only because it supports a preferred conclusion. Correction: compare consistently and record competing interpretations."
+      ],
+      "summary": "Multi-timeframe analysis organizes observations by comparing a broader view with finer detail. It can reveal differences in aggregation, but it remains interpretive and cannot guarantee a future outcome.",
+      "visual": {
+        "type": "structure",
+        "caption": "Three aligned fictional charts share one date span and price path, showing broad daily context above more detailed hourly movement without implying that either view predicts the next move."
+      },
+      "quiz": [
+        {
+          "question": "What is multi-timeframe analysis?",
+          "options": [
+            "Comparing the same market across more than one chart interval",
+            "Combining prices from unrelated instruments into one candle",
+            "Predicting the next move from candle colors alone",
+            "Changing a broker's margin setting"
+          ],
+          "correct": 0,
+          "explanation": "Multi-timeframe analysis compares the same instrument through different interval groupings. It is a descriptive method, not a price-color guarantee or account setting."
+        },
+        {
+          "question": "Why should you keep the date range consistent when comparing intervals?",
+          "options": [
+            "It helps ensure differences come from aggregation rather than different sampled periods",
+            "It makes future prices certain",
+            "It removes all chart-provider differences",
+            "It forces all candles to have the same shape"
+          ],
+          "correct": 0,
+          "explanation": "Holding the sample period consistent makes the comparison more meaningful because the views represent the same history at different granularity. It cannot eliminate all provider differences or make outcomes certain."
+        },
+        {
+          "question": "A daily chart rises over several days, while an hourly chart has several declines. What is a careful reading?",
+          "options": [
+            "The charts must be wrong because they disagree",
+            "The daily view shows a broader rise while the hourly path includes shorter declines",
+            "The hourly chart proves the daily rise will reverse",
+            "The daily chart guarantees continuation"
+          ],
+          "correct": 1,
+          "explanation": "Both observations can be true because hourly detail is contained within a broader daily summary. Neither view alone proves reversal or continuation."
+        },
+        {
+          "question": "What should a learner do when different timeframes give different impressions?",
+          "options": [
+            "Record the differences and uncertainty rather than forcing agreement",
+            "Ignore the timeframe labels",
+            "Keep only the view that confirms an initial belief",
+            "Treat the longer timeframe as infallible"
+          ],
+          "correct": 0,
+          "explanation": "Noting disagreement preserves the information in each aggregation and limits confirmation bias. A longer timeframe may add context, but it is not infallible and should not erase the other view."
+        },
+        {
+          "question": "How should subjective chart concepts such as support or market structure be treated?",
+          "options": [
+            "As interpretations that can differ, not objective guarantees",
+            "As exact laws that all readers identify identically",
+            "As proof of a successful strategy",
+            "As a replacement for checking dates and timeframe"
+          ],
+          "correct": 0,
+          "explanation": "These concepts can be useful shorthand, but readers may mark them differently and they do not guarantee outcomes. Careful chart reading still requires clear intervals, dates, and acknowledgment of uncertainty."
+        }
+      ]
+    }
+  ]
+}

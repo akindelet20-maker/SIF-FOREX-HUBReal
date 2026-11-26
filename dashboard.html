@@ -200,6 +200,7 @@ footer {
     <nav id="navigation" aria-label="Dashboard navigation">
         <a href="index.html">Home</a>
         <a href="academy.html">Academy</a>
+        <a href="sif-question.html">SIF Question</a>
         <a href="charts.html">Charts</a>
         <a href="simulator.html">Simulator</a>
         <a href="calculator.html">Risk calculator</a>
@@ -252,7 +253,8 @@ footer {
 
         <div class="grid">
             <a href="charts.html" class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16"/><path d="m7 15 3-4 3 2 5-7"/><path d="M17 6h1v1"/></svg></div><h3>Advanced Charts</h3><p>Explore the public TradingView chart and supported analysis tools.</p><span class="availability">Available</span></a>
-            <a href="academy.html" class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 9 9-5 9 5-9 5z"/><path d="M7 12v5c3 2.5 7 2.5 10 0v-5M21 9v6"/></svg></div><h3>Forex Academy</h3><p>Learn through a four-lesson beginner path, checks, and a quiz.</p><span class="availability">Available · guest access</span></a>
+            <a href="academy.html" class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 9 9-5 9 5-9 5z"/><path d="M7 12v5c3 2.5 7 2.5 10 0v-5M21 9v6"/></svg></div><h3>Forex Academy</h3><p>Build Forex knowledge through 18 guided modules and practical lessons.</p><span class="availability">Available · guest access</span></a>
+            <a href="sif-question.html" class="card"><div class="icon" aria-hidden="true">?</div><h3>SIF Question</h3><p>Take separate lesson assessments, review explanations, and unlock the next step.</p><span class="availability">Available · guest access</span></a>
             <a href="simulator.html" class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 19V5M5 19h14"/><path d="m8 15 3-4 3 2 4-6"/><path d="M17 7h2v2"/></svg></div><h3>Trading Simulator</h3><p>Practise with fictional funds and prices you enter yourself.</p><span class="availability">Available · guest access</span></a>
             <a href="calculator.html" class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2M8 18h8"/></svg></div><h3>Risk Calculator</h3><p>Estimate position size from the inputs you choose.</p><span class="availability">Available · guest access</span></a>
             <a href="journal.html" class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4.5A2.5 2.5 0 0 1 8.5 2H20v18H8.5A2.5 2.5 0 0 0 6 22z"/><path d="M6 4.5v15A2.5 2.5 0 0 1 8.5 17H20M10 7h6M10 11h6"/></svg></div><h3>Trading Journal</h3><p>Record practice trades after signing in; entries remain in this browser.</p><span class="availability">Sign-in required</span></a>
@@ -351,11 +353,24 @@ async function loadDashboard() {
         const membership = profile?.membership;
 
         try {
-            const savedLearning = JSON.parse(localStorage.getItem('sifForexAcademyStartHere.v1') || 'null');
-            if (savedLearning && Array.isArray(savedLearning.completed)) {
-                const completedCount = new Set(savedLearning.completed.map(String).filter(id => ['1','2','3','4'].includes(id))).size;
-                document.getElementById('learningProgress').textContent = `${completedCount} of 4 beginner lessons complete on this device. This progress is not synced to your account.`;
+            const savedLearning = JSON.parse(localStorage.getItem('sifForexAcademyProgress.v2') || 'null');
+            const oldLearning = JSON.parse(localStorage.getItem('sifForexAcademyStartHere.v1') || 'null');
+            const validLessonIds = new Set(Array.from({ length: 206 }, (_, index) => {
+                const moduleCounts = [9,8,9,13,10,10,12,12,13,14,13,14,13,12,11,11,11,11];
+                let remaining = index + 1;
+                for (let module = 1; module <= moduleCounts.length; module += 1) {
+                    if (remaining <= moduleCounts[module - 1]) return `m${module}-l${remaining}`;
+                    remaining -= moduleCounts[module - 1];
+                }
+                return '';
+            }));
+            const completed = new Set((Array.isArray(savedLearning?.completed) ? savedLearning.completed : [])
+                .map(String).filter(id => validLessonIds.has(id)));
+            if (!savedLearning && Array.isArray(oldLearning?.completed)) {
+                oldLearning.completed.map(String).filter(id => ['1','2','3','4'].includes(id))
+                    .forEach(id => completed.add(`m1-l${id}`));
             }
+            document.getElementById('learningProgress').textContent = `${completed.size} of 206 lessons complete on this device. Open the Academy to continue; assessments are in SIF Question.`;
         } catch {
             document.getElementById('learningProgress').textContent = 'Local Academy progress could not be read; nothing was changed. Open the Academy to review your progress.';
         }

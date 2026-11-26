@@ -1,0 +1,753 @@
+{
+  "id": 2,
+  "title": "Understanding Currency Pairs",
+  "description": "Learn how exchange rates are quoted so that currency symbols and pair categories feel clear rather than mysterious.",
+  "lessons": [
+    {
+      "id": "m2-l1",
+      "title": "What Are Currency Pairs?",
+      "intro": "Forex compares the value of one currency with another, so prices are shown as pairs. Understanding the pair is the first step in reading a Forex quote without confusing it for a standalone price.",
+      "objectives": [
+        "Explain why Forex quotes contain two currencies.",
+        "Interpret a pair price as a relative exchange rate.",
+        "Distinguish a quoted rate from a promise about a future price."
+      ],
+      "explanation": [
+        "A currency pair names two currencies together, such as EUR/USD. It expresses how much of the second currency is quoted for one unit of the first. Forex is a relative market: a change in the pair means the relationship between the two currencies changed, not that one currency moved in isolation.",
+        "If EUR/USD is 1.0800, the quote convention means one euro is valued at 1.0800 US dollars at that quoted moment. A displayed rate may be indicative or executable depending on the platform and account conditions. Quotes can change quickly, and different providers may show slightly different prices because of timing, liquidity, and their pricing arrangements.",
+        "Learning to read pairs is general education, not personal financial advice. A quote does not predict what happens next, and it does not tell you whether a transaction is suitable. Fees, spreads, leverage, margin rules, and execution conditions can affect outcomes; provider and jurisdiction terms vary, so check original official terms when evaluating them."
+      ],
+      "steps": [
+        "Find the two currency codes in a sample quote and read them from left to right.",
+        "Say aloud: one unit of the first currency equals the displayed amount of the second.",
+        "Check the quote timestamp and whether the display labels the price as indicative or tradable.",
+        "Compare two sample quotes only after confirming they use the same pair and quote convention."
+      ],
+      "example": "In a fictional classroom display, EUR/USD reads 1.0800. This means the quote values one euro at 1.08 US dollars at that moment. If a later fictional display reads 1.0850, the euro is priced higher relative to the dollar in that pair; this alone does not explain why it changed or predict what follows.",
+      "remember": [
+        "A pair compares two currencies.",
+        "The price describes a relative exchange rate at a particular time.",
+        "A quote is not a forecast or a guarantee of an available execution price."
+      ],
+      "mistakes": [
+        "Mistake: Treating 1.0800 as the standalone value of a euro. Correction: it is the quoted amount of the second currency for one unit of the first.",
+        "Mistake: Assuming a rising pair proves the first currency is strong against every currency. Correction: the quote compares only the two currencies in that pair."
+      ],
+      "summary": "A Forex pair expresses one currency's value in terms of another. Read its direction and timestamp carefully, and treat the quote as information about that moment rather than a prediction.",
+      "visual": {
+        "type": "pairs",
+        "caption": "A schematic pair label should show EUR/USD as one euro compared with a quoted amount of US dollars, with an arrow indicating the left-to-right reading convention."
+      },
+      "quiz": [
+        {
+          "question": "What does a EUR/USD quote of 1.0800 conventionally express?",
+          "options": [
+            "One euro is quoted as worth 1.0800 US dollars",
+            "One US dollar is quoted as worth 1.0800 euros",
+            "The euro's guaranteed value tomorrow",
+            "The total fee charged for exchanging euros"
+          ],
+          "correct": 0,
+          "explanation": "The first currency is the unit being compared, and the quote gives its amount in the second currency. The quote says nothing about tomorrow or about a fee."
+        },
+        {
+          "question": "Why are currencies shown as pairs in Forex?",
+          "options": [
+            "Because each rate compares one currency's value with another",
+            "Because every trade must contain exactly two separate fees",
+            "Because one currency always rises when the other falls by the same amount",
+            "Because prices are forecasts for two future dates"
+          ],
+          "correct": 0,
+          "explanation": "Forex rates are relative comparisons, so two currencies are named. The relationship may change, but it is not a rule that the currencies move by equal and opposite amounts."
+        },
+        {
+          "question": "A pair price changes between two displays. What is the safest conclusion from the quote alone?",
+          "options": [
+            "The relationship between the two named currencies changed on the display",
+            "The first currency gained value against every currency worldwide",
+            "A future movement is now certain",
+            "The quote provider made an error"
+          ],
+          "correct": 0,
+          "explanation": "A pair reports a relative value for those two currencies. It cannot establish broad strength, predict the future, or prove that a provider's quote is wrong."
+        },
+        {
+          "question": "Which detail is useful when comparing two Forex quotes?",
+          "options": [
+            "Their pair and timestamp",
+            "The color of the chart background",
+            "The number of letters in each currency code",
+            "Whether one quote has more decimal places, regardless of context"
+          ],
+          "correct": 0,
+          "explanation": "The same pair and comparable timestamps are needed for a meaningful rate comparison. Screen colors and code length do not establish comparable market data."
+        },
+        {
+          "question": "What is the appropriate way to treat a displayed Forex quote in this lesson?",
+          "options": [
+            "As time-specific information, not a guaranteed forecast",
+            "As a promise that a transaction will execute at that exact price",
+            "As personal advice about what to buy or sell",
+            "As proof that prices cannot move between screen refreshes"
+          ],
+          "correct": 0,
+          "explanation": "Quotes can change, and execution depends on the platform and conditions. A displayed rate is not automatically a promise, forecast, or individualized recommendation."
+        }
+      ]
+    },
+    {
+      "id": "m2-l2",
+      "title": "Base Currency and Quote Currency",
+      "intro": "The order of currencies in a pair determines how its price should be read. Learning the base and quote roles helps prevent a common beginner reversal when interpreting rates.",
+      "objectives": [
+        "Identify the base and quote currencies in a pair.",
+        "Read a pair rate using one unit of the base currency.",
+        "Explain how a pair's rise relates to the base currency versus the quote currency."
+      ],
+      "explanation": [
+        "In a standard pair such as GBP/USD, the first currency is the base currency (GBP) and the second is the quote currency (USD). The rate tells how many units of the quote currency are needed to represent one unit of the base currency. This naming convention stays in place whether the price is rising or falling.",
+        "Suppose a fictional GBP/USD rate is 1.2500. Read it as one British pound quoted at 1.2500 US dollars. If that rate rises, one pound is being priced at more dollars than before, so the pound has strengthened relative to the dollar within this pair, or the dollar weakened relative to the pound. The quote alone cannot tell which broader forces caused the change.",
+        "Pair direction is always relative. A lower GBP/USD rate does not mean the pound lost value against every currency, only that it is quoted lower against the dollar in this comparison. Bid and ask prices, spreads, conversion conventions, and execution may differ across services. This lesson is educational information, not personal financial advice."
+      ],
+      "steps": [
+        "Underline the first code and label it base; circle the second and label it quote.",
+        "Insert the words 'one unit of' before the base currency when reading the rate.",
+        "Write the quote currency after the number to make the rate's units explicit.",
+        "For a changed rate, describe the relationship only between the two named currencies."
+      ],
+      "example": "A fictional GBP/USD quote moves from 1.2500 to 1.2550. At the first quote, one pound is represented by 1.2500 dollars; at the second, it is represented by 1.2550 dollars. The pair has risen, meaning GBP is priced higher relative to USD in this quote, without proving a cause or a future direction.",
+      "remember": [
+        "The base currency is written first.",
+        "The quote currency is written second and supplies the price units.",
+        "A rising pair describes the base relative to the quote, not every market."
+      ],
+      "mistakes": [
+        "Mistake: Calling the second currency the base. Correction: in GBP/USD, GBP is base and USD is quote.",
+        "Mistake: Saying a rising GBP/USD means the dollar necessarily rose. Correction: it means one pound is quoted at more dollars, so GBP is stronger relative to USD in that pair."
+      ],
+      "summary": "Read a pair from left to right: base first, quote second. Its rate gives the quote-currency amount for one unit of the base, and its direction is specific to that comparison.",
+      "visual": {
+        "type": "pairs",
+        "caption": "A schematic GBP/USD label should mark GBP as base, USD as quote, and connect one pound to a numerical amount of dollars."
+      },
+      "quiz": [
+        {
+          "question": "In AUD/JPY, which currency is the base currency?",
+          "options": [
+            "AUD",
+            "JPY",
+            "Both equally",
+            "Neither; the base changes with the price"
+          ],
+          "correct": 0,
+          "explanation": "The base currency is the first code in the pair, so AUD is the base and JPY is the quote. Their roles do not switch when the price changes."
+        },
+        {
+          "question": "A fictional USD/CAD rate is 1.3600. What does the quote convention mean?",
+          "options": [
+            "One US dollar is quoted as 1.3600 Canadian dollars",
+            "One Canadian dollar is quoted as 1.3600 US dollars",
+            "One US dollar is guaranteed to buy 1.3600 Canadian dollars later",
+            "The pair contains 1.3600 dollars in total"
+          ],
+          "correct": 0,
+          "explanation": "USD is first, making it the base; CAD is second, so the rate states the quote-currency amount for one unit of USD. It is not a future guarantee."
+        },
+        {
+          "question": "If a fictional EUR/CHF rate rises, what can you say from the pair's direction?",
+          "options": [
+            "One euro is quoted at more Swiss francs than before",
+            "The euro rose against every world currency",
+            "The Swiss franc must have risen against the euro",
+            "The pair is certain to keep rising"
+          ],
+          "correct": 0,
+          "explanation": "A higher EUR/CHF rate means the base euro is priced at more quote-currency francs. It does not establish movements against other currencies or what happens next."
+        },
+        {
+          "question": "Which code provides the units for the numerical price in NZD/USD?",
+          "options": [
+            "USD, the quote currency",
+            "NZD, the base currency",
+            "Both codes together form a third unit",
+            "Neither code; the number has no currency units"
+          ],
+          "correct": 0,
+          "explanation": "The second currency, USD, is the quote currency and is the unit in which the rate is expressed for one NZD. The first currency identifies the one-unit base."
+        },
+        {
+          "question": "What does a falling CAD/JPY rate indicate within the pair convention?",
+          "options": [
+            "One Canadian dollar is quoted at fewer yen than before",
+            "The Canadian dollar fell against every currency",
+            "One yen is quoted at fewer Canadian dollars",
+            "The pair has stopped comparing currencies"
+          ],
+          "correct": 0,
+          "explanation": "A lower rate means fewer units of the quote currency, JPY, for one unit of the base, CAD. It cannot be generalized to all currencies."
+        }
+      ]
+    },
+    {
+      "id": "m2-l3",
+      "title": "Major Currency Pairs",
+      "intro": "Major pairs are widely followed and frequently discussed in Forex education. Knowing the usual definition gives you a useful map of the market, while remembering that activity and costs still vary over time and by provider.",
+      "objectives": [
+        "Describe the usual defining feature of a major pair.",
+        "Recognize common major-pair examples.",
+        "Explain why a major label does not guarantee low costs or low risk."
+      ],
+      "explanation": [
+        "Major currency pairs typically combine the US dollar with another heavily traded currency. Common examples include EUR/USD, USD/JPY, GBP/USD, USD/CHF, AUD/USD, USD/CAD, and NZD/USD. Lists can vary slightly among educational sources, but the US dollar is the central feature of the usual major-pair classification.",
+        "These pairs often receive substantial attention because they connect large economies and are commonly quoted by market services. However, 'major' is a category label, not a promise that a quote is always the tightest, easiest to trade, or safest. Liquidity and spreads can change with market hours, news, volatility, order size, and provider conditions.",
+        "A major pair can still move sharply, and leverage can magnify both gains and losses. Stops may execute at a different price during fast markets, slippage can occur, and gaps may bypass a requested stop level. This is general education, not personal financial advice; broker charges, regulation, protections, and trading conditions vary by provider and jurisdiction, so verify original official terms."
+      ],
+      "steps": [
+        "Look for the USD code in a candidate pair.",
+        "Check whether the other currency is among commonly cited major currencies.",
+        "Compare quoted spreads only at the same time and under the same provider conditions.",
+        "Read the provider's official product, fee, and risk disclosures rather than inferring terms from the word 'major'."
+      ],
+      "example": "A fictional learning chart lists EUR/USD and USD/JPY under majors because each pairs USD with another widely followed currency. At a quiet time, a made-up display shows a smaller spread than a fictional less-traded pair; during a major announcement the spreads widen. The illustration shows why category and momentary cost are not the same thing.",
+      "remember": [
+        "The US dollar is included in the usual major-pair category.",
+        "Major-pair status does not fix the spread or guarantee liquidity at every moment.",
+        "Currency classification does not remove market, leverage, or execution risk."
+      ],
+      "mistakes": [
+        "Mistake: Assuming every broker defines lists identically. Correction: the common set is stable, but published lists can vary.",
+        "Mistake: Treating 'major' as another word for safe. Correction: it is a market-category label, not a risk assessment."
+      ],
+      "summary": "Major pairs commonly combine USD with another widely traded currency and include familiar symbols such as EUR/USD. Their category does not guarantee stable spreads, easy execution, or low risk.",
+      "visual": {
+        "type": "pairs",
+        "caption": "A schematic hub-and-spoke diagram should place USD at the center and connect it to the other currencies in commonly cited major pairs, with a note that classification is not a risk rating."
+      },
+      "quiz": [
+        {
+          "question": "What is the usual defining feature of a major Forex pair?",
+          "options": [
+            "It includes the US dollar and another widely followed currency",
+            "It always has the smallest spread on every platform",
+            "It cannot move sharply during news",
+            "It is available only during US business hours"
+          ],
+          "correct": 0,
+          "explanation": "The common classification centers on USD paired with another heavily traded currency. Costs, movement, and availability are not guaranteed by the label."
+        },
+        {
+          "question": "Which is a commonly cited major pair?",
+          "options": [
+            "EUR/USD",
+            "EUR/TRY",
+            "USD/NGN",
+            "ZAR/THB"
+          ],
+          "correct": 0,
+          "explanation": "EUR/USD is one of the best-known major pairs. The other examples combine currencies generally classified as emerging-market currencies and are often categorized as exotic, though lists can vary."
+        },
+        {
+          "question": "Does the word 'major' ensure that a spread will always be narrow?",
+          "options": [
+            "No; spread can vary with time, volatility, and provider conditions",
+            "Yes; the category fixes the spread permanently",
+            "Yes, but only around scheduled news",
+            "No, because major pairs have no quotes"
+          ],
+          "correct": 0,
+          "explanation": "The label reflects a common market category, not a binding price condition. Spreads may widen during volatile or thin conditions and vary by provider."
+        },
+        {
+          "question": "What risk can still apply when looking at a major pair?",
+          "options": [
+            "Fast price moves and possible execution slippage",
+            "No possibility of a loss because the currencies are widely followed",
+            "A fixed price that cannot gap",
+            "Automatic protection from leverage"
+          ],
+          "correct": 0,
+          "explanation": "Major pairs can move quickly, and execution prices can differ from requested levels. Familiarity or trading activity does not eliminate market risk."
+        },
+        {
+          "question": "Where should a learner verify a provider's fees and regulatory protections?",
+          "options": [
+            "The provider's original official terms and relevant regulator information",
+            "The pair's three-letter currency symbols",
+            "A general claim that a pair is major",
+            "A fictional classroom example"
+          ],
+          "correct": 0,
+          "explanation": "Fees, regulation, and protections depend on the provider and jurisdiction. Original official terms are needed; pair classification cannot supply those details."
+        }
+      ]
+    },
+    {
+      "id": "m2-l4",
+      "title": "Minor Currency Pairs",
+      "intro": "Minor pairs help explain how currencies can be compared even when the US dollar is not in the pair. Learning the category also helps you notice that liquidity and pricing conditions are not identical across all pairs.",
+      "objectives": [
+        "Define a minor pair using the common Forex convention.",
+        "Recognize examples of minor pairs.",
+        "Identify why the category alone cannot establish execution costs or risk."
+      ],
+      "explanation": [
+        "A minor pair, often called a cross currency pair or simply a cross, commonly pairs two major currencies without including the US dollar. Examples often include EUR/GBP, EUR/JPY, GBP/JPY, and AUD/NZD. Terminology varies: some sources use 'cross' more broadly, and a list may differ by provider or teaching convention.",
+        "A cross rate can be understood by comparing the two currencies directly. A service may derive or quote it using prices against a common currency, but the displayed pair still has its own base and quote convention. Activity, spreads, and available pricing can differ from the corresponding USD pairs, and may vary by session and market conditions.",
+        "The term minor does not mean unimportant or automatically inexpensive. A cross may be less liquid at some times, and volatility or a sudden news event can affect its price and execution. Leverage, margin, slippage, and gaps remain relevant. This lesson is for general education rather than personal financial advice; provider fees, regulatory status, and protections vary by firm and jurisdiction, so consult original official terms."
+      ],
+      "steps": [
+        "Check whether the pair contains USD.",
+        "If it does not, identify whether both currencies belong to the common major-currency group.",
+        "Read the pair's base and quote roles before interpreting its rate.",
+        "Check a provider's current quote and official costs instead of assuming a cross has a particular spread."
+      ],
+      "example": "A fictional watchlist shows EUR/GBP at 0.8500. Since the pair contains two commonly followed currencies and no USD, a lesson may classify it as a minor or cross pair. The rate means one euro is quoted at 0.85 pounds; it does not establish the pair's current liquidity or predict a move.",
+      "remember": [
+        "Minors commonly pair major currencies without USD.",
+        "Cross and minor are commonly related terms, but usage can vary.",
+        "Check actual pricing and conditions; a category does not promise a cost."
+      ],
+      "mistakes": [
+        "Mistake: Thinking a minor pair must contain a small or weak currency. Correction: it commonly means a pair of major currencies without USD.",
+        "Mistake: Assuming every cross has the same spread or activity. Correction: conditions differ across pairs, providers, and times."
+      ],
+      "summary": "Minor pairs commonly compare two major currencies without the US dollar and are also known as crosses. Read the quote convention and assess actual conditions separately from the category label.",
+      "visual": {
+        "type": "pairs",
+        "caption": "A schematic should contrast a USD major such as GBP/USD with a no-USD cross such as EUR/GBP, labeling both pairs' base and quote currencies."
+      },
+      "quiz": [
+        {
+          "question": "Which description best fits a minor pair in common Forex usage?",
+          "options": [
+            "Two major currencies paired without the US dollar",
+            "Any pair whose price is below one",
+            "A pair that can only be quoted once a month",
+            "A major pair with a small account size"
+          ],
+          "correct": 0,
+          "explanation": "Minor pairs commonly contain two major currencies but exclude USD. Their classification has nothing to do with the numerical price or account size."
+        },
+        {
+          "question": "Which example is commonly treated as a minor or cross pair?",
+          "options": [
+            "EUR/GBP",
+            "EUR/USD",
+            "USD/CAD",
+            "GBP/USD"
+          ],
+          "correct": 0,
+          "explanation": "EUR/GBP pairs two widely followed currencies without USD, making it a familiar cross example. The other choices include USD and are commonly called majors."
+        },
+        {
+          "question": "What does 'cross rate' commonly mean in this context?",
+          "options": [
+            "A rate comparing two currencies without USD in the displayed pair",
+            "A price that has crossed its previous high",
+            "A guaranteed conversion without fees",
+            "A quote with no base currency"
+          ],
+          "correct": 0,
+          "explanation": "A cross commonly describes a non-USD pair of major currencies. It does not describe chart behavior, a fee promise, or a different quote convention."
+        },
+        {
+          "question": "A EUR/GBP quote is 0.8500. What does the number mean by convention?",
+          "options": [
+            "One euro is quoted as 0.8500 pounds",
+            "One pound is quoted as 0.8500 euros",
+            "The pair's spread is 0.8500",
+            "The euro will be worth 0.8500 pounds next week"
+          ],
+          "correct": 0,
+          "explanation": "EUR is the base and GBP is the quote currency, so the rate expresses pounds for one euro. It is neither the spread nor a future guarantee."
+        },
+        {
+          "question": "What should a beginner infer about a minor pair's spread from its category alone?",
+          "options": [
+            "Nothing definite; check current provider pricing and conditions",
+            "That the spread is always lower than a major's",
+            "That the pair is always too illiquid to quote",
+            "That no market risk applies"
+          ],
+          "correct": 0,
+          "explanation": "Minor status does not fix a spread or liquidity. Those conditions vary with pair, time, volatility, and provider, and must be checked directly."
+        }
+      ]
+    },
+    {
+      "id": "m2-l5",
+      "title": "Exotic Currency Pairs",
+      "intro": "Exotic pairs introduce currencies that are less frequently traded internationally alongside a major currency. Understanding the label helps beginners recognize potential differences in costs and price behavior without assuming every exotic pair behaves alike.",
+      "objectives": [
+        "Describe the common structure of an exotic pair.",
+        "Recognize examples without treating the category as a precise universal list.",
+        "Explain possible spread, liquidity, and event-related limitations."
+      ],
+      "explanation": [
+        "An exotic pair commonly combines a major currency, often USD or EUR, with a currency from a smaller or emerging market economy. Examples often cited include USD/TRY, EUR/TRY, or USD/THB, though exact classifications vary among sources and providers. The label describes a common market grouping, not a judgment about a country's importance.",
+        "Exotic pairs may have fewer active buyers and sellers than widely traded majors, so displayed spreads can be wider and prices can move sharply. Local market hours, capital controls, holidays, political developments, and economic announcements may affect access or pricing. These are possible characteristics rather than rules that apply identically to every pair.",
+        "A quoted pair can also have provider-specific fees, trading restrictions, or availability. In leveraged products, margin requirements and losses can change quickly; stops may slip, and gaps can move beyond a requested level. This is general education, not personal financial advice. Provider costs, regulation, and protections depend on firm and jurisdiction, so check original official documents and relevant regulator sources rather than relying on a label."
+      ],
+      "steps": [
+        "Identify both currencies and note whether one is commonly classified as a major currency.",
+        "Treat exotic classification as a common convention, not a fixed global list.",
+        "Look up current spreads, hours, restrictions, and fees in official provider materials.",
+        "Check whether local events or holidays could affect the availability or interpretation of a quote."
+      ],
+      "example": "A fictional educational screen lists USD/TRY at 32.00 and displays a wider spread than a fictional EUR/USD quote. This illustrates a possible difference, not a universal rule: another provider or time could show different conditions. The number means one US dollar is quoted at 32 Turkish lira; it gives no prediction about future movement.",
+      "remember": [
+        "An exotic often combines a major currency with a less internationally traded currency.",
+        "Classification and market conditions vary; do not assume identical behavior across pairs.",
+        "Wider spreads, sharp moves, and access limits are possible, not guaranteed."
+      ],
+      "mistakes": [
+        "Mistake: Assuming exotic means a currency has no legitimate market. Correction: it is a relative trading-category term, and the currencies are used in their economies.",
+        "Mistake: Treating the possibility of a wider spread as certain for every provider and time. Correction: verify current quoted costs and official terms."
+      ],
+      "summary": "Exotic pairs commonly join a major currency with a less internationally traded currency, but exact labels vary. Costs, liquidity, availability, and risk require checking for the specific pair and provider.",
+      "visual": {
+        "type": "pairs",
+        "caption": "A schematic should show a commonly traded currency paired with a less internationally traded currency, with callouts for possible—not guaranteed—spread and liquidity differences."
+      },
+      "quiz": [
+        {
+          "question": "Which description most closely matches the common exotic-pair category?",
+          "options": [
+            "A major currency paired with a currency traded less widely internationally",
+            "Any pair that has a price above 10",
+            "Two currencies that cannot be exchanged",
+            "A pair that guarantees a wide spread"
+          ],
+          "correct": 0,
+          "explanation": "Exotic pairs commonly combine a major currency with one from a smaller or emerging market. Price level and guaranteed spread are not part of the definition."
+        },
+        {
+          "question": "Which is often used as an example of an exotic pair?",
+          "options": [
+            "USD/TRY",
+            "EUR/USD",
+            "GBP/JPY",
+            "AUD/NZD"
+          ],
+          "correct": 0,
+          "explanation": "USD/TRY is often classed as an exotic pair because it combines USD with the Turkish lira. Lists vary, while the other examples are commonly considered major or minor crosses."
+        },
+        {
+          "question": "Which statement about exotic-pair spreads is accurate?",
+          "options": [
+            "They may be wider, but conditions depend on pair, provider, and time",
+            "They are always exactly twice a major pair's spread",
+            "They are fixed by the currency symbols",
+            "They are always zero during local market hours"
+          ],
+          "correct": 0,
+          "explanation": "Wider spreads are a possible feature, not a universal fixed rule. The actual quote depends on the pair and current provider conditions."
+        },
+        {
+          "question": "Why might a local holiday matter when learning about an exotic pair?",
+          "options": [
+            "It may affect local market activity or pricing availability",
+            "It changes the pair's base currency automatically",
+            "It guarantees that the quote will rise",
+            "It removes any need to check the timestamp"
+          ],
+          "correct": 0,
+          "explanation": "Local trading schedules can affect activity and quote conditions. A holiday does not change the pair's base currency or determine price direction."
+        },
+        {
+          "question": "How should learners check a provider's restrictions and protections for an exotic pair?",
+          "options": [
+            "Read the provider's original official terms and relevant jurisdiction information",
+            "Assume all providers use the same rules",
+            "Infer them from the pair's numerical price",
+            "Rely on the category name alone"
+          ],
+          "correct": 0,
+          "explanation": "Product access, fees, and regulatory protections vary by firm and jurisdiction. Official source documents are needed; the symbol and classification do not reveal these terms."
+        }
+      ]
+    },
+    {
+      "id": "m2-l6",
+      "title": "Understanding Currency Symbols",
+      "intro": "Currency symbols and three-letter codes can look similar, but they identify different currencies and sometimes share the same symbol. Learning the codes prevents confusion when reading a quote, chart, or educational example.",
+      "objectives": [
+        "Recognize the three-letter ISO currency-code format used in many Forex pairs.",
+        "Distinguish currency codes from familiar currency symbols.",
+        "Use pair order and context to resolve symbol ambiguity."
+      ],
+      "explanation": [
+        "Forex platforms commonly identify currencies with three-letter codes based on the ISO 4217 standard, such as USD for the US dollar, EUR for the euro, JPY for the Japanese yen, and GBP for the pound sterling. In a pair like USD/JPY, the codes make clear which two currencies are being compared.",
+        "Everyday symbols can be ambiguous. The dollar sign ($) is used for several currencies, including US, Canadian, Australian, and New Zealand dollars; context or a code is needed to know which one is meant. A yen symbol (¥) is also often used in ordinary writing, while a platform's standardized code reduces ambiguity.",
+        "Codes identify currencies, not whether a price is rising, whether a currency is 'strong', or what a provider charges. Some platforms may add suffixes or formatting, so use the platform's legend and product details. Educational examples here do not constitute personal financial advice; verify product specifications and official provider terms for real-world instruments."
+      ],
+      "steps": [
+        "Read each three-letter code in a pair and look up any unfamiliar code in a reliable reference.",
+        "Do not rely on a symbol like $ alone; identify the full code or country context.",
+        "Use the pair order to label base first and quote second.",
+        "Check a platform legend if a symbol or suffix is unfamiliar."
+      ],
+      "example": "A fictional worksheet shows USD/CAD. The codes reveal that US dollars are first and Canadian dollars second, even though both currencies may be written with a dollar sign in ordinary text. A learner reads the rate as Canadian dollars for one US dollar, rather than guessing from '$' alone.",
+      "remember": [
+        "Three-letter codes commonly identify currencies precisely in Forex pairs.",
+        "Everyday symbols such as $ can refer to more than one currency.",
+        "Pair order and a platform legend add meaning; symbols alone do not predict price."
+      ],
+      "mistakes": [
+        "Mistake: Assuming every '$' means US dollars. Correction: several currencies share that symbol, so check the code or context.",
+        "Mistake: Treating a currency code as a direction signal. Correction: a code identifies the currency, while price movement is separate information."
+      ],
+      "summary": "Three-letter codes make currency identity clearer than many everyday symbols. Read both codes and their order, and consult a legend whenever a display is ambiguous.",
+      "visual": {
+        "type": "pairs",
+        "caption": "A schematic should compare the shared dollar sign with USD, CAD, AUD, and NZD codes, then show how codes remove ambiguity in a pair."
+      },
+      "quiz": [
+        {
+          "question": "What does USD identify in a Forex pair?",
+          "options": [
+            "The US dollar",
+            "The Australian dollar",
+            "The euro",
+            "The Japanese yen"
+          ],
+          "correct": 0,
+          "explanation": "USD is the three-letter code for the US dollar. AUD identifies the Australian dollar, EUR the euro, and JPY the Japanese yen."
+        },
+        {
+          "question": "Why can the symbol '$' be unclear without context?",
+          "options": [
+            "Several currencies use a dollar sign in everyday writing",
+            "It always means a Forex spread",
+            "It is used only when no currency exists",
+            "It identifies whether the price will rise"
+          ],
+          "correct": 0,
+          "explanation": "The same familiar symbol is used for multiple dollar currencies. A code such as USD or CAD clarifies which currency is intended."
+        },
+        {
+          "question": "In USD/JPY, which currency is written second?",
+          "options": [
+            "JPY, the Japanese yen",
+            "USD, the US dollar",
+            "EUR, the euro",
+            "AUD, the Australian dollar"
+          ],
+          "correct": 0,
+          "explanation": "Pair order is left to right, making JPY the second, or quote, currency in USD/JPY. USD remains first and is the base."
+        },
+        {
+          "question": "What information does a three-letter currency code primarily provide?",
+          "options": [
+            "The identity of the currency",
+            "The future direction of its exchange rate",
+            "The transaction fee at every provider",
+            "The amount of leverage in a product"
+          ],
+          "correct": 0,
+          "explanation": "The code identifies which currency is meant. It does not encode a price forecast, provider fee, or leverage setting."
+        },
+        {
+          "question": "A platform shows an unfamiliar suffix after a pair. What is a sensible learning step?",
+          "options": [
+            "Check the platform's legend or product details",
+            "Assume it means a guaranteed price",
+            "Ignore the suffix because codes are always universal in display format",
+            "Change the order of the two currencies"
+          ],
+          "correct": 0,
+          "explanation": "Platforms may add formatting or product-specific labels, so the legend and product details explain their meaning. The suffix should not be guessed or ignored."
+        }
+      ]
+    },
+    {
+      "id": "m2-l7",
+      "title": "What Makes Currency Prices Move?",
+      "intro": "Currency prices respond to many interacting influences rather than one simple cause. A beginner who understands the main categories can interpret market explanations more carefully and avoid treating an event as a guaranteed price signal.",
+      "objectives": [
+        "Name several broad influences on exchange rates.",
+        "Explain why market expectations can matter alongside published data.",
+        "Recognize that reactions are uncertain and can differ from a simple headline interpretation."
+      ],
+      "explanation": [
+        "Currency prices can be influenced by interest-rate expectations, inflation, employment and growth data, central-bank communication, government policy, political events, and global demand for risk or safety. Trade and investment flows also matter. These influences interact, and their importance can change with the economic setting and the particular currencies in a pair.",
+        "Markets respond not only to a new number but also to how it compares with expectations and what participants believe it means for future policy. A report that looks positive in isolation may be weaker than forecast, already reflected in prices, or outweighed by another concern. Price movements can therefore seem counterintuitive, especially around announcements.",
+        "There is no reliable one-headline-to-one-price rule. Liquidity can thin, spreads can widen, and volatility can increase around major events. Leverage magnifies exposure; stops may slip, and gaps can pass requested levels. This explanation is general education, not personal financial advice or a trading signal. SMC terms and chart-pattern interpretations are subjective frameworks, not objective guarantees of cause or outcome."
+      ],
+      "steps": [
+        "Name the two currencies before looking for a possible explanation of a price change.",
+        "Separate reported facts from forecasts, expectations, and interpretations.",
+        "Check the release time, source, and comparison with prior or consensus figures.",
+        "Consider more than one possible influence and label any cause as uncertain unless evidence supports it.",
+        "Treat chart patterns and market narratives as interpretations, not guarantees."
+      ],
+      "example": "In a fictional scenario, analysts expect a central bank to hold rates steady, but its statement sounds less supportive of future rate increases than expected. A related currency pair moves lower for a short period. The example illustrates how expectations and wording may matter; it does not prove the statement caused every move or predict what comes next.",
+      "remember": [
+        "Many economic, policy, political, and flow-related influences can interact.",
+        "Expectations and surprises may matter as much as headline numbers.",
+        "An explanation or pattern is not a guaranteed forecast."
+      ],
+      "mistakes": [
+        "Mistake: Assuming positive economic news must make a currency rise immediately. Correction: markets compare the news with expectations and other influences.",
+        "Mistake: Treating a chart pattern or SMC label as objective proof. Correction: pattern reading is interpretive and cannot guarantee a result."
+      ],
+      "summary": "Exchange rates reflect many influences, and market expectations shape how news is interpreted. Reactions are uncertain, so headlines, technical patterns, and SMC language should not be treated as guarantees or personal advice.",
+      "visual": {
+        "type": "macro",
+        "caption": "A schematic should show several overlapping influences—rates, data, policy, politics, and market expectations—feeding into a pair's changing relative price, with a note that no single arrow guarantees direction."
+      },
+      "quiz": [
+        {
+          "question": "Which set contains plausible influences on currency prices?",
+          "options": [
+            "Interest-rate expectations, economic data, and political events",
+            "Only the color of a chart and the number of screen tabs",
+            "Only the previous day's closing price",
+            "A currency's three-letter code by itself"
+          ],
+          "correct": 0,
+          "explanation": "Rates, data, and politics can all affect expectations and flows. A symbol code identifies the currency but does not itself move the market."
+        },
+        {
+          "question": "Why can a currency fall after a report that appears positive?",
+          "options": [
+            "The result may be weaker than expectations or outweighed by other factors",
+            "Positive reports always lower every currency",
+            "The pair's base and quote roles reverse during reports",
+            "A report guarantees a specific price reaction"
+          ],
+          "correct": 0,
+          "explanation": "Markets compare information with what was expected and consider the wider setting. A positive headline alone does not determine the reaction."
+        },
+        {
+          "question": "What is a careful way to describe the cause of a brief price move after an announcement?",
+          "options": [
+            "Say the announcement may have contributed, while acknowledging uncertainty",
+            "Claim it proves a permanent trend",
+            "Say the announcement guarantees the next move",
+            "Ignore expectations and other simultaneous influences"
+          ],
+          "correct": 0,
+          "explanation": "Several influences may coincide, so a cautious explanation distinguishes a possible contribution from proven sole causation or a forecast."
+        },
+        {
+          "question": "How should a beginner understand a technical pattern or SMC label?",
+          "options": [
+            "As an interpretive framework, not an objective guarantee",
+            "As proof that price must reach a target",
+            "As a substitute for checking event risk",
+            "As a universal rule agreed upon by all observers"
+          ],
+          "correct": 0,
+          "explanation": "Pattern reading and SMC terminology involve interpretation and can be applied differently. They do not guarantee price outcomes or remove other risks."
+        },
+        {
+          "question": "What can happen to execution conditions during a major announcement?",
+          "options": [
+            "Spreads may widen and prices may move rapidly, with slippage possible",
+            "Requested stop prices are guaranteed exactly",
+            "Leverage ceases to affect risk",
+            "Gaps become impossible"
+          ],
+          "correct": 0,
+          "explanation": "Volatility and thinner liquidity can make execution less predictable. Stops are not always filled at the requested price, and gaps can occur."
+        }
+      ]
+    },
+    {
+      "id": "m2-l8",
+      "title": "Best Currency Pairs for Beginners",
+      "intro": "There is no universally best currency pair for every learner, because familiarity, availability, costs, and personal circumstances differ. This lesson offers a neutral way to compare pairs for study without recommending a trade or broker.",
+      "objectives": [
+        "Explain why no currency pair is universally best for beginners.",
+        "List practical factors to compare when choosing a pair to study.",
+        "Use a cautious learning-only checklist without making a trade recommendation."
+      ],
+      "explanation": [
+        "Beginners often start learning with widely discussed major pairs such as EUR/USD because examples and educational explanations are easy to find. That does not make EUR/USD or any other pair best for everyone. A learner's location, time zone, language resources, familiarity with the economies, and access to reliable data can all affect which pair is easiest to study.",
+        "Useful comparison factors include how clearly the pair is quoted, whether trustworthy educational material is available, typical trading hours, and the provider's published costs and restrictions. Costs may include spreads, commissions, financing charges, conversion fees, or other terms. These can vary by firm, account type, jurisdiction, and market conditions; verify current original official documents and relevant regulator information.",
+        "For a beginner, it is reasonable to study historical charts or simulated examples before making any decision about real money. Demo conditions may not reproduce live spreads, slippage, gaps, or emotions. Forex products can involve leverage and loss, and a stop does not guarantee a fill at the requested price. This is general education, not personal financial advice; it does not endorse deposits, live trades, signals, or a particular provider."
+      ],
+      "steps": [
+        "Choose a pair for a classroom exercise based on clarity and available educational context, not a promise of profit.",
+        "Learn its codes, base and quote roles, and the economic calendars relevant to both currencies.",
+        "Compare official provider descriptions of fees, hours, restrictions, and protections without assuming they are universal.",
+        "Use historical or simulated examples to practice reading quotes, while noting that simulations may differ from live execution.",
+        "Write down uncertainties and risk limits as learning questions rather than treating a pair choice as a trading signal."
+      ],
+      "example": "Two fictional learners compare EUR/USD and USD/JPY using old classroom charts. One finds more beginner explanations for EUR/USD, while the other can better follow Japanese economic releases because of their study materials. They choose different pairs for analysis practice; neither choice implies that either pair is more profitable or suitable for a real transaction.",
+      "remember": [
+        "No pair is universally best for every beginner.",
+        "Compare educational clarity and current official conditions, not popularity alone.",
+        "Practice examples are not proof that live outcomes will match."
+      ],
+      "mistakes": [
+        "Mistake: Assuming a popular pair is automatically safest or most profitable. Correction: popularity does not determine risk or suitability.",
+        "Mistake: Believing a demo exactly reproduces live trading. Correction: live spreads, slippage, gaps, and emotions may differ."
+      ],
+      "summary": "A useful beginner study pair is one whose quote, context, and official conditions you can understand, not a universal winner. Use educational practice cautiously and remember that live costs, risk, and personal suitability differ.",
+      "visual": {
+        "type": "pairs",
+        "caption": "A schematic comparison checklist should show learning clarity, currency familiarity, available information, and official costs as factors to review, while marking 'best' as personal and context-dependent."
+      },
+      "quiz": [
+        {
+          "question": "Which statement best answers 'What is the best pair for beginners?'",
+          "options": [
+            "There is no pair that is universally best for every learner",
+            "The pair with the largest recent price move is always best",
+            "Every beginner must study the same pair",
+            "The pair with the highest quoted number is safest"
+          ],
+          "correct": 0,
+          "explanation": "Learning needs, familiarity, information access, and conditions differ. Recent movement or a high numerical quote does not establish suitability or safety."
+        },
+        {
+          "question": "Which is a sensible factor when selecting a pair for study?",
+          "options": [
+            "Whether clear educational information and quote context are available",
+            "Whether someone promises a profit from it",
+            "Whether its price has many decimal places",
+            "Whether the pair name sounds familiar, without further checks"
+          ],
+          "correct": 0,
+          "explanation": "Clarity and reliable educational context help a learner study the pair. Promises and superficial price formatting do not establish quality or suitability."
+        },
+        {
+          "question": "Why should a learner check original provider terms?",
+          "options": [
+            "Fees, restrictions, regulation, and protections can vary by provider and jurisdiction",
+            "All providers have identical costs by law everywhere",
+            "A pair's category sets every account fee",
+            "Official terms predict future price movement"
+          ],
+          "correct": 0,
+          "explanation": "Provider costs and protections vary across firms, products, account types, and jurisdictions. Original official terms are the appropriate source for those conditions."
+        },
+        {
+          "question": "What is a limitation of practicing with a demo or historical chart?",
+          "options": [
+            "It may not reproduce live spreads, slippage, gaps, or emotional responses",
+            "It always creates the exact same conditions as live execution",
+            "It guarantees that later decisions will be suitable",
+            "It removes all uncertainty from market interpretation"
+          ],
+          "correct": 0,
+          "explanation": "Simulated and historical exercises can teach quote reading, but they may not match live execution or human reactions. Practice cannot guarantee future outcomes."
+        },
+        {
+          "question": "Which description matches the purpose of this course module?",
+          "options": [
+            "General education, not personal financial advice or a live-trading recommendation",
+            "A promise that a specific pair will make money",
+            "An instruction to deposit funds with a provider",
+            "A signal service for entering trades"
+          ],
+          "correct": 0,
+          "explanation": "The lesson teaches concepts and comparison methods only. It does not assess an individual's situation, recommend a transaction or provider, or promise financial outcomes."
+        }
+      ]
+    }
+  ]
+}
