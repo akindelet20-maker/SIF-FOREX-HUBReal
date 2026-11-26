@@ -588,3 +588,94 @@ legend { margin-bottom: 8px; color: #e6ecea; font-size: 11px; font-weight: 700; 
 .diagram-zone { fill: rgba(114,174,240,.2); stroke: rgba(114,174,240,.7); stroke-width: 1; }
 .diagram-card p { margin: 5px 0 0; color: var(--muted); font-size: 9px; line-height: 1.65; }
 @media (max-width: 760px) { .visual-concepts-grid { grid-template-columns: 1fr; } .diagram-card { padding: 14px; } .diagram-card svg { max-height: 150px; } }
+
+
+/* Site-wide SIF contact menu and homepage social section */
+.sif-contact-widget {
+  position: fixed;
+  right: max(18px, env(safe-area-inset-right));
+  bottom: calc(18px + env(safe-area-inset-bottom));
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.sif-contact-launcher {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  border: 1px solid rgba(240,217,149,.72);
+  border-radius: 50%;
+  color: #061a20;
+  background: linear-gradient(145deg, #63ddb2, #2bb88a 65%, #178764);
+  box-shadow: 0 12px 32px rgba(10,15,21,.48), 0 0 0 5px rgba(66,201,154,.11);
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+.sif-contact-launcher:hover { transform: translateY(-3px); filter: saturate(1.08); box-shadow: 0 16px 34px rgba(10,15,21,.52), 0 0 0 7px rgba(66,201,154,.13); }
+.sif-contact-launcher:active { transform: scale(.96); }
+.sif-contact-launcher svg { width: 29px; height: 29px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.sif-contact-launcher__sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.sif-contact-menu {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 14px);
+  width: min(330px, calc(100vw - 32px));
+  padding: 19px;
+  border: 1px solid rgba(213,180,106,.34);
+  border-radius: 20px;
+  color: var(--ink);
+  background: radial-gradient(ellipse at 100% 0, rgba(66,201,154,.10), transparent 55%), linear-gradient(155deg, rgba(15,34,49,.99), rgba(7,17,29,.99));
+  box-shadow: 0 24px 70px rgba(0,0,0,.55), inset 0 1px rgba(255,255,255,.035);
+  transform-origin: bottom right;
+  animation: sif-contact-pop .18s ease both;
+}
+.sif-contact-menu[hidden] { display: none; }
+@keyframes sif-contact-pop { from { opacity: 0; transform: translateY(8px) scale(.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
+.sif-contact-menu__header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 15px; }
+.sif-contact-menu__eyebrow { color: var(--green); font-size: 8px; font-weight: 800; letter-spacing: .16em; }
+.sif-contact-menu__header h2 { margin: 3px 0 2px; color: #f5f4ef; font: 800 18px/1.25 'Manrope',sans-serif; }
+.sif-contact-menu__header p { margin: 0; color: var(--muted); font-size: 10px; }
+.sif-contact-close { display: grid; flex: 0 0 32px; place-items: center; width: 32px; height: 32px; padding: 0; border: 1px solid var(--line); border-radius: 10px; color: var(--muted); background: rgba(255,255,255,.025); transition: color .18s ease, border-color .18s ease, background .18s ease; }
+.sif-contact-close:hover { color: var(--gold-bright); border-color: rgba(213,180,106,.48); background: rgba(213,180,106,.07); }
+.sif-contact-close svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+.sif-contact-options { display: grid; gap: 8px; }
+.sif-contact-option { display: grid; grid-template-columns: 39px minmax(0,1fr) 15px; align-items: center; gap: 11px; min-height: 62px; padding: 9px 11px; border: 1px solid rgba(162,183,198,.13); border-radius: 13px; background: rgba(255,255,255,.025); transition: transform .18s ease, border-color .18s ease, background .18s ease; }
+.sif-contact-option:hover { transform: translateX(2px); border-color: rgba(213,180,106,.4); background: rgba(213,180,106,.055); }
+.sif-contact-option__icon, .contact-link__icon { display: grid; place-items: center; width: 39px; height: 39px; border: 1px solid rgba(213,180,106,.22); border-radius: 12px; color: var(--gold-bright); background: rgba(213,180,106,.07); }
+.sif-contact-option__icon--whatsapp, .contact-link--whatsapp .contact-link__icon { color: #63ddb2; border-color: rgba(66,201,154,.27); background: rgba(66,201,154,.085); }
+.sif-contact-option__icon svg, .contact-link__icon svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+.sif-contact-option__copy { display: grid; gap: 2px; min-width: 0; }
+.sif-contact-option__copy strong { color: #f0f4f1; font: 750 11px 'Manrope',sans-serif; }
+.sif-contact-option__copy small { overflow: hidden; color: var(--muted); font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
+.sif-contact-option__arrow { color: var(--muted-2); }
+.sif-contact-option__arrow svg { display: block; width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.sif-contact-menu__note { margin: 13px 2px 0; color: var(--muted-2); font-size: 9px; line-height: 1.5; }
+
+.contact-panel { position: relative; overflow: hidden; padding: clamp(24px, 4vw, 38px); border: 1px solid rgba(213,180,106,.25); border-radius: 22px; text-align: center; background: radial-gradient(ellipse at 50% 0, rgba(66,201,154,.12), transparent 62%), linear-gradient(145deg, rgba(14,32,47,.96), rgba(8,19,31,.98)); box-shadow: inset 0 1px rgba(255,255,255,.035); }
+.contact-kicker { display: inline-flex; color: var(--green); font-size: 8px; font-weight: 800; letter-spacing: .16em; }
+.contact-panel .contact-title { max-width: 700px; margin: 8px auto 12px; color: #f2f3ed; font: 800 clamp(23px,3.5vw,34px)/1.18 'Manrope',sans-serif; letter-spacing: -.025em; }
+.contact-panel > p { max-width: 750px; margin: 0 auto 23px; color: #aebbc3; font-size: 12px; line-height: 1.75; }
+.contact-links { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 10px; }
+.contact-link { display: flex; min-width: 0; min-height: 76px; align-items: center; gap: 10px; padding: 12px; border: 1px solid rgba(162,183,198,.14); border-radius: 14px; color: #edf2ef; background: rgba(5,16,27,.55); text-align: left; transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease; }
+.contact-link:hover { transform: translateY(-3px); border-color: rgba(213,180,106,.46); background: rgba(213,180,106,.055); box-shadow: 0 9px 24px rgba(0,0,0,.22); }
+.contact-link:active { transform: translateY(-1px) scale(.99); }
+.contact-link__icon { flex: 0 0 38px; width: 38px; height: 38px; }
+.contact-link__label { flex: 1 1 auto; min-width: 0; color: #e5ece8; font-size: 10px; font-weight: 700; line-height: 1.45; }
+.contact-link__arrow { flex: 0 0 auto; align-self: flex-start; margin: -3px -2px 0 0; color: var(--muted-2); font-size: 12px; transition: color .2s ease, transform .2s ease; }
+.contact-link:hover .contact-link__arrow { color: var(--gold-bright); transform: translate(2px,-2px); }
+.contact-link--tiktok .contact-link__icon { color: #f0d995; }
+.contact-link--instagram .contact-link__icon { color: #e6b9c9; }
+.contact-link--telegram .contact-link__icon { color: #78c9e8; }
+@media (max-width: 760px) {
+  .contact-links { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .contact-panel { padding: 25px 18px; }
+}
+@media (max-width: 520px) {
+  .sif-contact-widget { right: max(14px, env(safe-area-inset-right)); bottom: calc(14px + env(safe-area-inset-bottom)); }
+  .sif-contact-launcher { width: 56px; height: 56px; }
+  .sif-contact-menu { width: min(320px, calc(100vw - 28px)); padding: 16px; }
+  .contact-links { grid-template-columns: 1fr; }
+  .contact-link { min-height: 66px; padding: 10px 12px; }
+}
