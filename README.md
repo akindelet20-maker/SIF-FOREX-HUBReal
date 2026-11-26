@@ -1,6 +1,6 @@
 # SIF FOREX HUB
 
-A static forex learning and practice site. The Academy, the separate SIF Question assessment section, charts, risk calculator, and simulator open directly without account creation. Sign-in is required for the personal journal and dashboard. Academy progress saves in browser storage; optional account sync is prepared but requires the separate migration described below.
+A static forex learning and practice site. The Academy, the separate SIF Question assessment section, charts, risk calculator, and simulator open directly without account creation. Sign-in is required for the personal journal and dashboard. Guest Academy progress saves in browser storage; signed-in learners can sync progress to their account.
 
 ## Preview locally
 
@@ -26,7 +26,7 @@ The browser client in login, registration, dashboard, and journal needs the proj
 
 Before deployment, confirm that `public.profiles` has `id`, `full_name`, `username`, and `membership`, with `id` corresponding to the authenticated user ID. If profile data is needed, configure and test a trusted server-side signup row-creation path. Keep RLS enabled and verify that an authenticated user can read only their own profile row. Test both new and existing accounts with RLS enabled. Do not apply SQL copied from documentation without matching it to the actual deployed schema and policies.
 
-The additive migration `supabase/migrations/20261126190000_academy_progress.sql` creates one JSONB progress row per authenticated user, enables RLS, and grants users access only to their own row. It does not change `public.profiles` or delete existing data. The migration has **not** been applied to production; until the owner approves the exact review build and authorizes a separate release step, Academy and SIF Question use browser storage and show a clear local-save fallback when account sync is unavailable. No build or test automatically applies this migration.
+The additive migration `supabase/migrations/20261126175200_academy_progress.sql` was applied to production with owner approval on 2026-11-26. It creates one JSONB progress row per authenticated user with RLS and owner-only policies; it does not alter `public.profiles` or existing user data. Signed-in Academy and SIF Question sessions can sync progress to this table. Guests save locally, and the app falls back to browser storage if account sync is unavailable. No build or test automatically applies this migration.
 
 The journal is currently local-only. If it must be private across devices or protected against other users of the same browser profile, store entries server-side in an owner-scoped table with verified RLS; that backend is not configured here. PRO/VIP plans and payment processing remain unavailable until a real paid feature is ready.
 
