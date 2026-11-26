@@ -1,0 +1,1020 @@
+{
+  "id": 17,
+  "title": "Prop Firm Trading",
+  "description": "Learn how prop firm evaluations work so you can assess their rules carefully and approach them with realistic expectations.",
+  "lessons": [
+    {
+      "id": "m17-l1",
+      "title": "What Is a Proprietary Trading Firm?",
+      "intro": "A proprietary trading firm uses its own capital or a simulated evaluation structure to assess trading performance. Understanding the business model helps you distinguish the marketing label from the exact agreement you would be accepting.",
+      "objectives": [
+        "Define proprietary trading and distinguish it from ordinary retail brokerage.",
+        "Describe common evaluation and revenue arrangements without assuming every firm works alike.",
+        "Identify why original firm terms and local rules matter."
+      ],
+      "explanation": [
+        "A proprietary trading firm, often shortened to prop firm, is a business that trades financial markets using capital it owns or controls. Some firms recruit traders as employees; many online retail-facing firms instead offer a paid assessment, often on a simulated account, and may later pay a share of eligible simulated or copied-trade results under a contract. The word funded does not by itself prove that a trader receives unrestricted access to a live brokerage account. Firms differ in how they evaluate, route, copy, or simulate orders, and the public label alone does not settle those details.",
+        "A firm's revenue may come from assessment fees, subscriptions, trading activity, or other sources, depending on its model. Payout eligibility, prohibited conduct, dispute handling, data use, and account status are defined by the provider's official terms, not by a slogan or a review. Provider terms and regulation vary by firm and jurisdiction; verify current original documents and relevant local requirements. Forex leverage can magnify losses, and spreads, commissions, slippage, and gaps can affect outcomes. This is general education, not personal financial advice; it does not recommend joining a firm."
+      ],
+      "steps": [
+        "Look up the firm's legal entity, location, and official terms rather than relying only on advertisements.",
+        "Mark whether the account is described as simulated, live, or copied, and note how the firm defines each term.",
+        "Find the fee, payout, rule-change, termination, and dispute clauses in the original documents.",
+        "Check applicable regulator or consumer-protection information for your jurisdiction; do not assume a prop firm is a regulated broker."
+      ],
+      "example": "Fictional example: Northstar Evaluation Ltd. charges a fictional $40 assessment fee for a simulated $25,000 account and says eligible results may receive a 75% share after conditions are met. The figures describe only this invented offer. A learner should ask whether losses are simulated, what triggers a payout, whether fees can recur, and which legal entity signs the agreement; the headline account size alone cannot answer those questions.",
+      "remember": [
+        "A prop firm's label does not reveal whether trading is live or simulated.",
+        "Read the current official agreement, including fees and payout conditions.",
+        "Firm and jurisdiction terms differ; there is no guaranteed payout."
+      ],
+      "mistakes": [
+        "Misunderstanding: every funded account is live firm capital. Correction: confirm the account's actual execution and legal status in the agreement.",
+        "Misunderstanding: a large advertised account is money the trader owns. Correction: account size is a rule-defined limit or simulation balance, not a personal cash deposit or guaranteed payout."
+      ],
+      "summary": "Prop firms use varied business and evaluation models, so the details matter more than the name. Verify the original terms and local context, and treat all outcomes as uncertain.",
+      "visual": {
+        "type": "propfirm",
+        "caption": "A schematic compares a firm's evaluation stage, account type, contract, and possible payout conditions, while showing that each firm's path can differ."
+      },
+      "quiz": [
+        {
+          "question": "What does the term proprietary trading generally refer to?",
+          "options": [
+            "Trading capital owned or controlled by a firm",
+            "A guaranteed personal account for every applicant",
+            "A government insurance program for trades",
+            "A rule that removes market risk"
+          ],
+          "correct": 0,
+          "explanation": "Proprietary trading generally means a firm trades capital it owns or controls. It does not mean applicants automatically receive personal funds or protection from market losses."
+        },
+        {
+          "question": "What is the safest way to learn whether an online account is live or simulated?",
+          "options": [
+            "Rely on the firm's account-size headline",
+            "Check the official agreement and account description",
+            "Assume all forex accounts are live",
+            "Ask another trader to guess"
+          ],
+          "correct": 1,
+          "explanation": "The official account description and contract are the primary sources for the provider's stated model. A headline balance or another person's assumption cannot establish execution status."
+        },
+        {
+          "question": "Which statement about firms' business models is most accurate?",
+          "options": [
+            "Every firm earns money in the same way",
+            "Assessment fees always guarantee a payout",
+            "Models and revenue sources can differ by provider",
+            "A simulated evaluation has no conditions"
+          ],
+          "correct": 2,
+          "explanation": "Providers may have different fee, evaluation, execution, and payout arrangements. Therefore a fee is not proof of a future payout, and terms must be checked firm by firm."
+        },
+        {
+          "question": "Why should a learner check jurisdiction-specific information?",
+          "options": [
+            "Rules and protections can depend on location and provider",
+            "It ensures a challenge will be passed",
+            "It makes spreads disappear",
+            "It replaces reading the contract"
+          ],
+          "correct": 0,
+          "explanation": "Legal treatment and consumer protections can vary by jurisdiction and firm. Checking them adds context but does not guarantee performance or replace reading the provider's own documents."
+        },
+        {
+          "question": "Which statement correctly frames this lesson?",
+          "options": [
+            "It is personal advice to join a specific firm",
+            "It guarantees that simulated results will be paid",
+            "It is general education, not personal financial advice",
+            "It proves all providers are regulated brokers"
+          ],
+          "correct": 2,
+          "explanation": "The lesson explains concepts and due diligence rather than recommending a personal decision. It also avoids claiming that simulated results must be paid or that every firm has broker status."
+        }
+      ]
+    },
+    {
+      "id": "m17-l2",
+      "title": "How Prop Firms Work.",
+      "intro": "Prop firms can evaluate participants through different stages and account structures. A simple process map helps beginners see where fees, rules, reviews, and uncertainty enter.",
+      "objectives": [
+        "Describe common stages from evaluation to a possible later account arrangement.",
+        "Identify where fees, performance conditions, and compliance reviews may apply.",
+        "Explain why provider models and legal terms must be checked individually."
+      ],
+      "explanation": [
+        "An online prop-firm process often begins with a published evaluation, sometimes requiring a fee and completion of targets while staying within loss limits. A participant who meets the stated conditions may be invited to another phase or account stage, but this does not necessarily mean the account is live or that a payout is automatic. A provider may use simulated trading, copy trades, or provide access through a different arrangement. Some businesses instead employ traders directly. The label alone cannot tell you which model applies.",
+        "At each stage, the provider may apply identity checks, prohibited-method rules, performance reviews, and payout eligibility conditions. Fees can be one-time or recurring, and refunds or resets depend on the original agreement. Review the legal entity, current contract, and how disputes are handled; provider terms and jurisdictional protections vary. Forex trading also involves leverage, margin, spreads, commissions, slippage, and gaps, so execution and loss risks remain. Process diagrams and advertised account sizes do not prove expected outcomes. This is general education, not personal financial advice, and it does not recommend a firm or participation."
+      ],
+      "steps": [
+        "Draw the stages shown in the current official terms, from signup through any evaluation and later review.",
+        "At each stage, note required fees, conditions, account status, and what can cause termination.",
+        "Check how the provider defines eligible results and any payout review or verification.",
+        "Compare the legal entity and dispute process with relevant official information for your jurisdiction."
+      ],
+      "example": "Fictional example: A fictional firm offers a $35 evaluation fee, then a simulated second-stage account if its written conditions are met. Eligible results may be reviewed before a hypothetical payment. A learner maps those three points—fee, stage transition, and review—and checks whether the $35 is refundable and what account status means. The invented sequence illustrates process analysis only; it does not predict a pass or payout.",
+      "remember": [
+        "A challenge is a process with stages and conditions, not a promise.",
+        "Account type and payout eligibility must be read in the official terms.",
+        "Fees, regulation, and protections can vary by provider and location."
+      ],
+      "mistakes": [
+        "Misunderstanding: meeting a displayed target automatically triggers a payout. Correction: account status, other rules, and review conditions may still apply.",
+        "Misunderstanding: all prop firms follow one standard process. Correction: stages, fees, execution, and legal terms differ."
+      ],
+      "summary": "Prop-firm processes may include paid evaluation, later account stages, and compliance or payout review. Map each step from current official documents and treat all results as uncertain.",
+      "visual": {
+        "type": "propfirm",
+        "caption": "A flow diagram traces a fictional process from evaluation fee to rule checks, a possible account stage, and conditional review, emphasizing that providers differ."
+      },
+      "quiz": [
+        {
+          "question": "What can follow an evaluation when stated conditions are met?",
+          "options": [
+            "A possible later stage or review, depending on the contract",
+            "An automatic guaranteed payout",
+            "Ownership of the firm's full advertised balance",
+            "Removal of all future rules"
+          ],
+          "correct": 0,
+          "explanation": "The agreement may provide a next stage or review, but conditions can remain. A target alone does not establish a guaranteed payment or ownership of the displayed balance."
+        },
+        {
+          "question": "Why check how a firm describes its account structure?",
+          "options": [
+            "The arrangement may be simulated, live, copied, or otherwise structured",
+            "All firms use identical live brokerage accounts",
+            "It predicts the next exchange rate",
+            "It makes fees refundable"
+          ],
+          "correct": 0,
+          "explanation": "Providers use different account arrangements, and the word funded is not enough to identify one. The current official description and contract provide the relevant details."
+        },
+        {
+          "question": "Which costs or risks may still matter in forex?",
+          "options": [
+            "Spreads, commissions, leverage, slippage, and gaps",
+            "Only the evaluation logo",
+            "No costs after signup",
+            "None if an account is simulated"
+          ],
+          "correct": 0,
+          "explanation": "Transaction costs and execution conditions can affect results, while leverage and gaps can worsen losses. A simulated evaluation does not make every financial or contractual risk disappear."
+        },
+        {
+          "question": "What should a learner check about a fee?",
+          "options": [
+            "Whether it is one-time, recurring, refundable, or linked to a reset",
+            "Assume it always guarantees a payout",
+            "Assume every firm refunds it",
+            "Ignore it because the account size is larger"
+          ],
+          "correct": 0,
+          "explanation": "Fee structure and refund rules depend on the provider's terms. A large advertised balance does not change whether fees recur or guarantee results."
+        },
+        {
+          "question": "What is the most reliable way to understand a provider process?",
+          "options": [
+            "Map its current official stages and conditions",
+            "Use a social-media guess as the contract",
+            "Assume all providers work alike",
+            "Treat a process diagram as proof of expected income"
+          ],
+          "correct": 0,
+          "explanation": "The provider's current official documents describe its stated process. General diagrams and informal accounts can omit provider-specific conditions and cannot establish expected income."
+        }
+      ]
+    },
+    {
+      "id": "m17-l3",
+      "title": "Funded Accounts.",
+      "intro": "The phrase funded account can sound straightforward, but it may describe several different arrangements. Knowing what the account actually represents prevents confusion about ownership, losses, and payout eligibility.",
+      "objectives": [
+        "Distinguish an account label from actual ownership of funds.",
+        "Explain how rules and payout conditions can apply after an evaluation.",
+        "Recognize operational risks such as leverage, execution costs, and account termination terms."
+      ],
+      "explanation": [
+        "A funded account usually means the provider has approved a participant for a further trading stage after an evaluation or selection process. However, the exact account may be a live brokerage account, a simulated account, or a simulation whose trades are copied or otherwise used by the firm. The trader generally does not own the displayed balance, and the firm's contract determines what activity is allowed and whether any performance-based payment is available. A displayed balance is not the same thing as cash that can be withdrawn.",
+        "Read how the firm calculates eligible results, when a payout can be requested, what identity or tax documents are needed, and what happens after a breach or inactivity. Check whether fees, commissions, spreads, overnight financing, slippage, or execution differences apply. Forex leverage and margin can make a small price move consequential; stop orders may fill at a different price during fast markets or gaps. Conditions may change and differ by provider and jurisdiction, so consult the official current terms. This is general education, not personal financial advice, and no payout or account growth is assured."
+      ],
+      "steps": [
+        "Confirm the account's stated live, simulated, or copied status in the signed terms.",
+        "Locate the rules for eligible instruments, trading hours, holding positions, and restricted methods.",
+        "Check payout calculation, timing, minimums, verification requirements, and possible deductions.",
+        "Identify what can suspend or close the account and how a dispute is handled."
+      ],
+      "example": "Fictional example: A firm shows a fictional $50,000 funded-stage balance, but its contract says the balance is simulated and a payment is considered only after a review. If a fictional month shows $600 of eligible results and the agreement specifies a 70% share, the arithmetic share would be $420 before any stated adjustments. This illustration is not a prediction; eligibility, review, and any deductions depend on the invented contract's wording.",
+      "remember": [
+        "The displayed account balance is not necessarily money owned by the trader.",
+        "Account status, permitted activity, and payout rules are contract-specific.",
+        "Costs, leverage, execution, and termination conditions still matter."
+      ],
+      "mistakes": [
+        "Misunderstanding: funded means money can be withdrawn at will. Correction: withdrawals and eligible payments are controlled by the contract.",
+        "Misunderstanding: an evaluation pass guarantees future income. Correction: later account rules, execution, eligibility, and market outcomes remain uncertain."
+      ],
+      "summary": "A funded-stage label does not define the account's legal or execution status by itself. Read the full current terms for permitted trading, costs, reviews, and payout conditions.",
+      "visual": {
+        "type": "propfirm",
+        "caption": "A schematic follows a displayed account balance through account status, rule checks, eligible-result calculation, and conditional payout review."
+      },
+      "quiz": [
+        {
+          "question": "What does a displayed $50,000 balance necessarily mean?",
+          "options": [
+            "The trader owns $50,000 in withdrawable cash",
+            "The trader can lose no money",
+            "Nothing by itself about ownership; account terms define it",
+            "A payout of $50,000 is guaranteed"
+          ],
+          "correct": 2,
+          "explanation": "A displayed balance is a platform figure and does not alone establish ownership or withdrawal rights. The contract and account description define what the number represents."
+        },
+        {
+          "question": "Which item is important to verify before treating a funded stage as understood?",
+          "options": [
+            "The payout formula and eligibility conditions",
+            "Only the logo color",
+            "Whether other traders use the same nickname",
+            "A guarantee of future profits"
+          ],
+          "correct": 0,
+          "explanation": "The payout formula and its conditions determine how eligible results are treated. Branding or community anecdotes do not replace those written provisions."
+        },
+        {
+          "question": "What is one realistic effect of leverage in forex?",
+          "options": [
+            "It removes all losses",
+            "It can magnify the effect of price movements",
+            "It guarantees stop execution at the requested price",
+            "It prevents gaps"
+          ],
+          "correct": 1,
+          "explanation": "Leverage increases exposure relative to posted margin, so favorable and adverse price changes can have amplified effects. It cannot eliminate gaps or guarantee a stop fill."
+        },
+        {
+          "question": "What might a funded account actually be, depending on the provider?",
+          "options": [
+            "Always a personal bank account",
+            "Always a live exchange account",
+            "A live, simulated, or copied-trade arrangement",
+            "A government bond"
+          ],
+          "correct": 2,
+          "explanation": "Providers may use different account structures. Checking the original description prevents assuming that every funded stage has identical execution or legal status."
+        },
+        {
+          "question": "Why is an evaluation pass not a guaranteed income source?",
+          "options": [
+            "Later rules and market outcomes still apply",
+            "Passing eliminates all costs",
+            "It proves future markets will repeat",
+            "Payouts never require review"
+          ],
+          "correct": 0,
+          "explanation": "An evaluation result does not control later market conditions, account compliance, or payout review. A pass therefore cannot guarantee income or account growth."
+        }
+      ]
+    },
+    {
+      "id": "m17-l4",
+      "title": "One-Step Challenges.",
+      "intro": "A one-step challenge condenses an evaluation into a single main stage, which can seem simpler at first glance. Understanding its target and loss rules together is essential because fewer stages do not mean easier or safer conditions.",
+      "objectives": [
+        "Describe the typical structure of a one-step evaluation.",
+        "Compare target requirements with drawdown limits and other restrictions.",
+        "Use a checklist to assess whether the written rules are clear."
+      ],
+      "explanation": [
+        "In a one-step challenge, a participant usually attempts to satisfy a stated performance target and rule set in one evaluation phase. The provider may set a minimum number of trading days, maximum daily or overall loss, position restrictions, or other conditions. Some evaluations also require a review or verification step before the next stage. The exact name and structure are not standardized, so 'one-step' only describes the broad number of stages, not the difficulty, fairness, account type, or chance of success.",
+        "Compare the target with all loss limits and the way each is measured: closed balance, equity including open positions, or a high-water mark. Note time limits, reset costs, trading-day definitions, prohibited strategies, and what happens when server time changes. A favorable target-to-limit ratio cannot make the outcome predictable; spreads, slippage, leverage, and gaps affect results. Check the current official rules and applicable jurisdictional context. This is general education, not personal financial advice, and it does not endorse entering or paying for any challenge."
+      ],
+      "steps": [
+        "Write down the exact target, account size, and any minimum-day or time requirements.",
+        "Record each daily and total loss limit and whether it uses balance or equity.",
+        "Check costs, reset policies, server time, and restricted trading methods.",
+        "Summarize in your own words what constitutes a pass, breach, and review."
+      ],
+      "example": "Fictional example: A fictional one-step evaluation on a simulated $20,000 balance lists a $1,200 target, a $700 daily loss limit, and a $1,500 overall loss limit. These invented figures show why a target cannot be read alone: the daily and total constraints also define the task. The learner would verify whether open losses count toward each limit and whether commissions are included before interpreting the arithmetic.",
+      "remember": [
+        "One step describes the stage count, not the likelihood of success.",
+        "Read target and loss rules together, including their measurement method.",
+        "Provider definitions, costs, and restrictions vary."
+      ],
+      "mistakes": [
+        "Misunderstanding: one-step means no additional review. Correction: verify whether verification, compliance review, or payout screening follows.",
+        "Misunderstanding: the target is the only important number. Correction: daily and overall limits can be breached before a target is reached."
+      ],
+      "summary": "A one-step evaluation still contains multiple interacting conditions. Translate every target, limit, cost, and restriction into clear written notes before assessing it.",
+      "visual": {
+        "type": "timeline",
+        "caption": "A simple timeline shows one evaluation stage with a target, simultaneous drawdown boundaries, and a possible review afterward."
+      },
+      "quiz": [
+        {
+          "question": "What does 'one-step' most directly describe?",
+          "options": [
+            "One guaranteed trading day",
+            "One broad evaluation stage",
+            "No rules or limits",
+            "A live account in every case"
+          ],
+          "correct": 1,
+          "explanation": "One-step generally refers to the number of broad evaluation stages. It does not establish the account type, remove conditions, or say how many days are needed."
+        },
+        {
+          "question": "Why should the target be examined alongside loss limits?",
+          "options": [
+            "Because a loss limit may be reached before the target",
+            "Because the target changes market prices",
+            "Because loss limits are always optional",
+            "Because targets eliminate spread costs"
+          ],
+          "correct": 0,
+          "explanation": "Targets and loss limits operate together. A participant may breach a loss boundary while attempting to reach the target, so the target alone is incomplete information."
+        },
+        {
+          "question": "What should be checked about a drawdown calculation?",
+          "options": [
+            "Whether it counts balance, equity, or another measure",
+            "Only the account's font",
+            "Whether it predicts the next candle",
+            "Whether losses are impossible"
+          ],
+          "correct": 0,
+          "explanation": "Balance and equity can differ when positions are open, and providers may use different measurements. Understanding the calculation is necessary to interpret a stated limit."
+        },
+        {
+          "question": "Which is a reasonable conclusion from a one-step label?",
+          "options": [
+            "The challenge is certainly easy",
+            "Success is guaranteed",
+            "The provider uses a single broad evaluation phase, subject to terms",
+            "No later compliance checks can occur"
+          ],
+          "correct": 2,
+          "explanation": "The label gives only a broad structural clue. Difficulty, later checks, and exact obligations must be confirmed in the current official rules."
+        },
+        {
+          "question": "Why check the server-time definition?",
+          "options": [
+            "Daily limits and trading days may depend on it",
+            "It guarantees a positive outcome",
+            "It removes overnight financing",
+            "It changes the trader's jurisdiction"
+          ],
+          "correct": 0,
+          "explanation": "A firm's server clock can determine when a daily period resets or what counts as a trading day. That timing matters when reading limits and eligibility rules."
+        }
+      ]
+    },
+    {
+      "id": "m17-l5",
+      "title": "Two-Step Challenges.",
+      "intro": "Two-step challenges divide an evaluation into separate phases, often with different targets or conditions. Beginners need to understand what carries forward and what resets before comparing phase one and phase two.",
+      "objectives": [
+        "Explain the two-stage evaluation pattern.",
+        "Identify which rules can differ or reset between phases.",
+        "Compare a two-step structure without assuming it is easier than another format."
+      ],
+      "explanation": [
+        "A two-step challenge typically asks a participant to meet one set of requirements in a first phase and then a second set in a later phase. The phases may use different profit targets, minimum trading days, or other rules; the account size may remain the same or be described differently. Reaching the first milestone does not automatically mean the whole process is complete. The participant may need a second evaluation, a compliance review, identity checks, or acceptance of further terms before any later account stage.",
+        "Read whether the balance, equity peak, trading-day count, and drawdown reference reset between phases. Check if a rule breach in either phase ends the evaluation, and whether time limits or fees apply to each phase. Do not infer that two phases are safer or more achievable just because targets may be smaller. Market uncertainty, leverage, transaction costs, slippage, and gaps remain relevant. Provider and jurisdiction conditions vary, so use official current documents. This is general education, not personal financial advice or a recommendation to participate."
+      ],
+      "steps": [
+        "Create a separate row of notes for phase one and phase two.",
+        "Compare each phase's target, minimum days, time limit, and loss boundaries.",
+        "Ask whether the balance and drawdown reference reset or carry forward at transition.",
+        "Locate post-phase verification, fees, and account-activation conditions."
+      ],
+      "example": "Fictional example: In an invented two-step evaluation, phase one lists a $1,000 target and phase two a $600 target on a simulated $25,000 starting balance. Both list their own daily limit, but the contract's fictional wording is unclear about whether a peak-equity reference carries across. A careful learner would not assume either outcome; they would request clarification from official support and preserve the written answer before interpreting the two figures.",
+      "remember": [
+        "A first-phase pass is not necessarily completion of the entire process.",
+        "Rules and reset behavior may differ between stages.",
+        "Two stages do not guarantee lower risk or a better chance of passing."
+      ],
+      "mistakes": [
+        "Misunderstanding: the second phase automatically uses identical rules. Correction: compare each condition separately.",
+        "Misunderstanding: passing phase one guarantees a funded account. Correction: phase two and any stated verification still apply."
+      ],
+      "summary": "Two-step formats require checking both phases and the transition between them. Never assume that a reset, target, or approval carries forward unless the written terms say so.",
+      "visual": {
+        "type": "timeline",
+        "caption": "Two labeled phases show separate targets and rule checks, with a transition point where reset and review conditions must be verified."
+      },
+      "quiz": [
+        {
+          "question": "What is typical of a two-step challenge?",
+          "options": [
+            "Two broad evaluation phases with requirements",
+            "A guarantee of two payouts",
+            "A rule-free second stage",
+            "An account always owned by the trader"
+          ],
+          "correct": 0,
+          "explanation": "Two-step usually describes two evaluation phases. It does not promise a payout, remove the later phase's rules, or transfer ownership of the displayed balance."
+        },
+        {
+          "question": "Which transition detail is important to verify?",
+          "options": [
+            "Whether balance and drawdown references reset or carry forward",
+            "Whether the platform logo changes",
+            "Whether every trade becomes profitable",
+            "Whether phase one eliminates costs"
+          ],
+          "correct": 0,
+          "explanation": "Reset rules can materially change how the next phase is measured. The written conditions should clarify which balances, peaks, and day counts carry forward."
+        },
+        {
+          "question": "What follows from passing phase one?",
+          "options": [
+            "A guaranteed payout",
+            "Automatic exemption from phase two",
+            "Only that the first phase's conditions were met, subject to review",
+            "A promise that the second phase will be easier"
+          ],
+          "correct": 2,
+          "explanation": "A first-stage result applies to that stage. The participant may still face another evaluation phase and any stated compliance or verification checks."
+        },
+        {
+          "question": "How should phase-specific targets be compared?",
+          "options": [
+            "Read each target with its own limits and conditions",
+            "Add them and assume the total is owed",
+            "Ignore minimum-day requirements",
+            "Treat them as a forecast"
+          ],
+          "correct": 0,
+          "explanation": "Each target operates alongside its phase's limits, timing, and other requirements. Targets are evaluation thresholds, not predictions or promised payments."
+        },
+        {
+          "question": "Why is it wrong to assume two steps are safer than one?",
+          "options": [
+            "More phases can have distinct constraints and uncertainty remains",
+            "Two-step formats remove leverage",
+            "All two-step providers are identical",
+            "The phase count predicts market direction"
+          ],
+          "correct": 0,
+          "explanation": "A two-stage process can add conditions or review points, and financial-market uncertainty still applies. Stage count alone cannot establish risk or likelihood of success."
+        }
+      ]
+    },
+    {
+      "id": "m17-l6",
+      "title": "Understanding Profit Targets.",
+      "intro": "A profit target is a threshold in an evaluation, not a forecast of what the market will deliver. Learning how the target is measured helps beginners avoid confusing a rule with an expected return.",
+      "objectives": [
+        "Define a profit target and distinguish it from a promise.",
+        "Understand how fees and open-position calculations may affect results.",
+        "Identify target-related constraints that should be checked in official rules."
+      ],
+      "explanation": [
+        "A profit target is a stated amount or percentage that an evaluation participant may be required to reach, usually within a defined account and rule set. A target can be calculated from starting balance, current balance, equity, or another reference specified by the provider. The number is a condition of the evaluation; it is not an estimate of likely market movement, a salary, or money owed. A result that appears to reach a target on a chart may differ from the provider's official calculation after commissions, swaps, or other costs.",
+        "Check whether open profits count, whether a minimum number of trading days is required, and whether the target must be reached without breaching daily or maximum drawdown. Understand the time window and how pending orders or positions are treated. Trying to force a threshold can encourage excessive risk, and leverage, slippage, or price gaps may worsen losses. The exact formulas differ by provider and jurisdiction; consult original official terms. This is general education, not personal financial advice, and reaching any target is uncertain."
+      ],
+      "steps": [
+        "Find the target formula and identify its reference balance or equity figure.",
+        "Check whether fees, swaps, commissions, and open positions affect the measured result.",
+        "Read the required trading days and time window alongside the target.",
+        "Confirm that all drawdown and conduct conditions must also remain satisfied."
+      ],
+      "example": "Fictional example: A fictional evaluation begins at $10,000 and lists a 6% target measured on closed balance, before a specified review. Six percent of $10,000 is $600, so the threshold would be $10,600 under that invented formula. If the terms instead counted equity and included costs, the observed threshold could differ. The calculation explains the rule only; it does not suggest how to reach it or imply the market will do so.",
+      "remember": [
+        "A target is a rule threshold, not a forecast or promise.",
+        "The provider's formula determines what counts as reaching it.",
+        "Other rules and costs continue to apply at the target."
+      ],
+      "mistakes": [
+        "Misunderstanding: target percentage is a likely return. Correction: it is an evaluation condition with an uncertain outcome.",
+        "Misunderstanding: touching a target on screen automatically qualifies. Correction: official measurement, costs, and remaining rules matter."
+      ],
+      "summary": "Profit targets define a condition, not a dependable income expectation. Verify the calculation basis, timing, costs, and simultaneous loss constraints.",
+      "visual": {
+        "type": "levels",
+        "caption": "A schematic balance scale marks a starting reference and target threshold while separately showing cost adjustments and loss boundaries."
+      },
+      "quiz": [
+        {
+          "question": "What is a prop challenge profit target?",
+          "options": [
+            "A guaranteed payout amount",
+            "A stated evaluation threshold",
+            "A forecast of future exchange rates",
+            "A limit on broker fees"
+          ],
+          "correct": 1,
+          "explanation": "A target is a condition the provider sets for an evaluation. It does not promise a payout or predict how prices will move."
+        },
+        {
+          "question": "Why does the target's measurement basis matter?",
+          "options": [
+            "Balance and equity can differ, especially with open positions",
+            "It determines the currency's official name",
+            "It removes the need for any contract",
+            "It guarantees a target will be reached"
+          ],
+          "correct": 0,
+          "explanation": "Balance usually reflects closed transactions, while equity may include open gains or losses. The provider's chosen measure can therefore change whether a threshold is considered met."
+        },
+        {
+          "question": "In the fictional example, what is 6% of $10,000?",
+          "options": [
+            "$60",
+            "$600",
+            "$1,600",
+            "$6,000"
+          ],
+          "correct": 1,
+          "explanation": "Six percent is 0.06, and 0.06 multiplied by $10,000 equals $600. The arithmetic illustrates a threshold only, not a recommended outcome."
+        },
+        {
+          "question": "Which additional condition could still matter after a target appears reached?",
+          "options": [
+            "A daily drawdown limit or minimum trading days",
+            "The color of a chart",
+            "A promise that all costs disappear",
+            "Whether the market repeats the same pattern"
+          ],
+          "correct": 0,
+          "explanation": "A target may be only one requirement. The participant may also need to stay within drawdown boundaries and satisfy timing or review conditions."
+        },
+        {
+          "question": "What is a safe interpretation of a target percentage?",
+          "options": [
+            "A likely monthly income rate",
+            "A guarantee of account growth",
+            "A provider-defined rule threshold with uncertain attainment",
+            "A signal to increase leverage"
+          ],
+          "correct": 2,
+          "explanation": "A percentage target describes a condition in the provider's rules. It is not a return forecast, guarantee, or instruction to take more risk."
+        }
+      ]
+    },
+    {
+      "id": "m17-l7",
+      "title": "Daily Drawdown Rules.",
+      "intro": "Daily drawdown rules limit losses over a provider-defined daily period. Beginners should learn the reset time and measurement method because a limit can be approached even when no trade has been closed.",
+      "objectives": [
+        "Explain what a daily drawdown boundary is intended to measure.",
+        "Distinguish balance-based and equity-based calculations.",
+        "Recognize why time zones, open positions, and execution conditions matter."
+      ],
+      "explanation": [
+        "A daily drawdown rule sets a maximum loss for a defined daily period. The provider may measure it from that day's starting balance or equity, include floating losses on open trades, and count commissions or other costs. Some rules use a fixed amount, while others use a percentage or a changing reference. The clock may follow server time rather than the trader's local time, and a reset may not occur at local midnight. Because provider definitions differ, the phrase daily loss limit is not precise enough by itself.",
+        "Find the exact reference point, reset time, and consequences of touching or exceeding the threshold. If open losses count, equity may breach the line while the balance still appears unchanged. In fast markets, spreads can widen and stop orders can slip; gaps can cross a boundary before an order executes. Leverage and margin calls may add further risk. Do not assume a stop or platform display guarantees compliance. Check the current official terms and local rules. This is general education, not personal financial advice or a trading instruction."
+      ],
+      "steps": [
+        "Record the daily limit amount and whether it is fixed or percentage-based.",
+        "Identify whether the rule uses balance, equity, or another value, and which costs count.",
+        "Convert the provider's reset clock to a clearly labeled time zone without assuming local midnight.",
+        "Read what the agreement says happens when a threshold is touched, exceeded, or recalculated."
+      ],
+      "example": "Fictional example: An invented rule sets a $400 daily loss boundary from a day's starting equity of $20,000. If its stated formula counts open losses and included costs, a $390 measured decline leaves only $10 of room under that rule at that moment. This does not prescribe a trade or imply that price will stop there; a spread change or slippage could affect the measured value. The learner must confirm the fictional formula and reset time first.",
+      "remember": [
+        "The provider defines the daily period and calculation.",
+        "Open losses and trading costs may count before positions close.",
+        "Stops, screens, and gaps do not guarantee a limit cannot be crossed."
+      ],
+      "mistakes": [
+        "Misunderstanding: daily drawdown resets at local midnight. Correction: use the provider's stated clock and reset rule.",
+        "Misunderstanding: only closed losses matter. Correction: equity-based rules may include floating losses and costs."
+      ],
+      "summary": "Daily drawdown is a rule-defined boundary whose clock and calculation can vary. Check its equity treatment, costs, reset, and breach consequences in writing.",
+      "visual": {
+        "type": "risk",
+        "caption": "A daily timeline shows a reset point, starting reference, equity movement, and a clearly labeled loss boundary."
+      },
+      "quiz": [
+        {
+          "question": "What does a daily drawdown rule generally set?",
+          "options": [
+            "A maximum loss over a provider-defined daily period",
+            "A guaranteed daily profit",
+            "A universal midnight reset",
+            "A prediction of daily price range"
+          ],
+          "correct": 0,
+          "explanation": "It generally limits losses within a period defined by the provider. The reset time and exact calculation are not universal and must be verified."
+        },
+        {
+          "question": "How can an equity-based limit differ from a balance-based limit?",
+          "options": [
+            "Equity may include floating results on open positions",
+            "Equity always ignores costs",
+            "Balance includes every future price move",
+            "They are identical under all conditions"
+          ],
+          "correct": 0,
+          "explanation": "Equity can reflect open gains or losses, while balance usually changes when positions close. The provider's formula determines which is relevant."
+        },
+        {
+          "question": "Why identify the provider's reset time zone?",
+          "options": [
+            "The daily measuring period may not match local midnight",
+            "It guarantees there will be no loss",
+            "It changes the currency pair",
+            "It eliminates slippage"
+          ],
+          "correct": 0,
+          "explanation": "The firm's server clock may define the start and end of its daily period. Assuming a local calendar day can lead to a mistaken reading of the rule."
+        },
+        {
+          "question": "What can happen to a stop order during fast or gapped markets?",
+          "options": [
+            "It is guaranteed to fill at the requested price",
+            "It may execute at a different price due to slippage",
+            "It cancels all leverage",
+            "It prevents spreads from changing"
+          ],
+          "correct": 1,
+          "explanation": "Stop execution can be affected by liquidity, speed, and price gaps, so the fill may differ from the requested trigger price. A stop is not absolute protection."
+        },
+        {
+          "question": "What should a learner do before interpreting a daily limit?",
+          "options": [
+            "Check its reference, clock, included costs, and breach definition",
+            "Assume the smallest number applies",
+            "Ignore open positions",
+            "Treat it as personal financial advice"
+          ],
+          "correct": 0,
+          "explanation": "These details define how the limit operates. Guessing or ignoring open-position treatment may produce an incorrect understanding of compliance."
+        }
+      ]
+    },
+    {
+      "id": "m17-l8",
+      "title": "Maximum Drawdown Rules.",
+      "intro": "Maximum drawdown limits the cumulative or peak-to-trough loss an account may experience under a firm's formula. Understanding whether the limit is static or trailing helps a beginner read the boundary correctly.",
+      "objectives": [
+        "Define maximum drawdown in a challenge context.",
+        "Distinguish static and trailing drawdown concepts.",
+        "Explain how equity, balance, and high-water marks may affect a rule."
+      ],
+      "explanation": [
+        "Maximum drawdown is an overall loss boundary, but providers calculate it in different ways. A static limit may be measured from the starting balance, whereas a trailing limit can move upward as the account reaches new highs. Some rules use balance, some equity, and some include open positions or costs. A high-water mark means the greatest reference value recorded so far; if a trailing floor follows it, the permitted loss may shrink relative to a later peak even when the account remains above its starting point.",
+        "Do not infer the formula from a percentage alone. Check whether the limit trails intraday or only after a day closes, whether it stops trailing at a specified threshold, and what happens at equality versus a breach. Leverage, margin, gaps, and slippage can cause a fast move through a boundary. A platform may show a different figure from the provider's official calculation. Terms vary by provider and jurisdiction, so read the official current rules. This general education is not personal financial advice and does not establish a safe trading level."
+      ],
+      "steps": [
+        "Find the starting reference and write down whether the boundary is static or trailing.",
+        "Check whether the rule follows balance, equity, or a high-water mark.",
+        "Verify update frequency, costs included, equality threshold, and breach consequence.",
+        "Compare a provider's sample calculation with the written rule and seek official clarification if ambiguous."
+      ],
+      "example": "Fictional example: A simulated account starts at $10,000 with a fictional static 8% maximum drawdown, so the illustrative floor is $9,200 if calculated from starting balance. Under a separate invented trailing rule, a new high-water mark of $10,500 with an 8% trail would imply a $9,660 floor while that reference applies. These calculations show that the same percentage can produce different floors; they are not predictions or recommended risk limits.",
+      "remember": [
+        "Maximum drawdown is defined by a formula, not just a label.",
+        "A trailing floor may move as the reference peak rises.",
+        "Equity, costs, and breach timing can affect the official calculation."
+      ],
+      "mistakes": [
+        "Misunderstanding: a maximum loss percentage always refers to the starting balance. Correction: check whether the rule trails a peak.",
+        "Misunderstanding: a balance above the starting amount cannot breach. Correction: a rising trailing floor may be higher than the start-based floor."
+      ],
+      "summary": "Maximum drawdown rules may be static or trailing, and their input values can differ. Verify the reference, update timing, and breach definition before comparing percentages.",
+      "visual": {
+        "type": "risk",
+        "caption": "Two schematic lines compare a static loss floor with a trailing floor that rises after a new high-water mark."
+      },
+      "quiz": [
+        {
+          "question": "What is a static maximum drawdown commonly anchored to?",
+          "options": [
+            "A fixed starting reference",
+            "The next market candle",
+            "A guaranteed payout",
+            "The trader's local clock"
+          ],
+          "correct": 0,
+          "explanation": "A static boundary is commonly calculated from a fixed starting balance or equity reference. The exact provider formula still needs checking."
+        },
+        {
+          "question": "How can a trailing drawdown floor behave?",
+          "options": [
+            "It may rise as a high-water mark rises",
+            "It always stays at the initial amount",
+            "It eliminates losses",
+            "It predicts a reversal"
+          ],
+          "correct": 0,
+          "explanation": "A trailing rule can update its reference after new account highs, moving the permitted floor upward. Providers differ on how frequently and when they update it."
+        },
+        {
+          "question": "What is a high-water mark in this context?",
+          "options": [
+            "The greatest recorded reference value under the rule",
+            "A chart's tallest candle only",
+            "The daily server reset",
+            "An automatic stop guarantee"
+          ],
+          "correct": 0,
+          "explanation": "A high-water mark is the highest value recognized by the rule. A trailing formula may use it to recalculate a loss boundary."
+        },
+        {
+          "question": "Why may two rules with the same percentage create different floors?",
+          "options": [
+            "One may be static and another trailing",
+            "Percentages never affect numbers",
+            "All providers use identical equity formulas",
+            "One percentage guarantees profit"
+          ],
+          "correct": 0,
+          "explanation": "The calculation reference matters: a starting balance and a later high-water mark can produce different numerical floors at the same rate."
+        },
+        {
+          "question": "What should be checked about a drawdown breach?",
+          "options": [
+            "Whether equality counts, when the measure updates, and what follows",
+            "Only the displayed account nickname",
+            "Whether the rule predicts a market gap",
+            "Whether losses are refunded"
+          ],
+          "correct": 0,
+          "explanation": "Threshold treatment, update timing, and consequences are contractual details. Assuming that a touch is harmless or that a breach is refunded is unsupported."
+        }
+      ]
+    },
+    {
+      "id": "m17-l9",
+      "title": "Consistency Rules.",
+      "intro": "Some providers apply consistency rules to assess whether performance depends on a narrow set of days or unusually concentrated results. These rules can be complex, so a beginner should learn the formula instead of relying on the label.",
+      "objectives": [
+        "Describe common reasons firms use consistency checks.",
+        "Recognize that formulas and thresholds differ across firms.",
+        "Identify questions to ask about daily contribution, size, and prohibited conduct."
+      ],
+      "explanation": [
+        "A consistency rule is a provider-defined condition intended to assess patterns in results or behavior. It may limit how much one day contributes to total gains, compare the largest profitable day with overall profit, or require a certain distribution of trading days. Other rules may address position-size changes or prohibited high-risk conduct. There is no single industry-wide consistency formula, and similar names can conceal different calculations. A rule may apply only during an evaluation, continue on a later account stage, or change between account types.",
+        "Read the exact numerator, denominator, date range, treatment of losing days, and calculation time. Check whether closed or open results count and how fees and withdrawals affect the percentage. Never assume that a specific number of days or uniform position sizes automatically complies. Some patterns, including SMC terminology or chart formations, are interpretive rather than objective guarantees; rule compliance and market prediction are separate questions. Official terms and jurisdictional context vary. This is general education, not personal financial advice, and it does not recommend a trading method."
+      ],
+      "steps": [
+        "Copy the consistency formula exactly, including its date range and named variables.",
+        "Check how profitable days, losing days, costs, open positions, and withdrawals enter the calculation.",
+        "Determine whether the condition applies to evaluation, funded stage, or both.",
+        "Ask the provider for an official worked example when the rule wording is unclear."
+      ],
+      "example": "Fictional example: An invented rule says the best day may contribute no more than 35% of total net evaluation profit. If fictional total net profit is $1,000 and the best day contributes $400, its share is 40%, above that invented cap. This arithmetic illustrates why the formula matters; it does not prescribe spreading activity across days or imply that changing a pattern will improve results. The learner must confirm how the provider defines net profit and the measurement period.",
+      "remember": [
+        "Consistency has no universal industry formula.",
+        "Read the exact calculation, measurement period, and account stage.",
+        "A consistency check is not proof that any trading pattern predicts the market."
+      ],
+      "mistakes": [
+        "Misunderstanding: every firm defines consistency as the same number of days. Correction: definitions and thresholds vary.",
+        "Misunderstanding: passing a consistency check proves a strategy is reliable. Correction: it only addresses the provider's stated criterion."
+      ],
+      "summary": "Consistency conditions can measure results or behavior in different ways. Copy the official formula and distinguish rule compliance from evidence of future performance.",
+      "visual": {
+        "type": "journal",
+        "caption": "A schematic compares daily result bars with total net results and highlights how one firm's illustrative contribution formula could be computed."
+      },
+      "quiz": [
+        {
+          "question": "What is true of consistency rules across providers?",
+          "options": [
+            "They have one universal formula",
+            "Their formulas and scope can differ",
+            "They guarantee stable future results",
+            "They always count only losing days"
+          ],
+          "correct": 1,
+          "explanation": "Providers may define consistency using different variables, thresholds, and time periods. The label alone does not reveal how a particular rule works."
+        },
+        {
+          "question": "In the fictional example, $400 out of $1,000 is what share?",
+          "options": [
+            "4%",
+            "35%",
+            "40%",
+            "400%"
+          ],
+          "correct": 2,
+          "explanation": "$400 divided by $1,000 equals 0.40, or 40%. Under the invented 35% cap, that contribution exceeds the stated example threshold."
+        },
+        {
+          "question": "Which formula detail is important to verify?",
+          "options": [
+            "Date range and treatment of costs and open results",
+            "Only the provider's brand color",
+            "A guaranteed market forecast",
+            "The number of chart templates"
+          ],
+          "correct": 0,
+          "explanation": "The date range and what counts in the numerator and denominator determine the result. Ignoring costs or open positions can lead to a wrong calculation."
+        },
+        {
+          "question": "Does satisfying a consistency rule prove future performance?",
+          "options": [
+            "Yes, it guarantees future profits",
+            "No, it only indicates the stated criterion was met",
+            "Yes, if a chart pattern appeared",
+            "No, because rules never matter"
+          ],
+          "correct": 1,
+          "explanation": "A compliance check concerns a defined past-results or behavior criterion. It cannot guarantee future trading outcomes or validate a strategy."
+        },
+        {
+          "question": "How should an unclear consistency formula be handled?",
+          "options": [
+            "Guess based on social media",
+            "Ask the provider for an official worked example",
+            "Ignore it until after a breach",
+            "Assume the most generous interpretation"
+          ],
+          "correct": 1,
+          "explanation": "An official worked example can clarify how the provider applies its own rule. Informal guesses or optimistic assumptions are not reliable substitutes for written clarification."
+        }
+      ]
+    },
+    {
+      "id": "m17-l10",
+      "title": "Reasons Traders Fail Challenges.",
+      "intro": "Challenge failures can result from rule breaches, market losses, or misunderstanding the provider's conditions. Reviewing common causes as education—not blame—can help beginners assess risks more realistically.",
+      "objectives": [
+        "List common operational and behavioral causes of challenge failure.",
+        "Explain how rule misunderstanding differs from market uncertainty.",
+        "Use a neutral review process to identify lessons without promising success next time."
+      ],
+      "explanation": [
+        "A challenge can end because a daily or maximum drawdown boundary is breached, a target is not met within its time window, or a minimum-day requirement is missed. Other causes include misunderstanding a trailing calculation, using a restricted method, holding through a prohibited event, failing verification, or overlooking fees and server-time resets. Losses can also occur even when the participant has read the rules, because exchange rates move unpredictably and execution conditions are imperfect. A failure is not necessarily proof of poor character, nor does it prove that a different firm would produce a better result.",
+        "Leverage, position sizing, emotional reactions, overtrading, and attempts to recover losses quickly can make adverse outcomes larger, but no checklist can remove risk. SMC concepts and visual patterns are interpretive and do not objectively guarantee future price direction. After an evaluation, a neutral review can separate rule errors, process gaps, and ordinary uncertainty without promising a pass next time. Verify official terms, since breach definitions differ by provider and jurisdiction. This is general education, not personal financial advice, and it is not an instruction to trade or pay for another attempt."
+      ],
+      "steps": [
+        "If reviewing a past attempt, gather the official rule version, timestamps, and account reports.",
+        "Classify each issue as rule interpretation, process error, execution condition, or market uncertainty.",
+        "Calculate any disputed figures from the provider's stated method and request written clarification if needed.",
+        "Record one learning point without treating a retake or changed strategy as a guaranteed fix."
+      ],
+      "example": "Fictional example: A learner in an invented evaluation believes the daily reset occurs at local midnight, but the provider's official clock resets at 17:00 UTC. A loss after that reset is categorized in a different day than the learner expected. The example shows how a clock misunderstanding can create a rule dispute; it does not say the learner would otherwise pass or that the provider's calculation is automatically correct. Written terms and time-stamped records are needed to assess it.",
+      "remember": [
+        "Failure can involve rules, execution, behavior, and unpredictable markets.",
+        "A past loss does not establish that a future attempt will succeed.",
+        "Use records and official formulas to review events rather than guessing."
+      ],
+      "mistakes": [
+        "Misunderstanding: every failed challenge means the trader lacks discipline. Correction: separate rule, process, execution, and market factors.",
+        "Misunderstanding: one correction guarantees a pass next time. Correction: uncertainty and all other conditions remain."
+      ],
+      "summary": "Challenges can fail for many interacting reasons, including simple rule misunderstandings and uncertain market moves. A careful review can teach without blaming or guaranteeing a future result.",
+      "visual": {
+        "type": "journal",
+        "caption": "A review flow sorts a fictional outcome into rule interpretation, process, execution, and market-uncertainty categories."
+      },
+      "quiz": [
+        {
+          "question": "Which can cause an evaluation to end without reaching a profit target?",
+          "options": [
+            "Breaching a drawdown boundary",
+            "Reading the terms carefully",
+            "Keeping a record",
+            "Checking the server clock"
+          ],
+          "correct": 0,
+          "explanation": "A drawdown breach can end an evaluation even if its profit target remains unmet. Reading and recordkeeping are review practices, not breach causes by themselves."
+        },
+        {
+          "question": "How should a learner classify a suspected daily reset misunderstanding?",
+          "options": [
+            "As a rule-interpretation issue to check against official timing",
+            "As proof that every firm is dishonest",
+            "As a guaranteed pass next time",
+            "As a market prediction"
+          ],
+          "correct": 0,
+          "explanation": "Reset timing is a rule detail that should be compared with the official time zone and records. It does not alone prove intent or predict another evaluation's result."
+        },
+        {
+          "question": "What does a challenge failure prove about a future attempt?",
+          "options": [
+            "That a future pass is impossible",
+            "That a future pass is guaranteed after a change",
+            "Neither; future outcomes remain uncertain",
+            "That markets will reverse"
+          ],
+          "correct": 2,
+          "explanation": "A single outcome does not determine the future. A review may reveal lessons, but it cannot guarantee that later market or rule conditions will be favorable."
+        },
+        {
+          "question": "Why review timestamps and account reports?",
+          "options": [
+            "They can help compare events with a provider's rule calculation",
+            "They erase losses",
+            "They prove all chart patterns work",
+            "They replace original terms"
+          ],
+          "correct": 0,
+          "explanation": "Time-stamped records can help reconstruct what happened and compare it with the written formula. They support analysis but do not replace the contract or erase an outcome."
+        },
+        {
+          "question": "Which statement about SMC or chart patterns is accurate?",
+          "options": [
+            "They guarantee challenge success",
+            "They are interpretive and do not objectively guarantee direction",
+            "They remove slippage",
+            "They define every firm's drawdown"
+          ],
+          "correct": 1,
+          "explanation": "Chart interpretations, including SMC language, can be subjective and are not guarantees of future price behavior. They also do not define contractual loss rules."
+        }
+      ]
+    },
+    {
+      "id": "m17-l11",
+      "title": "Preparing for Prop Firm Challenges.",
+      "intro": "Preparation begins with understanding terms and practicing careful rule calculations, not with a promise of passing. A structured review helps beginners notice costs, ambiguity, and personal limits before making any decision.",
+      "objectives": [
+        "Build a non-trading checklist for reviewing a challenge's official terms.",
+        "Explain why practice, recordkeeping, and risk awareness cannot guarantee a pass.",
+        "Distinguish education from personal financial advice and participation recommendations."
+      ],
+      "explanation": [
+        "Preparation can mean reading the contract, translating each rule into plain language, and checking whether examples match the actual account type. Make a checklist for targets, daily and maximum drawdown, consistency, time zone, costs, position restrictions, reset or refund wording, payout eligibility, verification, privacy, and complaint routes. Verify the firm and legal entity using original sources, and examine relevant jurisdictional information. A polished website, testimonials, or an advertised account size are not substitutes for these checks.",
+        "Some learners use a simulator or paper records to practice interpreting rules without placing live trades, but simulated performance does not guarantee live execution or a challenge result. Be honest about fees and the possibility of losing them; do not use money needed for essential expenses or borrow based on expected payouts. Forex margin, leverage, slippage, spreads, and gaps can create losses, and broker/provider costs vary. Conditions change, so recheck official terms. This is general education, not personal financial advice, and it does not tell you to deposit, trade, or choose a firm."
+      ],
+      "steps": [
+        "Read the official contract, FAQ, pricing, and rule pages and save dated copies for reference.",
+        "Make a plain-language checklist of thresholds, formulas, clock, costs, restrictions, and consequences.",
+        "Use a simulator or written examples to test understanding without assuming simulated results predict future performance.",
+        "Check legal entity, privacy, dispute process, and relevant jurisdictional information; seek qualified advice where needed.",
+        "Pause if a condition is ambiguous, unaffordable, or inconsistent across official documents; request clarification before deciding."
+      ],
+      "example": "Fictional example: A beginner reviews a fictional $60 assessment for a simulated challenge and discovers that the daily limit uses server-time equity while the advertisement shows only a balance-based example. Rather than infer which applies, the learner asks official support for a written clarification and records the date. This example demonstrates due diligence only; it is not a suggestion to buy the assessment or an indication that the learner would pass.",
+      "remember": [
+        "Preparation means understanding conditions, not forecasting a pass.",
+        "Practice records can test comprehension but do not replicate every execution risk.",
+        "Do not rely on advertised balances or expected payouts when evaluating costs."
+      ],
+      "mistakes": [
+        "Misunderstanding: a checklist makes challenge success likely. Correction: it reduces avoidable confusion but cannot control markets or guarantee compliance.",
+        "Misunderstanding: simulated success proves live results. Correction: live execution, costs, and market conditions can differ."
+      ],
+      "summary": "Careful preparation is a due-diligence process, not a path that guarantees a particular result. Review original documents, costs, and uncertainty before making any personal decision.",
+      "visual": {
+        "type": "routine",
+        "caption": "A mobile-friendly checklist links official terms, rule calculations, cost review, practice records, and a deliberate pause before any decision."
+      },
+      "quiz": [
+        {
+          "question": "Which source should anchor a review of challenge rules?",
+          "options": [
+            "The provider's current official terms",
+            "An old social-media comment",
+            "A marketing headline alone",
+            "A chart pattern"
+          ],
+          "correct": 0,
+          "explanation": "Current official terms set out the provider's stated rules and conditions. Informal comments and marketing headlines may omit details or become outdated."
+        },
+        {
+          "question": "What can a simulator help a beginner practice?",
+          "options": [
+            "Interpreting rules and keeping records",
+            "Guaranteeing live fills and results",
+            "Proving future profits",
+            "Eliminating all market risk"
+          ],
+          "correct": 0,
+          "explanation": "A simulator can help test comprehension and recordkeeping. It cannot guarantee live execution, future performance, or freedom from market risks."
+        },
+        {
+          "question": "What should happen if official documents appear inconsistent?",
+          "options": [
+            "Assume the most favorable rule",
+            "Request written clarification before deciding",
+            "Ignore the inconsistency",
+            "Pay first and ask later"
+          ],
+          "correct": 1,
+          "explanation": "Written clarification helps establish how the provider says it applies a rule. Guessing or proceeding without understanding can create avoidable uncertainty."
+        },
+        {
+          "question": "Which financial-risk statement is accurate?",
+          "options": [
+            "Leverage and gaps can affect losses and execution",
+            "A stop guarantees the exact fill price",
+            "Assessment fees guarantee payouts",
+            "A simulated account removes every risk"
+          ],
+          "correct": 0,
+          "explanation": "Leverage can magnify exposure and gaps or slippage can affect execution. Stops do not guarantee exact fills, and neither fees nor simulation assure payouts."
+        },
+        {
+          "question": "What is the purpose of preparation in this lesson?",
+          "options": [
+            "To promise a pass",
+            "To support informed understanding without guaranteeing an outcome",
+            "To recommend a specific firm",
+            "To provide a live trading signal"
+          ],
+          "correct": 1,
+          "explanation": "The checklist supports due diligence and clearer understanding. It is not a pass guarantee, firm recommendation, or signal to trade."
+        }
+      ]
+    }
+  ]
+}

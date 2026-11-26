@@ -1,0 +1,85 @@
+.sifq-shell { padding-top: 18px; }
+.sifq-hero { display: grid; grid-template-columns: minmax(0,1.35fr) minmax(250px,.65fr); gap: 24px; align-items: center; margin: 10px 0 20px; padding: clamp(22px,4vw,42px); border: 1px solid rgba(205,180,110,.16); border-radius: 22px; background: radial-gradient(ellipse at 78% 16%,rgba(59,113,102,.22),transparent 39%),linear-gradient(130deg,#102431,#0a1722 72%); box-shadow: 0 20px 55px rgba(0,0,0,.22); }
+.sifq-hero h1 { margin: 13px 0 12px; color: #f3f3ed; font: 800 clamp(32px,5vw,53px)/1.08 'Manrope',sans-serif; letter-spacing: -.04em; }
+.sifq-hero h1 em { color: var(--academy-gold-light); font-style: normal; }
+.sifq-hero-copy > p { max-width: 710px; color: #aebdbe; font-size: 14px; line-height: 1.75; }
+.sifq-hero-stats { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.sifq-hero-stats span { padding: 8px 11px; border: 1px solid rgba(171,197,191,.14); border-radius: 99px; color: #c0cfca; background: rgba(255,255,255,.025); font-size: 11px; font-weight: 750; }
+.sifq-hero-card { padding: 18px; border: 1px solid rgba(172,197,185,.15); border-radius: 15px; background: rgba(5,15,23,.55); }
+.sifq-hero-card ol { display: grid; gap: 11px; margin: 12px 0; padding: 0; list-style: none; }
+.sifq-hero-card li { display: flex; align-items: center; gap: 11px; color: #d4ddd6; font-size: 13px; }
+.sifq-hero-card li b { color: var(--academy-gold-light); font-size: 10px; letter-spacing: .08em; }
+.sifq-hero-card p { margin: 12px 0 0; color: #91a3a4; font-size: 11px; line-height: 1.6; }
+.sifq-save-status { margin: 0 0 16px; padding: 11px 14px; border: 1px solid rgba(102,196,153,.18); border-radius: 10px; color: #bed8c8; background: rgba(34,116,83,.1); font-size: 12px; }
+.sifq-save-status.is-error { border-color: rgba(213,166,105,.28); color: #ead4a5; background: rgba(124,84,35,.11); }
+.sifq-notice { margin: 0 0 16px; padding: 14px; border: 1px solid rgba(213,166,105,.3); border-radius: 10px; color: #ead7ac; background: rgba(124,84,35,.1); font-size: 13px; line-height: 1.6; }
+.sifq-section-heading { display: flex; justify-content: space-between; align-items: end; gap: 18px; margin: 26px 0 14px; }
+.sifq-section-heading h2 { margin: 5px 0; color: #edf1ec; font: 750 clamp(23px,3vw,31px)/1.2 'Manrope',sans-serif; }
+.sifq-section-heading p { max-width: 680px; color: #9eafb0; font-size: 13px; line-height: 1.6; }
+.sifq-search { display: flex; flex: 0 1 270px; align-items: center; gap: 8px; min-height: 42px; padding: 0 12px; border: 1px solid rgba(172,197,191,.19); border-radius: 9px; color: var(--academy-gold-light); background: rgba(11,24,34,.8); }
+.sifq-search input { width: 100%; border: 0; outline: 0; color: #e4ebe4; background: transparent; font: inherit; font-size: 12px; }
+.sifq-search input::placeholder { color: #7f9195; }
+.sifq-legend { display: flex; flex-wrap: wrap; gap: 15px; margin: 12px 0; color: #99a9aa; font-size: 11px; }
+.sifq-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.sifq-legend i { display: inline-grid; width: 17px; height: 17px; place-items: center; border: 1px solid rgba(159,187,177,.22); border-radius: 50%; font-style: normal; }
+.sifq-legend .legend-done { color: #7fe0b3; border-color: rgba(66,201,154,.4); }
+.sifq-module-grid { display: grid; gap: 10px; }
+.sifq-module { overflow: hidden; border: 1px solid rgba(166,191,184,.15); border-radius: 12px; background: rgba(12,28,40,.8); }
+.sifq-module[hidden] { display: none; }
+.sifq-module summary { display: grid; grid-template-columns: 40px 1fr auto; gap: 12px; align-items: center; padding: 14px; cursor: pointer; list-style: none; }
+.sifq-module summary::-webkit-details-marker { display: none; }
+.sifq-module summary:hover { background: rgba(255,255,255,.02); }
+.sifq-module-number { display: grid; width: 36px; height: 36px; place-items: center; border: 1px solid rgba(213,180,106,.3); border-radius: 10px; color: var(--academy-gold-light); font: 800 12px 'Manrope',sans-serif; }
+.sifq-module-title { color: #e2e9e2; font: 750 14px 'Manrope',sans-serif; }
+.sifq-module-description { margin-top: 4px; color: #8fa2a4; font-size: 11px; line-height: 1.5; }
+.sifq-module-progress { color: #9eafaa; font-size: 11px; white-space: nowrap; }
+.sifq-question-list { display: grid; gap: 6px; padding: 0 12px 12px; }
+.sifq-lesson-link { display: flex; align-items: center; gap: 10px; min-height: 42px; padding: 9px 11px; border: 1px solid rgba(160,188,178,.1); border-radius: 8px; color: #b7c7c1; background: rgba(255,255,255,.018); text-decoration: none; font-size: 12px; line-height: 1.4; }
+a.sifq-lesson-link:hover { border-color: rgba(213,180,106,.32); color: #f0dfb3; }
+.sifq-lesson-link.is-done { border-color: rgba(66,201,154,.18); }
+.sifq-lesson-link.is-locked { color: #72858a; opacity: .75; }
+.sifq-lesson-state { display: grid; flex: 0 0 23px; width: 23px; height: 23px; place-items: center; border: 1px solid rgba(159,187,177,.18); border-radius: 50%; color: #a9bab3; font-size: 10px; }
+.sifq-lesson-link.is-done .sifq-lesson-state { color: #7fe0b3; border-color: rgba(66,201,154,.34); }
+.sifq-lesson-title { flex: 1; }
+.sifq-lesson-status { color: #8da19c; font-size: 9px; font-weight: 800; letter-spacing: .06em; white-space: nowrap; }
+.sifq-session { margin: 22px 0; }
+.sifq-back-link { display: inline-flex; margin: 5px 0 12px; color: var(--academy-gold-light); font-size: 12px; font-weight: 750; }
+.sifq-session-header { margin: 0 0 13px; padding: 20px; border: 1px solid rgba(166,191,184,.15); border-radius: 14px; background: linear-gradient(135deg,rgba(19,46,55,.72),rgba(11,24,34,.94)); }
+.sifq-session-header h2 { margin: 7px 0; color: #eef1ea; font: 800 clamp(23px,4vw,33px)/1.2 'Manrope',sans-serif; }
+.sifq-session-header p { color: #aabbb8; font-size: 13px; line-height: 1.6; }
+.sifq-session .lesson-quiz { margin-top: 0; }
+.sifq-session .quiz-heading h3 { font-size: 22px; }
+.sifq-session .quiz-heading p { font-size: 13px; line-height: 1.55; }
+.sifq-session .quiz-count { font-size: 10px; }
+.sifq-session .quiz-question { margin-top: 17px; padding-top: 16px; }
+.sifq-session .quiz-question legend { margin-bottom: 10px; font-size: 14px; }
+.sifq-session .quiz-options { gap: 8px; }
+.sifq-session .quiz-option { padding: 11px 12px; font-size: 13px; }
+.sifq-session .quiz-explanation { font-size: 12px; line-height: 1.6; }
+.sifq-session .quiz-submit-btn, .sifq-session .quiz-retry-btn { min-height: 42px; font-size: 12px; cursor: pointer; }
+.sifq-session .quiz-feedback { font-size: 13px; }
+.sifq-question-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 13px; }
+.sifq-question-actions a { display: inline-flex; align-items: center; min-height: 40px; padding: 9px 13px; border: 1px solid rgba(66,201,154,.3); border-radius: 8px; color: #c3e6d3; background: rgba(66,201,154,.08); font-size: 12px; font-weight: 800; }
+.sifq-question-actions a:hover { border-color: rgba(213,180,106,.4); color: #f0dfb3; }
+.sifq-locked-card { padding: 24px; border: 1px solid rgba(213,180,106,.2); border-radius: 14px; background: rgba(13,28,41,.9); }
+.sifq-locked-card h2 { margin: 7px 0; color: #edf1ec; font: 750 24px 'Manrope',sans-serif; }
+.sifq-locked-card p { color: #aebbb8; font-size: 13px; line-height: 1.7; }
+.sifq-locked-card a { color: var(--academy-gold-light); font-weight: 800; }
+@media (max-width:760px) {
+  .sifq-hero { grid-template-columns: 1fr; gap: 16px; padding: 22px; }
+  .sifq-section-heading { display: grid; align-items: start; }
+  .sifq-search { width: 100%; flex-basis: auto; }
+  .sifq-module summary { grid-template-columns: 34px 1fr; gap: 9px; }
+  .sifq-module-progress { grid-column: 2; margin-top: -3px; }
+  .sifq-module-number { width: 32px; height: 32px; }
+  .sifq-lesson-link { align-items: flex-start; }
+  .sifq-lesson-status { padding-top: 4px; }
+}
+@media (max-width:420px) {
+  .sifq-hero-stats span { font-size: 10px; }
+  .sifq-question-list { padding-right: 8px; padding-left: 8px; }
+  .sifq-lesson-link { gap: 7px; padding: 9px 8px; font-size: 11px; }
+  .sifq-lesson-status { font-size: 8px; }
+  .sifq-session .quiz-question legend { font-size: 13px; }
+  .sifq-session .quiz-option { font-size: 12px; }
+}

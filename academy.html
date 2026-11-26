@@ -3,762 +3,125 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Start learning forex with four short beginner lessons, quick checks and a short quiz. Open to everyone; no account required.">
-<title>Start Here: Forex Academy | SIF FOREX HUB</title>
-<style>
-:root {
-    color-scheme: dark;
-    --page: #071426;
-    --panel: #10243a;
-    --panel-deep: #091a2c;
-    --line: #23445c;
-    --text: #f4f8fc;
-    --muted: #b3c2d1;
-    --accent: #24e69a;
-    --accent-dark: #073b31;
-    --warning: #ffd58a;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-    margin: 0;
-    background: var(--page);
-    color: var(--text);
-    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    line-height: 1.6;
-}
-a { color: var(--accent); }
-a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible {
-    outline: 3px solid #9af5cf;
-    outline-offset: 3px;
-}
-.site-header {
-    padding: 16px max(20px, calc((100% - 1080px) / 2));
-    background: #0a1220;
-    border-bottom: 1px solid var(--line);
-}
-.site-header a { font-size: 14px; font-weight: 700; text-decoration: none; }
-.container { width: min(100% - 32px, 1040px); margin: 0 auto; padding: 28px 0 56px; }
-.hero {
-    position: relative;
-    overflow: hidden;
-    padding: clamp(24px, 5vw, 48px);
-    border: 1px solid #1d6256;
-    border-radius: 20px;
-    background: radial-gradient(circle at 95% 10%, #1c5365 0, transparent 38%), linear-gradient(130deg, #103b3d, #10243a 72%);
-}
-.eyebrow { color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-.hero h1 { max-width: 720px; margin: 8px 0 12px; font-size: clamp(30px, 5vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
-.hero p { max-width: 690px; margin: 0; color: #d5e1eb; }
-.hero-note { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 22px; color: #c9d8e3; font-size: 13px; }
-.hero-note span::before { content: "• "; color: var(--accent); font-weight: 900; }
-.section-heading { margin: 34px 0 14px; }
-.section-heading h2 { margin: 0; font-size: clamp(23px, 4vw, 32px); }
-.section-heading p { margin: 6px 0 0; color: var(--muted); }
-.path-summary, .quiz, .more-topics { margin-top: 22px; padding: 22px; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; }
-.path-summary { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px 24px; align-items: center; }
-.path-summary strong { display: block; }
-.progress-caption { color: var(--muted); font-size: 13px; }
-progress { width: 100%; height: 10px; grid-column: 1 / -1; accent-color: var(--accent); }
-progress::-webkit-progress-bar { background: #071426; border-radius: 99px; }
-progress::-webkit-progress-value { background: var(--accent); border-radius: 99px; }
-progress::-moz-progress-bar { background: var(--accent); border-radius: 99px; }
-.storage-note { grid-column: 1 / -1; margin: 0; color: var(--muted); font-size: 12px; }
-.reset-button, .check-button, .continue-button, .quiz-submit {
-    min-height: 42px;
-    border: 0;
-    border-radius: 9px;
-    padding: 10px 15px;
-    font: inherit;
-    font-size: 13px;
-    font-weight: 800;
-    cursor: pointer;
-}
-.reset-button { border: 1px solid #426074; background: transparent; color: #e2edf5; }
-.reset-button:hover { border-color: var(--accent); color: var(--accent); }
-.lesson-list { display: grid; gap: 14px; }
-.lesson-card { padding: clamp(18px, 3vw, 26px); border: 1px solid var(--line); border-radius: 16px; background: var(--panel); scroll-margin-top: 18px; }
-.lesson-card.is-complete { border-color: #277c67; }
-.lesson-topline { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
-.step-label { display: block; color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-.lesson-card h3 { margin: 3px 0 8px; font-size: 21px; line-height: 1.3; }
-.lesson-state { flex: 0 0 auto; color: var(--muted); font-size: 12px; font-weight: 700; }
-.lesson-card.is-complete .lesson-state { color: var(--accent); }
-.lesson-copy { color: #d1dce6; }
-.lesson-copy p { margin: 8px 0; }
-.example { margin: 14px 0; padding: 12px 15px; border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; background: var(--panel-deep); color: #d8e5ef; }
-.quick-check { margin-top: 18px; padding-top: 17px; border-top: 1px solid var(--line); }
-.quick-check fieldset, .quiz fieldset { min-width: 0; margin: 0 0 14px; padding: 0; border: 0; }
-.quick-check legend, .quiz legend { margin-bottom: 9px; font-weight: 750; }
-.answer-option { display: flex; gap: 10px; align-items: flex-start; margin: 7px 0; padding: 10px 12px; border: 1px solid #28445a; border-radius: 9px; background: var(--panel-deep); cursor: pointer; }
-.answer-option:hover { border-color: #4d7a8c; }
-.answer-option input { margin: 4px 0 0; accent-color: var(--accent); }
-.check-button, .quiz-submit { background: var(--accent); color: #061b16; }
-.check-button:hover, .quiz-submit:hover, .continue-button:hover { filter: brightness(1.08); }
-.check-feedback, #quiz-result { min-height: 1.5em; margin: 10px 0 0; color: #c6d6e3; font-size: 14px; }
-.check-feedback.is-correct { color: var(--accent); }
-.check-feedback.is-retry { color: var(--warning); }
-.continue-button { display: block; margin-top: 12px; background: #d7f5e8; color: #07291e; }
-.quiz h2 { margin: 0 0 6px; font-size: 24px; }
-.quiz-intro { margin: 0 0 18px; color: var(--muted); }
-.quiz fieldset + fieldset { padding-top: 14px; border-top: 1px solid var(--line); }
-.challenge-notice {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 18px;
-    margin-top: 16px;
-    padding: 17px 20px;
-    border: 1px solid #277c67;
-    border-radius: 14px;
-    background: linear-gradient(120deg, #103b3d, #10243a 72%);
-}
-.challenge-notice h2 { margin: 3px 0 4px; font-size: 18px; }
-.challenge-notice p { margin: 0; color: #d5e1eb; }
-.challenge-notice a { flex: 0 0 auto; font-weight: 800; text-decoration: none; }
-.guided-exercise {
-    margin-top: 16px;
-    padding: clamp(17px, 3vw, 24px);
-    border: 1px solid #277c67;
-    border-radius: 14px;
-    background: linear-gradient(135deg, #103b3d, #10243a 72%);
-}
-.guided-exercise h3 { margin: 4px 0 8px; font-size: 21px; }
-.guided-exercise > p { margin: 0; color: #d5e1eb; }
-.guided-exercise-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 16px; }
-.guided-exercise-step { min-width: 0; padding: 14px; border: 1px solid #31566a; border-radius: 10px; background: #091a2c; }
-.guided-exercise-step strong { display: block; margin-bottom: 6px; color: var(--accent); }
-.guided-exercise-step p { margin: 0; color: #c8d7e2; font-size: 13px; }
-.example-values { margin: 10px 0 0; color: #e6f0f5; font-size: 13px; }
-.example-values div { display: flex; justify-content: space-between; gap: 10px; padding: 4px 0; border-bottom: 1px solid #1d374d; }
-.example-values div:last-child { border-bottom: 0; }
-.example-values dt { color: var(--muted); }
-.example-values dd { margin: 0; font-weight: 750; text-align: right; }
-.guided-exercise-link { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; margin-top: 11px; padding: 9px 12px; border-radius: 8px; background: var(--accent); color: #061b16; font-size: 13px; font-weight: 850; text-decoration: none; }
-.guided-exercise-link:hover { filter: brightness(1.08); }
-.guided-safety-note { margin-top: 13px !important; padding: 11px 13px; border-left: 3px solid var(--warning); border-radius: 0 8px 8px 0; background: #1a2633; color: #f0dfbd !important; font-size: 13px; }
-.result-share-card {
-    margin-top: 18px;
-    padding: 20px;
-    border: 1px solid #277c67;
-    border-radius: 14px;
-    background: linear-gradient(135deg, #103b3d, #10243a 72%);
-}
-.result-share-card h3 { margin: 4px 0 8px; font-size: 21px; }
-.result-score { margin: 8px 0; color: #d5e1eb; }
-.result-score strong { color: var(--accent); font-size: clamp(28px, 5vw, 38px); line-height: 1.15; }
-.result-note { margin: 5px 0 0; color: var(--muted); font-size: 13px; }
-.share-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
-.share-actions button { min-height: 46px; padding: 10px 16px; border-radius: 9px; font: inherit; font-weight: 800; cursor: pointer; }
-.share-primary { border: 0; background: var(--accent); color: #061b16; }
-.share-secondary { border: 1px solid #426074; background: transparent; color: #e2edf5; }
-.share-actions button:hover { filter: brightness(1.08); }
-.challenge-link-label { display: block; margin-top: 15px; color: #d5e1eb; font-size: 13px; font-weight: 750; }
-.challenge-link-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; margin-top: 6px; }
-.challenge-link-input { width: 100%; min-width: 0; min-height: 44px; padding: 10px 12px; border: 1px solid #426074; border-radius: 8px; background: var(--panel-deep); color: #e5edf4; font: inherit; font-size: 13px; }
-.share-status { min-height: 1.5em; margin: 9px 0 0; color: var(--muted); font-size: 13px; }
-.more-topics > h2 { margin: 0 0 6px; font-size: 24px; }
-.more-topics > p { margin: 0 0 16px; color: var(--muted); }
-.topic-group { margin-top: 10px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel-deep); }
-.topic-group summary { color: #eaf3f8; font-weight: 750; cursor: pointer; }
-.topic-group ul { margin: 12px 0 0; padding-left: 22px; color: #c4d2de; }
-.topic-group li + li { margin-top: 8px; }
-.disclaimer { margin: 24px 0 0; padding: 15px 17px; border: 1px solid #5a4a2a; border-radius: 10px; color: #e8d9b8; font-size: 13px; }
-footer { padding: 20px; border-top: 1px solid #152c41; color: #8193a5; text-align: center; font-size: 12px; }
-[hidden] { display: none !important; }
-@media (max-width: 620px) {
-    .container { width: min(100% - 24px, 1040px); padding-top: 16px; }
-    .site-header { padding: 14px 16px; }
-    .path-summary { grid-template-columns: 1fr; }
-    progress, .storage-note { grid-column: 1; }
-    .reset-button { justify-self: start; }
-    .lesson-topline { gap: 8px; }
-    .challenge-notice { align-items: flex-start; flex-direction: column; gap: 10px; padding: 16px; }
-    .guided-exercise-grid { grid-template-columns: 1fr; }
-    .guided-exercise-link { width: 100%; text-align: center; }
-    .share-actions { display: grid; grid-template-columns: 1fr; }
-    .share-actions button { width: 100%; }
-    .challenge-link-row { grid-template-columns: 1fr; }
-    .challenge-link-input { font-size: 16px; }
-}
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-</style>
+<meta name="description" content="Learn Forex from the ground up with 18 structured modules, practical examples, labelled chart illustrations and separate SIF Question assessments. Free to explore; no account required.">
+<meta name="theme-color" content="#07111d">
+<title>Forex Academy | SIF FOREX HUB</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="academy.css">
 <script src="site.js" defer></script>
+<script type="module" src="academy-engine.js"></script>
 </head>
-<body class="page-academy">
+<body class="page-academy academy-redesign">
 <header class="site-header">
-    <a href="index.html" class="brand" aria-label="SIF Forex Hub home">
-        <span class="brand-mark" aria-hidden="true">S</span>
-        <span class="brand-name">SIF <b>FOREX HUB</b><small>LEARN · TRADE · EARN</small></span>
-    </a>
-    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="navigation" aria-expanded="false">☰</button>
-    <nav id="navigation" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="academy.html">Academy</a>
-        <a href="charts.html">Charts</a>
-        <a href="simulator.html">Simulator</a>
-        <a href="calculator.html">Risk calculator</a>
-        <a href="journal.html">Journal</a>
-        <a href="login.html" class="nav-login">Sign in</a>
-        <a href="register.html" class="nav-register">Join free</a>
-    </nav>
+  <a href="index.html" class="brand" aria-label="SIF Forex Hub home">
+    <span class="brand-mark" aria-hidden="true">S</span>
+    <span class="brand-name">SIF <b>FOREX HUB</b><small>LEARN · TRADE · EARN</small></span>
+  </a>
+  <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="navigation" aria-expanded="false">☰</button>
+  <nav id="navigation" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="academy.html" aria-current="page">Academy</a>
+    <a href="sif-question.html">SIF Question</a>
+    <a href="charts.html">Charts</a>
+    <a href="simulator.html">Simulator</a>
+    <a href="calculator.html">Risk calculator</a>
+    <a href="journal.html">Journal</a>
+    <a href="login.html" class="nav-login">Sign in</a>
+    <a href="register.html" class="nav-register">Join free</a>
+  </nav>
 </header>
-<main class="container">
-    <section class="hero" aria-labelledby="page-title">
-        <span class="eyebrow">Forex Academy · Beginner path</span>
-        <h1 id="page-title">Start here: your first forex lessons</h1>
-        <p>Take four short lessons in order. Each ends with a quick check and a clear next step; finish with a five-question quiz. The lessons and quiz are open to everyone, with no account required.</p>
-        <div class="hero-note" aria-label="Path details">
-            <span>4 short lessons</span>
-            <span>Quick check after each</span>
-            <span>Free to explore</span>
+<main class="academy-shell">
+  <div class="academy-topline">
+    <div class="academy-breadcrumb"><a href="index.html">SIF Forex Hub</a><span aria-hidden="true">/</span><span>Forex Academy</span></div>
+    <div class="academy-access"><span class="access-dot" aria-hidden="true"></span> Open learning · no account required</div>
+  </div>
+
+  <section class="academy-hero" id="course-overview" aria-labelledby="academy-title">
+    <div class="academy-hero-copy">
+      <span class="academy-eyebrow"><span class="eyebrow-mark" aria-hidden="true">✦</span> SIF FOREX ACADEMY · BEGINNER TO DISCIPLINED PRACTICE</span>
+      <h1 id="academy-title">Learn the market.<br><em>Build the discipline.</em></h1>
+      <p>A structured learning path from your first currency pair to a repeatable trading routine. Study in order, practise with fictional examples, and test what you understand—without promises or pressure to trade.</p>
+      <div class="academy-hero-actions">
+        <a href="#module-catalog" class="academy-primary-btn" id="hero-start">Explore the learning path <span aria-hidden="true">→</span></a>
+        <button class="academy-secondary-btn" id="hero-continue" type="button" hidden>Continue learning <span aria-hidden="true">↗</span></button>
+      </div>
+      <div class="academy-trust-row" aria-label="Course features"><span>18 guided modules</span><span>200+ practical lessons</span><span>Free guest access</span></div>
+    </div>
+    <div class="academy-hero-art" aria-label="Illustrative currency market chart">
+      <div class="hero-art-top"><span>LEARNING PATH</span><span class="live-pill"><i></i> YOUR PACE</span></div>
+      <div class="hero-chart-wrap" id="hero-chart" aria-hidden="true"></div>
+      <div class="hero-art-foot"><div><small>START</small><b>Forex basics</b></div><span class="journey-dash" aria-hidden="true"></span><div><small>BUILD</small><b>Risk & process</b></div><span class="journey-dash" aria-hidden="true"></span><div><small>FINISH</small><b>Pro routine</b></div></div>
+      <span class="chart-illustration-tag">SCHEMATIC LEARNING VISUAL · NOT LIVE DATA</span>
+    </div>
+  </section>
+
+  <div class="academy-notice" id="sync-banner" role="status" aria-live="polite" hidden></div>
+
+  <section class="learner-dashboard" aria-labelledby="dashboard-heading">
+    <div class="dashboard-heading-row">
+      <div><span class="academy-section-kicker">YOUR LEARNING DESK</span><h2 id="dashboard-heading">Your progress, at a glance</h2></div>
+      <span class="save-status" id="save-status"><span class="save-dot" aria-hidden="true"></span><span id="save-status-text">Progress saves on this device</span></span>
+    </div>
+    <div class="learner-grid">
+      <article class="learner-main-card">
+        <div class="learner-main-copy">
+          <span class="mini-kicker">CONTINUE YOUR JOURNEY</span>
+          <h3 id="continue-title">Your first lesson is ready</h3>
+          <p id="continue-description">Start with the essentials. Your place will be saved as you work through each lesson.</p>
+          <a class="continue-link" id="continue-link" href="academy.html?lesson=m1-l1">Begin lesson 1 <span aria-hidden="true">→</span></a>
         </div>
-    </section>
+        <div class="course-progress-ring" id="course-progress-ring" role="img" aria-label="0 percent course progress"><div><strong id="course-progress-number">0%</strong><span>COMPLETE</span></div></div>
+        <div class="course-progress-track"><span id="course-progress-bar"></span></div>
+        <div class="course-progress-caption"><span id="course-progress-count">0 of 0 lessons complete</span><span id="course-module-count">0 of 18 modules</span></div>
+      </article>
+      <div class="learner-metrics">
+        <article class="metric-card"><span class="metric-icon" aria-hidden="true">▤</span><div><strong id="metric-lessons">0</strong><span>Lessons completed</span></div></article>
+        <article class="metric-card"><span class="metric-icon metric-icon-gold" aria-hidden="true">✦</span><div><strong id="metric-quizzes">0</strong><span>SIF Question attempts</span></div></article>
+        <article class="metric-card"><span class="metric-icon metric-icon-blue" aria-hidden="true">◷</span><div><strong id="metric-streak">—</strong><span>Last learning session</span></div></article>
+      </div>
+    </div>
+  </section>
 
-    <aside class="challenge-notice" id="incoming-challenge" aria-labelledby="incoming-challenge-title" hidden>
-        <div>
-            <span class="eyebrow">Challenge received</span>
-            <h2 id="incoming-challenge-title">A friend shared a quiz score</h2>
-            <p id="incoming-challenge-text"></p>
-        </div>
-        <a href="#first-quiz">Take the five-question quiz →</a>
-    </aside>
+  <section class="learning-history" id="learning-history" aria-labelledby="history-heading">
+    <div class="history-heading"><div><span class="academy-section-kicker">YOUR LEARNING HISTORY</span><h2 id="history-heading">Recent activity</h2></div><button id="history-toggle" class="text-button" type="button" aria-expanded="false">Show history</button></div>
+    <ol id="history-list" class="history-list" hidden></ol>
+    <p class="history-empty" id="history-empty">Your completed lessons and SIF Question attempts will appear here.</p>
+  </section>
 
-    <section class="path-summary" aria-label="Your learning progress">
-        <div>
-            <strong id="progress-label">Your progress: 0 of 4 lessons complete</strong>
-            <span class="progress-caption">Complete each quick check to mark a lesson done.</span>
-        </div>
-        <button class="reset-button" id="reset-progress" type="button">Reset progress</button>
-        <progress id="path-progress" max="4" value="0" aria-label="Beginner path progress">0 of 4</progress>
-        <p class="storage-note" id="storage-note">Progress is saved on this device only. Sign-in is not needed to learn; account-based progress sync is not set up yet.</p>
-    </section>
+  <section class="module-catalog" id="module-catalog" aria-labelledby="module-heading">
+    <div class="catalog-heading">
+      <div><span class="academy-section-kicker">THE COMPLETE BEGINNER CURRICULUM</span><h2 id="module-heading">A clear path from basics to routine</h2><p>Move through the modules in order, or open any available lesson to review a topic. Pass each SIF Question assessment to unlock the next step; sign-in is never required.</p></div>
+      <label class="module-search"><span class="sr-only">Search modules and lessons</span><span aria-hidden="true">⌕</span><input id="lesson-search" type="search" placeholder="Search the curriculum" autocomplete="off"></label>
+    </div>
+    <div class="path-legend" aria-label="Lesson status legend"><span><i class="legend-unlocked"></i> Available</span><span><i class="legend-current"></i> Continue here</span><span><i class="legend-done">✓</i> Completed</span><span><i class="legend-locked">⌑</i> Unlock by learning</span></div>
+    <div id="module-grid" class="module-grid" aria-live="polite"><div class="loading-modules"><span class="loading-orb" aria-hidden="true"></span>Preparing your learning path…</div></div>
+    <p class="no-search-results" id="no-search-results" hidden>No lessons match that search. Try another word or clear the search.</p>
+  </section>
 
-    <section aria-labelledby="start-title">
-        <div class="section-heading">
-            <h2 id="start-title">The Start Here path</h2>
-            <p>Read a lesson, answer its check, then use the next-step button to keep your place.</p>
-        </div>
-        <div class="lesson-list">
-            <article class="lesson-card" id="lesson-1" data-lesson="1">
-                <div class="lesson-topline">
-                    <div><span class="step-label">Lesson 1 · The basics</span><h3 tabindex="-1">What forex is—and how to read a pair</h3></div>
-                    <span class="lesson-state" aria-label="Lesson status">Lesson 1 of 4</span>
-                </div>
-                <div class="lesson-copy">
-                    <p>Forex (foreign exchange) is a market where one currency is exchanged for another. A pair compares the value of its first currency with its second.</p>
-                    <div class="example"><strong>Example: EUR/USD</strong><br>EUR is the <em>base currency</em>; USD is the <em>quote currency</em>. A price of 1.0800 means one euro is quoted at 1.08 US dollars. It is an illustration, not a live quote.</div>
-                    <p>A pair’s price can move up or down. Knowing the pair’s direction does not tell you whether a trade is suitable or profitable.</p>
-                </div>
-                <div class="quick-check">
-                    <fieldset>
-                        <legend>Quick check: In EUR/USD, which currency is the base currency?</legend>
-                        <label class="answer-option"><input type="radio" name="check-1" value="a"> <span>EUR, the first currency in the pair</span></label>
-                        <label class="answer-option"><input type="radio" name="check-1" value="b"> <span>USD, the second currency in the pair</span></label>
-                    </fieldset>
-                    <button class="check-button" type="button" data-check="1">Check answer</button>
-                    <p class="check-feedback" id="feedback-1" role="status" aria-live="polite"></p>
-                    <button class="continue-button" type="button" data-next="2" hidden>Continue to lesson 2 →</button>
-                </div>
-            </article>
+  <section class="certificate-section" id="certificates" aria-labelledby="certificate-heading">
+    <div class="certificate-icon" aria-hidden="true">✧</div>
+    <div><span class="academy-section-kicker">RECOGNISE YOUR PROGRESS</span><h2 id="certificate-heading">Certificates for completed modules</h2><p>Finish every lesson and pass its SIF Question assessment to unlock a printable certificate for that module. Certificates recognise study only; they are not trading licences or proof of trading performance.</p></div>
+    <div id="certificate-actions" class="certificate-actions"><span class="certificate-note">Complete a module to unlock its certificate.</span></div>
+  </section>
 
-            <article class="lesson-card" id="lesson-2" data-lesson="2">
-                <div class="lesson-topline">
-                    <div><span class="step-label">Lesson 2 · Price and costs</span><h3 tabindex="-1">Pips and the spread</h3></div>
-                    <span class="lesson-state" aria-label="Lesson status">Lesson 2 of 4</span>
-                </div>
-                <div class="lesson-copy">
-                    <p>A <em>pip</em> is a commonly used unit for describing a currency pair’s price movement. For many pairs it is 0.0001; for many yen pairs it is 0.01. Some platforms display an extra fractional pip.</p>
-                    <div class="example"><strong>The spread</strong><br>The spread is the difference between a market’s buy (ask) and sell (bid) prices. It is one of the costs to understand before trading, and it can vary with the pair and market conditions.</div>
-                    <p>Actual pricing and costs depend on the provider and account terms. Check those details rather than assuming every pair or platform is the same.</p>
-                </div>
-                <div class="quick-check">
-                    <fieldset>
-                        <legend>Quick check: What does the spread describe?</legend>
-                        <label class="answer-option"><input type="radio" name="check-2" value="a"> <span>The difference between the ask and bid prices</span></label>
-                        <label class="answer-option"><input type="radio" name="check-2" value="b"> <span>A guarantee that a trade will close without a loss</span></label>
-                    </fieldset>
-                    <button class="check-button" type="button" data-check="2">Check answer</button>
-                    <p class="check-feedback" id="feedback-2" role="status" aria-live="polite"></p>
-                    <button class="continue-button" type="button" data-next="3" hidden>Continue to lesson 3 →</button>
-                </div>
-            </article>
+  <aside class="academy-disclaimer"><span class="disclaimer-icon" aria-hidden="true">!</span><p><strong>Education, not financial advice.</strong> Forex and leveraged products can cause substantial losses. Examples are fictional, chart drawings are schematic, SMC terms are interpretive, and no lesson, indicator or certificate predicts results. Check the rules and risks that apply in your location before making financial decisions.</p></aside>
 
-            <article class="lesson-card" id="lesson-3" data-lesson="3">
-                <div class="lesson-topline">
-                    <div><span class="step-label">Lesson 3 · Leverage and risk</span><h3 tabindex="-1">Leverage can magnify outcomes</h3></div>
-                    <span class="lesson-state" aria-label="Lesson status">Lesson 3 of 4</span>
-                </div>
-                <div class="lesson-copy">
-                    <p><em>Leverage</em> lets a trader control a larger market exposure than the funds set aside as margin. Margin is collateral required to maintain that exposure; it is not a cap on possible loss.</p>
-                    <div class="example"><strong>Keep in mind</strong><br>Leverage can magnify gains and losses. A relatively small market move can have a large effect on account equity, and losses can exceed expectations. Rules and protections vary by provider and location.</div>
-                    <p>Understand the provider’s leverage, margin and close-out terms before using any leveraged product. Practising on this site does not remove real-world risk.</p>
-                </div>
-                <div class="quick-check">
-                    <fieldset>
-                        <legend>Quick check: What is a key effect of leverage?</legend>
-                        <label class="answer-option"><input type="radio" name="check-3" value="a"> <span>It makes possible losses disappear</span></label>
-                        <label class="answer-option"><input type="radio" name="check-3" value="b"> <span>It can magnify both gains and losses</span></label>
-                    </fieldset>
-                    <button class="check-button" type="button" data-check="3">Check answer</button>
-                    <p class="check-feedback" id="feedback-3" role="status" aria-live="polite"></p>
-                    <button class="continue-button" type="button" data-next="4" hidden>Continue to lesson 4 →</button>
-                </div>
-            </article>
-
-            <article class="lesson-card" id="lesson-4" data-lesson="4">
-                <div class="lesson-topline">
-                    <div><span class="step-label">Lesson 4 · Before you practise</span><h3 tabindex="-1">Plan first; protect your limits</h3></div>
-                    <span class="lesson-state" aria-label="Lesson status">Lesson 4 of 4</span>
-                </div>
-                <div class="lesson-copy">
-                    <p>A trading plan sets out the conditions you would use to make and review a decision. It can include what you are learning, how you would enter and exit a practice trade, and what would make you stand aside.</p>
-                    <div class="example"><strong>Before a practice trade</strong><br>Know the possible loss, choose a position size that fits your own limits, and decide how you will respond if the idea is wrong. Stop orders may not fill at the requested price in fast or gapping markets.</div>
-                    <p>There is no universally safe risk amount. Never trade money you cannot afford to lose, and do not treat this learning material as personal financial advice.</p>
-                </div>
-                <div class="quick-check">
-                    <fieldset>
-                        <legend>Quick check: Why set your limits before entering a trade?</legend>
-                        <label class="answer-option"><input type="radio" name="check-4" value="a"> <span>To know the possible loss and avoid making the decision impulsively</span></label>
-                        <label class="answer-option"><input type="radio" name="check-4" value="b"> <span>To make sure the trade will be profitable</span></label>
-                    </fieldset>
-                    <button class="check-button" type="button" data-check="4">Check answer</button>
-                    <p class="check-feedback" id="feedback-4" role="status" aria-live="polite"></p>
-                    <button class="continue-button" type="button" data-next="quiz" hidden>Continue to the short quiz →</button>
-                </div>
-            </article>
-        </div>
-
-
-        <section class="visual-concepts" aria-labelledby="visual-concepts-title">
-            <div class="section-heading"><span class="eyebrow">VISUAL REFERENCE · SCHEMATIC ONLY</span><h2 id="visual-concepts-title">Read the shape of a chart</h2><p>Simple teaching diagrams—not live market data, analysis, or trading signals.</p></div>
-            <div class="visual-concepts-grid">
-                <article class="diagram-card"><span class="diagram-label">01 · Candle anatomy</span><h3>Open, high, low, close</h3><svg viewBox="0 0 320 150" role="img" aria-label="Schematic candlestick anatomy with wick and body"><path d="M26 127H300M26 25V127" class="diagram-axis"/><path d="M83 38V112M150 24V130M217 49V120" class="diagram-wick"/><rect x="72" y="58" width="22" height="36" rx="3" class="diagram-candle-up"/><rect x="139" y="48" width="22" height="55" rx="3" class="diagram-candle-down"/><rect x="206" y="67" width="22" height="27" rx="3" class="diagram-candle-up"/><path d="M231 50h46M232 94h46" class="diagram-mark"/><text x="281" y="53">High</text><text x="281" y="98">Low</text></svg><p>A candle summarizes price movement for one chosen interval.</p></article>
-                <article class="diagram-card"><span class="diagram-label">02 · Structure & liquidity</span><h3>Swing points are context</h3><svg viewBox="0 0 320 150" role="img" aria-label="Schematic market structure with swing highs and a marked level"><path d="M22 128H300M22 20V128" class="diagram-axis"/><path d="M28 112 71 75 107 98 151 49 193 78 236 39 282 66" class="diagram-line"/><path d="M22 48H299" class="diagram-level"/><path d="M236 40V18" class="diagram-mark"/><text x="214" y="15">Prior high</text><text x="82" y="139">Illustrative swings</text></svg><p>Prior highs and lows may be studied as areas of interest; no level predicts what happens next.</p></article>
-                <article class="diagram-card"><span class="diagram-label">03 · Fair Value Gap</span><h3>Three-candle illustration</h3><svg viewBox="0 0 320 150" role="img" aria-label="Schematic three-candle fair value gap teaching diagram"><path d="M22 128H300M22 20V128" class="diagram-axis"/><path d="M78 37V111M155 22V126M232 45V103" class="diagram-wick"/><rect x="68" y="57" width="20" height="32" rx="2" class="diagram-candle-up"/><rect x="145" y="41" width="20" height="60" rx="2" class="diagram-candle-up"/><rect x="222" y="58" width="20" height="28" rx="2" class="diagram-candle-down"/><rect x="171" y="57" width="39" height="28" rx="4" class="diagram-zone"/><path d="M164 57h60M164 85h60" class="diagram-level"/><text x="175" y="76">Gap</text></svg><p>A pattern some traders interpret as imbalance; interpretations can differ and are not a forecast.</p></article>
-            </div>
-        </section>
-
-        <section class="guided-exercise" id="guided-exercise" aria-labelledby="guided-exercise-title">
-            <span class="eyebrow">Lesson 4 · Educational practice</span>
-            <h3 id="guided-exercise-title">Connect planning, position size and the simulator</h3>
-            <p>Follow this optional, no-account exercise using made-up values only. It demonstrates how the tools connect; it does not suggest a suitable risk level, account size, or trade.</p>
-            <div class="guided-exercise-grid">
-                <div class="guided-exercise-step">
-                    <strong>1 · Start with a fictional example</strong>
-                    <p>These inputs exist only to illustrate the calculator’s arithmetic.</p>
-                    <dl class="example-values">
-                        <div><dt>Demo balance</dt><dd>$10,000</dd></div>
-                        <div><dt>Demo risk input</dt><dd>1%</dd></div>
-                        <div><dt>Demo stop distance</dt><dd>20 pips</dd></div>
-                        <div><dt>Demo pip value</dt><dd>$10 / pip / standard lot</dd></div>
-                    </dl>
-                    <a class="guided-exercise-link" href="calculator.html?guided=1&amp;balance=10000&amp;risk=1&amp;stopLoss=20&amp;pipValue=10">Open the example in the calculator →</a>
-                </div>
-                <div class="guided-exercise-step">
-                    <strong>2 · Review the estimate</strong>
-                    <p>Calculate, check what each result means, and notice how changing an input changes the estimate. The example is not a recommendation.</p>
-                </div>
-                <div class="guided-exercise-step">
-                    <strong>3 · Explore virtual practice</strong>
-                    <p>Only after calculating, you can carry the example size into the simulator. It will not choose a direction or open a practice trade for you.</p>
-                </div>
-            </div>
-            <p class="guided-safety-note"><strong>Educational example only:</strong> the 1% input, balance, stop distance and pip value are fictional—not a real-money risk level or trade setup. The simulator uses its own virtual account and does not enforce a stop loss. Do not use the sample as personal financial advice.</p>
-        </section>
-    </section>
-
-    <section class="quiz" id="first-quiz" aria-labelledby="quiz-title">
-        <span class="eyebrow">Quick review · 5 questions</span>
-        <h2 id="quiz-title">Your first forex quiz</h2>
-        <p class="quiz-intro">Choose one answer for each question, then check your score. You can retry as often as you like.</p>
-        <form id="quiz-form">
-            <fieldset>
-                <legend>1. In GBP/USD, which currency is the quote currency?</legend>
-                <label class="answer-option"><input type="radio" name="q1" value="a"> <span>GBP</span></label>
-                <label class="answer-option"><input type="radio" name="q1" value="b"> <span>USD</span></label>
-            </fieldset>
-            <fieldset>
-                <legend>2. What does the spread compare?</legend>
-                <label class="answer-option"><input type="radio" name="q2" value="a"> <span>The ask and bid prices</span></label>
-                <label class="answer-option"><input type="radio" name="q2" value="b"> <span>Two different trading sessions</span></label>
-            </fieldset>
-            <fieldset>
-                <legend>3. What can leverage do?</legend>
-                <label class="answer-option"><input type="radio" name="q3" value="a"> <span>Magnify both gains and losses</span></label>
-                <label class="answer-option"><input type="radio" name="q3" value="b"> <span>Guarantee a maximum loss in all conditions</span></label>
-            </fieldset>
-            <fieldset>
-                <legend>4. What is a sensible purpose of a trading plan?</legend>
-                <label class="answer-option"><input type="radio" name="q4" value="a"> <span>To make every trade profitable</span></label>
-                <label class="answer-option"><input type="radio" name="q4" value="b"> <span>To define a process and limits before a decision</span></label>
-            </fieldset>
-            <fieldset>
-                <legend>5. Do these lessons or quiz results predict future trading performance?</legend>
-                <label class="answer-option"><input type="radio" name="q5" value="a"> <span>Yes, a high score predicts future profits</span></label>
-                <label class="answer-option"><input type="radio" name="q5" value="b"> <span>No, they are educational and do not predict outcomes</span></label>
-            </fieldset>
-            <button class="quiz-submit" type="submit">Check my score</button>
-            <div id="quiz-result" role="status" aria-live="polite" aria-atomic="true"></div>
-            <section class="result-share-card" id="quiz-share-card" aria-labelledby="share-card-title" hidden>
-                <span class="eyebrow">Your learning result</span>
-                <h3 id="share-card-title">Forex basics · quick review</h3>
-                <p class="result-score">Your score: <strong id="share-score"></strong> <span>out of 5</span></p>
-                <p class="result-note">A learning quiz score only; it does not predict future trading performance.</p>
-                <div class="share-actions">
-                    <button class="share-primary" id="share-challenge" type="button">Challenge a friend</button>
-                    <button class="share-secondary" id="share-result-card" type="button">Share result card</button>
-                    <button class="share-secondary" id="download-result-card" type="button">Download card</button>
-                    <button class="share-secondary" id="copy-challenge-link" type="button">Copy link</button>
-                </div>
-                <label class="challenge-link-label" for="challenge-link">Challenge link · includes only this quiz score</label>
-                <div class="challenge-link-row">
-                    <input class="challenge-link-input" id="challenge-link" type="text" readonly spellcheck="false" aria-label="Shareable challenge link containing only the quiz score">
-                </div>
-                <p class="share-status" id="share-status" role="status" aria-live="polite"></p>
-            </section>
-        </form>
-    </section>
-
-    <section class="more-topics" aria-labelledby="more-title">
-        <h2 id="more-title">Explore more topics</h2>
-        <p>When you are ready, continue with the existing intermediate and advanced material.</p>
-        <details class="topic-group">
-            <summary>Intermediate: market structure, trends and risk</summary>
-            <ul>
-                <li><strong>Market structure:</strong> swing highs and lows can help describe an uptrend, downtrend or range; they do not guarantee what happens next.</li>
-                <li><strong>Support and resistance:</strong> areas where buying or selling interest has previously slowed a move. These are zones of interest, not guaranteed turning points.</li>
-                <li><strong>Trend analysis:</strong> describe a market as generally rising, falling or moving sideways, while keeping the chosen timeframe in view.</li>
-                <li><strong>Risk management:</strong> understand possible loss, position size, stop orders and leverage before practice; no tool prevents all losses.</li>
-            </ul>
-        </details>
-        <details class="topic-group">
-            <summary>Advanced: Smart Money Concepts (SMC)</summary>
-            <ul>
-                <li><strong>Liquidity:</strong> traders may study areas where orders could be concentrated, such as prior highs and lows; this is an analytical idea, not a promise of price behaviour.</li>
-                <li><strong>Break of Structure (BOS):</strong> a break of a swing level in the direction of a described structure, which may be interpreted as continuation evidence.</li>
-                <li><strong>Change of Character (CHoCH):</strong> a break against a prior direction that some traders watch for a possible shift; it does not confirm a reversal.</li>
-                <li><strong>Fair Value Gap (FVG):</strong> a three-candle pattern some traders interpret as an imbalance and study as a possible area of interest.</li>
-            </ul>
-        </details>
-        <details class="topic-group">
-            <summary>Psychology and planning</summary>
-            <ul>
-                <li><strong>Discipline:</strong> practise following a written process rather than chasing a move or reacting emotionally to a loss.</li>
-                <li><strong>Trading plan:</strong> write down the conditions, review process and risk limits you intend to follow. A plan cannot guarantee a result.</li>
-            </ul>
-        </details>
-    </section>
-
-    <p class="disclaimer">Forex and leveraged products involve substantial risk and may not be suitable for everyone. This material is for general education, not personal financial advice, a trade signal or a promise of results.</p>
+  <section class="lesson-view" id="lesson-view" hidden aria-labelledby="lesson-title">
+    <div class="lesson-toolbar"><button class="back-to-course" id="back-to-course" type="button"><span aria-hidden="true">←</span> All modules</button><div class="lesson-breadcrumb" id="lesson-breadcrumb"></div><button class="lesson-bookmark" id="lesson-bookmark" type="button" aria-pressed="false" aria-label="Save this lesson to your learning history">☆ <span>Save lesson</span></button></div>
+    <div class="lesson-layout">
+      <article class="lesson-article" id="lesson-content"></article>
+      <aside class="lesson-sidebar" aria-label="Lesson outline and progress">
+        <div class="lesson-outline-card"><span class="academy-section-kicker">IN THIS LESSON</span><ol id="lesson-outline"></ol></div>
+        <div class="lesson-progress-card"><span class="academy-section-kicker">MODULE PROGRESS</span><div class="sidebar-progress"><span id="module-progress-bar"></span></div><p id="module-progress-text">0 of 0 lessons complete</p><a id="module-overview-link" href="#module-catalog">View module lessons →</a></div>
+        <div class="lesson-safety-card"><strong>Study first, decide later</strong><p>Practise ideas on paper or in a demo environment. An assessment score is not a trading signal.</p></div>
+      </aside>
+    </div>
+    <nav class="lesson-navigation" aria-label="Lesson navigation"><a class="lesson-nav-card previous-lesson" id="previous-lesson" href="#" hidden><span>← PREVIOUS LESSON</span><strong id="previous-title"></strong></a><div class="lesson-nav-spacer"></div><a class="lesson-nav-card next-lesson" id="next-lesson" href="#" hidden><span>NEXT LESSON →</span><strong id="next-title"></strong></a></nav>
+  </section>
+  <div id="certificate-print-area" class="certificate-print-area" hidden></div>
 </main>
-<footer>© 2026 SIF FOREX HUB · Learn at your own pace</footer>
-<script>
-(() => {
-    const STORAGE_KEY = "sifForexAcademyStartHere.v1";
-    const answers = {
-        "1": { correct: "a", explanation: "Correct. In EUR/USD, EUR is first, so it is the base currency." },
-        "2": { correct: "a", explanation: "Correct. The spread is the difference between the ask and bid prices." },
-        "3": { correct: "b", explanation: "Correct. Leverage can magnify both gains and losses." },
-        "4": { correct: "a", explanation: "Correct. Setting limits first helps you understand possible loss and follow a planned process; it cannot guarantee profit." }
-    };
-    const quizAnswers = [
-        { correct: "b", explanation: "USD is the second currency in GBP/USD, so it is the quote currency." },
-        { correct: "a", explanation: "The spread is the difference between the ask and bid prices." },
-        { correct: "a", explanation: "Leverage can magnify gains and losses." },
-        { correct: "b", explanation: "A plan can define a process and limits, but cannot ensure a profitable outcome." },
-        { correct: "b", explanation: "A learning quiz does not predict future market outcomes or personal performance." }
-    ];
-    const validIds = ["1", "2", "3", "4"];
-    let completed = new Set();
-    let storageAvailable = true;
-
-    try {
-        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
-        if (saved && Array.isArray(saved.completed)) {
-            completed = new Set(saved.completed.map(String).filter(id => validIds.includes(id)));
-        }
-    } catch (error) {
-        storageAvailable = false;
-    }
-
-    const progress = document.getElementById("path-progress");
-    const progressLabel = document.getElementById("progress-label");
-    const storageNote = document.getElementById("storage-note");
-
-    const shareCard = document.getElementById("quiz-share-card");
-    const shareScore = document.getElementById("share-score");
-    const shareLink = document.getElementById("challenge-link");
-    const shareStatus = document.getElementById("share-status");
-    let latestScore = null;
-
-    function buildChallengeUrl(score) {
-        const challengeUrl = new URL("academy.html", window.location.href);
-        challengeUrl.search = "";
-        challengeUrl.hash = "";
-        challengeUrl.searchParams.set("challenge", String(score));
-        return challengeUrl.toString();
-    }
-
-    function prepareShareLink() {
-        if (latestScore === null) return "";
-        const link = buildChallengeUrl(latestScore);
-        shareLink.value = link;
-        return link;
-    }
-
-    async function copyChallengeLink() {
-        const link = prepareShareLink();
-        if (!link) return;
-        let copied = false;
-        try {
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-                await navigator.clipboard.writeText(link);
-                copied = true;
-            }
-        } catch (error) {}
-        if (!copied) {
-            try {
-                shareLink.focus();
-                shareLink.select();
-                copied = document.execCommand("copy");
-            } catch (error) {}
-        }
-        if (copied) {
-            shareStatus.textContent = "Challenge link copied. It contains only your learning quiz score.";
-        } else {
-            shareLink.focus();
-            shareLink.select();
-            shareStatus.textContent = "Copy was not available here. The score-only link is selected so you can copy it manually.";
-        }
-    }
-
-    async function shareChallenge() {
-        if (latestScore === null) return;
-        const link = prepareShareLink();
-        const shareData = {
-            title: "SIF Forex Hub · Start Here quiz",
-            text: `I scored ${latestScore}/5 on a short forex learning quiz. Can you match my score? This learning score does not predict future performance.`,
-            url: link
-        };
-        if (typeof navigator.share !== "function") {
-            await copyChallengeLink();
-            return;
-        }
-        try {
-            await navigator.share(shareData);
-            shareStatus.textContent = "Shared. The message includes only your quiz score and challenge link.";
-        } catch (error) {
-            if (error && error.name === "AbortError") {
-                shareStatus.textContent = "Share cancelled. You can still use Copy link.";
-                return;
-            }
-            await copyChallengeLink();
-        }
-    }
-
-    function makeResultCardFile(score) {
-        const canvas = document.createElement("canvas");
-        canvas.width = 1200;
-        canvas.height = 630;
-        const ctx = canvas.getContext("2d");
-        if (!ctx) throw new Error("Card image unavailable");
-        const background = ctx.createLinearGradient(0, 0, 1200, 630);
-        background.addColorStop(0, "#173b3d");
-        background.addColorStop(1, "#07111d");
-        ctx.fillStyle = background;
-        ctx.fillRect(0, 0, 1200, 630);
-        ctx.strokeStyle = "#927945";
-        ctx.lineWidth = 4;
-        ctx.strokeRect(32, 32, 1136, 566);
-        ctx.fillStyle = "#f0d995";
-        ctx.font = "bold 25px sans-serif";
-        ctx.fillText("SIF FOREX HUB  /  BEGINNER ACADEMY", 86, 104);
-        ctx.fillStyle = "#f4f8fc";
-        ctx.font = "bold 52px sans-serif";
-        ctx.fillText("Forex basics · quick review", 86, 186);
-        ctx.font = "29px sans-serif";
-        ctx.fillStyle = "#d5e1eb";
-        ctx.fillText("MY LEARNING QUIZ SCORE", 86, 270);
-        ctx.font = "bold 146px sans-serif";
-        ctx.fillStyle = "#f0d995";
-        ctx.fillText(`${score} / 5`, 82, 426);
-        ctx.fillStyle = "#d5e1eb";
-        ctx.font = "26px sans-serif";
-        ctx.fillText("Educational quiz only. This score does not predict", 86, 510);
-        ctx.fillText("future trading performance.", 86, 548);
-        const encoded = canvas.toDataURL("image/png").split(",")[1];
-        const bytes = Uint8Array.from(atob(encoded), character => character.charCodeAt(0));
-        return new File([bytes], "sif-forex-learning-result.png", { type: "image/png" });
-    }
-
-    function downloadResultCard(file) {
-        const url = URL.createObjectURL(file);
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = file.name;
-        document.body.append(link);
-        link.click();
-        link.remove();
-        setTimeout(() => URL.revokeObjectURL(url), 10000);
-    }
-
-    function downloadCard() {
-        if (latestScore === null) return;
-        try {
-            downloadResultCard(makeResultCardFile(latestScore));
-            shareStatus.textContent = "Your score-only result card is downloading.";
-        } catch (error) {
-            shareStatus.textContent = "The card image could not be created here. You can still share the challenge link.";
-        }
-    }
-
-    async function shareResultCard() {
-        if (latestScore === null) return;
-        try {
-            const file = makeResultCardFile(latestScore);
-            const data = { files: [file], title: "SIF Forex Hub learning quiz", text: "My forex basics learning quiz score." };
-            if (typeof navigator.share === "function" && typeof navigator.canShare === "function" && navigator.canShare({ files: [file] })) {
-                try {
-                    await navigator.share(data);
-                    shareStatus.textContent = "Result card shared or handed to your device's share menu.";
-                } catch (error) {
-                    shareStatus.textContent = error && error.name === "AbortError" ? "Share cancelled. You can still download the card." : "Sharing the image was unavailable. Use Download card to share it manually.";
-                }
-            } else {
-                downloadResultCard(file);
-                shareStatus.textContent = "Image sharing is unavailable here, so your score-only card is downloading instead.";
-            }
-        } catch (error) {
-            shareStatus.textContent = "The card image could not be created here. You can still share the challenge link.";
-        }
-    }
-
-    const incomingScore = new URLSearchParams(window.location.search).get("challenge");
-    if (incomingScore !== null && /^[0-5]$/.test(incomingScore)) {
-        document.getElementById("incoming-challenge-text").textContent = `A friend scored ${incomingScore} out of 5 on the beginner forex quiz. Take it to compare your learning scores. This score does not predict future performance.`;
-        document.getElementById("incoming-challenge").hidden = false;
-    }
-
-    function updateProgress() {
-        progress.value = completed.size;
-        progressLabel.textContent = `Your progress: ${completed.size} of 4 lessons complete`;
-        if (!storageAvailable) {
-            storageNote.textContent = "Progress will last only for this visit because this browser is not allowing local storage.";
-        }
-        document.querySelectorAll("[data-lesson]").forEach(card => {
-            const id = card.dataset.lesson;
-            const isComplete = completed.has(id);
-            const state = card.querySelector(".lesson-state");
-            const continueButton = card.querySelector(".continue-button");
-            card.classList.toggle("is-complete", isComplete);
-            state.textContent = isComplete ? "Complete" : `Lesson ${id} of 4`;
-            state.setAttribute("aria-label", isComplete ? "Lesson complete" : `Lesson ${id} of 4`);
-            continueButton.hidden = !isComplete;
-        });
-    }
-
-    function saveProgress() {
-        try {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify({ completed: [...completed] }));
-        } catch (error) {
-            storageAvailable = false;
-        }
-        updateProgress();
-    }
-
-    document.querySelectorAll("[data-check]").forEach(button => {
-        button.addEventListener("click", () => {
-            const id = button.dataset.check;
-            const selected = document.querySelector(`input[name="check-${id}"]:checked`);
-            const feedback = document.getElementById(`feedback-${id}`);
-            feedback.classList.remove("is-correct", "is-retry");
-            if (!selected) {
-                feedback.textContent = "Choose an answer first, then check it.";
-                feedback.classList.add("is-retry");
-                return;
-            }
-            if (selected.value !== answers[id].correct) {
-                feedback.textContent = "Not quite. Review the lesson and try the other answer.";
-                feedback.classList.add("is-retry");
-                return;
-            }
-            feedback.textContent = answers[id].explanation;
-            feedback.classList.add("is-correct");
-            completed.add(id);
-            saveProgress();
-        });
-    });
-
-    document.querySelectorAll(".continue-button").forEach(button => {
-        button.addEventListener("click", () => {
-            const destination = button.dataset.next === "quiz" ? document.getElementById("first-quiz") : document.getElementById(`lesson-${button.dataset.next}`);
-            if (!destination) return;
-            destination.scrollIntoView({ behavior: "smooth", block: "start" });
-            const heading = destination.querySelector("h2, h3");
-            if (heading) heading.focus({ preventScroll: true });
-        });
-    });
-
-    document.getElementById("reset-progress").addEventListener("click", () => {
-        completed = new Set();
-        try { localStorage.removeItem(STORAGE_KEY); } catch (error) { storageAvailable = false; }
-        document.querySelectorAll(".check-feedback").forEach(feedback => {
-            feedback.textContent = "";
-            feedback.classList.remove("is-correct", "is-retry");
-        });
-        document.querySelectorAll(".quick-check input").forEach(input => { input.checked = false; });
-        updateProgress();
-    });
-
-    const quizForm = document.getElementById("quiz-form");
-    quizForm.addEventListener("change", () => {
-        if (latestScore !== null) {
-            latestScore = null;
-            shareCard.hidden = true;
-            shareLink.value = "";
-            shareStatus.textContent = "";
-            document.getElementById("quiz-result").replaceChildren();
-        }
-    });
-    document.getElementById("share-challenge").addEventListener("click", shareChallenge);
-    document.getElementById("copy-challenge-link").addEventListener("click", copyChallengeLink);
-    document.getElementById("share-result-card").addEventListener("click", shareResultCard);
-    document.getElementById("download-result-card").addEventListener("click", downloadCard);
-    quizForm.addEventListener("submit", event => {
-        event.preventDefault();
-        const selected = quizAnswers.map((_, index) => document.querySelector(`input[name="q${index + 1}"]:checked`));
-        const result = document.getElementById("quiz-result");
-        result.replaceChildren();
-        if (selected.some(answer => !answer)) {
-            latestScore = null;
-            shareCard.hidden = true;
-            shareLink.value = "";
-            shareStatus.textContent = "";
-            result.textContent = "Please answer all five questions before checking your score.";
-            return;
-        }
-        const score = selected.reduce((total, answer, index) => total + (answer.value === quizAnswers[index].correct ? 1 : 0), 0);
-        latestScore = score;
-        const heading = document.createElement("p");
-        heading.textContent = `Your score: ${score} out of 5. ${score === 5 ? "Excellent recall." : "Review any missed lesson and try again."}`;
-        result.append(heading);
-        const list = document.createElement("ul");
-        quizAnswers.forEach((item, index) => {
-            const line = document.createElement("li");
-            line.textContent = `${index + 1}. ${item.explanation}`;
-            list.append(line);
-        });
-        result.append(list);
-        shareScore.textContent = String(score);
-        shareLink.value = buildChallengeUrl(score);
-        shareStatus.textContent = "";
-        shareCard.hidden = false;
-    });
-
-    updateProgress();
-})();
-</script>
+<footer class="academy-footer"><div class="footer-logo">SIF <span>FOREX HUB</span></div><p>Learn at your own pace. Build a process before risking capital.</p><p class="footer-disclaimer">Educational material only · No personalised financial advice · PRO and VIP features remain unavailable until a real paid feature is ready</p><div class="copyright">© 2026 SIF FOREX HUB · LEARN · TRADE · EARN</div></footer>
 </body>
 </html>

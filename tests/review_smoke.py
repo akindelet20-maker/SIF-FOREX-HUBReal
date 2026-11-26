@@ -1,8 +1,9 @@
+import json
 from pathlib import Path
 import re
 from playwright.sync_api import sync_playwright, expect
 
-BASE = 'http://127.0.0.1:4173'
+BASE = 'http://127.0.0.1:4174'
 OUT = Path(__file__).resolve().parents[1]
 
 SUPABASE_STUB = r'''export function createClient() {
@@ -17,8 +18,13 @@ SUPABASE_STUB = r'''export function createClient() {
       resetPasswordForEmail: async (email) => { window.__reviewResetEmail = email; return { data: {}, error: null }; },
       signOut: async () => ({ error: null })
     },
-    from: () => {
-      const query = { select() { return query; }, eq() { return query; }, maybeSingle: async () => ({ data: profile, error: null }) };
+    from: (table) => {
+      const query = {
+        select() { return query; },
+        eq() { return query; },
+        maybeSingle: async () => ({ data: table === 'academy_progress' ? (window.__reviewProgress || null) : profile, error: null }),
+        upsert: async (payload) => { window.__reviewUpsert = { table, payload }; return { error: null }; }
+      };
       return query;
     }
   };
@@ -77,34 +83,100 @@ def main():
         expect(page.locator('.feature-card:has-text("Strategy Tester") .coming-soon-label')).to_be_visible()
         checks.append('homepage, rendered TradingView feed disclaimer, pair selector, and disabled membership states')
 
-        # Academy: all quick checks, local progress, quiz, score-sharing and challenge route.
+        # Academy: complete curriculum manifest, lazy-loaded lesson, separate assessment link, and locked progression.
         page.goto(BASE + '/academy.html', wait_until='domcontentloaded')
-        lesson_answers = {1: 'a', 2: 'a', 3: 'b', 4: 'a'}
-        for lesson, answer in lesson_answers.items():
-            page.locator(f'input[name="check-{lesson}"][value="{answer}"]').check()
-            page.locator(f'button[data-check="{lesson}"]').click()
-            expect(page.locator(f'#lesson-{lesson} .check-feedback')).not_to_be_empty()
-            if lesson < 4:
-                page.locator(f'.continue-button[data-next="{lesson + 1}"]').click()
-            else:
-                page.locator('.continue-button[data-next="quiz"]').click()
-        expect(page.locator('#progress-label')).to_contain_text('4 of 4')
-        quiz_answers = {'q1':'b', 'q2':'a', 'q3':'a', 'q4':'b', 'q5':'b'}
-        for name, value in quiz_answers.items():
-            page.locator(f'input[name="{name}"][value="{value}"]').check()
-        page.locator('#quiz-form button[type="submit"]').click()
-        expect(page.locator('#quiz-share-card')).to_be_visible()
-        expect(page.locator('#share-score')).to_have_text('5')
-        page.locator('#copy-challenge-link').click()
-        expect(page.locator('#challenge-link')).to_have_value(f'{BASE}/academy.html?challenge=5')
-        page.reload(wait_until='domcontentloaded')
-        expect(page.locator('#progress-label')).to_contain_text('4 of 4')
-        page.locator('#reset-progress').click()
-        expect(page.locator('#progress-label')).to_contain_text('0 of 4')
-        page.goto(BASE + '/academy.html?challenge=3', wait_until='domcontentloaded')
-        expect(page.locator('#incoming-challenge')).to_be_visible()
-        page.screenshot(path=str(OUT / 'review-academy-mobile.png'), full_page=True) if page.set_viewport_size({'width':390,'height':844}) is None else None
-        checks.append('Academy checks, progress persistence/reset, quiz, share link, challenge route')
+        expect(page.locator('#module-grid .module-card')).to_have_count(18)
+        expect(page.locator('#module-grid .module-lesson-row')).to_have_count(206)
+        expect(page.locator('#course-progress-count')).to_contain_text('0 of 206')
+        page.screenshot(path=str(OUT / 'review-academy-desktop.png'), full_page=True)
+        with page.expect_response(re.compile(r'academy-content/module-01\.json')) as lesson_response:
+            page.locator('#module-1 [data-open-lesson="m1-l1"]').click()
+        assert lesson_response.value.status == 200
+        expect(page.locator('#lesson-title')).to_have_text('What is Forex Trading?')
+        expect(page.locator('.lesson-assessment-link')).to_be_visible()
+        expect(page.locator('.lesson-assessment-link a')).to_have_attribute('href', 'sif-question.html?lesson=m1-l1')
+        expect(page.locator('.quiz-question')).to_have_count(0)
+        page.screenshot(path=str(OUT / 'review-academy-lesson.png'), full_page=True)
+        page.locator('#back-to-course').click()
+        expect(page.locator('#course-overview')).to_be_visible()
+        page.goto(BASE + '/academy.html?lesson=m1-l2', wait_until='domcontentloaded')
+        expect(page.locator('.lesson-locked-notice')).to_contain_text('finish the earlier lesson')
+        page.set_viewport_size({'width':390,'height':844})
+        page.goto(BASE + '/academy.html', wait_until='domcontentloaded')
+        assert_no_horizontal_overflow(page, 'academy mobile overview')
+        page.screenshot(path=str(OUT / 'review-academy-mobile.png'), full_page=True)
+        checks.append('Academy manifest for 18 modules/206 lessons, lazy-loaded lesson route, separated assessment CTA, and sequence lock')
+
+        # Key chart types must render labelled diagrams, not generic or missing visuals.
+        visual_ctx = browser.new_context(viewport={'width':1280,'height':900})
+        stub_supabase(visual_ctx)
+        visual = visual_ctx.new_page(); visual.on('pageerror', lambda error: page_errors.append(str(error)))
+        module_counts = [9,8,9,13,10,10,12,12,13,14,13,14,13,12,11,11,11,11]
+        all_ids = [f'm{module}-l{lesson}' for module, count in enumerate(module_counts, 1) for lesson in range(1, count + 1)]
+        visual_targets = [
+            ('m6-l3', 'candlestick chart schematic', ''), ('m7-l1', 'candlestick pattern schematic', ''),
+            ('m8-l2', 'support and resistance chart', ''), ('m8-l4', 'trend and pullback', ''),
+            ('m8-l6', 'supply and demand zones', 'SUPPLY'), ('m9-l9', 'swing structure', ''),
+            ('m10-l6', 'liquidity sweep', ''), ('m10-l8', 'fair value gap', ''),
+            ('m10-l9', 'order block', ''), ('m10-l14', 'take profit/exit and stop loss', 'STOP LOSS'),
+        ]
+        for lesson_id, accessible_label, chart_text in visual_targets:
+            visual.goto(BASE + '/academy.html', wait_until='domcontentloaded')
+            seeded_progress = {
+                'version': 2, 'completed': [item for item in all_ids if item != lesson_id], 'bookmarks': [],
+                'quizAttempts': 0, 'history': [], 'lastLessonId': lesson_id, 'updatedAt': '2026-11-26T00:00:00.000Z',
+            }
+            visual.evaluate("(progress) => localStorage.setItem('sifForexAcademyProgress.v2', JSON.stringify(progress))", seeded_progress)
+            visual.goto(BASE + f'/academy.html?lesson={lesson_id}', wait_until='domcontentloaded')
+            expect(visual.locator('.lesson-visual svg')).to_have_attribute('aria-label', re.compile(accessible_label, re.I))
+            if chart_text:
+                expect(visual.locator('.lesson-visual svg')).to_contain_text(chart_text)
+        checks.append('labelled candle, pattern, support/resistance, trend, supply/demand, structure, liquidity, FVG, order-block, and entry/TP/SL schematics')
+
+        # SIF Question: separate assessment hub, retries, answer explanations, pass gating, persistence, and mocked account sync.
+        question_visual_ctx = browser.new_context(viewport={'width':1440,'height':1000})
+        stub_supabase(question_visual_ctx)
+        question_visual = question_visual_ctx.new_page(); question_visual.on('pageerror', lambda error: page_errors.append(str(error)))
+        question_visual.goto(BASE + '/sif-question.html?lesson=m1-l1', wait_until='domcontentloaded')
+        expect(question_visual.locator('#sif-question-form')).to_be_visible(timeout=10000)
+        question_visual.screenshot(path=str(OUT / 'review-sif-question-desktop.png'), full_page=True)
+        question_visual_ctx.close()
+        question_ctx = browser.new_context(viewport={'width':1440,'height':1000})
+        stub_supabase(question_ctx); set_test_user(question_ctx, 'review-question-user')
+        question = question_ctx.new_page(); question.on('pageerror', lambda error: page_errors.append(str(error)))
+        question.goto(BASE + '/sif-question.html?lesson=m1-l1', wait_until='domcontentloaded')
+        expect(question.locator('#sif-question-form')).to_be_visible(timeout=10000)
+        expect(question.locator('.quiz-question')).to_have_count(5)
+        for fieldset in question.locator('.quiz-question').all():
+            fieldset.locator('input[value="1"]').check()
+        question.locator('.quiz-submit-btn').click()
+        expect(question.locator('.quiz-feedback')).to_contain_text('0/5')
+        expect(question.locator('.quiz-explanation.is-visible')).to_have_count(5)
+        stored = question.evaluate("JSON.parse(localStorage.getItem('sifForexAcademyProgress.v2'))")
+        assert stored['completed'] == [] and stored['quizAttempts'] == 1
+        question.locator('[data-retry-quiz]').click()
+        for fieldset in question.locator('.quiz-question').all():
+            fieldset.locator('input[value="0"]').check()
+        question.locator('.quiz-submit-btn').click()
+        expect(question.locator('.quiz-feedback')).to_contain_text('5/5')
+        expect(question.locator('[data-return-lesson]')).to_be_visible()
+        question.wait_for_function("window.__reviewUpsert && window.__reviewUpsert.table === 'academy_progress' && window.__reviewUpsert.payload.progress.completed.includes('m1-l1')", timeout=10000)
+        stored = question.evaluate("JSON.parse(localStorage.getItem('sifForexAcademyProgress.v2'))")
+        assert stored['completed'] == ['m1-l1'] and stored['quizAttempts'] == 2
+        question.locator('.sifq-back-link').click()
+        expect(question.locator('a[href="sif-question.html?lesson=m1-l2"]')).to_be_visible()
+        checks.append('SIF Question separate page, score failure/retry/pass, explanations, browser persistence, unlock, and review-only Supabase upsert mock')
+
+        # Legacy four-lesson progress migrates to the new versioned course state without deleting the old key.
+        migration_ctx = browser.new_context(viewport={'width':1440,'height':1000})
+        migration_ctx.add_init_script("localStorage.setItem('sifForexAcademyStartHere.v1', JSON.stringify({completed:['1','2']}));")
+        migration = migration_ctx.new_page(); migration.on('pageerror', lambda error: page_errors.append(str(error)))
+        migration.goto(BASE + '/sif-question.html', wait_until='domcontentloaded')
+        expect(migration.locator('a[href="sif-question.html?lesson=m1-l3"]')).to_be_visible()
+        migrated = migration.evaluate("JSON.parse(localStorage.getItem('sifForexAcademyProgress.v2'))")
+        assert migrated['completed'] == ['m1-l1', 'm1-l2']
+        assert migration.evaluate("localStorage.getItem('sifForexAcademyStartHere.v1')") is not None
+        checks.append('legacy four-lesson progress migrates to v2 while preserving its original storage key')
 
         # Guided calculator handoff: only prefill values; no simulator trade is opened.
         page.set_viewport_size({'width':1440,'height':1000})
@@ -169,7 +241,7 @@ def main():
         # Dashboard: mock authenticated Supabase profile, display real fields, and local-only progress.
         dash_ctx = browser.new_context(viewport={'width':1440,'height':1000})
         stub_supabase(dash_ctx); set_test_user(dash_ctx)
-        dash_ctx.add_init_script("localStorage.setItem('sifForexAcademyStartHere.v1', JSON.stringify({completed:['1','2']}));")
+        dash_ctx.add_init_script("localStorage.setItem('sifForexAcademyProgress.v2', JSON.stringify({version:2,completed:['m1-l1','m1-l2'],bookmarks:[],quizAttempts:1,history:[],lastLessonId:'m1-l3',updatedAt:new Date().toISOString()}));")
         dash = dash_ctx.new_page(); dash.on('pageerror', lambda error: page_errors.append(str(error)))
         dash.goto(BASE + '/dashboard.html', wait_until='domcontentloaded')
         expect(dash.locator('#dashboardContent')).to_be_visible(timeout=10000)
@@ -177,7 +249,8 @@ def main():
         expect(dash.locator('#memberUsername')).to_have_text('@review_user')
         expect(dash.locator('#memberEmail')).to_have_text('review@example.test')
         expect(dash.locator('#membership')).to_have_text('FREE MEMBER')
-        expect(dash.locator('#learningProgress')).to_contain_text('2 of 4')
+        expect(dash.locator('#learningProgress')).to_contain_text('2 of 206')
+        expect(dash.locator('a.card[href="sif-question.html"]')).to_be_visible()
         expect(dash.locator('.card.is-unavailable')).to_have_count(3)
         close_alert(dash); dash.locator('#logoutButton').click()
         dash.wait_for_url('**/login.html', timeout=10000)
@@ -185,7 +258,7 @@ def main():
         stub_supabase(guest_ctx)
         guest_dash = guest_ctx.new_page(); guest_dash.on('pageerror', lambda error: page_errors.append(str(error)))
         guest_dash.goto(BASE + '/dashboard.html', wait_until='domcontentloaded')
-        guest_dash.wait_for_url('**/login.html', timeout=10000)
+        guest_dash.wait_for_url(re.compile(r'.*/login\.html(?:\?.*)?$'), timeout=10000)
         checks.append('dashboard guest redirect and auth/profile render, local progress, unavailable cards (mocked session only)')
 
         # Auth UI wiring is exercised only through the local Supabase stub; no real credentials/accounts used.
@@ -212,7 +285,7 @@ def main():
         mobile_ctx = browser.new_context(viewport={'width':390,'height':844}, device_scale_factor=1)
         stub_supabase(mobile_ctx); set_test_user(mobile_ctx)
         mobile = mobile_ctx.new_page(); mobile.on('pageerror', lambda error: page_errors.append(str(error)))
-        pages = ['index.html','academy.html','calculator.html','charts.html','simulator.html','journal.html','login.html','register.html','dashboard.html']
+        pages = ['index.html','academy.html','sif-question.html','calculator.html','charts.html','simulator.html','journal.html','login.html','register.html','dashboard.html']
         for route in pages:
             mobile.goto(BASE + '/' + route, wait_until='domcontentloaded')
             if route == 'dashboard.html':
@@ -233,7 +306,18 @@ def main():
         mobile.goto(BASE + '/index.html', wait_until='domcontentloaded')
         expect(mobile.frame_locator('.dashboard-chart iframe').locator('body')).to_contain_text('Indicative data', timeout=20000)
         mobile.screenshot(path=str(OUT / 'review-homepage-mobile.png'), full_page=True)
-        checks.append('mobile viewport (390px) for all pages, navigation open/close, no horizontal overflow')
+        mobile.goto(BASE + '/sif-question.html?lesson=m1-l1', wait_until='domcontentloaded')
+        expect(mobile.locator('#sif-question-form')).to_be_visible(timeout=10000)
+        assert_no_horizontal_overflow(mobile, 'SIF Question mobile assessment')
+        question_mobile_ctx = browser.new_context(viewport={'width':390,'height':844}, device_scale_factor=1)
+        stub_supabase(question_mobile_ctx)
+        question_mobile = question_mobile_ctx.new_page(); question_mobile.on('pageerror', lambda error: page_errors.append(str(error)))
+        question_mobile.goto(BASE + '/sif-question.html?lesson=m1-l1', wait_until='domcontentloaded')
+        expect(question_mobile.locator('#sif-question-form')).to_be_visible(timeout=10000)
+        assert_no_horizontal_overflow(question_mobile, 'SIF Question mobile screenshot')
+        question_mobile.screenshot(path=str(OUT / 'review-sif-question-mobile.png'), full_page=True)
+        question_mobile_ctx.close()
+        checks.append('mobile viewport (390px) for all pages including separate assessment, menu open/close, no horizontal overflow')
 
         # No uncaught application JavaScript exceptions in exercised pages.
         if page_errors:
@@ -241,7 +325,7 @@ def main():
         print('PASS:')
         for check in checks: print(' - ' + check)
         print('All browser regression checks passed. Review Auth flows used a local mock; no live account or credential was used.')
-        print('Screenshots:', OUT / 'review-homepage-desktop.png', OUT / 'review-homepage-mobile.png')
+        print('Screenshots:', OUT / 'review-homepage-desktop.png', OUT / 'review-homepage-mobile.png', OUT / 'review-academy-desktop.png', OUT / 'review-academy-lesson.png', OUT / 'review-academy-mobile.png', OUT / 'review-sif-question-desktop.png', OUT / 'review-sif-question-mobile.png')
         browser.close()
 
 

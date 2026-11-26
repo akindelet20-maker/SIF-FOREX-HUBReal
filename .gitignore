@@ -1,0 +1,5 @@
+__pycache__/
+*.py[cod]
+/review-*-desktop.png
+/review-*-mobile.png
+/review-academy-lesson.png

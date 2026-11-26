@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Use SIF Question for separate Forex lesson assessments. Check your understanding, review answer explanations, and unlock lessons without creating an account.">
+<meta name="theme-color" content="#07111d">
+<title>SIF Question | SIF FOREX HUB</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="academy.css">
+<link rel="stylesheet" href="sif-question.css">
+<script src="site.js" defer></script>
+<script type="module" src="sif-question.js"></script>
+</head>
+<body class="page-academy sif-question-page">
+<header class="site-header">
+  <a href="index.html" class="brand" aria-label="SIF Forex Hub home">
+    <span class="brand-mark" aria-hidden="true">S</span>
+    <span class="brand-name">SIF <b>FOREX HUB</b><small>LEARN · TRADE · EARN</small></span>
+  </a>
+  <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="navigation" aria-expanded="false">☰</button>
+  <nav id="navigation" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="academy.html">Academy</a>
+    <a href="sif-question.html" aria-current="page">SIF Question</a>
+    <a href="charts.html">Charts</a>
+    <a href="simulator.html">Simulator</a>
+    <a href="calculator.html">Risk calculator</a>
+    <a href="journal.html">Journal</a>
+    <a href="login.html" class="nav-login">Sign in</a>
+    <a href="register.html" class="nav-register">Join free</a>
+  </nav>
+</header>
+<main class="academy-shell sifq-shell">
+  <div class="academy-topline">
+    <div class="academy-breadcrumb"><a href="index.html">SIF Forex Hub</a><span aria-hidden="true">/</span><a href="academy.html">Academy</a><span aria-hidden="true">/</span><span>SIF Question</span></div>
+    <div class="academy-access"><span class="access-dot" aria-hidden="true"></span> Assessments open to everyone</div>
+  </div>
+
+  <section class="sifq-hero" aria-labelledby="sifq-title">
+    <div class="sifq-hero-copy">
+      <span class="academy-eyebrow"><span class="eyebrow-mark" aria-hidden="true">✦</span> SEPARATE ASSESSMENT SPACE · SIF QUESTION</span>
+      <h1 id="sifq-title">Learn in the Academy.<br><em>Check it here.</em></h1>
+      <p>Lesson pages focus on learning. SIF Question is the separate assessment area: choose a lesson, answer five questions, and review clear explanations. Pass with 4 out of 5 to record completion and unlock the next lesson.</p>
+      <div class="sifq-hero-stats"><span>18 modules</span><span>206 lesson checks</span><span>No account required</span></div>
+    </div>
+    <div class="sifq-hero-card" aria-label="Assessment process">
+      <span class="academy-section-kicker">A STEADY LEARNING LOOP</span>
+      <ol><li><b>01</b><span>Study the lesson</span></li><li><b>02</b><span>Check your understanding</span></li><li><b>03</b><span>Review, then continue</span></li></ol>
+      <p>Questions support learning; they are not trade signals or financial advice.</p>
+    </div>
+  </section>
+
+  <div class="sifq-save-status" id="question-save-status" role="status" aria-live="polite">Progress saves on this device.</div>
+  <div class="sifq-notice" id="question-notice" role="status" aria-live="polite" hidden></div>
+
+  <section class="sifq-catalog" id="question-catalog" aria-labelledby="question-catalog-title">
+    <div class="sifq-section-heading">
+      <div><span class="academy-section-kicker">QUESTION LIBRARY</span><h2 id="question-catalog-title">Choose a lesson to assess</h2><p>Assessments unlock in the same order as the Academy. Start with the first lesson, then work forward at your own pace.</p></div>
+      <label class="sifq-search"><span class="sr-only">Search assessment topics</span><span aria-hidden="true">⌕</span><input id="question-search" type="search" placeholder="Search questions" autocomplete="off"></label>
+    </div>
+    <div class="sifq-legend" aria-label="Assessment status legend"><span><i class="legend-unlocked"></i> Ready</span><span><i class="legend-done">✓</i> Passed</span><span><i class="legend-locked">⌑</i> Locked until earlier checks are passed</span></div>
+    <div class="sifq-module-grid" id="question-module-grid" aria-live="polite"><div class="loading-modules">Preparing the question library…</div></div>
+    <p class="no-search-results" id="question-no-results" hidden>No assessment topics match that search. Try another word or clear the search.</p>
+  </section>
+
+  <section class="sifq-session" id="question-session" hidden aria-labelledby="question-session-title">
+    <a class="sifq-back-link" href="sif-question.html">← All SIF Questions</a>
+    <div id="question-session-content"></div>
+  </section>
+
+  <aside class="academy-disclaimer"><span class="disclaimer-icon" aria-hidden="true">!</span><p><strong>Education, not financial advice.</strong> A quiz score shows how you answered these learning questions only. It is not evidence of trading skill or future results. Forex and leveraged products can cause substantial losses; learn and practise before making financial decisions.</p></aside>
+</main>
+<footer class="academy-footer"><div class="footer-logo">SIF <span>FOREX HUB</span></div><p>Learn at your own pace. Build a process before risking capital.</p><p class="footer-disclaimer">Educational material only · No personalised financial advice · PRO and VIP features remain unavailable until a real paid feature is ready</p><div class="copyright">© 2026 SIF FOREX HUB · LEARN · TRADE · EARN</div></footer>
+</body>
+</html>
