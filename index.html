@@ -32,8 +32,8 @@
         <a href="#features">Tools</a>
         <a href="#pricing">Plans</a>
         <a href="#about">About</a>
-        <a href="login.html" class="nav-login">Login</a>
-        <a href="register.html" class="nav-register">Create Account</a>
+        <a href="login.html" class="nav-login" id="nav-login">Login</a>
+        <a href="register.html" class="nav-register" id="nav-register">Create Account</a>
     </nav>
 
 </header>
@@ -374,6 +374,42 @@
 
 </footer>
 
+
+<script type="module">
+(async () => {
+    try {
+        const { createClient } = await import("https://esm.sh/@supabase/supabase-js@2");
+        const supabase = createClient(
+            "https://kfaqrjhwbmkawnxkcrld.supabase.co",
+            "sb_publishable_-kdg7Pmr_mWPPfnv83VTMA_n2hhKXhk"
+        );
+        const loginButton = document.getElementById("nav-login");
+        const registerButton = document.getElementById("nav-register");
+
+        function updateHomepage(session) {
+            if (!loginButton || !registerButton) return;
+            if (session) {
+                loginButton.textContent = "Dashboard";
+                loginButton.href = "dashboard.html";
+                registerButton.hidden = true;
+            } else {
+                loginButton.textContent = "Login";
+                loginButton.href = "login.html";
+                registerButton.hidden = false;
+                registerButton.textContent = "Create Account";
+                registerButton.href = "register.html";
+            }
+        }
+
+        const { data, error } = await supabase.auth.getSession();
+        if (error) console.warn("Homepage session check unavailable:", error.message);
+        updateHomepage(data?.session || null);
+        supabase.auth.onAuthStateChange((_event, session) => updateHomepage(session));
+    } catch (error) {
+        console.warn("Homepage account navigation is unavailable:", error);
+    }
+})();
+</script>
 
 <script>
 

@@ -236,6 +236,10 @@ footer {
                 Username: <strong id="memberUsername">---</strong>
             </p>
 
+            <p style="margin-top:8px;">
+                Email: <strong id="memberEmail">---</strong>
+            </p>
+
             <span class="membership" id="membership">
                 FREE MEMBER
             </span>
@@ -351,6 +355,7 @@ async function loadDashboard() {
 
         document.getElementById('memberName').textContent = name;
         document.getElementById('memberUsername').textContent = '@' + username;
+        document.getElementById('memberEmail').textContent = user.email || 'Not available';
         document.getElementById('membership').textContent = membership
             ? String(membership).toUpperCase() + ' MEMBER'
             : 'MEMBERSHIP STATUS UNAVAILABLE';
@@ -384,6 +389,8 @@ document.getElementById('logoutButton')
         alert('Account service is unavailable. Please try again shortly.');
         return;
     }
+
+    if (!window.confirm('Are you sure you want to log out of SIF FOREX HUB?')) return;
 
     try {
         const { error } = await supabase.auth.signOut();

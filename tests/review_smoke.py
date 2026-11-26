@@ -10,6 +10,7 @@ SUPABASE_STUB = r'''export function createClient() {
   return {
     auth: {
       getUser: async () => ({ data: { user: window.__reviewUser || null }, error: null }),
+      getSession: async () => ({ data: { session: window.__reviewUser ? { user: window.__reviewUser } : null }, error: null }),
       onAuthStateChange: (callback) => { window.__reviewAuthCallback = callback; return { data: { subscription: { unsubscribe() {} } } }; },
       signInWithPassword: async (credentials) => { window.__reviewLoginEmail = credentials.email; return { data: { user: window.__reviewUser || { id: 'review-user' }, session: { access_token: 'review-only' } }, error: null }; },
       signUp: async (payload) => { window.__reviewSignup = payload; return { data: { user: null, session: null }, error: null }; },
@@ -37,7 +38,7 @@ def stub_supabase(context):
 
 
 def set_test_user(context, uid='review-user'):
-    context.add_init_script(f'''window.__reviewUser = {{ id: {uid!r}, user_metadata: {{ full_name: 'Review Trader', username: 'review_user' }} }};
+    context.add_init_script(f'''window.__reviewUser = {{ id: {uid!r}, email: 'review@example.test', user_metadata: {{ full_name: 'Review Trader', username: 'review_user' }} }};
 window.__reviewProfile = {{ full_name: 'Review Trader', username: 'review_user', membership: 'free' }};''')
 
 
@@ -64,6 +65,8 @@ def main():
         # Homepage navigation and TradingView chart selection.
         page.goto(BASE + '/index.html', wait_until='domcontentloaded')
         expect(page.locator('.hero h1')).to_be_visible()
+        expect(page.locator('#nav-login')).to_have_text('Login')
+        expect(page.locator('#nav-register')).to_be_visible()
         expect(page.locator('#pair-selector')).to_be_visible()
         expect(page.frame_locator('.dashboard-chart iframe').locator('body')).to_contain_text('Indicative data', timeout=20000)
         page.screenshot(path=str(OUT / 'review-homepage-desktop.png'), full_page=True)
@@ -172,9 +175,12 @@ def main():
         expect(dash.locator('#dashboardContent')).to_be_visible(timeout=10000)
         expect(dash.locator('#memberName')).to_have_text('Review Trader')
         expect(dash.locator('#memberUsername')).to_have_text('@review_user')
+        expect(dash.locator('#memberEmail')).to_have_text('review@example.test')
         expect(dash.locator('#membership')).to_have_text('FREE MEMBER')
         expect(dash.locator('#learningProgress')).to_contain_text('2 of 4')
         expect(dash.locator('.card.is-unavailable')).to_have_count(3)
+        close_alert(dash); dash.locator('#logoutButton').click()
+        dash.wait_for_url('**/login.html', timeout=10000)
         guest_ctx = browser.new_context(viewport={'width':1440,'height':1000})
         stub_supabase(guest_ctx)
         guest_dash = guest_ctx.new_page(); guest_dash.on('pageerror', lambda error: page_errors.append(str(error)))
@@ -211,6 +217,9 @@ def main():
             mobile.goto(BASE + '/' + route, wait_until='domcontentloaded')
             if route == 'dashboard.html':
                 expect(mobile.locator('#dashboardContent')).to_be_visible(timeout=10000)
+            if route == 'index.html':
+                expect(mobile.locator('#nav-login')).to_have_text('Dashboard')
+                expect(mobile.locator('#nav-register')).to_be_hidden()
             if route == 'journal.html':
                 expect(mobile.locator('#journalApp')).to_be_visible(timeout=10000)
             assert_no_horizontal_overflow(mobile, route)
