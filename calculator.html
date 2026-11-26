@@ -129,7 +129,7 @@ button {
     line-height: 1.7;
 }
 
-.guided-note, .guided-next-step {
+.guided-note {
     margin: 18px 0;
     padding: 15px;
     border: 1px solid #277c67;
@@ -138,10 +138,8 @@ button {
     color: #e4f3ec;
     line-height: 1.65;
 }
-.guided-note p, .guided-next-step p { margin: 6px 0 0; }
-.guided-note a, .guided-next-step a { display: inline-flex; align-items: center; min-height: 44px; margin-top: 10px; padding: 9px 12px; border-radius: 8px; background: #24e69a; color: #071426; font-weight: 800; text-decoration: none; }
-.guided-next-step { display: none; border-color: #34536a; background: #091a2c; }
-.guided-next-step a { width: 100%; justify-content: center; text-align: center; }
+.guided-note p { margin: 6px 0 0; }
+.guided-note a { display: inline-flex; align-items: center; min-height: 44px; margin-top: 10px; padding: 9px 12px; border-radius: 8px; background: #24e69a; color: #071426; font-weight: 800; text-decoration: none; }
 
 .error {
     display: none;
@@ -171,12 +169,11 @@ footer {
     <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="navigation" aria-expanded="false">☰</button>
     <nav id="navigation" aria-label="Main navigation">
         <a href="index.html">Home</a>
-        <a href="academy.html">Academy</a>
-        <a href="sif-question.html">SIF Question</a>
-        <a href="charts.html">Charts</a>
-        <a href="simulator.html">Simulator</a>
-        <a href="calculator.html">Risk calculator</a>
-        <a href="journal.html">Journal</a>
+        <a href="academy.html">Forex Academy</a>
+        <a href="journal.html">Trading Journal</a>
+        <a href="calculator.html" aria-current="page">Risk Calculator</a>
+        <a href="charts.html">Professional Charts</a>
+        <a href="charts.html#ai-coach">SIF AI Chart Coach</a>
         <a href="login.html" class="nav-login">Sign in</a>
         <a href="register.html" class="nav-register">Join free</a>
     </nav>
@@ -255,11 +252,6 @@ footer {
 
         </div>
 
-        <div class="guided-next-step" id="guided-next-step" aria-live="polite">
-            <strong>Next · virtual practice only</strong>
-            <p id="guided-result-note">This carries the calculator’s sample lot-size estimate to the simulator. It does not set a stop loss, select a direction, or open a practice trade.</p>
-            <a id="simulator-link" href="simulator.html">Continue to the simulator →</a>
-        </div>
 
     </form>
 
@@ -282,8 +274,6 @@ footer {
 const calculatorParams = new URLSearchParams(window.location.search);
 const isGuidedExercise = calculatorParams.get("guided") === "1";
 const guidedNote = document.getElementById("guided-note");
-const guidedNextStep = document.getElementById("guided-next-step");
-const simulatorLink = document.getElementById("simulator-link");
 
 if (isGuidedExercise) {
     guidedNote.hidden = false;
@@ -312,7 +302,6 @@ function calculateRisk() {
 
     error.style.display = "none";
     results.style.display = "none";
-    if (isGuidedExercise) guidedNextStep.style.display = "none";
 
     if (!Number.isFinite(balance) || !Number.isFinite(risk) ||
         !Number.isFinite(stopLoss) || !Number.isFinite(pipValue) ||
@@ -351,25 +340,10 @@ function calculateRisk() {
     document.getElementById("actualRisk").textContent = "$" + actualRisk.toFixed(2);
     results.style.display = "block";
 
-    if (isGuidedExercise) {
-        const simulatorUrl = new URL("simulator.html", window.location.href);
-        simulatorUrl.searchParams.set("guided", "1");
-        simulatorUrl.searchParams.set("pair", "EURUSD");
-        simulatorUrl.searchParams.set("price", "1.08500");
-        simulatorUrl.searchParams.set("pipSize", "0.0001");
-        simulatorUrl.searchParams.set("pipValue", String(pipValue));
-        simulatorUrl.searchParams.set("lots", lotSize.toFixed(3));
-        simulatorLink.href = simulatorUrl.toString();
-        document.getElementById("guided-result-note").textContent = `The fictional calculation produced ${lotSize.toFixed(3)} lots. Carrying it forward only fills simulator inputs; it does not set a stop loss, select a direction, or open a practice trade.`;
-        guidedNextStep.style.display = "block";
-    }
 }
 
 document.getElementById("riskForm").addEventListener("input", function() {
-    if (isGuidedExercise) {
-        guidedNextStep.style.display = "none";
-        document.getElementById("results").style.display = "none";
-    }
+    if (isGuidedExercise) document.getElementById("results").style.display = "none";
 });
 
 document.getElementById("riskForm").addEventListener("submit", function(event) {

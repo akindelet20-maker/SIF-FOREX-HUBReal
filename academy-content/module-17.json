@@ -934,12 +934,12 @@
       ],
       "explanation": [
         "Preparation can mean reading the contract, translating each rule into plain language, and checking whether examples match the actual account type. Make a checklist for targets, daily and maximum drawdown, consistency, time zone, costs, position restrictions, reset or refund wording, payout eligibility, verification, privacy, and complaint routes. Verify the firm and legal entity using original sources, and examine relevant jurisdictional information. A polished website, testimonials, or an advertised account size are not substitutes for these checks.",
-        "Some learners use a simulator or paper records to practice interpreting rules without placing live trades, but simulated performance does not guarantee live execution or a challenge result. Be honest about fees and the possibility of losing them; do not use money needed for essential expenses or borrow based on expected payouts. Forex margin, leverage, slippage, spreads, and gaps can create losses, and broker/provider costs vary. Conditions change, so recheck official terms. This is general education, not personal financial advice, and it does not tell you to deposit, trade, or choose a firm."
+        "Some learners use written records or a broker demo environment to practise interpreting rules without placing live trades, but demo performance does not guarantee live execution or a challenge result. Be honest about fees and the possibility of losing them; do not use money needed for essential expenses or borrow based on expected payouts. Forex margin, leverage, slippage, spreads, and gaps can create losses, and broker/provider costs vary. Conditions change, so recheck official terms. This is general education, not personal financial advice, and it does not tell you to deposit, trade, or choose a firm."
       ],
       "steps": [
         "Read the official contract, FAQ, pricing, and rule pages and save dated copies for reference.",
         "Make a plain-language checklist of thresholds, formulas, clock, costs, restrictions, and consequences.",
-        "Use a simulator or written examples to test understanding without assuming simulated results predict future performance.",
+        "Use written examples or a broker demo environment to test understanding without assuming demo results predict future performance.",
         "Check legal entity, privacy, dispute process, and relevant jurisdictional information; seek qualified advice where needed.",
         "Pause if a condition is ambiguous, unaffordable, or inconsistent across official documents; request clarification before deciding."
       ],
@@ -971,7 +971,7 @@
           "explanation": "Current official terms set out the provider's stated rules and conditions. Informal comments and marketing headlines may omit details or become outdated."
         },
         {
-          "question": "What can a simulator help a beginner practice?",
+          "question": "What can a demo environment or written example help a beginner practise?",
           "options": [
             "Interpreting rules and keeping records",
             "Guaranteeing live fills and results",
@@ -979,7 +979,7 @@
             "Eliminating all market risk"
           ],
           "correct": 0,
-          "explanation": "A simulator can help test comprehension and recordkeeping. It cannot guarantee live execution, future performance, or freedom from market risks."
+          "explanation": "A demo environment or written example can help test comprehension and recordkeeping. It cannot guarantee live execution, future performance, or freedom from market risks."
         },
         {
           "question": "What should happen if official documents appear inconsistent?",

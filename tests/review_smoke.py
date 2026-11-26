@@ -75,6 +75,7 @@ def main():
         expect(page.locator('#nav-register')).to_be_visible()
         expect(page.locator('#pair-selector')).to_be_visible()
         expect(page.frame_locator('.dashboard-chart iframe').locator('body')).to_contain_text('Indicative data', timeout=20000)
+        assert_no_horizontal_overflow(page, 'homepage desktop')
         page.screenshot(path=str(OUT / 'review-homepage-desktop.png'), full_page=True)
         page.locator('#pair-selector').select_option('FX:GBPUSD')
         expect(page.locator('#market-provider')).to_contain_text('FX:GBPUSD')
@@ -82,8 +83,15 @@ def main():
         expect(page.locator('.stat-card').nth(1)).to_contain_text('206 open guest lessons')
         expect(page.locator('.feature-card:has-text("Forex Academy")')).to_contain_text('SIF Question')
         expect(page.locator('.price-button.is-disabled')).to_have_count(2)
-        expect(page.locator('.feature-card:has-text("Strategy Tester") .coming-soon-label')).to_be_visible()
-        checks.append('homepage, rendered TradingView feed disclaimer, pair selector, and disabled membership states')
+        expect(page.locator('.price-card:has-text("SIF PRO")')).to_contain_text('₦20,000')
+        expect(page.locator('.price-card:has-text("SIF VIP")')).to_contain_text('₦50,000')
+        expect(page.locator('.feature-card:has-text("SIF AI Chart Coach")')).to_contain_text('Planned · not available yet')
+        feature_names = page.locator('.feature-card h3').all_text_contents()
+        assert feature_names == ['Forex Academy', 'Trading Journal', 'Risk Calculator', 'Professional Charts', 'SIF AI Chart Coach'], feature_names
+        assert not (OUT / 'simulator.html').exists()
+        for filename in ['index.html', 'academy.html', 'sif-question.html', 'calculator.html', 'charts.html', 'journal.html', 'login.html', 'register.html', 'dashboard.html']:
+            assert 'simulator.html' not in (OUT / filename).read_text().lower(), f'retired route remains in {filename}'
+        checks.append('homepage feature order, Coach planned state, disabled membership states, and retired route removal')
 
         # Academy: complete curriculum manifest, lazy-loaded lesson, separate assessment link, and locked progression.
         page.goto(BASE + '/academy.html', wait_until='domcontentloaded')
@@ -180,42 +188,16 @@ def main():
         assert migration.evaluate("localStorage.getItem('sifForexAcademyStartHere.v1')") is not None
         checks.append('legacy four-lesson progress migrates to v2 while preserving its original storage key')
 
-        # Guided calculator handoff: only prefill values; no simulator trade is opened.
+        # Academy guided exercise still prefills and calculates without an obsolete handoff.
         page.set_viewport_size({'width':1440,'height':1000})
         page.goto(BASE + '/calculator.html?guided=1&balance=10000&risk=1&stopLoss=20&pipValue=10', wait_until='domcontentloaded')
         expect(page.locator('#guided-note')).to_be_visible()
         expect(page.locator('#balance')).to_have_value('10000')
+        expect(page.locator('#simulator-link')).to_have_count(0)
         page.locator('#riskForm button[type="submit"]').click()
         expect(page.locator('#results')).to_be_visible()
         expect(page.locator('#lotSize')).to_contain_text('0.500')
-        page.locator('#simulator-link').click()
-        page.wait_for_url('**/simulator.html?guided=1*')
-        expect(page.locator('#guidedExampleNotice')).to_be_visible()
-        expect(page.locator('#direction')).to_have_value('')
-        expect(page.locator('#openPositions tr')).to_have_count(1)
-        expect(page.locator('#openPositions .empty')).to_be_visible()
-        checks.append('calculator estimate and guided simulator prefill without auto-trading')
-
-        # Simulator lifecycle in a fresh test context: open, mark-to-market, close, P/L, reset.
-        sim_ctx = browser.new_context(viewport={'width':1440,'height':1000})
-        sim = sim_ctx.new_page()
-        sim.on('pageerror', lambda error: page_errors.append(str(error)))
-        sim.goto(BASE + '/simulator.html', wait_until='domcontentloaded')
-        sim.locator('#marketPrice').fill('1.085')
-        close_alert(sim); sim.locator('.update').click()
-        sim.locator('#lots').fill('0.10')
-        close_alert(sim); sim.locator('.buy').click()
-        expect(sim.locator('#openPositions tr')).to_have_count(1)
-        sim.locator('#marketPrice').fill('1.095')
-        close_alert(sim); sim.locator('.update').click()
-        sim.locator('#openPositions .close').click()
-        expect(sim.locator('#history tr')).to_have_count(1)
-        expect(sim.locator('#balance')).to_have_text('$10100.00')
-        expect(sim.locator('#totalTrades')).to_have_text('1')
-        close_alert(sim); sim.locator('.reset').click()
-        expect(sim.locator('#balance')).to_have_text('$10000.00')
-        expect(sim.locator('#history .empty')).to_be_visible()
-        checks.append('simulator manual price, virtual BUY, P/L, close, history, reset')
+        checks.append('guided Academy calculator inputs and risk estimate remain functional')
 
         # Signed-out journal stays gated; signed-in journal saves and deletes locally by user ID.
         page.goto(BASE + '/journal.html', wait_until='domcontentloaded')
@@ -250,10 +232,14 @@ def main():
         expect(dash.locator('#memberName')).to_have_text('Review Trader')
         expect(dash.locator('#memberUsername')).to_have_text('@review_user')
         expect(dash.locator('#memberEmail')).to_have_text('review@example.test')
+        assert_no_horizontal_overflow(dash, 'dashboard desktop')
         expect(dash.locator('#membership')).to_have_text('FREE MEMBER')
         expect(dash.locator('#learningProgress')).to_contain_text('2 of 206')
-        expect(dash.locator('a.card[href="sif-question.html"]')).to_be_visible()
-        expect(dash.locator('.card.is-unavailable')).to_have_count(3)
+        dashboard_names = dash.locator('.grid > * h3').all_text_contents()
+        assert dashboard_names == ['Forex Academy', 'Trading Journal', 'Risk Calculator', 'Professional Charts', 'SIF AI Chart Coach'], dashboard_names
+        expect(dash.locator('.grid > *:first-child')).to_contain_text('SIF Question is the Academy’s separate assessment section')
+        expect(dash.locator('.card.is-unavailable')).to_have_count(1)
+        expect(dash.locator('.card.is-unavailable')).to_contain_text('Planned · not available yet')
         close_alert(dash); dash.locator('#logoutButton').click()
         dash.wait_for_url('**/login.html', timeout=10000)
         guest_ctx = browser.new_context(viewport={'width':1440,'height':1000})
@@ -287,7 +273,7 @@ def main():
         mobile_ctx = browser.new_context(viewport={'width':390,'height':844}, device_scale_factor=1)
         stub_supabase(mobile_ctx); set_test_user(mobile_ctx)
         mobile = mobile_ctx.new_page(); mobile.on('pageerror', lambda error: page_errors.append(str(error)))
-        pages = ['index.html','academy.html','sif-question.html','calculator.html','charts.html','simulator.html','journal.html','login.html','register.html','dashboard.html']
+        pages = ['index.html','academy.html','sif-question.html','calculator.html','charts.html','journal.html','login.html','register.html','dashboard.html']
         for route in pages:
             mobile.goto(BASE + '/' + route, wait_until='domcontentloaded')
             if route == 'dashboard.html':

@@ -1,6 +1,6 @@
 # SIF FOREX HUB
 
-A static forex learning and practice site. The Academy, the separate SIF Question assessment section, charts, risk calculator, and simulator open directly without account creation. Sign-in is required for the personal journal and dashboard. Guest Academy progress saves in browser storage; signed-in learners can sync progress to their account.
+A static Forex learning site with five primary features in order: Forex Academy, Trading Journal, Risk Calculator, Professional Charts, and SIF AI Chart Coach (planned; not available yet). SIF Question remains the Academy’s separate assessment section. Academy lessons, assessments, charts, and the Risk Calculator open without account creation; sign-in is required for the personal journal and dashboard. Guest Academy progress saves in browser storage; signed-in learners can sync progress to their account.
 
 ## Preview locally
 
@@ -18,7 +18,6 @@ The dashboard uses Supabase Auth and reads `public.profiles`. Registration write
 
 The journal requires a Supabase-verified signed-in session. New entries are stored only in this browser under a key scoped to the authenticated user ID; they are not synced to a server or encrypted. Anyone with access to this browser profile or its storage can inspect them. The earlier unscoped journal key is left untouched and is not automatically assigned to an account. A deliberate, owner-approved migration would be needed to import that older data safely.
 
-The simulator is a guest practice tool and stores fictional practice state in this browser profile. It is not synced to an account or connected to a broker. Avoid real or sensitive information, especially on a shared device. Neither tool guarantees profits or prevents losses.
 
 ## Supabase setup and safety
 
