@@ -3,9 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Advanced Charts | SIF FOREX HUB</title>
-
+<title>Market Charts &amp; AI Chart Coach | SIF FOREX HUB</title>
+<meta name="description" content="Explore public forex charts and upload a chart for an educational AI explanation of market structure, liquidity, BOS/CHoCH and Fair Value Gaps.">
 <style>
 * {
     margin: 0;
@@ -13,40 +12,24 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
-
 body {
     background: #071426;
     color: white;
 }
-
-header {
-    background: #10243a;
-    padding: 18px;
-    border-bottom: 1px solid #23445c;
-}
-
-header a {
-    color: #24e69a;
-    text-decoration: none;
-}
-
 .container {
     max-width: 1200px;
     margin: auto;
     padding: 20px;
 }
-
 h1 {
     color: #24e69a;
     margin-bottom: 10px;
 }
-
 .subtitle {
     color: #aabaca;
     margin-bottom: 20px;
     line-height: 1.6;
 }
-
 .chart-box {
     background: #10243a;
     border: 1px solid #23445c;
@@ -54,90 +37,366 @@ h1 {
     padding: 10px;
     overflow: hidden;
 }
-
 .tradingview-widget-container {
     width: 100%;
     height: 600px;
 }
-
 .tradingview-widget-container iframe {
     width: 100% !important;
     height: 100% !important;
 }
-
 .tools {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
     margin-top: 20px;
 }
-
 .tool {
     background: #10243a;
     padding: 17px;
     border: 1px solid #23445c;
     border-radius: 10px;
 }
-
 .tool h3 {
     color: #24e69a;
     margin-bottom: 8px;
     font-size: 15px;
 }
-
 .tool p {
     color: #aabaca;
     font-size: 12px;
     line-height: 1.5;
 }
-
 .coach {
-    margin-top: 25px;
-    padding: 22px;
+    margin-top: 28px;
+    padding: clamp(18px, 3vw, 30px);
     background: linear-gradient(120deg, #123d42, #173b60);
-    border-radius: 12px;
+    border: 1px solid #28606a;
+    border-radius: 16px;
 }
-
+.coach-kicker {
+    color: #91f1c9;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    margin-bottom: 8px;
+}
 .coach h2 {
     color: #24e69a;
     margin-bottom: 10px;
+    font-size: clamp(23px, 4vw, 32px);
 }
-
-.coach p {
+.coach-intro,
+.coach-disclosure {
+    color: #d5e1eb;
+    line-height: 1.65;
+    font-size: 14px;
+}
+.coach-intro {
+    max-width: 780px;
+    margin-bottom: 18px;
+}
+.coach-disclosure {
+    margin-top: 18px;
+    padding: 12px 14px;
+    background: rgba(3, 15, 28, .48);
+    border-left: 3px solid #e6be72;
+    border-radius: 7px;
+    font-size: 12px;
+}
+.coach-form {
+    display: grid;
+    gap: 16px;
+    padding: 18px;
+    background: rgba(4, 18, 31, .55);
+    border: 1px solid #385b6f;
+    border-radius: 12px;
+}
+.coach-fields {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(170px, .8fr) minmax(160px, .7fr);
+    gap: 14px;
+}
+.coach-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+.coach-field label {
+    color: #edf7ff;
+    font-size: 13px;
+    font-weight: 700;
+}
+.coach-field input,
+.coach-field select {
+    width: 100%;
+    min-height: 44px;
+    border: 1px solid #547084;
+    border-radius: 8px;
+    padding: 10px 11px;
+    background: #0b1c2d;
+    color: #f5f8fc;
+    font-size: 14px;
+}
+.coach-field input[type="file"] {
+    padding: 8px;
+}
+.coach-field input:focus-visible,
+.coach-field select:focus-visible,
+.coach-button:focus-visible {
+    outline: 3px solid #24e69a;
+    outline-offset: 2px;
+}
+.field-help {
+    color: #aabaca;
+    line-height: 1.45;
+    font-size: 11px;
+}
+.coach-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+.coach-button {
+    border: 1px solid transparent;
+    border-radius: 8px;
+    min-height: 44px;
+    padding: 11px 17px;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+}
+.coach-button-primary {
+    background: #24e69a;
+    color: #071426;
+}
+.coach-button-primary:disabled {
+    background: #5b806f;
+    color: #d3ded8;
+    cursor: not-allowed;
+}
+.coach-button-secondary {
+    background: transparent;
+    border-color: #647d91;
+    color: #edf7ff;
+}
+.coach-status {
+    min-height: 22px;
+    color: #c2d3df;
+    font-size: 13px;
+    line-height: 1.5;
+}
+.coach-status.is-loading::before {
+    content: "";
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    margin: 0 8px 0 1px;
+    border: 2px solid #8ba3b4;
+    border-top-color: #24e69a;
+    border-radius: 50%;
+    vertical-align: -2px;
+    animation: coach-spin .8s linear infinite;
+}
+@keyframes coach-spin { to { transform: rotate(360deg); } }
+.coach-error {
+    color: #ffd3d3;
+    background: #512b36;
+    border: 1px solid #a95461;
+    border-radius: 8px;
+    padding: 12px;
+    line-height: 1.5;
+}
+.preview-section,
+.analysis-results {
+    margin-top: 20px;
+}
+.preview-section h3,
+.analysis-results h3 {
+    color: #edf7ff;
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+.chart-preview {
+    position: relative;
+    width: min(100%, 980px);
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid #476579;
+    border-radius: 10px;
+    background: #06111e;
+}
+.chart-preview img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.annotation-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+.annotation-marker {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    transform: translate(-50%, -50%);
+    border: 2px solid #071426;
+    border-radius: 50%;
+    background: #24e69a;
+    color: #071426;
+    box-shadow: 0 2px 9px #000b;
+    font-size: 12px;
+    font-weight: 900;
+}
+.annotation-marker.annotation-liquidity { background: #6ec8ff; }
+.annotation-marker.annotation-bos,
+.annotation-marker.annotation-choch { background: #ffc96b; }
+.annotation-marker.annotation-fvg { background: #d8a4ff; }
+.annotation-caption {
+    color: #b7c9d6;
+    margin: 8px 0 0;
+    font-size: 11px;
+    line-height: 1.5;
+}
+.analysis-summary {
+    padding: 16px;
+    border: 1px solid #377366;
+    border-radius: 10px;
+    background: rgba(7, 28, 37, .75);
+}
+.analysis-summary p,
+.insight-card p,
+.scenario-card p {
     color: #d5e1eb;
     line-height: 1.6;
     font-size: 13px;
 }
-
+.analysis-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+.analysis-tag {
+    display: inline-flex;
+    align-items: center;
+    min-height: 26px;
+    padding: 4px 9px;
+    border: 1px solid #486a7e;
+    border-radius: 99px;
+    background: #10243a;
+    color: #eaf4fc;
+    font-size: 11px;
+    font-weight: 700;
+}
+.analysis-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 12px;
+}
+.insight-card,
+.scenario-card {
+    padding: 15px;
+    background: rgba(7, 22, 37, .8);
+    border: 1px solid #385b6f;
+    border-radius: 10px;
+    min-width: 0;
+}
+.insight-card h4,
+.scenario-card h4 {
+    color: #91f1c9;
+    margin-bottom: 7px;
+    font-size: 14px;
+}
+.insight-card p + p,
+.scenario-card p + p {
+    margin-top: 7px;
+}
+.insight-label {
+    color: #aabaca !important;
+    font-size: 11px !important;
+}
+.scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 14px;
+}
+.scenario-card-bullish { border-top: 3px solid #24e69a; }
+.scenario-card-bearish { border-top: 3px solid #ff8b8b; }
+.annotation-list,
+.caveat-list {
+    padding-left: 21px;
+    color: #d5e1eb;
+    font-size: 13px;
+    line-height: 1.6;
+}
+.annotation-list li,
+.caveat-list li { margin: 7px 0; }
+.annotation-list strong { color: #91f1c9; }
+.caveat-box {
+    margin-top: 14px;
+    padding: 13px 15px;
+    background: rgba(5, 17, 30, .75);
+    border: 1px solid #536579;
+    border-radius: 10px;
+}
+.caveat-box h4 {
+    color: #f0d29a;
+    margin-bottom: 6px;
+    font-size: 13px;
+}
+.coach-fine-print {
+    color: #aabaca;
+    margin-top: 14px;
+    font-size: 11px;
+    line-height: 1.55;
+}
+.market-data-note {
+    margin-top: 20px;
+    color: #aabaca;
+    font-size: 12px;
+    line-height: 1.6;
+}
 footer {
     text-align: center;
     color: #71869a;
     padding: 25px;
     font-size: 12px;
 }
-
-@media(max-width:700px) {
-    .tradingview-widget-container {
-        height: 480px;
-    }
-
-    .tools {
-        grid-template-columns: repeat(2, 1fr);
-    }
+@media(max-width:760px) {
+    .tradingview-widget-container { height: 480px; }
+    .tools { grid-template-columns: repeat(2, 1fr); }
+    .coach-fields { grid-template-columns: 1fr 1fr; }
+    .coach-field:first-child { grid-column: 1 / -1; }
 }
-
-@media(max-width:400px) {
-    .tools {
-        grid-template-columns: 1fr;
-    }
+@media(max-width:540px) {
+    .container { padding: 14px; }
+    .tools,
+    .analysis-grid,
+    .scenario-grid,
+    .coach-fields { grid-template-columns: 1fr; }
+    .coach-field:first-child { grid-column: auto; }
+    .coach-form { padding: 13px; }
+    .coach-actions { align-items: stretch; }
+    .coach-actions .coach-button { width: 100%; }
+    .tradingview-widget-container { height: 430px; }
+}
+@media(prefers-reduced-motion: reduce) {
+    .coach-status.is-loading::before { animation: none; }
 }
 </style>
 <link rel="stylesheet" href="style.css">
 <script src="site.js" defer></script>
+<script src="chart-coach.js" defer></script>
 </head>
-
 <body class="page-charts">
-
 <header class="site-header">
     <a href="index.html" class="brand" aria-label="SIF Forex Hub home">
         <span class="brand-mark" aria-hidden="true">S</span>
@@ -155,27 +414,17 @@ footer {
         <a href="register.html" class="nav-register">Join free</a>
     </nav>
 </header>
-
-<div class="container">
-
+<main class="container">
     <h1>Market charts</h1>
-
     <p class="subtitle">
-        Explore financial markets using interactive charts
-        and technical analysis. This public chart view does not
+        Explore financial markets using interactive charts and technical analysis. This public chart view does not
         require a SIF account; TradingView services need an internet connection.
     </p>
 
     <div class="chart-box">
-
         <div class="tradingview-widget-container">
-
             <div class="tradingview-widget-container__widget"></div>
-
-            <script
-                type="text/javascript"
-                src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js"
-                async>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
             {
                 "autosize": true,
                 "symbol": "FX:EURUSD",
@@ -189,75 +438,142 @@ footer {
                 "support_host": "https://www.tradingview.com"
             }
             </script>
-
         </div>
-
     </div>
-
     <p class="chart-fallback">If the chart does not appear, check your connection or <a href="https://www.tradingview.com/markets/currencies/">open TradingView’s currency markets</a>.</p>
 
     <h2 style="margin-top:25px;">Chart Features</h2>
-
     <div class="tools">
-
-        <div class="tool">
-            <h3>Candlesticks</h3>
-            <p>Study price movements through candlestick charts.</p>
-        </div>
-
-        <div class="tool">
-            <h3>Timeframes</h3>
-            <p>Explore different trading timeframes.</p>
-        </div>
-
-        <div class="tool">
-            <h3>Indicators</h3>
-            <p>Explore technical indicators supported by the chart.</p>
-        </div>
-
-        <div class="tool">
-            <h3>Drawing tools</h3>
-            <p>Use chart drawing tools where supported.</p>
-        </div>
-
-        <div class="tool">
-            <h3>Forex markets</h3>
-            <p>Explore available forex instruments.</p>
-        </div>
-
-        <div class="tool">
-            <h3>Market analysis</h3>
-            <p>Study trends and important price levels.</p>
-        </div>
-
+        <div class="tool"><h3>Candlesticks</h3><p>Study price movements through candlestick charts.</p></div>
+        <div class="tool"><h3>Timeframes</h3><p>Explore different trading timeframes.</p></div>
+        <div class="tool"><h3>Indicators</h3><p>Explore technical indicators supported by the chart.</p></div>
+        <div class="tool"><h3>Drawing tools</h3><p>Use chart drawing tools where supported.</p></div>
+        <div class="tool"><h3>Forex markets</h3><p>Explore available forex instruments.</p></div>
+        <div class="tool"><h3>Market analysis</h3><p>Study trends and important price levels.</p></div>
     </div>
 
-    <section class="coach" id="ai-coach">
+    <section class="coach" id="ai-coach" aria-labelledby="coach-title">
+        <p class="coach-kicker">PUBLIC TOOL · NO ACCOUNT REQUIRED</p>
+        <h2 id="coach-title">SIF AI Chart Coach</h2>
+        <p class="coach-intro">Upload a chart screenshot and choose its pair and timeframe. The Coach will explain visible market structure, liquidity, BOS/CHoCH and Fair Value Gaps, then outline conditional bullish and bearish study scenarios. It will only mark areas it can place on the screenshot with reasonable visual confidence.</p>
 
-        <h2>SIF AI Chart Coach · not available yet</h2>
+        <form class="coach-form" id="coach-form" novalidate>
+            <div class="coach-fields">
+                <div class="coach-field">
+                    <label for="chart-file">Chart image</label>
+                    <input id="chart-file" name="chart" type="file" accept="image/png,image/jpeg,image/webp" aria-describedby="image-help" required>
+                    <span class="field-help" id="image-help">PNG, JPG or WebP, up to 12 MB. A clear screenshot with visible candles and price scale works best.</span>
+                </div>
+                <div class="coach-field">
+                    <label for="currency-pair">Currency pair</label>
+                    <select id="currency-pair" name="pair" required>
+                        <option value="EUR/USD">EUR/USD</option>
+                        <option value="GBP/USD">GBP/USD</option>
+                        <option value="USD/JPY">USD/JPY</option>
+                        <option value="USD/CHF">USD/CHF</option>
+                        <option value="AUD/USD">AUD/USD</option>
+                        <option value="USD/CAD">USD/CAD</option>
+                        <option value="NZD/USD">NZD/USD</option>
+                        <option value="EUR/GBP">EUR/GBP</option>
+                        <option value="EUR/JPY">EUR/JPY</option>
+                        <option value="GBP/JPY">GBP/JPY</option>
+                        <option value="EUR/AUD">EUR/AUD</option>
+                        <option value="GBP/CHF">GBP/CHF</option>
+                    </select>
+                </div>
+                <div class="coach-field">
+                    <label for="chart-timeframe">Timeframe</label>
+                    <select id="chart-timeframe" name="timeframe" required>
+                        <option value="1m">1 minute</option>
+                        <option value="5m">5 minutes</option>
+                        <option value="15m">15 minutes</option>
+                        <option value="30m">30 minutes</option>
+                        <option value="1h" selected>1 hour</option>
+                        <option value="4h">4 hours</option>
+                        <option value="1d">1 day</option>
+                        <option value="1w">1 week</option>
+                    </select>
+                </div>
+            </div>
+            <div class="coach-actions">
+                <button class="coach-button coach-button-primary" id="analyze-button" type="submit" disabled>Analyze chart</button>
+                <button class="coach-button coach-button-secondary" id="clear-chart" type="button">Clear chart</button>
+            </div>
+            <p class="coach-status" id="coach-status" role="status" aria-live="polite">Choose a chart image to begin.</p>
+            <p class="coach-error" id="coach-error" role="alert" hidden></p>
+        </form>
 
-        <p>
-            This learning feature is not available yet. This page does not accept chart uploads or provide AI chart analysis.
-        </p>
+        <section class="preview-section" id="preview-section" aria-labelledby="preview-title" hidden>
+            <h3 id="preview-title">Chart preview</h3>
+            <div class="chart-preview">
+                <img id="chart-preview" alt="Uploaded chart preview">
+                <div class="annotation-layer" id="annotation-layer" aria-hidden="true"></div>
+            </div>
+            <p class="annotation-caption" id="annotation-caption">Markers, when present, are approximate AI-estimated teaching annotations—not measured price levels.</p>
+        </section>
 
+        <section class="analysis-results" id="analysis-results" aria-labelledby="results-title" hidden>
+            <h3 id="results-title">Educational chart reading</h3>
+            <div class="analysis-summary">
+                <div class="analysis-tags">
+                    <span class="analysis-tag" id="bias-tag"></span>
+                    <span class="analysis-tag" id="confidence-tag"></span>
+                    <span class="analysis-tag" id="pair-timeframe-tag"></span>
+                </div>
+                <p id="analysis-summary-text"></p>
+            </div>
+            <div class="analysis-grid">
+                <article class="insight-card">
+                    <h4>Market structure</h4>
+                    <p id="structure-reading"></p><p id="structure-evidence"></p><p class="insight-label" id="structure-confidence"></p>
+                </article>
+                <article class="insight-card">
+                    <h4>Liquidity</h4>
+                    <p id="liquidity-reading"></p><p id="liquidity-evidence"></p><p class="insight-label" id="liquidity-confidence"></p>
+                </article>
+                <article class="insight-card">
+                    <h4>Break of Structure (BOS)</h4>
+                    <p class="insight-label" id="bos-status"></p><p id="bos-explanation"></p>
+                </article>
+                <article class="insight-card">
+                    <h4>Change of Character (CHoCH)</h4>
+                    <p class="insight-label" id="choch-status"></p><p id="choch-explanation"></p>
+                </article>
+                <article class="insight-card">
+                    <h4>Fair Value Gaps (FVG)</h4>
+                    <p class="insight-label" id="fvg-status"></p><p id="fvg-explanation"></p>
+                </article>
+                <article class="insight-card">
+                    <h4>How to read these concepts</h4>
+                    <p>BOS describes a break of a prior swing in the current structure; CHoCH describes a possible shift in that structure. A Fair Value Gap is a three-candle imbalance concept. These labels are interpretations, not objective facts or forecasts.</p>
+                </article>
+            </div>
+            <div class="scenario-grid">
+                <article class="scenario-card scenario-card-bullish">
+                    <h4>Bullish study scenario</h4>
+                    <p id="bullish-watch"></p><p class="insight-label" id="bullish-weaken"></p>
+                </article>
+                <article class="scenario-card scenario-card-bearish">
+                    <h4>Bearish study scenario</h4>
+                    <p id="bearish-watch"></p><p class="insight-label" id="bearish-weaken"></p>
+                </article>
+            </div>
+            <div class="caveat-box">
+                <h4>What the image cannot confirm</h4>
+                <ul class="caveat-list" id="caveat-list"></ul>
+            </div>
+            <div class="caveat-box">
+                <h4>AI-estimated annotations</h4>
+                <ol class="annotation-list" id="annotation-list"></ol>
+            </div>
+            <p class="coach-fine-print">This is educational image interpretation, not financial advice or a trading signal. No live market data is used; the result is based only on the uploaded image and your selected pair/timeframe. Verify every interpretation independently. Forex and leveraged trading involve substantial risk.</p>
+        </section>
+
+        <p class="coach-disclosure"><strong>Image privacy:</strong> Your chart image is sent to OpenAI for analysis through a server-side API. SIF Forex Hub does not save the uploaded image. Avoid screenshots containing account numbers, balances, names, or other private information. Provider data-handling terms apply.</p>
     </section>
 
-    <div style="
-        margin-top:20px;
-        color:#aabaca;
-        font-size:12px;
-        line-height:1.6;
-    ">
-        Market data and chart services are provided by
-        TradingView. Data availability may vary by instrument
-        and provider.
-    </div>
-
-</div>
-
-<footer>
-    © 2026 SIF FOREX HUB V2.0
-</footer>
-
+    <p class="market-data-note">Market data and chart services are provided by TradingView. Data availability may vary by instrument and provider.</p>
+</main>
+<footer>© 2026 SIF FOREX HUB V2.0</footer>
 </body>
 </html>

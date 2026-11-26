@@ -1,10 +1,22 @@
 # SIF FOREX HUB
 
-A static forex learning and practice site. The Academy, charts, risk calculator, and simulator open directly without account creation. Sign-in is required for the personal journal and dashboard. Academy lessons and quizzes save progress only in this browser; progress is not synced to an account.
+A public forex-learning and practice site. The Academy, charts, AI Chart Coach, risk calculator, and simulator open directly without account creation. Sign-in is required only for the personal journal and dashboard. Academy lessons and quizzes save progress only in this browser; progress is not synced to an account.
 
 ## Preview locally
 
-From this folder, run `python3 -m http.server 8000` and open `http://localhost:8000/`. A local HTTP server is more reliable than opening individual files. Supabase auth and the TradingView chart need an internet connection and their external services.
+For the static pages, run `python3 -m http.server 8000` and open `http://localhost:8000/`. A local HTTP server is more reliable than opening individual files. Supabase auth and TradingView charts need an internet connection and their external services.
+
+The AI Chart Coach uses the Vercel Function in `api/chart-coach.js`; Python's static server does not run this endpoint. To exercise the endpoint locally, use `vercel dev` with `OPENAI_API_KEY` set in an uncommitted local `.env.local` file. Never commit the key. In Vercel, the key should be a sensitive server-side variable scoped to the intended review preview branch; do not set it for production until the owner approves the exact result.
+
+## AI Chart Coach
+
+The Coach is public and does not require an account. It accepts PNG, JPG, and WebP chart screenshots, with a selected currency pair and timeframe. The browser compresses the image and sends it to the same-origin serverless function. The function validates the request and image signature, checks the pair/timeframe, and calls OpenAI's vision API with structured output. The API key is read only by the function; it must never appear in browser code, source files, or client responses.
+
+SIF Forex Hub does not persist uploaded images or analysis responses. The image is sent to OpenAI for processing, and provider data-handling terms apply. The request sets `store: false`, but users should still avoid screenshots containing names, account identifiers, balances, or other private information.
+
+The Coach is educational image interpretation, not financial advice, a live-data feed, or a guaranteed trading signal. The model must explain uncertainty and use conditional bullish and bearish study scenarios. Its annotations are approximate visual estimates, not measured price levels. The API includes an in-memory per-instance rate cap; that is best-effort in serverless deployments, not a shared/global quota. Before enabling a paid key on a broad production endpoint, add a persistent rate limiter or equivalent abuse protection and set an explicit usage budget.
+
+Automated checks: `node --test tests/chart_coach_api.test.js`. Browser test: start the site on port 4173, then run `python3 tests/chart_coach_browser.py`; it uses a test-only stub response and never calls the live model.
 
 ## Account and data behavior
 
