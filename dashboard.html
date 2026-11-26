@@ -186,6 +186,7 @@ footer {
     }
 }
 </style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body class="page-dashboard">
@@ -317,11 +318,17 @@ async function loadDashboard() {
         }
 
         const { data: authData, error: authError } = await supabase.auth.getUser();
-        if (authError) throw authError;
-        if (!authData.user) {
-            window.location.href = 'login.html';
+        const sessionMissing = authError?.name === 'AuthSessionMissingError'
+            || authError?.code === 'session_not_found'
+            || authError?.status === 401;
+        if (sessionMissing || (!authError && !authData?.user)) {
+            const loginUrl = new URL('login.html', window.location.href);
+            loginUrl.searchParams.set('next', 'dashboard.html');
+            loginUrl.searchParams.set('reason', 'signed-out');
+            window.location.replace(loginUrl.href);
             return;
         }
+        if (authError) throw authError;
 
         const user = authData.user;
         let profileData = null;

@@ -119,6 +119,12 @@ button:disabled {
     color: #ffaaaa;
 }
 
+.info {
+    background: #172c40;
+    color: #d7e1e8;
+    border: 1px solid #34536a;
+}
+
 .links {
     text-align: center;
     margin-top: 22px;
@@ -228,6 +234,13 @@ function showMessage(text, type) {
     message.textContent = text;
     message.className = 'message ' + type;
     message.style.display = 'block';
+}
+
+if (new URLSearchParams(window.location.search).get('reason') === 'signed-out') {
+    showMessage(
+        'You’re signed out. Sign in to view your dashboard. Public lessons, charts and practice tools remain available without an account.',
+        'info'
+    );
 }
 
 form.addEventListener('submit', async function(event) {
