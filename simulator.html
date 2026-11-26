@@ -103,14 +103,28 @@ th{color:#20d69a}
  .balance{font-size:25px}
 }
 </style>
+<link rel="stylesheet" href="style.css">
+<script src="site.js" defer></script>
 </head>
 
-<body>
+<body class="page-simulator">
 
-<header>
- <h2>📈 SIF FOREX HUB</h2>
- <p>Guest practice simulator • Uses fictional funds only</p>
- <a href="index.html">← Home</a>
+<header class="site-header">
+    <a href="index.html" class="brand" aria-label="SIF Forex Hub home">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span class="brand-name">SIF <b>FOREX HUB</b><small>LEARN · TRADE · EARN</small></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="navigation" aria-expanded="false">☰</button>
+    <nav id="navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="academy.html">Academy</a>
+        <a href="charts.html">Charts</a>
+        <a href="simulator.html">Simulator</a>
+        <a href="calculator.html">Risk calculator</a>
+        <a href="journal.html">Journal</a>
+        <a href="login.html" class="nav-login">Sign in</a>
+        <a href="register.html" class="nav-register">Join free</a>
+    </nav>
 </header>
 
 <div class="container">
@@ -133,7 +147,7 @@ th{color:#20d69a}
  </div>
 
  <div class="card">
-  <h3>⚙️ Market Settings</h3>
+  <h3>Market settings</h3>
 
   <div class="grid">
    <div>
@@ -171,7 +185,7 @@ th{color:#20d69a}
  </div>
 
  <div class="card">
-  <h3>🚀 Open a Practice Trade</h3>
+  <h3>Open a practice trade</h3>
 
   <label for="direction">Trade Direction</label>
   <select id="direction">
@@ -194,7 +208,7 @@ th{color:#20d69a}
  </div>
 
  <div class="card">
-  <h3>📊 Open Positions</h3>
+  <h3>Open positions</h3>
 
   <div class="table-wrap">
    <table>
@@ -215,7 +229,7 @@ th{color:#20d69a}
  </div>
 
  <div class="card">
-  <h3>📚 Trade History</h3>
+  <h3>Trade history</h3>
 
   <div class="table-wrap">
    <table>
@@ -235,7 +249,7 @@ th{color:#20d69a}
  </div>
 
  <div class="card">
-  <h3>📈 Account Statistics</h3>
+  <h3>Account statistics</h3>
   <div class="grid">
    <div>
     <div class="small">Total Trades</div>

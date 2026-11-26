@@ -1,6 +1,6 @@
 # SIF FOREX HUB
 
-A static forex learning and practice site. The Academy, charts, risk calculator, and simulator open directly without account creation. Sign-in is required for the personal journal and dashboard. Academy lessons and quizzes do not save progress; that feature is not implemented.
+A static forex learning and practice site. The Academy, charts, risk calculator, and simulator open directly without account creation. Sign-in is required for the personal journal and dashboard. Academy lessons and quizzes save progress only in this browser; progress is not synced to an account.
 
 ## Preview locally
 

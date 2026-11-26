@@ -15,21 +15,22 @@
 
 </head>
 
-<body>
+<body class="page-home">
 
 <header class="header">
 
     <a href="index.html" class="logo">
         <span class="logo-icon">S</span>
-        <span>SIF <b>FOREX HUB</b></span>
+        <span>SIF <b>FOREX HUB</b><small>LEARN · TRADE · EARN</small></span>
     </a>
 
     <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="navigation" aria-expanded="false" onclick="toggleMenu()">☰</button>
 
     <nav id="navigation" aria-label="Main navigation">
         <a href="#home">Home</a>
-        <a href="#features">Features</a>
-        <a href="#pricing">Pricing</a>
+        <a href="academy.html">Academy</a>
+        <a href="#features">Tools</a>
+        <a href="#pricing">Plans</a>
         <a href="#about">About</a>
         <a href="login.html" class="nav-login">Login</a>
         <a href="register.html" class="nav-register">Create Account</a>
@@ -45,7 +46,7 @@
     <div class="hero-content">
 
         <div class="badge">
-            ✦ THE FUTURE OF SMART TRADING
+            LEARN · TRADE · EARN  /  FOREX EDUCATION & TOOLS
         </div>
 
         <h1>
@@ -85,7 +86,7 @@
                 <h3>Trading Dashboard</h3>
             </div>
 
-            <span class="live-indicator">● LIVE CHART</span>
+            <span class="market-source-label">TRADINGVIEW CHART</span>
         </div>
 
         <div class="market-card">
@@ -106,11 +107,11 @@
                 <span class="market-provider" id="market-provider" aria-live="polite">TradingView · FX:EURUSD · 1H</span>
             </div>
 
-            <div class="dashboard-chart" role="region" aria-label="Live EUR/USD chart from TradingView">
+            <div class="dashboard-chart" role="region" aria-label="EUR/USD chart from TradingView">
             </div>
 
             <p class="market-data-note">
-                Indicative forex data is real-time per <a href="https://www.tradingview.com/widget-docs/faq/data/" target="_blank" rel="noopener noreferrer">TradingView</a>; availability may vary. If the chart doesn't load, <a href="charts.html">open the full chart →</a>
+                Indicative forex data is provided by <a href="https://www.tradingview.com/widget-docs/faq/data/" target="_blank" rel="noopener noreferrer">TradingView</a>; price timing and availability may vary by market and feed. If the chart doesn't load, <a href="charts.html">open the full chart →</a>
             </p>
 
         </div>
@@ -119,15 +120,15 @@
         <div class="stats-grid">
 
             <div class="stat-card">
-                <small>Trading Tools</small>
-                <h3>15+</h3>
-                <span>Learning tools</span>
+                <small>Currency pairs</small>
+                <h3>07</h3>
+                <span>Selectable in the TradingView chart</span>
             </div>
 
             <div class="stat-card">
-                <small>AI Assistant</small>
-                <h3>01</h3>
-                <span>Chart Coach</span>
+                <small>Beginner path</small>
+                <h3>04</h3>
+                <span>Guest-accessible lessons</span>
             </div>
 
         </div>
@@ -153,56 +154,56 @@
     <div class="features-grid">
 
         <div class="feature-card">
-            <div class="feature-icon">📊</div>
+            <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16"/><path d="m7 15 3-4 3 2 5-7"/><path d="M17 6h1v1"/></svg></div>
             <h3>Professional Charts</h3>
             <p>Open the public TradingView chart view. No SIF account is required.</p>
             <a href="charts.html">Explore Charts →</a>
         </div>
 
         <div class="feature-card">
-            <div class="feature-icon">🤖</div>
+            <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18V6M4 18h16"/><path d="m7 14 3-4 3 2 4-5"/><path d="M17 5h2v2"/><path d="M8 4v2M7 5h2"/></svg></div>
             <h3>SIF AI Chart Coach</h3>
             <p>Planned only. Chart uploads and AI analysis are not available yet.</p>
             <a href="charts.html#ai-coach">See feature status →</a>
         </div>
 
         <div class="feature-card">
-            <div class="feature-icon">🎯</div>
+            <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 19V5M5 19h14"/><path d="m8 15 3-4 3 2 4-6"/><path d="M17 7h2v2"/></svg></div>
             <h3>Trading Simulator</h3>
             <p>Practise with fictional funds. No account is required; practice data stays in this browser.</p>
             <a href="simulator.html">Start Practising →</a>
         </div>
 
         <div class="feature-card">
-            <div class="feature-icon">📈</div>
+            <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 19V5M5 19h14"/><path d="m8 15 3-3 2 2 4-6"/><circle cx="17" cy="8" r="1"/></svg></div>
             <h3>Strategy Tester</h3>
             <p>Not available yet. This site does not currently test strategies against historical data.</p>
             <span class="coming-soon-label">Not available yet</span>
         </div>
 
         <div class="feature-card">
-            <div class="feature-icon">📓</div>
+            <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4.5A2.5 2.5 0 0 1 8.5 2H20v18H8.5A2.5 2.5 0 0 0 6 22z"/><path d="M6 4.5v15A2.5 2.5 0 0 1 8.5 17H20M10 7h6M10 11h6"/></svg></div>
             <h3>Trading Journal</h3>
             <p>Sign in required. Your practice journal is stored locally under your signed-in account.</p>
             <a href="journal.html">Open Journal →</a>
         </div>
 
         <div class="feature-card">
-            <div class="feature-icon">🧮</div>
+            <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2M8 18h8"/></svg></div>
             <h3>Risk Calculator</h3>
             <p>Use the in-browser estimate without an account. Estimates are not a guarantee of actual risk or results.</p>
             <a href="calculator.html">Calculate Risk →</a>
         </div>
 
         <div class="feature-card">
-            <div class="feature-icon">🎓</div>
+            <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 9 9-5 9 5-9 5z"/><path d="M7 12v5c3 2.5 7 2.5 10 0v-5M21 9v6"/></svg></div>
             <h3>Forex Academy</h3>
             <p>Start with four guided beginner lessons, quick checks and a short quiz. No account is required; progress stays on this device.</p>
             <a href="academy.html">Start Here →</a>
         </div>
 
         <div class="feature-card">
-            <div class="feature-icon">⏪</div>
+            <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7v5h5"/><path d="M5 12a7 7 0 1 0 2-5"/><path d="M12 8v4l3 2"/></svg></div>
             <h3>Market Replay</h3>
             <p>Not available yet. Historical market replay is not currently implemented.</p>
             <span class="coming-soon-label">Not available yet</span>
@@ -266,8 +267,8 @@
                 <li>✓ Guest practice simulator</li>
             </ul>
 
-            <a href="register.html" class="price-button">
-                Start Learning — No Account
+            <a href="academy.html" class="price-button">
+                Open the Free Academy
             </a>
 
         </div>
@@ -324,6 +325,20 @@
 
 </section>
 
+
+
+<section class="faq-section" aria-labelledby="faq-title">
+    <div class="section-heading"><span>COMMON QUESTIONS</span><h2 id="faq-title">A clearer way to get started</h2><p>Transparent access, feature availability, and learning-first expectations.</p></div>
+    <div class="faq-list">
+        <details><summary>Do I need an account to learn or practise?</summary><p>No. The Academy, charts, risk calculator, and virtual simulator are open directly to guests. Sign-in is only needed for personal account features such as the dashboard and journal.</p></details>
+        <details><summary>Are SIF PRO and SIF VIP available to buy?</summary><p>Not yet. The displayed amounts are proposed plan prices only. PRO and VIP remain unavailable, and this site does not collect subscription payments.</p></details>
+        <details><summary>Does the simulator use live prices or a broker?</summary><p>No. The simulator uses manually entered practice prices and fictional funds stored in this browser. It does not connect to a broker or place real trades.</p></details>
+        <details><summary>Is this platform financial advice or a signal service?</summary><p>No. Lessons and tools are educational only. Forex and leveraged trading involve substantial risk; no tool, lesson, or result guarantees an outcome.</p></details>
+    </div>
+</section>
+<section class="support-section" aria-labelledby="support-title">
+    <div class="support-panel"><span class="eyebrow">SUPPORT</span><h2 id="support-title">Need a hand?</h2><p>Support contact details are not configured on this site yet. Use the support channel shared directly by SIF FOREX HUB; a public contact method can be added once the owner confirms it.</p></div>
+</section>
 
 <section class="cta-section">
 
@@ -389,7 +404,7 @@ function renderHomepageChart() {
     const symbol = pairSelector.value;
     const pairName = pairSelector.options[pairSelector.selectedIndex].textContent.trim();
     marketProvider.textContent = `TradingView · ${symbol} · 1H`;
-    dashboardChart.setAttribute("aria-label", `Live ${pairName} chart from TradingView`);
+    dashboardChart.setAttribute("aria-label", `${pairName} chart from TradingView`);
 
     const widgetContainer = document.createElement("div");
     widgetContainer.className = "tradingview-widget-container";

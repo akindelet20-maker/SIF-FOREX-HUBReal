@@ -132,17 +132,33 @@ footer {
     }
 }
 </style>
+<link rel="stylesheet" href="style.css">
+<script src="site.js" defer></script>
 </head>
 
-<body>
+<body class="page-charts">
 
-<header>
-    <a href="index.html">← Home</a>
+<header class="site-header">
+    <a href="index.html" class="brand" aria-label="SIF Forex Hub home">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span class="brand-name">SIF <b>FOREX HUB</b><small>LEARN · TRADE · EARN</small></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="navigation" aria-expanded="false">☰</button>
+    <nav id="navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="academy.html">Academy</a>
+        <a href="charts.html">Charts</a>
+        <a href="simulator.html">Simulator</a>
+        <a href="calculator.html">Risk calculator</a>
+        <a href="journal.html">Journal</a>
+        <a href="login.html" class="nav-login">Sign in</a>
+        <a href="register.html" class="nav-register">Join free</a>
+    </nav>
 </header>
 
 <div class="container">
 
-    <h1>📊 SIF Advanced Charts</h1>
+    <h1>Market charts</h1>
 
     <p class="subtitle">
         Explore financial markets using interactive charts
@@ -185,32 +201,32 @@ footer {
     <div class="tools">
 
         <div class="tool">
-            <h3>📈 Candlesticks</h3>
+            <h3>Candlesticks</h3>
             <p>Study price movements through candlestick charts.</p>
         </div>
 
         <div class="tool">
-            <h3>⏱ Timeframes</h3>
+            <h3>Timeframes</h3>
             <p>Explore different trading timeframes.</p>
         </div>
 
         <div class="tool">
-            <h3>📐 Indicators</h3>
+            <h3>Indicators</h3>
             <p>Explore technical indicators supported by the chart.</p>
         </div>
 
         <div class="tool">
-            <h3>✏️ Drawing Tools</h3>
+            <h3>Drawing tools</h3>
             <p>Use chart drawing tools where supported.</p>
         </div>
 
         <div class="tool">
-            <h3>🌍 Forex Markets</h3>
+            <h3>Forex markets</h3>
             <p>Explore available forex instruments.</p>
         </div>
 
         <div class="tool">
-            <h3>🔍 Market Analysis</h3>
+            <h3>Market analysis</h3>
             <p>Study trends and important price levels.</p>
         </div>
 
@@ -218,7 +234,7 @@ footer {
 
     <section class="coach" id="ai-coach">
 
-        <h2>🤖 SIF AI Chart Coach — coming soon</h2>
+        <h2>SIF AI Chart Coach · not available yet</h2>
 
         <p>
             This learning feature is not available yet. This page does not accept chart uploads or provide AI chart analysis.

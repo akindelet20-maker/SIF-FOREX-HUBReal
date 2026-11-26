@@ -183,10 +183,26 @@ footer { padding: 20px; border-top: 1px solid #152c41; color: #8193a5; text-alig
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
+<link rel="stylesheet" href="style.css">
+<script src="site.js" defer></script>
 </head>
-<body>
+<body class="page-academy">
 <header class="site-header">
-    <a href="index.html">← SIF FOREX HUB home</a>
+    <a href="index.html" class="brand" aria-label="SIF Forex Hub home">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span class="brand-name">SIF <b>FOREX HUB</b><small>LEARN · TRADE · EARN</small></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="navigation" aria-expanded="false">☰</button>
+    <nav id="navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="academy.html">Academy</a>
+        <a href="charts.html">Charts</a>
+        <a href="simulator.html">Simulator</a>
+        <a href="calculator.html">Risk calculator</a>
+        <a href="journal.html">Journal</a>
+        <a href="login.html" class="nav-login">Sign in</a>
+        <a href="register.html" class="nav-register">Join free</a>
+    </nav>
 </header>
 <main class="container">
     <section class="hero" aria-labelledby="page-title">
@@ -313,6 +329,16 @@ footer { padding: 20px; border-top: 1px solid #152c41; color: #8193a5; text-alig
                 </div>
             </article>
         </div>
+
+
+        <section class="visual-concepts" aria-labelledby="visual-concepts-title">
+            <div class="section-heading"><span class="eyebrow">VISUAL REFERENCE · SCHEMATIC ONLY</span><h2 id="visual-concepts-title">Read the shape of a chart</h2><p>Simple teaching diagrams—not live market data, analysis, or trading signals.</p></div>
+            <div class="visual-concepts-grid">
+                <article class="diagram-card"><span class="diagram-label">01 · Candle anatomy</span><h3>Open, high, low, close</h3><svg viewBox="0 0 320 150" role="img" aria-label="Schematic candlestick anatomy with wick and body"><path d="M26 127H300M26 25V127" class="diagram-axis"/><path d="M83 38V112M150 24V130M217 49V120" class="diagram-wick"/><rect x="72" y="58" width="22" height="36" rx="3" class="diagram-candle-up"/><rect x="139" y="48" width="22" height="55" rx="3" class="diagram-candle-down"/><rect x="206" y="67" width="22" height="27" rx="3" class="diagram-candle-up"/><path d="M231 50h46M232 94h46" class="diagram-mark"/><text x="281" y="53">High</text><text x="281" y="98">Low</text></svg><p>A candle summarizes price movement for one chosen interval.</p></article>
+                <article class="diagram-card"><span class="diagram-label">02 · Structure & liquidity</span><h3>Swing points are context</h3><svg viewBox="0 0 320 150" role="img" aria-label="Schematic market structure with swing highs and a marked level"><path d="M22 128H300M22 20V128" class="diagram-axis"/><path d="M28 112 71 75 107 98 151 49 193 78 236 39 282 66" class="diagram-line"/><path d="M22 48H299" class="diagram-level"/><path d="M236 40V18" class="diagram-mark"/><text x="214" y="15">Prior high</text><text x="82" y="139">Illustrative swings</text></svg><p>Prior highs and lows may be studied as areas of interest; no level predicts what happens next.</p></article>
+                <article class="diagram-card"><span class="diagram-label">03 · Fair Value Gap</span><h3>Three-candle illustration</h3><svg viewBox="0 0 320 150" role="img" aria-label="Schematic three-candle fair value gap teaching diagram"><path d="M22 128H300M22 20V128" class="diagram-axis"/><path d="M78 37V111M155 22V126M232 45V103" class="diagram-wick"/><rect x="68" y="57" width="20" height="32" rx="2" class="diagram-candle-up"/><rect x="145" y="41" width="20" height="60" rx="2" class="diagram-candle-up"/><rect x="222" y="58" width="20" height="28" rx="2" class="diagram-candle-down"/><rect x="171" y="57" width="39" height="28" rx="4" class="diagram-zone"/><path d="M164 57h60M164 85h60" class="diagram-level"/><text x="175" y="76">Gap</text></svg><p>A pattern some traders interpret as imbalance; interpretations can differ and are not a forecast.</p></article>
+            </div>
+        </section>
 
         <section class="guided-exercise" id="guided-exercise" aria-labelledby="guided-exercise-title">
             <span class="eyebrow">Lesson 4 · Educational practice</span>
@@ -468,7 +494,7 @@ footer { padding: 20px; border-top: 1px solid #152c41; color: #8193a5; text-alig
     let latestScore = null;
 
     function buildChallengeUrl(score) {
-        const challengeUrl = new URL("https://sif-forex-hubreal.vercel.app/academy.html");
+        const challengeUrl = new URL("academy.html", window.location.href);
         challengeUrl.search = "";
         challengeUrl.hash = "";
         challengeUrl.searchParams.set("challenge", String(score));
@@ -539,14 +565,14 @@ footer { padding: 20px; border-top: 1px solid #152c41; color: #8193a5; text-alig
         const ctx = canvas.getContext("2d");
         if (!ctx) throw new Error("Card image unavailable");
         const background = ctx.createLinearGradient(0, 0, 1200, 630);
-        background.addColorStop(0, "#103b3d");
-        background.addColorStop(1, "#091a2c");
+        background.addColorStop(0, "#173b3d");
+        background.addColorStop(1, "#07111d");
         ctx.fillStyle = background;
         ctx.fillRect(0, 0, 1200, 630);
-        ctx.strokeStyle = "#277c67";
+        ctx.strokeStyle = "#927945";
         ctx.lineWidth = 4;
         ctx.strokeRect(32, 32, 1136, 566);
-        ctx.fillStyle = "#24e69a";
+        ctx.fillStyle = "#f0d995";
         ctx.font = "bold 25px sans-serif";
         ctx.fillText("SIF FOREX HUB  /  BEGINNER ACADEMY", 86, 104);
         ctx.fillStyle = "#f4f8fc";
@@ -556,7 +582,7 @@ footer { padding: 20px; border-top: 1px solid #152c41; color: #8193a5; text-alig
         ctx.fillStyle = "#d5e1eb";
         ctx.fillText("MY LEARNING QUIZ SCORE", 86, 270);
         ctx.font = "bold 146px sans-serif";
-        ctx.fillStyle = "#24e69a";
+        ctx.fillStyle = "#f0d995";
         ctx.fillText(`${score} / 5`, 82, 426);
         ctx.fillStyle = "#d5e1eb";
         ctx.font = "26px sans-serif";

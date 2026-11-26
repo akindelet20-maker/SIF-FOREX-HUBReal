@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dashboard | SIF FOREX HUB</title>
+<script src="site.js" defer></script>
 
 <style>
 * {
@@ -187,11 +188,23 @@ footer {
 </style>
 </head>
 
-<body>
+<body class="page-dashboard">
 
-<header>
-    <div class="logo">SIF FOREX HUB</div>
-    <button class="logout" id="logoutButton">LOGOUT</button>
+<header class="site-header">
+    <a href="index.html" class="brand" aria-label="SIF Forex Hub home">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span class="brand-name">SIF <b>FOREX HUB</b><small>LEARN · TRADE · EARN</small></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="navigation" aria-expanded="false">☰</button>
+    <nav id="navigation" aria-label="Dashboard navigation">
+        <a href="index.html">Home</a>
+        <a href="academy.html">Academy</a>
+        <a href="charts.html">Charts</a>
+        <a href="simulator.html">Simulator</a>
+        <a href="calculator.html">Risk calculator</a>
+        <a href="journal.html">Journal</a>
+    </nav>
+    <button class="logout" id="logoutButton" type="button">Sign out</button>
 </header>
 
 <main class="container">
@@ -226,49 +239,33 @@ footer {
             <span class="membership" id="membership">
                 FREE MEMBER
             </span>
+            <a href="index.html#pricing" class="primary-btn" style="position:relative;z-index:1;margin-top:14px;min-height:40px;padding:9px 13px;font-size:10px;">Compare membership plans</a>
 
         </section>
 
         <h2 class="section-title">Your Trading Workspace</h2>
 
         <div class="grid">
+            <a href="charts.html" class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16"/><path d="m7 15 3-4 3 2 5-7"/><path d="M17 6h1v1"/></svg></div><h3>Advanced Charts</h3><p>Explore the public TradingView chart and supported analysis tools.</p><span class="availability">Available</span></a>
+            <a href="academy.html" class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 9 9-5 9 5-9 5z"/><path d="M7 12v5c3 2.5 7 2.5 10 0v-5M21 9v6"/></svg></div><h3>Forex Academy</h3><p>Learn through a four-lesson beginner path, checks, and a quiz.</p><span class="availability">Available · guest access</span></a>
+            <a href="simulator.html" class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 19V5M5 19h14"/><path d="m8 15 3-4 3 2 4-6"/><path d="M17 7h2v2"/></svg></div><h3>Trading Simulator</h3><p>Practise with fictional funds and prices you enter yourself.</p><span class="availability">Available · guest access</span></a>
+            <a href="calculator.html" class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2M8 18h8"/></svg></div><h3>Risk Calculator</h3><p>Estimate position size from the inputs you choose.</p><span class="availability">Available · guest access</span></a>
+            <a href="journal.html" class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4.5A2.5 2.5 0 0 1 8.5 2H20v18H8.5A2.5 2.5 0 0 0 6 22z"/><path d="M6 4.5v15A2.5 2.5 0 0 1 8.5 17H20M10 7h6M10 11h6"/></svg></div><h3>Trading Journal</h3><p>Record practice trades after signing in; entries remain in this browser.</p><span class="availability">Sign-in required</span></a>
+            <article class="card is-unavailable" aria-disabled="true"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18V6M4 18h16"/><path d="m7 14 3-4 3 2 4-5"/><path d="M17 5h2v2"/><path d="M8 4v2M7 5h2"/></svg></div><h3>AI Chart Coach</h3><p>Chart uploads and AI chart analysis are not available yet.</p><span class="availability">Coming soon · unavailable</span></article>
+            <article class="card is-unavailable" aria-disabled="true"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 19V5M5 19h14"/><path d="m8 15 3-3 2 2 4-6"/><circle cx="17" cy="8" r="1"/></svg></div><h3>Strategy Tester</h3><p>Historical strategy backtesting is not currently implemented.</p><span class="availability">Unavailable</span></article>
+            <article class="card is-unavailable" aria-disabled="true"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7v5h5"/><path d="M5 12a7 7 0 1 0 2-5"/><path d="M12 8v4l3 2"/></svg></div><h3>Market Replay</h3><p>Interactive historical replay is not currently implemented.</p><span class="availability">Unavailable</span></article>
+        </div>
 
-            <a href="charts.html" class="card">
-                <div class="icon">📊</div>
-                <h3>Advanced Charts</h3>
-                <p>Explore market charts and technical analysis tools.</p>
-            </a>
-
-            <a href="academy.html" class="card">
-                <div class="icon">🎓</div>
-                <h3>Forex Academy</h3>
-                <p>Learn forex from beginner to advanced level.</p>
-            </a>
-
-            <a href="simulator.html" class="card">
-                <div class="icon">🎮</div>
-                <h3>Trading Simulator</h3>
-                <p>Practise trading with simulated funds.</p>
-            </a>
-
-            <a href="calculator.html" class="card">
-                <div class="icon">🧮</div>
-                <h3>Risk Calculator</h3>
-                <p>Calculate position size and trading risk.</p>
-            </a>
-
-            <a href="journal.html" class="card">
-                <div class="icon">📒</div>
-                <h3>Trading Journal</h3>
-                <p>Record and review your trading activities.</p>
-            </a>
-
-            <a href="charts.html#ai-coach" class="card">
-                <div class="icon">🤖</div>
-                <h3>AI Chart Coach</h3>
-                <p>Study market structure and possible trading scenarios.</p>
-            </a>
-
+        <div class="dashboard-panels">
+            <section class="dashboard-panel" aria-labelledby="learning-panel-title">
+                <h3 id="learning-panel-title">Learning progress</h3>
+                <p id="learningProgress">Four beginner lessons are open to everyone. Completion is saved only in this browser and is not synced to your account.</p>
+                <a href="academy.html">Continue in the Academy →</a>
+            </section>
+            <section class="dashboard-panel" aria-labelledby="activity-panel-title">
+                <h3 id="activity-panel-title">Account activity</h3>
+                <p>Recent tool activity and notifications are not tracked in this dashboard yet. No activity or account data is being inferred.</p>
+            </section>
         </div>
 
         <div class="notice">
@@ -341,6 +338,16 @@ async function loadDashboard() {
         const name = profile?.full_name || user.user_metadata?.full_name || 'Trader';
         const username = profile?.username || user.user_metadata?.username || 'Member';
         const membership = profile?.membership;
+
+        try {
+            const savedLearning = JSON.parse(localStorage.getItem('sifForexAcademyStartHere.v1') || 'null');
+            if (savedLearning && Array.isArray(savedLearning.completed)) {
+                const completedCount = new Set(savedLearning.completed.map(String).filter(id => ['1','2','3','4'].includes(id))).size;
+                document.getElementById('learningProgress').textContent = `${completedCount} of 4 beginner lessons complete on this device. This progress is not synced to your account.`;
+            }
+        } catch {
+            document.getElementById('learningProgress').textContent = 'Local Academy progress could not be read; nothing was changed. Open the Academy to review your progress.';
+        }
 
         document.getElementById('memberName').textContent = name;
         document.getElementById('memberUsername').textContent = '@' + username;
