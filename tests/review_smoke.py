@@ -79,6 +79,8 @@ def main():
         page.locator('#pair-selector').select_option('FX:GBPUSD')
         expect(page.locator('#market-provider')).to_contain_text('FX:GBPUSD')
         expect(page.locator('.dashboard-chart iframe')).to_have_attribute('src', re.compile('GBPUSD'), timeout=5000)
+        expect(page.locator('.stat-card').nth(1)).to_contain_text('206 open guest lessons')
+        expect(page.locator('.feature-card:has-text("Forex Academy")')).to_contain_text('SIF Question')
         expect(page.locator('.price-button.is-disabled')).to_have_count(2)
         expect(page.locator('.feature-card:has-text("Strategy Tester") .coming-soon-label')).to_be_visible()
         checks.append('homepage, rendered TradingView feed disclaimer, pair selector, and disabled membership states')
